@@ -1,0 +1,16 @@
+[Unit]
+Description=bash - Signal Registry
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/root/sites/signalregistry.net/bash/run
+ExecStart=/root/sites/signalregistry.net/bash/build/bash.signalregistry.net
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
