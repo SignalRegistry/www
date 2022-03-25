@@ -30,6 +30,84 @@
 
 <body>
 
+  <div>
+    <table class="ui celled structured table">
+      <thead>
+        <tr>
+          <th rowspan="2" class="center aligned">Frequency</th>
+          <th colspan="3" class="center aligned">Antenna Size in Wavelengths</th>
+        </tr>
+        <tr>
+          <th class="center aligned">Far-field Range</th>
+          <th class="center aligned">Near-field Range</th>
+          <th class="center aligned">Compact Range</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="left aligned">200 MHz</td>
+          <td class="center aligned">
+            <span>&gt;2&lambda;</span>
+          </td>
+          <td class="center aligned">
+            &gt;2&lambda;
+          </td>
+          <td class="center aligned disabled">
+            Not ideal
+          </td>
+        </tr>
+        <tr>
+          <td class="left aligned">500 MHz</td>
+          <td class="center aligned">
+            <span>&gt;2&lambda;</span>
+          </td>
+          <td class="center aligned green">
+            <span class="ui big text">&gt;2&lambda;</span>
+          </td>
+          <td class="center aligned disabled">
+            Not ideal
+          </td>
+        </tr>
+        <tr>
+          <td class="left aligned">1 GHz</td>
+          <td class="center aligned">
+            <span>&gt;5&lambda;</span>
+          </td>
+          <td class="center aligned">
+            &gt;5&lambda;
+          </td>
+          <td class="center aligned">
+            &gt;5&lambda;
+          </td>
+        </tr>
+        <tr>
+          <td class="left aligned">2 GHz</td>
+          <td class="center aligned">
+            <span>&gt;5&lambda;</span>
+          </td>
+          <td class="center aligned">
+            &gt;10&lambda;
+          </td>
+          <td class="center aligned">
+            &gt;10&lambda;
+          </td>
+        </tr>
+        <tr>
+          <td class="left aligned">&ge; 4 GHz</td>
+          <td class="center aligned">
+            <span>&gt;10&lambda;</span>
+          </td>
+          <td class="center aligned">
+            &gt;10&lambda;
+          </td>
+          <td class="center aligned">
+            &gt;10&lambda;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <footer>
     <div class="ui form">
       <div class="ui fluid icon input">
@@ -41,6 +119,15 @@
 
   <script src="vendor/jquery-3.6.0.min.js"></script>
   <script src="vendor/Fomantic-UI-2.8.8/dist/semantic.min.js"></script>
+
+  <script>
+    $(document).ready(() => {
+      $('.ui.rating').rating();
+      $('table')
+        .transition('tada')
+        ;
+    })
+  </script>
 </body>
 
 </html>
