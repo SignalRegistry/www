@@ -27,15 +27,51 @@
     }
 
     .selected {
-      background: lightgreen;
+      background: aquamarine !important;
       font-size: larger !important;
+    }
+
+    .highlighted {
+      background-color: antiquewhite;
+    }
+
+    .invisible {
+      display: none;
     }
   </style>
 </head>
 
 <body>
+  <div class="ui centered grid" style="margin: 1rem;">
+    <form class="ui form sixteen wide tablet eight wide computer column">
+      <h4 class="ui dividing header center aligned">Antenna</h4>
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <label>Frequency [MHz]</label>
+            <input type="number" name="frequency" placeholder="Max. operating frequency" step="100">
+          </div>
+          <div class="field">
+            <label>Size [m]</label>
+            <input type="number" name="size" placeholder="Max. cross-sectional size" step="0.1">
+          </div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="eight wide field center">
+          <label>Electrical Size</label>
+          <div class="ui right labeled input">
+            <input type="text" name="esize" placeholder="Will be calculated automatically" disabled>
+            <div class="ui basic label">
+              wavelength (&lambda;)
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 
-  <div>
+  <div style="margin: 1rem !important;">
     <table class="ui celled structured table unstackable">
       <thead>
         <tr>
@@ -50,11 +86,11 @@
       </thead>
       <tbody>
         <tr>
-          <td class="left aligned">200 MHz</td>
-          <td class="center aligned">
+          <td class="left aligned" frc>200 MHz</td>
+          <td class="center aligned" wlc>
             &lt;2&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;2&lambda;
           </td>
           <td class="center aligned disabled">
@@ -62,11 +98,11 @@
           </td>
         </tr>
         <tr>
-          <td class="left aligned">500 MHz</td>
-          <td class="center aligned">
+          <td class="left aligned" frc>500 MHz</td>
+          <td class="center aligned" wlc>
             &lt;2&lambda;
           </td>
-          <td class="center aligned selected">
+          <td class="center aligned" wlc>
             &gt;2&lambda;
           </td>
           <td class="center aligned disabled">
@@ -74,60 +110,139 @@
           </td>
         </tr>
         <tr>
-          <td class="left aligned">1 GHz</td>
-          <td class="center aligned">
+          <td class="left aligned" frc>1 GHz</td>
+          <td class="center aligned" wlc>
             &lt;5&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;5&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;5&lambda;
           </td>
         </tr>
         <tr>
-          <td class="left aligned">2 GHz</td>
-          <td class="center aligned">
+          <td class="left aligned" frc>2 GHz</td>
+          <td class="center aligned" wlc>
             &lt;5&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;10&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;10&lambda;
           </td>
         </tr>
         <tr>
-          <td class="left aligned">&ge; 4 GHz</td>
-          <td class="center aligned">
+          <td class="left aligned" frc>&ge; 4 GHz</td>
+          <td class="center aligned" wlc>
             &lt;10&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;10&lambda;
           </td>
-          <td class="center aligned">
+          <td class="center aligned" wlc>
             &gt;10&lambda;
           </td>
         </tr>
       </tbody>
     </table>
+
+    <div class="ui red message invisible">! No ideal range found.</div>
+    <div class="ui green message invisible"><span class="ui text black"></span></div>
   </div>
 
-  <footer>
+
+
+  <!-- <footer>
     <div class="ui form">
       <div class="ui fluid icon input">
         <input type="text" placeholder="Search a very wide input...">
         <i class="search icon"></i>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="vendor/jquery-3.6.0.min.js"></script>
   <script src="vendor/Fomantic-UI-2.8.8/dist/semantic.min.js"></script>
 
   <script>
+    function update() {
+      let isMatched = false
+      let matchedRanges = []
+      let fRanges = [0, 2, 4, 7, 10]
+      let nRanges = [1, 3, 5, 8, 11]
+      let cRanges = [6, 9, 12]
+      $('[wlc]').removeClass("selected")
+      $('.message').addClass("invisible")
+      if ($('[name="size"').val() && $('[name="frequency"').val()) {
+        let val = ($('[name="size"').val() / (3E8 / ($('[name="frequency"').val() * 1E6))).toFixed(1)
+        $('[name="esize"').val(String(val))
+        $('[wlc]').each((index, elem) => {
+          let criteria = Number($(elem).html().replace("&lambda;", "").replace("<", "").replace(">", "").replace("λ", "").replace("&gt;", "").replace("&lt;", ""))
+          if ($(elem).html().includes("<") || $(elem).html().includes("&lt;")) {
+            if (val <= criteria && $(elem).parent().hasClass("highlighted")) {
+              $(elem).addClass("selected")
+              isMatched = true
+              if (fRanges.includes(index))
+                matchedRanges.push("Far-field")
+              else if (nRanges.includes(index))
+                matchedRanges.push("Near-field")
+              else
+                matchedRanges.push("Compact Range")
+            }
+          }
+          if ($(elem).html().includes(">") || $(elem).html().includes("&gt;")) {
+            if (val >= criteria && $(elem).parent().hasClass("highlighted")) {
+              $(elem).addClass("selected")
+              isMatched = true
+              if (fRanges.includes(index))
+                matchedRanges.push("Far-field")
+              else if (nRanges.includes(index))
+                matchedRanges.push("Near-field")
+              else
+                matchedRanges.push("Compact Range")
+            }
+          }
+        })
+        if (!isMatched)
+          $('.red.message').removeClass("invisible")
+        else {
+          $('.green.message>span').text(matchedRanges[0])
+          for (var i = 1; i < matchedRanges.length; i++) {
+            $('.green.message>span').text($('.green.message>span').text() + ', ' + matchedRanges[i])
+          }
+          $('.green.message').removeClass("invisible")
+        }
+
+      }
+    }
+
+    function highlight() {
+      $(`tbody>tr`).removeClass("highlighted")
+      let matched = []
+      for (let i = 0; i < $('[frc]').length; i++) {
+        let j = $('[frc]').length - 1 - i
+        let freq = Number($(`[frc]:eq(${j})`).text().replace(" MHz", ""))
+        if ($(`[frc]:eq(${j})`).text().includes("GHz")) {
+          freq = Number($(`[frc]:eq(${j})`).text().replace(" GHz", "").replace("≥ ", "").replace("&ge;", "")) * 1000
+        }
+        if ($('[name="frequency"').val() >= freq) {
+          console.log($(`tbody>tr:eq(${j})`).addClass("highlighted"))
+          break
+        }
+      }
+    }
+
     $(document).ready(() => {
       $('.focus').transition('tada');
+      $('[name="size"').bind("keypress keyup keydown", () => {
+        update()
+      })
+      $('[name="frequency"').bind("keypress keyup keydown", () => {
+        highlight()
+        update()
+      })
     })
   </script>
 </body>
