@@ -1,0 +1,287 @@
+Introduction to Antenna Placement and Installation
+Contents
+About the Author
+Preface
+Series Preface
+1 Basic Antenna and Propagation Theory
+1.1 Introduction
+1.2 Characteristics of Electromagnetic Waves
+1.2.1 Reflection
+1.2.2 Refraction
+1.2.3 Diffraction
+1.3 Interaction between Two Waves
+1.3.1 Waveforms in the Time Domain
+1.3.2 Phasors
+1.4 Polarization
+1.4.1 Linear Polarization
+1.4.2 Circular and Elliptical Polarization
+1.4.3 Axial Ratio
+1.4.4 Measurement of Polarization Purity
+1.5 Characteristics of an Antenna
+1.5.1 Radiation Patterns
+1.5.2 Directivity, Gain and Efficiency
+1.5.3 Electrical and Mechanical Boresight
+1.5.4 Beamwidth and Gain of the Main Lobe
+1.5.5 Position and Magnitude of the Lobes
+1.5.6 Bandwidth
+1.5.7 Polarization
+1.5.8 Power Handling
+1.6 Propagation
+1.6.1 Power Flux Density
+1.6.2 Guided Waves
+1.6.3 Free Space Waves
+References
+2 Aircraft Systems Using Antennas
+2.1 Aircraft Systems
+2.2 Frequencies of the Most Common Aircraft Systems
+2.3 Automatic Direction Finding
+2.4 Distress/SOS
+2.5 Distance Measuring Equipment
+2.6 Electronic Counter Measures
+2.7 Electronic Support Systems
+2.7.1 Frequency
+2.7.2 Positional Information
+2.7.3 DOA from Antenna Position
+2.7.4 DOA Using Amplitude Comparison
+2.7.5 DOA Using Phase Comparison
+2.8 Emergency Locator Transmitter/Emergency Position Indicating Radio Beacon
+2.9 Global Positioning System
+2.10 HF
+2.11 Instrument Landing System
+2.11.1 ILS Marker
+2.11.2 ILS Glideslope and Localizer
+2.12 In-Flight Telephony
+2.13 Microwave Landing System
+2.14 Radar
+2.14.1 Doppler Shift
+2.14.2 RadAlt
+2.14.3 Search Radar
+2.14.4 Weather Radar
+2.14.5 Synthetic Aperture Radar (SAR)
+2.14.6 Secondary Surveillance Radar
+2.15 SatCom Civilian
+2.15.1 INMARSAT
+2.15.2 Globalstar
+2.15.3 Iridium
+2.15.4 SKYLink
+2.15.5 Teledesic
+2.15.6 SatCom Airborne Antennas
+2.16 Signals Intelligence
+2.16.1 Communications Intelligence
+2.16.2 Electronic Intelligence
+2.17 Tactical Air Navigation
+2.18 Traffic Collision Avoidance System
+2.19 Telemetry
+2.20 UHF
+2.21 VHF Comms
+2.22 VHF Omnidirectional Ranging
+2.23 Equipment Designation
+References
+3 The Antenna Siting Process
+3.1 Introduction
+3.2 New Antenna Layouts
+3.3 Optimum Positions for Blades
+3.4 Design Phase
+3.4.1 Initial Paper Design Stage
+3.4.2 Investigative and Computational Modelling Phase
+3.4.3 Verification and Implementation Phase
+3.5 Certification and Qualification Phase
+3.6 Typical Antenna Layouts
+3.6.1 Small Aircraft
+3.6.2 Large Aircraft
+References
+4 Frequency and Spatial Coverage Considerations
+4.1 Introduction
+4.1.1 Standard Ground Planes
+4.2 Effect of the Structure on the Spatial Characteristics of the Antenna
+4.2.1 Uninstalled and Installed Patterns
+4.3 Combination of Two Waves
+4.3.1 Combination in the Time Domain
+4.3.2 Combination of Two Waves Using Trigonometry
+4.4 Measurements on Scaled Test Bodies
+4.4.1 Fokker 100 Scaled Model Used for Measurements
+4.4.2 Cylinder Used for Radiation Pattern Measurements
+4.5 Effect of Frequency on the Radiation Pattern
+4.6 Effect of Distance from Obstacles
+4.6.1 Effect of the Physical Distance from Obstacles
+4.6.2 Effect of the Electrical Distance from Obstacles
+4.7 Effect of Wings on the Radiation Pattern
+4.8 Effect of the Curved Ground Plane and the Electrical Dimensions of the Fuselage
+4.8.1 Effect of the Curved Fuselage on the Roll Plane Patterns
+4.8.2 Effect of the Curved Nose Cone and Tail on the Pitch Plane Patterns
+4.9 Radiation Patterns on Cylinders in the Absence of Obstacles
+References
+5 Antennas Used on Aircraft
+5.1 Introduction
+5.2 Near and Far Fields of an Antenna
+5.2.1 Far Field for Wire Antennas
+5.2.2 Far Field for Aperture Antennas
+5.3 Antennas on Aerostructures
+5.4 Polar Radiation Patterns
+5.5 Dipoles
+5.5.1 Small Dipoles
+5.5.2 Resonant Dipoles
+5.5.3 Broadband Dipoles
+5.5.4 Crossed Dipoles
+5.5.5 Dipole Arrays
+5.6 Monopoles
+5.6.1 Ground Plane Dependence
+5.6.2 Top Loaded Monopoles
+5.6.3 Small Monopoles
+5.6.4 Broadband Monopoles
+5.6.5 Tuned Monopoles
+5.6.6 Monopole Arrays
+5.7 Loops and Notches
+5.8 Helixes
+5.9 Flat/Planar Spirals
+5.10 Patches
+5.10.1 Patch Arrays
+5.11 Aperture Antennas
+5.12 Reflectors
+5.12.1 Antennas and the Fourier Transform
+5.13 Waveguide Fed Antennas
+5.13.1 Waveguide Theory
+5.13.2 Horns
+5.13.3 Slotted Waveguide Array Antenna
+5.13.4 Phased Array Antennas
+5.14 Model Numbers Used by Different Manufacturers
+References
+6 RF Interoperability
+6.1 Introduction
+6.2 Coupling between Systems on an Aircraft
+6.2.1 Conducted Emissions inside the Airframe
+6.2.2 Radiated Emissions inside the Airframe
+6.2.3 Radiated Emissions outside the Airframe
+6.2.4 Conducted Emissions outside the Airframe
+6.2.5 Radiated Emissions through the Airframe
+6.2.6 Conducted Emissions through the Airframe
+6.2.7 Coupling between Systems due to Radiated Emissions Outside the Airframe
+6.3 Techniques for Achieving RF Interoperability
+6.3.1 Antenna Placement
+6.3.2 Time Domain Measures
+6.3.3 Sidelobe Blanking
+6.3.4 Receiver Blanking
+6.3.5 Frequency Filters
+6.3.6 EM Shielding
+6.4 Modulation
+6.4.1 Amplitude Modulation
+6.4.2 Single Sideband Modulation
+6.4.3 Frequency Modulation
+6.4.4 Pulsed Radar
+6.5 Coupling due to Radiated Emissions through the Antennas
+6.6 Coupling between Systems with LOS Antennas
+6.6.1 Spatial Isolation
+6.6.2 Calculation of Coupling between Systems with LOS Antennas
+6.6.3 Out-of-Band Coupling
+6.7 Coupling between Systems for Antennas on Opposite Surfaces of the Fuselage
+6.7.1 Problems with Estimating Coupling at the Higher Frequencies
+6.8 Existing Formulas Used for Calculating Coupling between Two Antennas on Opposite Surfaces
+6.8.1 Bull and Smithers
+6.8.2 Simple Diffraction
+6.9 Derivation of an Empirical Formula that Correlates with the Measured Data
+References
+7 Computer Modelling Techniques
+7.1 Introduction
+7.2 Overview of Computer Modelling
+7.2.1 Reasons for Computer Modelling of Antennas on Structures
+7.2.2 Systems Performance Using Antenna Modelling
+7.2.3 Postdiction
+7.2.4 Modelling the Exterior Surface
+7.2.5 Modelling the Antenna
+7.2.6 The Frequency Gap
+7.3 Generic Types of Computer Modelling
+7.3.1 Classification of Generic Forms of Computer Packages
+7.3.2 Verification of Modelling by Showing Correlation with Measured Data
+7.4 Method of Moments
+7.4.1 Enhancements
+7.4.2 Comparison with Scaled Model Measurements
+7.4.3 Fast Multipole Method &#8211; BEM with Accelerated Solver
+7.5 Finite Difference Time Domain
+7.5.1 Comparison with Measurements
+7.6 GTD/UTD
+7.6.1 Geometric Theory of Diffraction
+7.6.2 Uniform/Unified Theory of Diffraction
+7.6.3 Creeping Waves Around Cylinders
+7.6.4 Limitations of GTD/UTD Modelling
+7.6.5 Geometric Surface Models for GTD/UTD
+7.6.6 Higher-Order Interactions
+7.6.7 Comparison of GTD/UTD with Scaled Model Measurements
+7.7 Physical Optics
+7.7.1 Comparison with MoM
+7.8 Hybrid Methods
+7.8.1 Multi-domain Method
+7.8.2 Physical Optics and Hybrid MoM/PO
+7.8.3 Hybrid of MoM and GTD/UTD
+7.9 Comparison of Predicted Surface Currents
+7.9.1 Comparison between the Surface Currents on an Airframe using Different Codes
+7.9.2 Surface Currents on a Simplistic Airframe for Different Meshes
+7.10 Code-to-code Comparison of Radiation Patterns Predicted on the Simplistic Airframe
+7.11 Relationship between Number of Unknowns and Surface Area
+References
+8 Measurements
+8.1 Introduction
+8.2 Positioners
+8.2.1 Phase Centre Error
+8.3 Test Facility Antennas
+8.3.1 Range Antennas
+8.3.2 Antennas Used in Near-Field Facilities
+8.3.3 Antennas Used in Compact Ranges
+8.4 Scaled Models
+8.4.1 Use of Scaled Models
+8.4.2 Characteristics of Scaled Models
+8.5 Scaled Antennas
+8.5.1 Monopole Antennas
+8.5.2 Patch Antennas
+8.6 Absorbers
+8.6.1 Carbon Loaded Foam RAM
+8.6.2 Carbon Loaded Fibre Matting
+8.6.3 Other Types of RAM
+8.7 Measurement Facilities
+8.8 Indoor Test Facilities
+8.9 Anechoic Chambers
+8.9.1 Quiet Zone
+8.9.2 Rectangular Chambers
+8.9.3 Tapered Anechoic Chambers
+8.10 Compact Ranges
+8.11 Near-Field Facilities
+8.11.1 Planar Near-Field Facilities
+8.11.2 Cylindrical Near-Field Facilities
+8.11.3 Spherical Near-Field Facilities
+8.11.4 Advanced Antenna Near-Field Test System
+8.12 Outdoor Far-Field Ranges
+8.12.1 Measurement of the Variation of the Field over the Measurement Volume
+8.12.2 Elevated Ranges
+8.12.3 Slant Ranges
+8.12.4 Ground Reflection Ranges
+8.12.5 Open Area Test Sites (OATS)
+8.13 Ground Test Measurements
+8.13.1 Radiation Pattern Measurements
+8.13.2 Coupling Measurements
+8.14 In-Flight Measurements for System and Inter-System Testing
+References
+9 Reference
+9.1 Centigrade to Fahrenheit Temperature Conversion
+9.2 Conductivity of Common Metals
+9.3 Degrees to Radians and Radians to Degrees
+9.4 Dielectric Constants and Loss Tangents of Common Materials
+9.5 Electrochemical Series
+9.6 Electromagnetic Spectrum and Frequency Bands for Different Nomenclatures
+9.6.1 EM Spectrum
+9.6.2 Frequency Bands and Wavelengths for Different Nomenclatures
+9.7 Formulas
+9.8 Frequency to Wavelength
+9.9 Gain in dB and Gain as a Linear Ratio
+9.10 Greek Alphabet
+9.11 Imperial to Metric Conversions &#8211; Distance, Area, Volume, Speed
+9.11.1 Conversion Factors for Lengths/Distances
+9.11.2 Conversion Factors for Areas
+9.11.3 Conversion Factors for Volume and Capacity
+9.11.4 Conversion Factors for Speed
+9.12 Periodic Table Alphabetically
+9.13 Polarization Matching Matrix
+9.14 Power in dBm and Power in Watts
+9.15 Preferred SI Scientific Prefixes
+9.16 Terms and Definitions
+9.17 VSWR to Return Loss
+Appendix: Abbreviations and Acronyms
+Index

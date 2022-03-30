@@ -1,0 +1,3804 @@
+{
+  "_id": {
+    "$oid": "5cb47d10c70c568c501ab017"
+  },
+  "file": "5cb481f1c70c568c501abceb",
+  "cover": "5cb47aba1b9c8813a0e5adbb",
+  "title": "Introduction to RF Propagation",
+  "author": "John S. Seybold",
+  "publisher": "Wiley",
+  "publisherSite": "https://onlinelibrary.wiley.com/doi/book/10.1002/0471743690",
+  "amazonSite": "https://www.amazon.com/Introduction-RF-Propagation-John-Seybold/dp/0471655961",
+  "edition": 1,
+  "year": 2005,
+  "description": "An introduction to RF propagation that spans all wireless applications\n\n This book provides readers with a solid understanding of the concepts involved in the propagation of electromagnetic waves and of the commonly used modeling techniques. While many books cover RF propagation, most are geared to cellular telephone systems and, therefore, are limited in scope. This title is comprehensive-it treats the growing number of wireless applications that range well beyond the mobile telecommunications industry, including radar and satellite communications.i",
+  "users": [
+    "guest",
+    "hsyn",
+    "admin"
+  ],
+  "owners": [
+    "hsyn",
+    "admin"
+  ],
+  "chapters": [
+    {
+      "level": 1,
+      "title": "1 Introduction ",
+      "page": 20
+    },
+    {
+      "level": 2,
+      "title": "  1.1 Frequency Designations ",
+      "page": 20
+    },
+    {
+      "level": 2,
+      "title": "  1.2 Modes of Propagation ",
+      "page": 22
+    },
+    {
+      "level": 3,
+      "title": "  1.2.1 Line-of-Sight Propagation and the Radio Horizon ",
+      "page": 22
+    },
+    {
+      "level": 3,
+      "title": "  1.2.2 Non-LOS Propagation ",
+      "page": 24
+    },
+    {
+      "level": 4,
+      "title": "  1.2.2.1 Indirect or Obstructed Propagation ",
+      "page": 25
+    },
+    {
+      "level": 4,
+      "title": "  1.2.2.2 Tropospheric Propagation ",
+      "page": 25
+    },
+    {
+      "level": 4,
+      "title": "  1.2.2.3 Ionospheric Propagation ",
+      "page": 25
+    },
+    {
+      "level": 3,
+      "title": "  1.2.3 Propagation Effects as a Function of Frequency ",
+      "page": 28
+    },
+    {
+      "level": 2,
+      "title": "  1.3 Why Model Propagation? ",
+      "page": 29
+    },
+    {
+      "level": 2,
+      "title": "  1.4 Model Selection and Application ",
+      "page": 30
+    },
+    {
+      "level": 3,
+      "title": "  1.4.1 Model Sources ",
+      "page": 30
+    },
+    {
+      "level": 1,
+      "title": "2 Electromagnetics and RF Propagation ",
+      "page": 33
+    },
+    {
+      "level": 2,
+      "title": "  2.1 Introduction ",
+      "page": 33
+    },
+    {
+      "level": 2,
+      "title": "  2.2 The Electric Field ",
+      "page": 33
+    },
+    {
+      "level": 3,
+      "title": "  2.2.1 Permittivity ",
+      "page": 34
+    },
+    {
+      "level": 3,
+      "title": "  2.2.2 Conductivity ",
+      "page": 36
+    },
+    {
+      "level": 2,
+      "title": "  2.3 The Magnetic Field ",
+      "page": 37
+    },
+    {
+      "level": 2,
+      "title": "  2.4 Electromagnetic Waves ",
+      "page": 39
+    },
+    {
+      "level": 3,
+      "title": "  2.4.1 Electromagnetic Waves in a Perfect Dielectric ",
+      "page": 41
+    },
+    {
+      "level": 3,
+      "title": "  2.4.2 Electromagnetic Waves in a Lossy Dielectric or Conductor ",
+      "page": 41
+    },
+    {
+      "level": 3,
+      "title": "  2.4.3 Electromagnetic Waves in a Conductor ",
+      "page": 41
+    },
+    {
+      "level": 2,
+      "title": "  2.5 Wave Polarization ",
+      "page": 43
+    },
+    {
+      "level": 2,
+      "title": "  2.6 Propagation of Electromagnetic Waves at Material Boundaries ",
+      "page": 44
+    },
+    {
+      "level": 3,
+      "title": "  2.6.1 Dielectric to Dielectric Boundary ",
+      "page": 45
+    },
+    {
+      "level": 3,
+      "title": "  2.6.2 Dielectric-to-Perfect Conductor Boundaries ",
+      "page": 50
+    },
+    {
+      "level": 3,
+      "title": "  2.6.3 Dielectric-to-Lossy Dielectric Boundary ",
+      "page": 50
+    },
+    {
+      "level": 2,
+      "title": "  2.7 Propagation Impairment ",
+      "page": 51
+    },
+    {
+      "level": 2,
+      "title": "  2.8 Ground Effects on Circular Polarization ",
+      "page": 52
+    },
+    {
+      "level": 1,
+      "title": "3 Antenna Fundamentals ",
+      "page": 57
+    },
+    {
+      "level": 2,
+      "title": "  3.1 Introduction ",
+      "page": 57
+    },
+    {
+      "level": 2,
+      "title": "  3.2 Antenna Parameters ",
+      "page": 57
+    },
+    {
+      "level": 3,
+      "title": "  3.2.1 Gain ",
+      "page": 58
+    },
+    {
+      "level": 3,
+      "title": "  3.2.2 Effective Area ",
+      "page": 58
+    },
+    {
+      "level": 3,
+      "title": "  3.2.3 Radiation Pattern ",
+      "page": 61
+    },
+    {
+      "level": 3,
+      "title": "  3.2.4 Polarization ",
+      "page": 63
+    },
+    {
+      "level": 3,
+      "title": "  3.2.5 Impedance and VSWR ",
+      "page": 63
+    },
+    {
+      "level": 2,
+      "title": "  3.3 Antenna Radiation Regions ",
+      "page": 64
+    },
+    {
+      "level": 2,
+      "title": "  3.4 Some Common Antennas ",
+      "page": 67
+    },
+    {
+      "level": 3,
+      "title": "  3.4.1 The Dipole ",
+      "page": 67
+    },
+    {
+      "level": 3,
+      "title": "  3.4.2 Beam Antennas ",
+      "page": 69
+    },
+    {
+      "level": 3,
+      "title": "  3.4.3 Horn Antennas ",
+      "page": 71
+    },
+    {
+      "level": 3,
+      "title": "  3.4.4 Reflector Antennas ",
+      "page": 71
+    },
+    {
+      "level": 3,
+      "title": "  3.4.5 Phased Arrays ",
+      "page": 73
+    },
+    {
+      "level": 3,
+      "title": "  3.4.6 Other Antennas ",
+      "page": 73
+    },
+    {
+      "level": 2,
+      "title": "  3.5 Antenna Polarization ",
+      "page": 74
+    },
+    {
+      "level": 3,
+      "title": "  3.5.1 Cross-Polarization Discrimination ",
+      "page": 76
+    },
+    {
+      "level": 3,
+      "title": "  3.5.2 Polarization Loss Factor ",
+      "page": 77
+    },
+    {
+      "level": 2,
+      "title": "  3.6 Antenna Pointing loss ",
+      "page": 81
+    },
+    {
+      "level": 1,
+      "title": "4 Communication Systems and the Link Budget ",
+      "page": 98
+    },
+    {
+      "level": 2,
+      "title": "  4.1 Introduction ",
+      "page": 85
+    },
+    {
+      "level": 2,
+      "title": "  4.2 Path Loss ",
+      "page": 86
+    },
+    {
+      "level": 2,
+      "title": "  4.3 Noise ",
+      "page": 88
+    },
+    {
+      "level": 2,
+      "title": "  4.4 Interference ",
+      "page": 95
+    },
+    {
+      "level": 2,
+      "title": "  4.5 Detailed Link Budget ",
+      "page": 98
+    },
+    {
+      "level": 3,
+      "title": "  4.5.1 EIRP ",
+      "page": 99
+    },
+    {
+      "level": 3,
+      "title": "  4.5.2 Path Loss ",
+      "page": 99
+    },
+    {
+      "level": 3,
+      "title": "  4.5.3 Receiver Gain ",
+      "page": 101
+    },
+    {
+      "level": 3,
+      "title": "  4.5.4 Link Margin ",
+      "page": 102
+    },
+    {
+      "level": 3,
+      "title": "  4.5.5 Signal-to-Noise Ratio ",
+      "page": 102
+    },
+    {
+      "level": 1,
+      "title": "5 Radar Systems ",
+      "page": 106
+    },
+    {
+      "level": 2,
+      "title": "  5.1 Introduction ",
+      "page": 106
+    },
+    {
+      "level": 2,
+      "title": "  5.2 The Radar Range Equation ",
+      "page": 107
+    },
+    {
+      "level": 2,
+      "title": "  5.3 Radar Measurements ",
+      "page": 112
+    },
+    {
+      "level": 3,
+      "title": "  5.3.1 Range Measurement ",
+      "page": 112
+    },
+    {
+      "level": 3,
+      "title": "  5.3.2 Doppler Measurement ",
+      "page": 114
+    },
+    {
+      "level": 3,
+      "title": "  5.3.3 Angle Measurement ",
+      "page": 114
+    },
+    {
+      "level": 3,
+      "title": "  5.3.4 Signature Measurement ",
+      "page": 117
+    },
+    {
+      "level": 2,
+      "title": "  5.4 Clutter ",
+      "page": 118
+    },
+    {
+      "level": 3,
+      "title": "  5.4.1 Area Clutter ",
+      "page": 118
+    },
+    {
+      "level": 3,
+      "title": "  5.4.2 Volume Clutter ",
+      "page": 124
+    },
+    {
+      "level": 3,
+      "title": "  5.4.3 Clutter Statistics ",
+      "page": 125
+    },
+    {
+      "level": 2,
+      "title": "  5.5 Atmospheric Impairments ",
+      "page": 125
+    },
+    {
+      "level": 1,
+      "title": "6 Atmospheric Effects ",
+      "page": 130
+    },
+    {
+      "level": 2,
+      "title": "  6.1 Introduction ",
+      "page": 130
+    },
+    {
+      "level": 2,
+      "title": "  6.2 Atmospheric Refraction ",
+      "page": 131
+    },
+    {
+      "level": 3,
+      "title": "  6.2.1 The Radio Horizon ",
+      "page": 131
+    },
+    {
+      "level": 3,
+      "title": "  6.2.2 Equivalent Earth Radius ",
+      "page": 132
+    },
+    {
+      "level": 3,
+      "title": "  6.2.3 Ducting ",
+      "page": 135
+    },
+    {
+      "level": 3,
+      "title": "  6.2.4 Atmospheric Multipath ",
+      "page": 136
+    },
+    {
+      "level": 2,
+      "title": "  6.3 Atmospheric Attenuation ",
+      "page": 140
+    },
+    {
+      "level": 2,
+      "title": "  6.4 Loss From Moisture and Precipitation ",
+      "page": 144
+    },
+    {
+      "level": 3,
+      "title": "  6.4.1 Fog and Clouds ",
+      "page": 145
+    },
+    {
+      "level": 3,
+      "title": "  6.4.2 Snow and Dust ",
+      "page": 149
+    },
+    {
+      "level": 1,
+      "title": "7 Near-Earth Propagation Models ",
+      "page": 153
+    },
+    {
+      "level": 2,
+      "title": "  7.1 Introduction ",
+      "page": 153
+    },
+    {
+      "level": 2,
+      "title": "  7.2 Foliage Models ",
+      "page": 153
+    },
+    {
+      "level": 3,
+      "title": "  7.2.1 Weissberger's Model ",
+      "page": 154
+    },
+    {
+      "level": 3,
+      "title": "  7.2.2 Early ITU Vegetation Model ",
+      "page": 154
+    },
+    {
+      "level": 3,
+      "title": "  7.2.3 Updated ITU Vegetation Model ",
+      "page": 156
+    },
+    {
+      "level": 4,
+      "title": "  7.2.3.1 Terrestrial Path with One Terminal in Woodland ",
+      "page": 157
+    },
+    {
+      "level": 4,
+      "title": "  7.2.3.2 Single Vegetative Obstruction ",
+      "page": 157
+    },
+    {
+      "level": 2,
+      "title": "  7.3 Terrain Modeling ",
+      "page": 160
+    },
+    {
+      "level": 3,
+      "title": "  7.3.1 Egli Model ",
+      "page": 160
+    },
+    {
+      "level": 3,
+      "title": "  7.3.2 Longley-Rice Model ",
+      "page": 162
+    },
+    {
+      "level": 3,
+      "title": "  7.3.3 ITU Model ",
+      "page": 163
+    },
+    {
+      "level": 2,
+      "title": "  7.4 Propagation in Built-Up Areas ",
+      "page": 165
+    },
+    {
+      "level": 3,
+      "title": "  7.4.1 Young Model ",
+      "page": 165
+    },
+    {
+      "level": 3,
+      "title": "  7.4.2 Okumura Model ",
+      "page": 165
+    },
+    {
+      "level": 3,
+      "title": "  7.4.3 Hata Model ",
+      "page": 170
+    },
+    {
+      "level": 3,
+      "title": "  7.4.4 COST 231 Model ",
+      "page": 171
+    },
+    {
+      "level": 3,
+      "title": "  7.4.5 Lee Model ",
+      "page": 172
+    },
+    {
+      "level": 3,
+      "title": "  7.4.6 Comparison of Propagation Models for Built-Up Areas ",
+      "page": 176
+    },
+    {
+      "level": 1,
+      "title": "8 Fading and Multipath Characterization ",
+      "page": 182
+    },
+    {
+      "level": 2,
+      "title": "  8.1 Introduction ",
+      "page": 182
+    },
+    {
+      "level": 2,
+      "title": "  8.2 Ground-Bounce Multipath ",
+      "page": 183
+    },
+    {
+      "level": 3,
+      "title": "  8.2.1 Surface Roughness ",
+      "page": 193
+    },
+    {
+      "level": 3,
+      "title": "  8.2.2 Fresnel Zones ",
+      "page": 194
+    },
+    {
+      "level": 3,
+      "title": "  8.2.3 Diffraction and Huygen's Principle ",
+      "page": 198
+    },
+    {
+      "level": 3,
+      "title": "  8.2.4 Quantifying Diffraction Loss ",
+      "page": 198
+    },
+    {
+      "level": 2,
+      "title": "  8.3 Large-Scale or Log-Normal Fading ",
+      "page": 205
+    },
+    {
+      "level": 2,
+      "title": "  8.4 Small-Scale Fading ",
+      "page": 212
+    },
+    {
+      "level": 3,
+      "title": "  8.4.1 Delay Spread ",
+      "page": 213
+    },
+    {
+      "level": 3,
+      "title": "  8.4.2 Doppler Spread ",
+      "page": 217
+    },
+    {
+      "level": 3,
+      "title": "  8.4.3 Channel Modeling ",
+      "page": 218
+    },
+    {
+      "level": 3,
+      "title": "  8.4.4 The Probabilistic Nature of Small-Scale Fading ",
+      "page": 219
+    },
+    {
+      "level": 1,
+      "title": "9 Indoor Propagation Modeling ",
+      "page": 227
+    },
+    {
+      "level": 2,
+      "title": "  9.1 Introduction ",
+      "page": 227
+    },
+    {
+      "level": 2,
+      "title": "  9.2 Interference ",
+      "page": 227
+    },
+    {
+      "level": 2,
+      "title": "  9.3 The Indoor Environment ",
+      "page": 228
+    },
+    {
+      "level": 3,
+      "title": "  9.3.1 Indoor Propagation Effects ",
+      "page": 228
+    },
+    {
+      "level": 3,
+      "title": "  9.3.2 Indoor Propagation Modeling ",
+      "page": 229
+    },
+    {
+      "level": 3,
+      "title": "  9.3.3 The ITU Indoor Path Loss Model ",
+      "page": 229
+    },
+    {
+      "level": 3,
+      "title": "  9.3.4 The Log-Distance Path Loss Model ",
+      "page": 233
+    },
+    {
+      "level": 1,
+      "title": "10 Rain Attenuation of Microwave and Millimeter Wave Signals ",
+      "page": 237
+    },
+    {
+      "level": 2,
+      "title": "  10.1 Introduction ",
+      "page": 237
+    },
+    {
+      "level": 2,
+      "title": "  10.2 Link Budget ",
+      "page": 238
+    },
+    {
+      "level": 2,
+      "title": "  10.3 Rain Fades ",
+      "page": 241
+    },
+    {
+      "level": 3,
+      "title": "  10.3.1 Specific Attenuation Due to Rainfall ",
+      "page": 241
+    },
+    {
+      "level": 3,
+      "title": "  10.3.2 The ITU Model ",
+      "page": 243
+    },
+    {
+      "level": 3,
+      "title": "  10.3.3 The Crane Global Model ",
+      "page": 248
+    },
+    {
+      "level": 3,
+      "title": "  10.3.4 Other Rain Models ",
+      "page": 253
+    },
+    {
+      "level": 3,
+      "title": "  10.3.5 Rain Attenuation Model Comparison ",
+      "page": 253
+    },
+    {
+      "level": 3,
+      "title": "  10.3.6 Slant Paths ",
+      "page": 253
+    },
+    {
+      "level": 2,
+      "title": "  10.4 The Link Distance Chart ",
+      "page": 253
+    },
+    {
+      "level": 2,
+      "title": "  10.5 Availability Curves ",
+      "page": 256
+    },
+    {
+      "level": 2,
+      "title": "  10.6 Other Precipitation ",
+      "page": 256
+    },
+    {
+      "level": 2,
+      "title": "  10.7 Cross-Polarization Effects ",
+      "page": 258
+    },
+    {
+      "level": 1,
+      "title": "Appendix 10A: Data for Rain Attenuation Models ",
+      "page": 261
+    },
+    {
+      "level": 1,
+      "title": "11 Satellite Communications ",
+      "page": 265
+    },
+    {
+      "level": 2,
+      "title": "  11.1 Introduction ",
+      "page": 265
+    },
+    {
+      "level": 2,
+      "title": "  11.2 Satellite Orbits ",
+      "page": 266
+    },
+    {
+      "level": 2,
+      "title": "  11.3 Satellite Operating Frequency ",
+      "page": 268
+    },
+    {
+      "level": 2,
+      "title": "  11.4 Satellite Path Free-Space Loss ",
+      "page": 268
+    },
+    {
+      "level": 2,
+      "title": "  11.5 Atmospheric Attenuation ",
+      "page": 271
+    },
+    {
+      "level": 2,
+      "title": "  11.6 Ionospheric Effects ",
+      "page": 274
+    },
+    {
+      "level": 2,
+      "title": "  11.7 Rain Fades ",
+      "page": 274
+    },
+    {
+      "level": 3,
+      "title": "  11.7.1 ITU Rain Attenuation Model for Satellite Paths ",
+      "page": 276
+    },
+    {
+      "level": 3,
+      "title": "  11.7.2 Crane Rain Attenuation Model for Satellite Paths ",
+      "page": 283
+    },
+    {
+      "level": 3,
+      "title": "  11.7.3 The DAH Rain Attenuation Model ",
+      "page": 289
+    },
+    {
+      "level": 2,
+      "title": "  11.8 Antenna Considerations ",
+      "page": 292
+    },
+    {
+      "level": 2,
+      "title": "  11.9 Noise Temperature ",
+      "page": 293
+    },
+    {
+      "level": 3,
+      "title": "  11.9.1 The Hot-Pad Formula ",
+      "page": 295
+    },
+    {
+      "level": 3,
+      "title": "  11.9.2 Noise Due to Rain ",
+      "page": 297
+    },
+    {
+      "level": 3,
+      "title": "  11.9.3 Sun Outages ",
+      "page": 298
+    },
+    {
+      "level": 1,
+      "title": "12 RF Safety ",
+      "page": 302
+    },
+    {
+      "level": 2,
+      "title": "  12.1 Introduction ",
+      "page": 302
+    },
+    {
+      "level": 2,
+      "title": "  12.2 Biological Effects of RF Exposure ",
+      "page": 304
+    },
+    {
+      "level": 2,
+      "title": "  12.3 CC Guidelines ",
+      "page": 306
+    },
+    {
+      "level": 2,
+      "title": "  12.4 Antenna Considerations ",
+      "page": 309
+    },
+    {
+      "level": 2,
+      "title": "  12.5 FCC Computations ",
+      "page": 311
+    },
+    {
+      "level": 3,
+      "title": "  12.5.1 Main Beam and Omnidirectional Antenna Analysis ",
+      "page": 311
+    },
+    {
+      "level": 3,
+      "title": "  12.5.2 Antenna Directivity ",
+      "page": 312
+    },
+    {
+      "level": 2,
+      "title": "  12.6 Station Evaluations ",
+      "page": 316
+    },
+    {
+      "level": 1,
+      "title": "Appendix A: Review of Probability for Propagation Modeling ",
+      "page": 320
+    },
+    {
+      "level": 1,
+      "title": "Index ",
+      "page": 336
+    }
+  ],
+  "chapterDisplayLevel": 2
+}
+{
+  "_id": {
+    "$oid": "5cbe1029c70c568c5032b71d"
+  },
+  "file": "5cbe160fc70c568c5032c630",
+  "cover": "5cbe0e3f1b9c8813a0e5adbc",
+  "title": "Slotted Waveguide Array Antennas",
+  "author": "Lars Josefsson, Sembiam Rengarajan",
+  "publisher": "SciTech Publishing",
+  "publisherSite": "https://digital-library.theiet.org/content/books/ew/sbew517e",
+  "amazonSite": "https://www.amazon.com/Slotted-Waveguide-Array-Antennas-Electromagnetics/dp/1613531893",
+  "edition": 1,
+  "year": 2018,
+  "description": "Slotted waveguide antenna arrays are used in radar, communication and remote sensing systems for high frequencies. They have linear polarization with low cross-polarization and low losses but can also be designed for dual polarizations and phase steered beams. Slotted Waveguide Array Antennas is the first comprehensive treatment of these antennas from an engineering perspective. It provides readers with a thorough foundation in applicable theories as well as hands-on instruction for practical analysis, design, manufacture and use of important types of waveguide slot arrays. It goes beyond some of the commonly discussed topics and ventures into areas that include higher order mode coupling and edge effects; performance optimisation in terms of bandwidth and pattern performance and manufacturing tolerances. With specific examples of waveguide array designs, accompanied by detailed illustrations and antenna characteristics, the book is a must-have reference for engineers involved in antenna design, development and applications.",
+  "users": [
+    "guest",
+    "hsyn",
+    "admin"
+  ],
+  "owners": [
+    "hsyn",
+    "admin"
+  ],
+  "chapters": [
+    {
+      "level": 1,
+      "title": " Contents",
+      "page": 6
+    },
+    {
+      "level": 1,
+      "title": " 1 Introduction",
+      "page": 26
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 28
+    },
+    {
+      "level": 1,
+      "title": " 2 Review of electromagnetic theory",
+      "page": 30
+    },
+    {
+      "level": 2,
+      "title": " 2.1 Maxwell's equations",
+      "page": 30
+    },
+    {
+      "level": 2,
+      "title": " 2.2 Boundary conditions",
+      "page": 31
+    },
+    {
+      "level": 2,
+      "title": " 2.3 Energy and power",
+      "page": 32
+    },
+    {
+      "level": 2,
+      "title": " 2.4 Reciprocity theorem",
+      "page": 33
+    },
+    {
+      "level": 3,
+      "title": " 2.4.1 Source-free region",
+      "page": 33
+    },
+    {
+      "level": 3,
+      "title": " 2.4.2 Infinite region or a region bounded by perfect conductors",
+      "page": 34
+    },
+    {
+      "level": 2,
+      "title": " 2.5 Vector and scalar potentials",
+      "page": 34
+    },
+    {
+      "level": 3,
+      "title": " 2.5.1 Electric vector potential",
+      "page": 35
+    },
+    {
+      "level": 2,
+      "title": " 2.6 The image principle",
+      "page": 36
+    },
+    {
+      "level": 2,
+      "title": " 2.7 The field equivalence principle",
+      "page": 37
+    },
+    {
+      "level": 2,
+      "title": " 2.8 Green's functions",
+      "page": 38
+    },
+    {
+      "level": 3,
+      "title": " 2.8.1 Free-space Green's function",
+      "page": 38
+    },
+    {
+      "level": 3,
+      "title": " 2.8.2 Dyadic Green's function for the magnetic field of a magnetic current in a rectangular waveguide",
+      "page": 39
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 40
+    },
+    {
+      "level": 1,
+      "title": " 3 History",
+      "page": 42
+    },
+    {
+      "level": 2,
+      "title": " 3.1 The early years",
+      "page": 42
+    },
+    {
+      "level": 2,
+      "title": " 3.2 The golden years",
+      "page": 42
+    },
+    {
+      "level": 2,
+      "title": " 3.3 Waveguide slot antennas",
+      "page": 43
+    },
+    {
+      "level": 2,
+      "title": " 3.4 The many shapes of slotted waveguide array antennas",
+      "page": 43
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 48
+    },
+    {
+      "level": 1,
+      "title": " 4 The slot antenna",
+      "page": 50
+    },
+    {
+      "level": 2,
+      "title": " 4.1 An aperture in an infinite ground plane",
+      "page": 50
+    },
+    {
+      "level": 3,
+      "title": " 4.1.1 Problem formulation",
+      "page": 50
+    },
+    {
+      "level": 3,
+      "title": " 4.1.2 Far field",
+      "page": 51
+    },
+    {
+      "level": 3,
+      "title": " 4.1.3 General field expressions",
+      "page": 52
+    },
+    {
+      "level": 3,
+      "title": " 4.1.4 Radiated complex power",
+      "page": 54
+    },
+    {
+      "level": 3,
+      "title": " 4.1.5 The aperture admittance",
+      "page": 54
+    },
+    {
+      "level": 2,
+      "title": " 4.2 The rectangular slot antenna",
+      "page": 55
+    },
+    {
+      "level": 2,
+      "title": " 4.3 Waveguide modes",
+      "page": 58
+    },
+    {
+      "level": 3,
+      "title": " 4.3.1 Definitions",
+      "page": 58
+    },
+    {
+      "level": 4,
+      "title": " 4.3.1.1 Sign convention",
+      "page": 58
+    },
+    {
+      "level": 4,
+      "title": " 4.3.1.2 Modal indices",
+      "page": 59
+    },
+    {
+      "level": 4,
+      "title": " 4.3.1.3 Modal admittance",
+      "page": 59
+    },
+    {
+      "level": 4,
+      "title": " 4.3.1.4 Normalisation",
+      "page": 59
+    },
+    {
+      "level": 3,
+      "title": " 4.3.2 The rectangular waveguide",
+      "page": 59
+    },
+    {
+      "level": 4,
+      "title": " 4.3.2.1 Normalised mode expressions",
+      "page": 60
+    },
+    {
+      "level": 3,
+      "title": " 4.3.3 The TE10 mode case",
+      "page": 61
+    },
+    {
+      "level": 2,
+      "title": " 4.4 The longitudinal slot in a waveguide wall",
+      "page": 61
+    },
+    {
+      "level": 3,
+      "title": " 4.4.1 Preliminaries",
+      "page": 61
+    },
+    {
+      "level": 3,
+      "title": " 4.4.2 The longitudinal rectangular slot",
+      "page": 63
+    },
+    {
+      "level": 3,
+      "title": " 4.4.3 Rectangular waveguide and TE10 mode scattering",
+      "page": 64
+    },
+    {
+      "level": 3,
+      "title": " 4.4.4 The equivalent slot conductance",
+      "page": 65
+    },
+    {
+      "level": 2,
+      "title": " 4.5 Mutual coupling",
+      "page": 68
+    },
+    {
+      "level": 3,
+      "title": " 4.5.1 Introduction",
+      "page": 68
+    },
+    {
+      "level": 3,
+      "title": " 4.5.2 Mutual coupling calculations",
+      "page": 69
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.1 Introduction",
+      "page": 69
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.2 Equivalent circuit approach",
+      "page": 70
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.3 Single-slot admittance",
+      "page": 71
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.4 Mutual admittance between two slot apertures",
+      "page": 71
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.5 Array coupling",
+      "page": 72
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.6 Calculating the mutual coupling",
+      "page": 73
+    },
+    {
+      "level": 4,
+      "title": " 4.5.2.7 Examples",
+      "page": 76
+    },
+    {
+      "level": 3,
+      "title": " 4.5.3 Finite ground plane effects",
+      "page": 80
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 82
+    },
+    {
+      "level": 1,
+      "title": " 5 Slot models",
+      "page": 84
+    },
+    {
+      "level": 2,
+      "title": " 5.1 Modelling principles",
+      "page": 84
+    },
+    {
+      "level": 3,
+      "title": " 5.1.1 Using experimental data",
+      "page": 84
+    },
+    {
+      "level": 3,
+      "title": " 5.1.2 Equivalent circuit approach",
+      "page": 85
+    },
+    {
+      "level": 3,
+      "title": " 5.1.3 Electromagnetic models",
+      "page": 87
+    },
+    {
+      "level": 4,
+      "title": " 5.1.3.1 The boundary problem",
+      "page": 88
+    },
+    {
+      "level": 4,
+      "title": " 5.1.3.2 Zero wall thickness",
+      "page": 89
+    },
+    {
+      "level": 4,
+      "title": " 5.1.3.3 Choice of basis and testing functions",
+      "page": 90
+    },
+    {
+      "level": 4,
+      "title": " 5.1.3.4 The other slot problems in Figure 5.5",
+      "page": 91
+    },
+    {
+      "level": 3,
+      "title": " 5.1.4 Finite wall thickness",
+      "page": 91
+    },
+    {
+      "level": 2,
+      "title": " 5.2 Integral equation solution",
+      "page": 93
+    },
+    {
+      "level": 3,
+      "title": " 5.2.1 The internal field",
+      "page": 93
+    },
+    {
+      "level": 3,
+      "title": " 5.2.2 The external field",
+      "page": 95
+    },
+    {
+      "level": 3,
+      "title": " 5.2.3 Matrix elements",
+      "page": 96
+    },
+    {
+      "level": 4,
+      "title": " 5.2.3.1 Internal field contribution",
+      "page": 96
+    },
+    {
+      "level": 4,
+      "title": " 5.2.3.2 External field contribution",
+      "page": 97
+    },
+    {
+      "level": 4,
+      "title": " 5.2.3.3 Excitation vector",
+      "page": 97
+    },
+    {
+      "level": 2,
+      "title": " 5.3 Longitudinal slot characteristics",
+      "page": 97
+    },
+    {
+      "level": 3,
+      "title": " 5.3.1 Slot electric field distribution",
+      "page": 97
+    },
+    {
+      "level": 3,
+      "title": " 5.3.2 Slot magnetic field distribution",
+      "page": 101
+    },
+    {
+      "level": 3,
+      "title": " 5.3.3 Experimental verification",
+      "page": 104
+    },
+    {
+      "level": 3,
+      "title": " 5.3.4 Weakly excited slots",
+      "page": 107
+    },
+    {
+      "level": 2,
+      "title": " 5.4 Transverse slots",
+      "page": 108
+    },
+    {
+      "level": 3,
+      "title": " 5.4.1 Introduction",
+      "page": 108
+    },
+    {
+      "level": 3,
+      "title": " 5.4.2 Theoretical analysis",
+      "page": 109
+    },
+    {
+      "level": 3,
+      "title": " 5.4.3 Results",
+      "page": 111
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 113
+    },
+    {
+      "level": 1,
+      "title": " 6 The linear slotted waveguide array antenna",
+      "page": 118
+    },
+    {
+      "level": 2,
+      "title": " 6.1 Introduction",
+      "page": 118
+    },
+    {
+      "level": 3,
+      "title": " 6.1.1 Overview of design approaches",
+      "page": 120
+    },
+    {
+      "level": 2,
+      "title": " 6.2 The accuracy of the slot array model",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 6.2.1 Slot model",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 6.2.2 Network model",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 6.2.3 Ground plane",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 6.2.4 Mutual coupling",
+      "page": 122
+    },
+    {
+      "level": 2,
+      "title": " 6.3 The Elliott design equations",
+      "page": 124
+    },
+    {
+      "level": 3,
+      "title": " 6.3.1 The first design equation",
+      "page": 124
+    },
+    {
+      "level": 3,
+      "title": " 6.3.2 The second design equation",
+      "page": 126
+    },
+    {
+      "level": 3,
+      "title": " 6.3.3 The iterative design algorithm for standing wave arrays",
+      "page": 127
+    },
+    {
+      "level": 2,
+      "title": " 6.4 Mutual coupling",
+      "page": 129
+    },
+    {
+      "level": 3,
+      "title": " 6.4.1 Efficient computation of the external mutual coupling terms",
+      "page": 129
+    },
+    {
+      "level": 3,
+      "title": " 6.4.2 The self-admittance",
+      "page": 131
+    },
+    {
+      "level": 3,
+      "title": " 6.4.3 Internal TE20 mode coupling",
+      "page": 134
+    },
+    {
+      "level": 3,
+      "title": " 6.4.4 Full wave analysis",
+      "page": 136
+    },
+    {
+      "level": 3,
+      "title": " 6.4.5 Mutual coupling compensation",
+      "page": 136
+    },
+    {
+      "level": 2,
+      "title": " 6.5 Design example of a standing wave array",
+      "page": 137
+    },
+    {
+      "level": 3,
+      "title": " 6.5.1 Slot data needed for the design algorithm",
+      "page": 137
+    },
+    {
+      "level": 3,
+      "title": " 6.5.2 Design of a ? 30 dB sidelobe-level Dolph?Chebyshev array",
+      "page": 138
+    },
+    {
+      "level": 2,
+      "title": " 6.6 Design of a travelling wave array",
+      "page": 141
+    },
+    {
+      "level": 3,
+      "title": " 6.6.1 Design equations for travelling wave array",
+      "page": 143
+    },
+    {
+      "level": 3,
+      "title": " 6.6.2 Design algorithm",
+      "page": 143
+    },
+    {
+      "level": 3,
+      "title": " 6.6.3 Example of a 21-element travelling wave array",
+      "page": 144
+    },
+    {
+      "level": 2,
+      "title": " 6.7 Array design using the concept of incremental conductance",
+      "page": 151
+    },
+    {
+      "level": 2,
+      "title": " 6.8 Array design in terms of scattering parameters",
+      "page": 153
+    },
+    {
+      "level": 2,
+      "title": " 6.9 Improvement to Elliott's design procedure",
+      "page": 155
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 157
+    },
+    {
+      "level": 1,
+      "title": " 7 Design of planar slotted waveguide array antennas",
+      "page": 160
+    },
+    {
+      "level": 2,
+      "title": " 7.1 Introduction",
+      "page": 160
+    },
+    {
+      "level": 2,
+      "title": " 7.2 Elliott's design procedure for planar standing wave arrays",
+      "page": 161
+    },
+    {
+      "level": 3,
+      "title": " 7.2.1 Design algorithm",
+      "page": 164
+    },
+    {
+      "level": 3,
+      "title": " 7.2.2 Example of a 6 ? 6 planar array",
+      "page": 166
+    },
+    {
+      "level": 2,
+      "title": " 7.3 Design of large arrays using the infinite array mutual coupling model",
+      "page": 170
+    },
+    {
+      "level": 3,
+      "title": " 7.3.1 Infinite array mutual coupling expression [11,13]",
+      "page": 171
+    },
+    {
+      "level": 2,
+      "title": " 7.4 Choice of total slot conductance in radiating waveguides and resistance in feed waveguides",
+      "page": 174
+    },
+    {
+      "level": 2,
+      "title": " 7.5 Sub-array architectures",
+      "page": 176
+    },
+    {
+      "level": 3,
+      "title": " 7.5.1 A planar array of 160 ? 160 elements consisting of 10 ? 10 element sub-arrays",
+      "page": 176
+    },
+    {
+      "level": 3,
+      "title": " 7.5.2 A slot array with 8 ? 8 radiating elements consisting of two sub-arrays",
+      "page": 176
+    },
+    {
+      "level": 3,
+      "title": " 7.5.3 A slot array with four-element sub-arrays",
+      "page": 177
+    },
+    {
+      "level": 2,
+      "title": " 7.6 Examples of planar slot array designs",
+      "page": 181
+    },
+    {
+      "level": 3,
+      "title": " 7.6.1 Large array design using the infinite array model [11,15]",
+      "page": 181
+    },
+    {
+      "level": 3,
+      "title": " 7.6.2 An 8 ? 8 slot array for radiometer application",
+      "page": 185
+    },
+    {
+      "level": 2,
+      "title": " 7.7 Design of a travelling wave feed for a planar array",
+      "page": 187
+    },
+    {
+      "level": 3,
+      "title": " 7.7.1 Design procedure for a travelling wave feed in terms of scattering wave representation of a coupling slot",
+      "page": 189
+    },
+    {
+      "level": 3,
+      "title": " 7.7.2 Computed results",
+      "page": 191
+    },
+    {
+      "level": 2,
+      "title": " 7.8 A review of other methods for analysis and design in the literature",
+      "page": 193
+    },
+    {
+      "level": 2,
+      "title": " 7.9 The generalised scattering matrix model for analysis and design",
+      "page": 194
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 197
+    },
+    {
+      "level": 1,
+      "title": " 8 Concepts and models for advanced designs",
+      "page": 200
+    },
+    {
+      "level": 2,
+      "title": " 8.1 Coupling slot models",
+      "page": 200
+    },
+    {
+      "level": 3,
+      "title": " 8.1.1 Centred-inclined coupling slot",
+      "page": 201
+    },
+    {
+      "level": 3,
+      "title": " 8.1.2 Shunt-series coupling slot",
+      "page": 204
+    },
+    {
+      "level": 3,
+      "title": " 8.1.3 Transverse/transverse coupling slot",
+      "page": 206
+    },
+    {
+      "level": 2,
+      "title": " 8.2 Edge wall slot",
+      "page": 207
+    },
+    {
+      "level": 2,
+      "title": " 8.3 Radiating compound broad wall slot",
+      "page": 209
+    },
+    {
+      "level": 2,
+      "title": " 8.4 Iris-excited longitudinal slot",
+      "page": 211
+    },
+    {
+      "level": 3,
+      "title": " 8.4.1 Elliott's design procedure for iris-excited slotted waveguide arrays",
+      "page": 214
+    },
+    {
+      "level": 2,
+      "title": " 8.5 Slot arrays in ridge waveguides",
+      "page": 215
+    },
+    {
+      "level": 2,
+      "title": " 8.6 Slot arrays with a dielectric cover",
+      "page": 216
+    },
+    {
+      "level": 2,
+      "title": " 8.7 Higher-order mode coupling between centred-inclined coupling slots",
+      "page": 218
+    },
+    {
+      "level": 3,
+      "title": " 8.7.1 Theory for the higher-order mode coupling between centred-inclined coupling slots",
+      "page": 220
+    },
+    {
+      "level": 3,
+      "title": " 8.7.2 Procedure to incorporate the higher-order mode coupling in the design of centred-inclined coupling slots",
+      "page": 221
+    },
+    {
+      "level": 2,
+      "title": " 8.8 Higher-order mode coupling between a centred-inclined coupling slot and longitudinal radiating slots",
+      "page": 222
+    },
+    {
+      "level": 2,
+      "title": " 8.9 Finite ground plane effects",
+      "page": 224
+    },
+    {
+      "level": 2,
+      "title": " 8.10 MoM solution to the integral equations of a planar array and applications",
+      "page": 226
+    },
+    {
+      "level": 3,
+      "title": " 8.10.1 Formulation of the coupled integral equations",
+      "page": 226
+    },
+    {
+      "level": 3,
+      "title": " 8.10.2 MoM solution",
+      "page": 228
+    },
+    {
+      "level": 3,
+      "title": " 8.10.3 Improved design procedure using the MoM solution",
+      "page": 229
+    },
+    {
+      "level": 2,
+      "title": " 8.11 Global optimisations for improved designs",
+      "page": 234
+    },
+    {
+      "level": 3,
+      "title": " 8.11.1 GA optimisation of a travelling wave linear array",
+      "page": 234
+    },
+    {
+      "level": 3,
+      "title": " 8.11.2 GA optimisation of a planar standing wave array using the MoM analysis",
+      "page": 236
+    },
+    {
+      "level": 3,
+      "title": " 8.11.3 Equivalence between a slot with one basis function and a slot with many basis functions",
+      "page": 238
+    },
+    {
+      "level": 3,
+      "title": " 8.11.4 GA optimised results",
+      "page": 240
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 242
+    },
+    {
+      "level": 1,
+      "title": " 9 Antenna systems and special requirements",
+      "page": 246
+    },
+    {
+      "level": 2,
+      "title": " 9.1 Phase scanned slotted waveguide arrays",
+      "page": 246
+    },
+    {
+      "level": 2,
+      "title": " 9.2 Frequency scanned slotted waveguide arrays",
+      "page": 248
+    },
+    {
+      "level": 3,
+      "title": " 9.2.1 Travelling wave linear array",
+      "page": 250
+    },
+    {
+      "level": 3,
+      "title": " 9.2.2 Phase reversal travelling array",
+      "page": 251
+    },
+    {
+      "level": 3,
+      "title": " 9.2.3 Resonant series feed array",
+      "page": 255
+    },
+    {
+      "level": 3,
+      "title": " 9.2.4 Centre-fed travelling array",
+      "page": 256
+    },
+    {
+      "level": 2,
+      "title": " 9.3 Dual polarised slotted waveguide arrays",
+      "page": 257
+    },
+    {
+      "level": 2,
+      "title": " 9.4 Multiple beam slotted waveguide arrays",
+      "page": 262
+    },
+    {
+      "level": 2,
+      "title": " 9.5 Conformal slotted waveguide arrays",
+      "page": 264
+    },
+    {
+      "level": 2,
+      "title": " 9.6 Monopulse slotted waveguide arrays",
+      "page": 267
+    },
+    {
+      "level": 2,
+      "title": " 9.7 Stripline slotted arrays",
+      "page": 270
+    },
+    {
+      "level": 3,
+      "title": " 9.7.1 Introduction",
+      "page": 270
+    },
+    {
+      "level": 3,
+      "title": " 9.7.2 Independent excitations",
+      "page": 272
+    },
+    {
+      "level": 2,
+      "title": " 9.8 Scattering from slotted waveguide arrays",
+      "page": 274
+    },
+    {
+      "level": 3,
+      "title": " 9.8.1 Introduction",
+      "page": 274
+    },
+    {
+      "level": 3,
+      "title": " 9.8.2 Scattering by a single slot in a planar ground plane",
+      "page": 275
+    },
+    {
+      "level": 3,
+      "title": " 9.8.3 Scattering from an array of slots",
+      "page": 277
+    },
+    {
+      "level": 3,
+      "title": " 9.8.4 The feeding network",
+      "page": 280
+    },
+    {
+      "level": 3,
+      "title": " 9.8.5 Numerical examples",
+      "page": 281
+    },
+    {
+      "level": 3,
+      "title": " 9.8.6 Spatial filters",
+      "page": 281
+    },
+    {
+      "level": 2,
+      "title": " 9.9 Second-order lobes",
+      "page": 283
+    },
+    {
+      "level": 3,
+      "title": " 9.9.1 Introduction",
+      "page": 283
+    },
+    {
+      "level": 3,
+      "title": " 9.9.2 Analysis",
+      "page": 283
+    },
+    {
+      "level": 3,
+      "title": " 9.9.3 Reducing the secondary lobes",
+      "page": 284
+    },
+    {
+      "level": 2,
+      "title": " 9.10 Omnidirectional slotted waveguide array antennas",
+      "page": 291
+    },
+    {
+      "level": 3,
+      "title": " 9.10.1 Slotted rectangular waveguide array",
+      "page": 291
+    },
+    {
+      "level": 3,
+      "title": " 9.10.2 Slotted circular waveguide array",
+      "page": 291
+    },
+    {
+      "level": 3,
+      "title": " 9.10.3 The pattern ripple problem",
+      "page": 294
+    },
+    {
+      "level": 2,
+      "title": " 9.11 On the bandwidth of slotted waveguide array antennas",
+      "page": 297
+    },
+    {
+      "level": 3,
+      "title": " 9.11.1 Introduction",
+      "page": 297
+    },
+    {
+      "level": 3,
+      "title": " 9.11.2 The slot itself",
+      "page": 298
+    },
+    {
+      "level": 3,
+      "title": " 9.11.3 The waveguide-fed longitudinal slot",
+      "page": 298
+    },
+    {
+      "level": 3,
+      "title": " 9.11.4 The linear resonant array antenna",
+      "page": 300
+    },
+    {
+      "level": 3,
+      "title": " 9.11.5 Overloading",
+      "page": 302
+    },
+    {
+      "level": 3,
+      "title": " 9.11.6 Mutual coupling",
+      "page": 303
+    },
+    {
+      "level": 3,
+      "title": " 9.11.7 The planar array and feeding arrangements",
+      "page": 304
+    },
+    {
+      "level": 3,
+      "title": " 9.11.8 Travelling wave arrays",
+      "page": 306
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 307
+    },
+    {
+      "level": 1,
+      "title": " 10 Slot arrays in special waveguide technologies",
+      "page": 316
+    },
+    {
+      "level": 2,
+      "title": " 10.1 Slot arrays in circular parallel plate waveguides",
+      "page": 316
+    },
+    {
+      "level": 3,
+      "title": " 10.1.1 Circularly polarised radial line slot antenna",
+      "page": 316
+    },
+    {
+      "level": 3,
+      "title": " 10.1.2 Slot coupling and the attenuation coefficient of the propagating wave",
+      "page": 321
+    },
+    {
+      "level": 3,
+      "title": " 10.1.3 Linearly polarised radial line slot antenna",
+      "page": 322
+    },
+    {
+      "level": 3,
+      "title": " 10.1.4 Design of slot coupling coefficients",
+      "page": 324
+    },
+    {
+      "level": 3,
+      "title": " 10.1.5 Single-layer radial line slot arrays",
+      "page": 326
+    },
+    {
+      "level": 3,
+      "title": " 10.1.6 Radial line antennas for monopulse applications",
+      "page": 328
+    },
+    {
+      "level": 3,
+      "title": " 10.1.7 Accurate analysis and design techniques",
+      "page": 329
+    },
+    {
+      "level": 2,
+      "title": " 10.2 Slot arrays in rectangular parallel plate waveguides",
+      "page": 329
+    },
+    {
+      "level": 2,
+      "title": " 10.3 Slot arrays in substrate integrated waveguides",
+      "page": 332
+    },
+    {
+      "level": 2,
+      "title": " 10.4 Slot arrays in gap waveguides",
+      "page": 335
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 338
+    },
+    {
+      "level": 1,
+      "title": " 11 Manufacturing aspects",
+      "page": 342
+    },
+    {
+      "level": 2,
+      "title": " 11.1 Tolerance theory",
+      "page": 342
+    },
+    {
+      "level": 2,
+      "title": " 11.2 Manufacturing methods",
+      "page": 347
+    },
+    {
+      "level": 3,
+      "title": " 11.2.1 Metallic materials",
+      "page": 347
+    },
+    {
+      "level": 3,
+      "title": " 11.2.2 Carbon fibre-reinforced plastic materials",
+      "page": 349
+    },
+    {
+      "level": 3,
+      "title": " 11.2.3 Microfabrication",
+      "page": 351
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 353
+    },
+    {
+      "level": 1,
+      "title": " 12 Outlook for the future",
+      "page": 356
+    },
+    {
+      "level": 2,
+      "title": " 12.1 Defence systems",
+      "page": 356
+    },
+    {
+      "level": 2,
+      "title": " 12.2 Millimetre waves",
+      "page": 357
+    },
+    {
+      "level": 2,
+      "title": " 12.3 Spaceborne systems",
+      "page": 357
+    },
+    {
+      "level": 2,
+      "title": " 12.4 Communication",
+      "page": 358
+    },
+    {
+      "level": 2,
+      "title": " 12.5 Manufacturing",
+      "page": 358
+    },
+    {
+      "level": 2,
+      "title": " 12.6 Design tools and software",
+      "page": 358
+    },
+    {
+      "level": 3,
+      "title": " 12.6.1 HFSS",
+      "page": 359
+    },
+    {
+      "level": 3,
+      "title": " 12.6.2 XFdtd",
+      "page": 359
+    },
+    {
+      "level": 3,
+      "title": " 12.6.3 CST Microwave Studio",
+      "page": 359
+    },
+    {
+      "level": 3,
+      "title": " 12.6.4 WASP-NET",
+      "page": 359
+    },
+    {
+      "level": 3,
+      "title": " 12.6.5 SWAN",
+      "page": 360
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 360
+    },
+    {
+      "level": 1,
+      "title": " Appendix Standard waveguide frequency bands",
+      "page": 364
+    },
+    {
+      "level": 1,
+      "title": " Index",
+      "page": 366
+    }
+  ],
+  "chapterDisplayLevel": 2
+}
+
+
+
+{
+  "_id": {
+    "$oid": "5cce93cb6b290f95ff1eb3fc"
+  },
+  "file": "5cce935f6b290f95ff1eb2ae",
+  "cover": "5cce921343e939041c7b2248",
+  "title": "Smart Antennas",
+  "author": "Lal Chand Godara",
+  "publisher": "CRC Press",
+  "publisherSite": "https://www.crcpress.com/Smart-Antennas/Godara/p/book/9780849312069",
+  "amazonSite": "https://www.amazon.com/Antennas-Electrical-Engineering-Applied-Processing/dp/084931206X",
+  "edition": 1,
+  "year": 2004,
+  "description": " The use of smart antennas to increase mobile communications channels has re-ignited research and development in the field. Practicing engineers are eager to discover more about this subject, and need a comprehensive book that can provide a learning platform and prevent the loss of time spent on searches through journal literature.\n Smart Antennas examines nearly all aspects of array signal processing and presents them in a logical manner. It delivers a detailed treatment of antenna array processing schemes, adaptive algorithms to adjust weighting, direction of arrival (DOA) estimation methods, diversity-combining methods that combat fading and reduce errors.\n The book introduces the various processor structures suitable for the narrowband field, examining the behavior of both element space and beamspace processors. It then explores adaptive processing, focusing on the simple matrix inversion algorithm, constrained least mean squares (LMS), the neural network approach, and more. The text also describes smart antennas that are suitable for broadband signals, and presents analyses and techniques suitable for correlated fields in narrowband and broadband signals.",
+  "users": [
+    "guest",
+    "hsyn",
+    "admin"
+  ],
+  "owners": [
+    "hsyn",
+    "admin"
+  ],
+  "chapterDisplayLevel": 2,
+  "chapters": [
+    {
+      "level": 1,
+      "title": " Chapter 01 Introduction",
+      "page": 19
+    },
+    {
+      "level": 2,
+      "title": " 1.1 Antenna Gain",
+      "page": 19
+    },
+    {
+      "level": 2,
+      "title": " 1.2 Phased Array Antenna",
+      "page": 20
+    },
+    {
+      "level": 2,
+      "title": " 1.3 Power Pattern",
+      "page": 20
+    },
+    {
+      "level": 2,
+      "title": " 1.4 Beam Steering",
+      "page": 20
+    },
+    {
+      "level": 2,
+      "title": " 1.5 Degree of Freedom",
+      "page": 21
+    },
+    {
+      "level": 2,
+      "title": " 1.6 Optimal Antenna",
+      "page": 22
+    },
+    {
+      "level": 2,
+      "title": " 1.7 Adaptive Antenna",
+      "page": 22
+    },
+    {
+      "level": 2,
+      "title": " 1.8 Smart Antenna",
+      "page": 22
+    },
+    {
+      "level": 2,
+      "title": " 1.9 Book Outline",
+      "page": 23
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 24
+    },
+    {
+      "level": 1,
+      "title": " Chapter 02 Narrowband Processing",
+      "page": 25
+    },
+    {
+      "level": 2,
+      "title": " 2.1 Signal Model",
+      "page": 29
+    },
+    {
+      "level": 3,
+      "title": " 2.1.1 Steering Vector Representation",
+      "page": 32
+    },
+    {
+      "level": 3,
+      "title": " 2.1.2 Eigenvalue Decomposition",
+      "page": 35
+    },
+    {
+      "level": 2,
+      "title": " 2.2 Conventional Beamformer",
+      "page": 36
+    },
+    {
+      "level": 3,
+      "title": " 2.2.1 Source in Look Direction",
+      "page": 37
+    },
+    {
+      "level": 3,
+      "title": " 2.2.2 Directional Interference",
+      "page": 38
+    },
+    {
+      "level": 3,
+      "title": " 2.2.3 Random Noise Environment",
+      "page": 41
+    },
+    {
+      "level": 3,
+      "title": " 2.2.4 Signal-to-Noise Ratio",
+      "page": 41
+    },
+    {
+      "level": 2,
+      "title": " 2.3 Null Steering Beamformer",
+      "page": 43
+    },
+    {
+      "level": 2,
+      "title": " 2.4 Optimal Beamformer",
+      "page": 44
+    },
+    {
+      "level": 3,
+      "title": " 2.4.1 Unconstrained Beamformer",
+      "page": 45
+    },
+    {
+      "level": 3,
+      "title": " 2.4.2 Constrained Beamformer",
+      "page": 46
+    },
+    {
+      "level": 3,
+      "title": " 2.4.3 Output Signal-to-Noise Ratio and Array Gain",
+      "page": 48
+    },
+    {
+      "level": 3,
+      "title": " 2.4.4 Special Case 1 Uncorrelated Noise Only",
+      "page": 49
+    },
+    {
+      "level": 3,
+      "title": " 2.4.5 Special Case 2 One Directional Interference",
+      "page": 50
+    },
+    {
+      "level": 2,
+      "title": " 2.5 Optimization Using Reference Signal",
+      "page": 51
+    },
+    {
+      "level": 2,
+      "title": " 2.6 Beam Space Processing",
+      "page": 54
+    },
+    {
+      "level": 3,
+      "title": " 2.6.1 Optimal Beam Space Processor",
+      "page": 56
+    },
+    {
+      "level": 3,
+      "title": " 2.6.2 Generalized Side-Lobe Canceler",
+      "page": 59
+    },
+    {
+      "level": 3,
+      "title": " 2.6.3 Postbeamformer Interference Canceler",
+      "page": 62
+    },
+    {
+      "level": 4,
+      "title": " 2.6.3.1 Optimal PIC",
+      "page": 63
+    },
+    {
+      "level": 4,
+      "title": " 2.6.3.2 PIC with Conventional Interference Beamformer",
+      "page": 64
+    },
+    {
+      "level": 4,
+      "title": " 2.6.3.3 PIC with Orthogonal Interference Beamformer",
+      "page": 67
+    },
+    {
+      "level": 4,
+      "title": " 2.6.3.4 PIC with Improved Interference Beamformer",
+      "page": 69
+    },
+    {
+      "level": 4,
+      "title": " 2.6.3.5 Discussion and Comments",
+      "page": 71
+    },
+    {
+      "level": 5,
+      "title": " 2.6.3.5.1 Signal Suppression",
+      "page": 72
+    },
+    {
+      "level": 5,
+      "title": " 2.6.3.5.2 Residual Interference",
+      "page": 73
+    },
+    {
+      "level": 5,
+      "title": " 2.6.3.5.3 Uncorrelated Noise Power",
+      "page": 76
+    },
+    {
+      "level": 5,
+      "title": " 2.6.3.5.4 Signal-to-Noise Ratio",
+      "page": 76
+    },
+    {
+      "level": 3,
+      "title": " 2.6.4 Comparison of Postbeamformer Interference Canceler with Element Space Processor",
+      "page": 78
+    },
+    {
+      "level": 3,
+      "title": " 2.6.5 Comparison in Presence of Look Direction Errors",
+      "page": 79
+    },
+    {
+      "level": 2,
+      "title": " 2.7 Effect of Errors",
+      "page": 85
+    },
+    {
+      "level": 3,
+      "title": " 2.7.1 Weight Vector Errors",
+      "page": 86
+    },
+    {
+      "level": 4,
+      "title": " 2.7.1.1 Output Signal Power",
+      "page": 87
+    },
+    {
+      "level": 4,
+      "title": " 2.7.1.2 Output Noise Power",
+      "page": 87
+    },
+    {
+      "level": 4,
+      "title": " 2.7.1.3 Output SNR and Array Gain",
+      "page": 88
+    },
+    {
+      "level": 3,
+      "title": " 2.7.2 Steering Vector Errors",
+      "page": 89
+    },
+    {
+      "level": 4,
+      "title": " 2.7.2.1 Noise-Alone Matrix Inverse Processor",
+      "page": 89
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.1.1 Output Signal Power",
+      "page": 90
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.1.2 Total Output Noise Power",
+      "page": 90
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.1.3 Output SNR and Array Gain",
+      "page": 91
+    },
+    {
+      "level": 4,
+      "title": " 2.7.2.2 Signal-Plus-Noise Matrix Inverse Processor",
+      "page": 91
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.2.1 Output Signal Power",
+      "page": 92
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.2.2 Total Output Noise Power",
+      "page": 92
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.2.3 Output SNR",
+      "page": 93
+    },
+    {
+      "level": 4,
+      "title": " 2.7.2.3 Discussion and Comments",
+      "page": 93
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.3.1 Special Case 1 Uncorrelated Noise Only",
+      "page": 94
+    },
+    {
+      "level": 5,
+      "title": " 2.7.2.3.2 Special Case 2 One Directional Interference",
+      "page": 96
+    },
+    {
+      "level": 3,
+      "title": " 2.7.3 Phase Shifter Errors",
+      "page": 99
+    },
+    {
+      "level": 4,
+      "title": " 2.7.3.1 Random Phase Errors",
+      "page": 101
+    },
+    {
+      "level": 4,
+      "title": " 2.7.3.2 Signal Suppression",
+      "page": 103
+    },
+    {
+      "level": 4,
+      "title": " 2.7.3.3 Residual Interference Power",
+      "page": 104
+    },
+    {
+      "level": 4,
+      "title": " 2.7.3.4 Array Gain",
+      "page": 105
+    },
+    {
+      "level": 4,
+      "title": " 2.7.3.5 Comparison with SVE",
+      "page": 106
+    },
+    {
+      "level": 3,
+      "title": " 2.7.4 Phase Quantization Errors",
+      "page": 106
+    },
+    {
+      "level": 3,
+      "title": " 2.7.5 Other Errors",
+      "page": 107
+    },
+    {
+      "level": 3,
+      "title": " 2.7.6 Robust Beamforming",
+      "page": 108
+    },
+    {
+      "level": 2,
+      "title": " Acknowledgments",
+      "page": 108
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 108
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 113
+    },
+    {
+      "level": 1,
+      "title": " Chapter 03 Adaptive Processing",
+      "page": 118
+    },
+    {
+      "level": 2,
+      "title": " 3.1 Sample Matrix Inversion Algorithm",
+      "page": 120
+    },
+    {
+      "level": 2,
+      "title": " 3.2 Unconstrained Least Mean Squares Algorithm",
+      "page": 121
+    },
+    {
+      "level": 3,
+      "title": " 3.2.1 Gradient Estimate",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 3.2.2 Covariance of Gradient",
+      "page": 122
+    },
+    {
+      "level": 3,
+      "title": " 3.2.3 Convergence of Weight Vector",
+      "page": 124
+    },
+    {
+      "level": 3,
+      "title": " 3.2.4 Convergence Speed",
+      "page": 127
+    },
+    {
+      "level": 3,
+      "title": " 3.2.5 Weight Covariance Matrix",
+      "page": 129
+    },
+    {
+      "level": 3,
+      "title": " 3.2.6 Transient Behavior of Weight Covariance Matrix",
+      "page": 131
+    },
+    {
+      "level": 3,
+      "title": " 3.2.7 Excess Mean Square Error",
+      "page": 133
+    },
+    {
+      "level": 3,
+      "title": " 3.2.8 Misadjustment",
+      "page": 135
+    },
+    {
+      "level": 2,
+      "title": " 3.3 Normalized Least Mean Squares Algorithm",
+      "page": 137
+    },
+    {
+      "level": 2,
+      "title": " 3.4 Constrained Least Mean Squares Algorithm",
+      "page": 137
+    },
+    {
+      "level": 3,
+      "title": " 3.4.1 Gradient Estimate",
+      "page": 139
+    },
+    {
+      "level": 3,
+      "title": " 3.4.2 Covariance of Gradient",
+      "page": 139
+    },
+    {
+      "level": 3,
+      "title": " 3.4.3 Convergence of Weight Vector",
+      "page": 140
+    },
+    {
+      "level": 3,
+      "title": " 3.4.4 Weight Covariance Matrix",
+      "page": 141
+    },
+    {
+      "level": 3,
+      "title": " 3.4.5 Transient Behavior of Weight Covariance Matrix",
+      "page": 142
+    },
+    {
+      "level": 3,
+      "title": " 3.4.6 Convergence of Weight Covariance Matrix",
+      "page": 144
+    },
+    {
+      "level": 3,
+      "title": " 3.4.7 Misadjustment",
+      "page": 145
+    },
+    {
+      "level": 2,
+      "title": " 3.5 Perturbation Algorithms",
+      "page": 147
+    },
+    {
+      "level": 3,
+      "title": " 3.5.1 Time Multiplex Sequence",
+      "page": 148
+    },
+    {
+      "level": 3,
+      "title": " 3.5.2 Single-Receiver System",
+      "page": 149
+    },
+    {
+      "level": 4,
+      "title": " 3.5.2.1 Covariance of the Gradient Estimate",
+      "page": 149
+    },
+    {
+      "level": 4,
+      "title": " 3.5.2.2 Perturbation Noise",
+      "page": 150
+    },
+    {
+      "level": 3,
+      "title": " 3.5.3 Dual-Receiver System",
+      "page": 151
+    },
+    {
+      "level": 4,
+      "title": " 3.5.3.1 Dual-Receiver System with Reference Receiver",
+      "page": 152
+    },
+    {
+      "level": 4,
+      "title": " 3.5.3.2 Covariance of Gradient",
+      "page": 152
+    },
+    {
+      "level": 3,
+      "title": " 3.5.4 Covariance of Weights",
+      "page": 152
+    },
+    {
+      "level": 4,
+      "title": " 3.5.4.1 Dual-Receiver System with Dual Perturbation",
+      "page": 153
+    },
+    {
+      "level": 4,
+      "title": " 3.5.4.2 Dual-Receiver System with Reference Receiver",
+      "page": 154
+    },
+    {
+      "level": 3,
+      "title": " 3.5.5 Misadjustment Results",
+      "page": 155
+    },
+    {
+      "level": 4,
+      "title": " 3.5.5.1 Single-Receiver System",
+      "page": 155
+    },
+    {
+      "level": 4,
+      "title": " 3.5.5.2 Dual-Receiver System with Dual Perturbation",
+      "page": 155
+    },
+    {
+      "level": 4,
+      "title": " 3.5.5.3 Dual-Receiver System with Reference Receiver",
+      "page": 156
+    },
+    {
+      "level": 2,
+      "title": " 3.6 Structured Gradient Algorithm",
+      "page": 156
+    },
+    {
+      "level": 3,
+      "title": " 3.6.1 Gradient Estimate",
+      "page": 157
+    },
+    {
+      "level": 3,
+      "title": " 3.6.2 Examples and Discussion",
+      "page": 158
+    },
+    {
+      "level": 2,
+      "title": " 3.7 Recursive Least Mean Squares Algorithm",
+      "page": 160
+    },
+    {
+      "level": 3,
+      "title": " 3.7.1 Gradient Estimate",
+      "page": 161
+    },
+    {
+      "level": 3,
+      "title": " 3.7.2 Covariance of Gradient",
+      "page": 162
+    },
+    {
+      "level": 3,
+      "title": " 3.7.3 Discussion",
+      "page": 164
+    },
+    {
+      "level": 2,
+      "title": " 3.8 Improved Least Mean Squares Algorithm",
+      "page": 164
+    },
+    {
+      "level": 2,
+      "title": " 3.9 Recursive Least Squares Algorithm",
+      "page": 167
+    },
+    {
+      "level": 2,
+      "title": " 3.10 Constant Modulus Algorithm",
+      "page": 169
+    },
+    {
+      "level": 2,
+      "title": " 3.11 Conjugate Gradient Method",
+      "page": 170
+    },
+    {
+      "level": 2,
+      "title": " 3.12 Neural Network Approach",
+      "page": 171
+    },
+    {
+      "level": 2,
+      "title": " 3.13 Adaptive Beam Space Processing",
+      "page": 173
+    },
+    {
+      "level": 3,
+      "title": " 3.13.1 Gradient Estimate",
+      "page": 174
+    },
+    {
+      "level": 3,
+      "title": " 3.13.2 Convergence of Weights",
+      "page": 175
+    },
+    {
+      "level": 3,
+      "title": " 3.13.3 Covariance of Weights",
+      "page": 175
+    },
+    {
+      "level": 3,
+      "title": " 3.13.4 Transient Behavior of Weight Covariance",
+      "page": 176
+    },
+    {
+      "level": 3,
+      "title": " 3.13.5 Steady State Behavior of Weight Covariance",
+      "page": 177
+    },
+    {
+      "level": 3,
+      "title": " 3.13.6 Misadjustment",
+      "page": 178
+    },
+    {
+      "level": 3,
+      "title": " 3.13.7 Examples and Discussion",
+      "page": 179
+    },
+    {
+      "level": 2,
+      "title": " 3.14 Signal Sensitivity of Constrained Least Mean Squares Algorithm",
+      "page": 180
+    },
+    {
+      "level": 2,
+      "title": " 3.15 Implementation Issues",
+      "page": 183
+    },
+    {
+      "level": 3,
+      "title": " 3.15.1 Finite Precision Arithmetic",
+      "page": 183
+    },
+    {
+      "level": 3,
+      "title": " 3.15.2 Real vs. Complex Implementation",
+      "page": 184
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.1 Quadrature Filter",
+      "page": 184
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.2 Analytical Signals",
+      "page": 186
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.3 Beamformer Structures",
+      "page": 186
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.4 Real LMS Algorithm",
+      "page": 188
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.5 Complex LMS Algorithm",
+      "page": 189
+    },
+    {
+      "level": 4,
+      "title": " 3.15.2.6 Discussion",
+      "page": 190
+    },
+    {
+      "level": 2,
+      "title": " Acknowledgments",
+      "page": 191
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 191
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 195
+    },
+    {
+      "level": 2,
+      "title": " Appendices",
+      "page": 199
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.1",
+      "page": 199
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.2",
+      "page": 204
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.3",
+      "page": 205
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.4",
+      "page": 207
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.5",
+      "page": 210
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.6",
+      "page": 211
+    },
+    {
+      "level": 3,
+      "title": " Appendix 3.7",
+      "page": 213
+    },
+    {
+      "level": 1,
+      "title": " Chapter 04 Broadband Processing",
+      "page": 218
+    },
+    {
+      "level": 2,
+      "title": " 4.1 Tapped-Delay Line Structure",
+      "page": 220
+    },
+    {
+      "level": 3,
+      "title": " 4.1.1 Description",
+      "page": 220
+    },
+    {
+      "level": 3,
+      "title": " 4.1.2 Frequency Response",
+      "page": 223
+    },
+    {
+      "level": 3,
+      "title": " 4.1.3 Optimization",
+      "page": 224
+    },
+    {
+      "level": 3,
+      "title": " 4.1.4 Adaptive Algorithm",
+      "page": 226
+    },
+    {
+      "level": 3,
+      "title": " 4.1.5 Minimum Mean Square Error Design",
+      "page": 229
+    },
+    {
+      "level": 4,
+      "title": " 4.1.5.1 Derivation of Constraints",
+      "page": 229
+    },
+    {
+      "level": 4,
+      "title": " 4.1.5.2 Optimization",
+      "page": 231
+    },
+    {
+      "level": 2,
+      "title": " 4.2 Partitioned Realization",
+      "page": 233
+    },
+    {
+      "level": 3,
+      "title": " 4.2.1 Generalized Side-Lobe Canceler",
+      "page": 235
+    },
+    {
+      "level": 3,
+      "title": " 4.2.2 Constrained Partitioned Realization",
+      "page": 239
+    },
+    {
+      "level": 3,
+      "title": " 4.2.3 General Constrained Partitioned Realization",
+      "page": 240
+    },
+    {
+      "level": 4,
+      "title": " 4.2.3.1 Derivation of Constraints",
+      "page": 240
+    },
+    {
+      "level": 4,
+      "title": " 4.2.3.2 Optimization",
+      "page": 241
+    },
+    {
+      "level": 2,
+      "title": " 4.3 Derivative Constrained Processor",
+      "page": 242
+    },
+    {
+      "level": 3,
+      "title": " 4.3.1 First-Order Derivative Constraints",
+      "page": 242
+    },
+    {
+      "level": 3,
+      "title": " 4.3.2 Second-Order Derivative Constraints",
+      "page": 245
+    },
+    {
+      "level": 3,
+      "title": " 4.3.3 Optimization with Derivative Constraints",
+      "page": 245
+    },
+    {
+      "level": 4,
+      "title": " 4.3.3.1 Linear Array Example",
+      "page": 247
+    },
+    {
+      "level": 3,
+      "title": " 4.3.4 Adaptive Algorithm",
+      "page": 251
+    },
+    {
+      "level": 3,
+      "title": " 4.3.5 Choice of Origin",
+      "page": 251
+    },
+    {
+      "level": 2,
+      "title": " 4.4 Correlation Constrained Processor",
+      "page": 253
+    },
+    {
+      "level": 2,
+      "title": " 4.5 Digital Beamforming",
+      "page": 254
+    },
+    {
+      "level": 2,
+      "title": " 4.6 Frequency Domain Processing",
+      "page": 257
+    },
+    {
+      "level": 3,
+      "title": " 4.6.1 Description",
+      "page": 258
+    },
+    {
+      "level": 3,
+      "title": " 4.6.2 Relationship with Tapped-Delay Line Structure Processing",
+      "page": 260
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.1 Weight Relationship",
+      "page": 260
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.2 Matrix Relationship",
+      "page": 261
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.3 Derivation of Rf(k)",
+      "page": 263
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.4 Array with Presteering Delays",
+      "page": 264
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.5 Array without Presteering Delays",
+      "page": 265
+    },
+    {
+      "level": 4,
+      "title": " 4.6.2.6 Discussion and Comments",
+      "page": 265
+    },
+    {
+      "level": 3,
+      "title": " 4.6.3 Transformation of Constraints",
+      "page": 265
+    },
+    {
+      "level": 4,
+      "title": " 4.6.3.1 Point Constraints",
+      "page": 266
+    },
+    {
+      "level": 4,
+      "title": " 4.6.3.2 Derivative Constraints",
+      "page": 267
+    },
+    {
+      "level": 2,
+      "title": " 4.7 Broadband Processing Using Discrete Fourier Transform Method",
+      "page": 269
+    },
+    {
+      "level": 3,
+      "title": " 4.7.1 Weight Estimation",
+      "page": 271
+    },
+    {
+      "level": 3,
+      "title": " 4.7.2 Performance Comparison",
+      "page": 272
+    },
+    {
+      "level": 4,
+      "title": " 4.7.2.1 Effect of Filter Length",
+      "page": 273
+    },
+    {
+      "level": 4,
+      "title": " 4.7.2.2 Effect of Number of Elements in Array",
+      "page": 274
+    },
+    {
+      "level": 4,
+      "title": " 4.7.2.3 Effect of Interference Power",
+      "page": 275
+    },
+    {
+      "level": 3,
+      "title": " 4.7.3 Computational Requirement Comparison",
+      "page": 276
+    },
+    {
+      "level": 3,
+      "title": " 4.7.4 Schemes to Reduce Computation",
+      "page": 277
+    },
+    {
+      "level": 4,
+      "title": " 4.7.4.1 Limited Number of Bins Processing",
+      "page": 277
+    },
+    {
+      "level": 4,
+      "title": " 4.7.4.2 Parallel Processing Schemes",
+      "page": 278
+    },
+    {
+      "level": 5,
+      "title": " 4.7.4.2.1 Parallel Processing Scheme 1",
+      "page": 278
+    },
+    {
+      "level": 5,
+      "title": " 4.7.4.2.2 Parallel Processing Scheme 2",
+      "page": 279
+    },
+    {
+      "level": 5,
+      "title": " 4.7.4.2.3 Parallel Processing Scheme 3",
+      "page": 280
+    },
+    {
+      "level": 3,
+      "title": " 4.7.5 Discussion",
+      "page": 282
+    },
+    {
+      "level": 4,
+      "title": " 4.7.5.1 Higher SNR with Less Processing Time",
+      "page": 282
+    },
+    {
+      "level": 4,
+      "title": " 4.7.5.2 Robustness of DFT Method",
+      "page": 283
+    },
+    {
+      "level": 2,
+      "title": " 4.8 Performance",
+      "page": 284
+    },
+    {
+      "level": 2,
+      "title": " Acknowledgments",
+      "page": 284
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 285
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 288
+    },
+    {
+      "level": 1,
+      "title": " Chapter 05 Correlated Fields",
+      "page": 292
+    },
+    {
+      "level": 2,
+      "title": " 5.1 Correlated Signal Model",
+      "page": 293
+    },
+    {
+      "level": 2,
+      "title": " 5.2 Optimal Element Space Processor",
+      "page": 295
+    },
+    {
+      "level": 2,
+      "title": " 5.3 Optimized Postbeamformer Interference Canceler Processor",
+      "page": 297
+    },
+    {
+      "level": 2,
+      "title": " 5.4 Signal-to-Noise Ratio Performance",
+      "page": 300
+    },
+    {
+      "level": 3,
+      "title": " 5.4.1 Zero Uncorrelated Noise",
+      "page": 303
+    },
+    {
+      "level": 3,
+      "title": " 5.4.2 Strong Interference and Large Number of Elements",
+      "page": 304
+    },
+    {
+      "level": 3,
+      "title": " 5.4.3 Coherent Sources",
+      "page": 304
+    },
+    {
+      "level": 3,
+      "title": " 5.4.4 Examples and Discussion",
+      "page": 305
+    },
+    {
+      "level": 2,
+      "title": " 5.5 Methods to Alleviate Correlation Effects",
+      "page": 306
+    },
+    {
+      "level": 2,
+      "title": " 5.6 Spatial Smoothing Method",
+      "page": 309
+    },
+    {
+      "level": 3,
+      "title": " 5.6.1 Decorrelation Analysis",
+      "page": 310
+    },
+    {
+      "level": 3,
+      "title": " 5.6.2 Adaptive Algorithm",
+      "page": 313
+    },
+    {
+      "level": 2,
+      "title": " 5.7 Structured Beamforming Method",
+      "page": 314
+    },
+    {
+      "level": 3,
+      "title": " 5.7.1 Decorrelation Analysis",
+      "page": 314
+    },
+    {
+      "level": 4,
+      "title": " 5.7.1.1 Examples and Discussion",
+      "page": 317
+    },
+    {
+      "level": 3,
+      "title": " 5.7.2 Structured Gradient Algorithm",
+      "page": 318
+    },
+    {
+      "level": 4,
+      "title": " 5.7.2.1 Gradient Comparison",
+      "page": 319
+    },
+    {
+      "level": 4,
+      "title": " 5.7.2.2 Weight Vector Comparison",
+      "page": 322
+    },
+    {
+      "level": 4,
+      "title": " 5.7.2.3 Examples and Discussion",
+      "page": 324
+    },
+    {
+      "level": 2,
+      "title": " 5.8 Correlated Broadband Sources",
+      "page": 327
+    },
+    {
+      "level": 3,
+      "title": " 5.8.1 Structure of Array Correlation Matrix",
+      "page": 327
+    },
+    {
+      "level": 3,
+      "title": " 5.8.2 Correlated Field Model",
+      "page": 329
+    },
+    {
+      "level": 3,
+      "title": " 5.8.3 Structured Beamforming Method",
+      "page": 330
+    },
+    {
+      "level": 3,
+      "title": " 5.8.4 Decorrelation Analysis",
+      "page": 331
+    },
+    {
+      "level": 4,
+      "title": " 5.8.4.1 Examples and Discussion",
+      "page": 336
+    },
+    {
+      "level": 2,
+      "title": " Acknolwedgments",
+      "page": 338
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 338
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 340
+    },
+    {
+      "level": 1,
+      "title": " Chapter 06 Direction-of-Arrival Estimation Methods",
+      "page": 342
+    },
+    {
+      "level": 2,
+      "title": " 6.1 Spectral Estimation Methods",
+      "page": 343
+    },
+    {
+      "level": 3,
+      "title": " 6.1.1 Bartlett Method",
+      "page": 343
+    },
+    {
+      "level": 2,
+      "title": " 6.2 Minimum Variance Distortionless Response Estimator",
+      "page": 343
+    },
+    {
+      "level": 2,
+      "title": " 6.3 Linear Prediction Method",
+      "page": 344
+    },
+    {
+      "level": 2,
+      "title": " 6.4 Maximum Entropy Method",
+      "page": 344
+    },
+    {
+      "level": 2,
+      "title": " 6.5 Maximum Likelihood Method",
+      "page": 346
+    },
+    {
+      "level": 2,
+      "title": " 6.6 Eigenstructure Methods",
+      "page": 346
+    },
+    {
+      "level": 2,
+      "title": " 6.7 MUSIC Algorithm",
+      "page": 347
+    },
+    {
+      "level": 3,
+      "title": " 6.7.1 Spectral MUSIC",
+      "page": 348
+    },
+    {
+      "level": 3,
+      "title": " 6.7.2 Root-MUSIC",
+      "page": 348
+    },
+    {
+      "level": 3,
+      "title": " 6.7.3 Constrained MUSIC",
+      "page": 348
+    },
+    {
+      "level": 3,
+      "title": " 6.7.4 Beam Space MUSIC",
+      "page": 349
+    },
+    {
+      "level": 2,
+      "title": " 6.8 Minimum Norm Method",
+      "page": 349
+    },
+    {
+      "level": 2,
+      "title": " 6.9 CLOSEST Method",
+      "page": 350
+    },
+    {
+      "level": 2,
+      "title": " 6.10 ESPRIT Method",
+      "page": 350
+    },
+    {
+      "level": 2,
+      "title": " 6.11 Weighted Subspace Fitting Method",
+      "page": 353
+    },
+    {
+      "level": 2,
+      "title": " 6.12 Review of Other Methods",
+      "page": 353
+    },
+    {
+      "level": 2,
+      "title": " 6.13 Preprocessing Techniques",
+      "page": 355
+    },
+    {
+      "level": 2,
+      "title": " 6.14 Estimating Source Number",
+      "page": 357
+    },
+    {
+      "level": 2,
+      "title": " 6.15 Performance Comparison",
+      "page": 358
+    },
+    {
+      "level": 2,
+      "title": " 6.16 Sensitivity Analysis",
+      "page": 360
+    },
+    {
+      "level": 2,
+      "title": " Acknowledgments",
+      "page": 364
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 364
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 366
+    },
+    {
+      "level": 1,
+      "title": " Chapter 07 Single-Antenna System in Fading Channels",
+      "page": 375
+    },
+    {
+      "level": 2,
+      "title": " 7.1 Fading Channels",
+      "page": 375
+    },
+    {
+      "level": 3,
+      "title": " 7.1.1 Large-Scale Fading",
+      "page": 377
+    },
+    {
+      "level": 3,
+      "title": " 7.1.2 Small-Scale Fading",
+      "page": 379
+    },
+    {
+      "level": 3,
+      "title": " 7.1.3 Distribution of Signal Power",
+      "page": 382
+    },
+    {
+      "level": 2,
+      "title": " 7.2 Channel Gain",
+      "page": 383
+    },
+    {
+      "level": 2,
+      "title": " 7.3 Single-Antenna System",
+      "page": 384
+    },
+    {
+      "level": 3,
+      "title": " 7.3.1 Noise-Limited System",
+      "page": 384
+    },
+    {
+      "level": 4,
+      "title": " 7.3.1.1 Rayleigh Fading Environment",
+      "page": 385
+    },
+    {
+      "level": 4,
+      "title": " 7.3.1.2 Nakagami Fading Environment",
+      "page": 386
+    },
+    {
+      "level": 3,
+      "title": " 7.3.2 Interference-Limited System",
+      "page": 386
+    },
+    {
+      "level": 4,
+      "title": " 7.3.2.1 Identical Interferences",
+      "page": 387
+    },
+    {
+      "level": 4,
+      "title": " 7.3.2.2 Signal and Interference with Different Statistics",
+      "page": 389
+    },
+    {
+      "level": 3,
+      "title": " 7.3.3 Interference with Nakagami Fading and Shadowing",
+      "page": 389
+    },
+    {
+      "level": 3,
+      "title": " 7.3.4 Error Rate Performance",
+      "page": 392
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 393
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 395
+    },
+    {
+      "level": 1,
+      "title": " Chapter 08 Diversity Combining",
+      "page": 396
+    },
+    {
+      "level": 2,
+      "title": " 8.1 Selection Combiner",
+      "page": 400
+    },
+    {
+      "level": 3,
+      "title": " 8.1.1 Noise-Limited Systems",
+      "page": 401
+    },
+    {
+      "level": 4,
+      "title": " 8.1.1.1 Rayleigh Fading Environment",
+      "page": 401
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.1.1 Outage Probability",
+      "page": 401
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.1.2 Mean SNR",
+      "page": 401
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.1.3 Average BER",
+      "page": 402
+    },
+    {
+      "level": 4,
+      "title": " 8.1.1.2 Nakagami Fading Environment",
+      "page": 403
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.2.1 Output SNR pdf",
+      "page": 403
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.2.2 Outage Probability",
+      "page": 405
+    },
+    {
+      "level": 5,
+      "title": " 8.1.1.2.3 Average BER",
+      "page": 406
+    },
+    {
+      "level": 3,
+      "title": " 8.1.2 Interference-Limited Systems",
+      "page": 406
+    },
+    {
+      "level": 4,
+      "title": " 8.1.2.1 Desired Signal Power Algorithm",
+      "page": 406
+    },
+    {
+      "level": 4,
+      "title": " 8.1.2.2 Total Power Algorithm",
+      "page": 408
+    },
+    {
+      "level": 4,
+      "title": " 8.1.2.3 SIR Power Algorithm",
+      "page": 410
+    },
+    {
+      "level": 2,
+      "title": " 8.2 Switched Diversity Combiner",
+      "page": 410
+    },
+    {
+      "level": 3,
+      "title": " 8.2.1. Outage Probability",
+      "page": 410
+    },
+    {
+      "level": 3,
+      "title": " 8.2.2 Average Bit Error Rate",
+      "page": 411
+    },
+    {
+      "level": 3,
+      "title": " 8.2.3 Correlated Fading",
+      "page": 413
+    },
+    {
+      "level": 2,
+      "title": " 8.3 Equal Gain Combiner",
+      "page": 415
+    },
+    {
+      "level": 3,
+      "title": " 8.3.1 Noise-Limited Systems",
+      "page": 415
+    },
+    {
+      "level": 4,
+      "title": " 8.3.1.1 Mean SNR",
+      "page": 415
+    },
+    {
+      "level": 4,
+      "title": " 8.3.1.2 Outage Probability",
+      "page": 417
+    },
+    {
+      "level": 4,
+      "title": " 8.3.1.3 Average BER",
+      "page": 419
+    },
+    {
+      "level": 4,
+      "title": " 8.3.1.4 Use of Characteristic Function",
+      "page": 421
+    },
+    {
+      "level": 3,
+      "title": " 8.3.2 Interference-Limited Systems",
+      "page": 421
+    },
+    {
+      "level": 4,
+      "title": " 8.3.2.1 Outage Probability",
+      "page": 421
+    },
+    {
+      "level": 4,
+      "title": " 8.3.2.2 Mean Signal Power to Mean Interference Power Ratio",
+      "page": 423
+    },
+    {
+      "level": 2,
+      "title": " 8.4 Maximum Ratio Combiner",
+      "page": 423
+    },
+    {
+      "level": 3,
+      "title": " 8.4.1 Noise-Limited Systems",
+      "page": 424
+    },
+    {
+      "level": 4,
+      "title": " 8.4.1.1 Mean SNR",
+      "page": 424
+    },
+    {
+      "level": 4,
+      "title": " 8.4.1.2 Rayleigh Fading Environment",
+      "page": 425
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.2.1 PDF of Output SNR",
+      "page": 425
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.2.2 Outage Probability",
+      "page": 426
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.2.3 Average BER",
+      "page": 426
+    },
+    {
+      "level": 4,
+      "title": " 8.4.1.3 Nakagami Fading Environment",
+      "page": 427
+    },
+    {
+      "level": 4,
+      "title": " 8.4.1.4 Effect of Weight Errors",
+      "page": 428
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.4.1 Output SNR pdf",
+      "page": 428
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.4.2 Outage Probability",
+      "page": 429
+    },
+    {
+      "level": 5,
+      "title": " 8.4.1.4.3 Average BER",
+      "page": 429
+    },
+    {
+      "level": 3,
+      "title": " 8.4.2 Interference-Limited Systems",
+      "page": 430
+    },
+    {
+      "level": 4,
+      "title": " 8.4.2.1 Mean Signal Power to Interference Power Ratio",
+      "page": 430
+    },
+    {
+      "level": 4,
+      "title": " 8.4.2.2 Outage Probability",
+      "page": 431
+    },
+    {
+      "level": 4,
+      "title": " 8.4.2.3 Average BER",
+      "page": 432
+    },
+    {
+      "level": 2,
+      "title": " 8.5 Optimal Combiner",
+      "page": 433
+    },
+    {
+      "level": 3,
+      "title": " 8.5.1 Mean Signal Power to Interference Power Ratio",
+      "page": 434
+    },
+    {
+      "level": 3,
+      "title": " 8.5.2. Outage Probability",
+      "page": 435
+    },
+    {
+      "level": 3,
+      "title": " 8.5.3 Average Bit Error Rate",
+      "page": 435
+    },
+    {
+      "level": 2,
+      "title": " 8.6 Generalized Selection Combiner",
+      "page": 436
+    },
+    {
+      "level": 3,
+      "title": " 8.6.1 Moment-Generating Functions",
+      "page": 437
+    },
+    {
+      "level": 3,
+      "title": " 8.6.2 Mean Output Signal-to-Noise Ratio",
+      "page": 438
+    },
+    {
+      "level": 3,
+      "title": " 8.6.3 Outage Probability",
+      "page": 440
+    },
+    {
+      "level": 3,
+      "title": " 8.6.4 Average Bit Error Rate",
+      "page": 441
+    },
+    {
+      "level": 2,
+      "title": " 8.7 Cascade Diversity Combiner",
+      "page": 443
+    },
+    {
+      "level": 3,
+      "title": " 8.7.1 Rayleigh Fading Environment",
+      "page": 444
+    },
+    {
+      "level": 4,
+      "title": " 8.7.1.1 Output SNR pdf",
+      "page": 444
+    },
+    {
+      "level": 4,
+      "title": " 8.7.1.2 Outage Probability",
+      "page": 445
+    },
+    {
+      "level": 4,
+      "title": " 8.7.1.3 Mean SNR",
+      "page": 446
+    },
+    {
+      "level": 4,
+      "title": " 8.7.1.4 Average BER",
+      "page": 447
+    },
+    {
+      "level": 3,
+      "title": " 8.7.2 Nakagami Fading Environment",
+      "page": 448
+    },
+    {
+      "level": 4,
+      "title": " 8.7.2.1 Average BER",
+      "page": 449
+    },
+    {
+      "level": 2,
+      "title": " 8.8 Macroscopic Diversity Combiner",
+      "page": 450
+    },
+    {
+      "level": 3,
+      "title": " 8.8.1 Effect of Shadowing",
+      "page": 450
+    },
+    {
+      "level": 4,
+      "title": " 8.8.1.1 Selection Combiner",
+      "page": 450
+    },
+    {
+      "level": 4,
+      "title": " 8.8.1.2 Maximum Ratio Combiner",
+      "page": 452
+    },
+    {
+      "level": 3,
+      "title": " 8.8.2 Microscopic Plus Macroscopic Diversity",
+      "page": 452
+    },
+    {
+      "level": 2,
+      "title": " Notation and Abbreviations",
+      "page": 454
+    },
+    {
+      "level": 2,
+      "title": " References",
+      "page": 456
+    }
+  ]
+}
