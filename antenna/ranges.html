@@ -173,6 +173,12 @@
           </td>
         </tr>
         <tr>
+          <td colspan="4">
+            <div class="ui red message invisible">Ideal range not found.</div>
+            <div class="ui green message invisible"><span class="ui text black"></span></div>
+          </td>
+        </tr>
+        <tr>
           <td class="center aligned" rowspan="2">Sample Facilities</td>
           <td class="center aligned">
             <img class="ui centered rounded image" style="display:block;" width="66%" src="/img/nsi-ff.jpg" alt="NSI-MI Far-field Range">
@@ -206,8 +212,7 @@
       </tbody>
     </table>
 
-    <div class="ui red message invisible">Ideal range not found.</div>
-    <div class="ui green message invisible"><span class="ui text black"></span></div>
+   
   </div>
 
 
@@ -272,7 +277,7 @@
         else {
           $('.green.message>span').text(matchedRanges[0])
           for (var i = 1; i < matchedRanges.length; i++) {
-            $('.green.message>span').text($('.green.message>span').text() + ', ' + matchedRanges[i])
+            $('.green.message>span').text($('.green.message>span').text() + ' & ' + matchedRanges[i])
           }
           $('.green.message').removeClass("invisible")
         }
