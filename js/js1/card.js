@@ -4,7 +4,7 @@ ready(function () {
     el.removeChild(el.firstChild);
   }
 
-  $.getJSON("json/links3.json", function (companies) {
+  $.getJSON("/json/links3.json", function (companies) {
       console.log(companies.length)
       companies.shuffle()
       for (var i = 0; i < companies.length; i++) {
@@ -30,7 +30,7 @@ ready(function () {
           el_div0_a0_img0.setAttribute("src", companies[i].logo)
         }
         else{
-          el_div0_a0_img0.setAttribute("src", "img/img1/logos/" + companies[i].logo)
+          el_div0_a0_img0.setAttribute("src", "/img/img1/logos/" + companies[i].logo)
         }
         if(companies[i].logo_background){
           el_div0_a0_img0.style.backgroundColor = companies[i].logo_background
