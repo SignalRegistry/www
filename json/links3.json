@@ -1452,5 +1452,23 @@
     "url": "https://www.chelton.com/",
     "title": "Chelton - Aerospace and Defence Antennas & Avionics - Chelton",
     "logo": "https://www.chelton.com/img/dist/logo-0509f82533.svg"
+  },
+  {
+    "category": "rf, microwave",
+    "url": "https://www.knowlescapacitors.com/",
+    "title": "Specialty Components | Knowles Precision Devices",
+    "logo": "https://i.ibb.co/N2wW8Nz/Ekran-Al-nt-s.png"
+  },
+  {
+    "category": "measurement",
+    "url": "https://www.marvintest.com/",
+    "title": "Marvin Test Solutions, Inc.",
+    "logo": "https://www.marvintest.com/Images/MTS-logo-Hi.png"
+  },
+  {
+    "category": "measurement",
+    "url": "https://noisecom.com/",
+    "title": "Noisecom",
+    "logo": "https://noisecom.com/Portals/0/logo-Noisecom.jpg?ver=2021-02-23-170237-970"
   }
 ]
