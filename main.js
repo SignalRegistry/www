@@ -87,6 +87,7 @@ app.use(function (req, res, next) {
 // static file paths
 //-------------------------------------
 app.use(`/`, express.static(path.join(__dirname, 'html/')))
+app.use(`/node_modules`, express.static(path.join(__dirname, 'node_modules/')))
 // app.use(`/app/css`, express.static(path.join(__dirname, 'html/css')))
 // app.use(`/app/js`, express.static(path.join(__dirname, 'html/js')))
 // app.use(`/app/img`, express.static(path.join(__dirname, 'html/img')))

@@ -1,0 +1,92 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <title>Signal Registry | Client Application</title>
+
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+  </style>
+
+</head>
+
+<body class="h-100 d-flex flex-column">
+
+  <div class="container-fluid flex-fill">
+    <div class="row h-100">
+      <div class="h-100 mb-3">
+        <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label> -->
+        <textarea class="form-control h-100 border-0" id="exampleFormControlTextarea1" style="resize: none;" readonly></textarea>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <!-- <form action=""> -->
+    <div class="input-group align-self-end">
+      <span class="input-group-text border-end-0 bg-white" id="basic-addon1">>></span>
+      <input name="command" autocomplete="off" type="text" class="form-control border-start-0 ps-0" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <span class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></span>
+    </div>
+  </footer>
+
+  <!-- components -->
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="infoPopUp" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <!-- <img src="..." class="rounded me-2" alt="..."> -->
+        <strong id="infoPopUpHeader" class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div id="infoPopUpBody" class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- You can also require other files to run in this process -->
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/node_modules/esprima/dist/esprima.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- <script src="./renderer.js"></script> -->
+  <script>
+
+    document.querySelector('input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        const cmd = e.target.value;
+        console.log(esprima.parseScript(cmd).body[0].type)
+        console.log(esprima.parseScript(cmd).body[0].expression)
+        document.querySelector('textarea').value += "> " + String(eval(cmd)) + "\n"
+        document.querySelector('input').value = ""
+      }
+    });
+
+    const toastLiveExample = document.getElementById('infoPopUp')
+
+    const toast = new bootstrap.Toast(toastLiveExample)
+
+    function showInfo(){
+      toast.show()
+
+    }
+
+  </script>
+</body>
+
+</html>

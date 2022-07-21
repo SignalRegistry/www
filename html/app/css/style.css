@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+  /* height: 100%; */
+  /* overflow: hidden; */
+  /* max-height: 100%; */
+  overflow: hidden;
+}
+
+input:focus {
+  border-color: rgba(126, 239, 104, 0.8) !important;
+  /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important; */
+  box-shadow: none !important;
+  outline: 0 none !important;
+}
+
+textarea {
+  line-height: 1.75rem;
+}
