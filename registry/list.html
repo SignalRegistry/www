@@ -51,7 +51,25 @@
   </table>
 
 
+  <!-- JQuery -->
+  <script src="https://filedn.eu/l59pfB3ibCbBAOoojMSgwuL/cdn/signalregistry/vendor/jquery-3.7.1.min.js"></script>
+
   <script src="/js/main.js"></script>
+
+  <script>
+    $.ajaxSetup({
+      dataType: 'json',
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
+    })
+
+    $.get(`${apiu}/list`, (res)=>{
+      console.log(res)
+    })
+  </script>
+
 
 </body>
 
