@@ -9,6 +9,19 @@
 
 <body>
 
+  <form id="add_data" name="new_data">
+    Name : <input type="text" name="name">
+    <br>
+    Data : <input type="text" name="data">
+    <br>
+    <input type="submit" name="add" value="Add">
+  </form>
+
+  <form action=""></form>
+  <input type="text" name="id" maxlength="30" value="">Lorem ipsum
+  <input type="text" name="pw" maxlength="30" value="">
+  <input type="submit" name="submit" value="Login">
+
   <table>
     <thead>
       <tr>
@@ -65,9 +78,30 @@
       crossDomain: true
     })
 
-    $.get(`${api_url}/list`, (res)=>{
+    $.get(`${api_url}/list`, (res) => {
       console.log(res)
     })
+
+    // https://www.learnwithjason.dev/blog/get-form-values-as-json/
+    const add_data_form = document.querySelector('#add_data')
+    add_data_form.addEventListener('submit', addDataSubmitHandle)
+    function addDataSubmitHandle(event) {
+      event.preventDefault();
+      const form_data      = new FormData(event.target);
+      const form_data_json = Object.fromEntries(form_data.entries());
+      const name           = form_data_json.name
+      delete form_data_json.name
+      console.log(form_data_json);
+      $.ajax({
+        url  : `${api_url}/list/${name}`,
+        type : 'PUT',
+        body : form_data_json,
+        success: function(result) {
+            console.log(result)
+        }
+      });
+    }
+
   </script>
 
 
