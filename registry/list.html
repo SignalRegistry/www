@@ -17,49 +17,34 @@
     <input type="submit" name="add" value="Add">
   </form>
 
-  <form action=""></form>
+  <!-- <form action=""></form>
   <input type="text" name="id" maxlength="30" value="">Lorem ipsum
   <input type="text" name="pw" maxlength="30" value="">
-  <input type="submit" name="submit" value="Login">
+  <input type="submit" name="submit" value="Login"> -->
 
   <table>
     <thead>
       <tr>
         <th>Owner</th>
-        <th>Date Initialized</th>
-        <th>Date Modifies</th>
-        <th>Name</th>
+        <th>Name</th> 
+        <th>Create Date</th>
+        <th>Last Update</th>
         <th>Count</th>
         <th>Type(s)</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>cell1_1</td>
-        <td>cell1_1</td>
-        <td>cell1_1</td>
-        <td>cell2_1</td>
-        <td>cell3_1</td>
-        <td>cell3_1</td>
-      </tr>
-      <tr>
-        <td>cell1_2</td>
-        <td>cell1_2</td>
-        <td>cell1_2</td>
-        <td>cell1_2</td>
-        <td>cell2_2</td>
-        <td>cell3_2</td>
-      </tr>
+
     </tbody>
     <tfoot>
-      <tr>
+      <!-- <tr>
         <td>Foot 1</td>
         <td>Foot 1</td>
         <td>Foot 2</td>
         <td>Foot 2</td>
         <td>Foot 2</td>
         <td>Foot 2</td>
-      </tr>
+      </tr> -->
     </tfoot>
   </table>
 
@@ -78,8 +63,21 @@
       crossDomain: true
     })
 
-    $.get(`${api_url}/list`, (res) => {
-      console.log(res)
+    $.get(`${api_url}/list`, (result) => {
+      console.log(result)
+      for(let i=0; i<result.length; i++){
+        console.log(result[i].type)
+        $("tbody").append(`
+        <tr>
+          <td>${result[i].owner}</td>
+          <td>${result[i].name}</td>
+          <td>${result[i].create_date}</td>
+          <td>${result[i].last_update}</td>
+          <td>${result[i].count}</td>
+          <td>${result[i].type}</td>
+        </tr>
+        `)
+      }
     })
 
     // https://www.learnwithjason.dev/blog/get-form-values-as-json/
@@ -90,14 +88,16 @@
       const form_data      = new FormData(event.target);
       const form_data_json = Object.fromEntries(form_data.entries());
       const name           = form_data_json.name
+      form_data_json.data  = Array.from(form_data_json.data)
       delete form_data_json.name
-      console.log(form_data_json);
+      // const form_data_array = Array.from(form_data_json.data)
+      // console.log(form_data_json);
       $.ajax({
         url  : `${api_url}/list/${name}`,
         type : 'PUT',
-        body : form_data_json,
+        data : form_data_json,
         success: function(result) {
-            console.log(result)
+          console.log(result)
         }
       });
     }
