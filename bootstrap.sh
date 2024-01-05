@@ -26,6 +26,7 @@ nginx -t
 nginx -s reload
 
 sudo certbot --nginx -d signalregistry.net -d www.signalregistry.net
+nginx -t
 nginx -s reload
 
 gpasswd -a www-data $USER
