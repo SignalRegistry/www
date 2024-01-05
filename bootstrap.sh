@@ -1,26 +1,27 @@
 ################################################################################
 # Nginx server block
 ################################################################################
-rm -f /etc/nginx/sites-enabled/www.signalregistry.net
+unlink /etc/nginx/sites-enabled/www.signalregistry.net 
 nginx -s reload
-cat > /etc/nginx/sites-enabled/www.signalregistry.net <<- EOM
+cat > /etc/nginx/sites-available/www.signalregistry.net <<- EOM
 server {
 
   listen 80;
   listen [::]:80;
 
-  root /root/SignalRegistry/www;
+  root $PWD;
 
   index index.html;
 
   # https://docs.digitalocean.com/glossary/allow-origin/
   # add_header Access-Control-Allow-Origin "\$http_origin";
   # https://docs.digitalocean.com/glossary/allow-cred/
-  3 add_header Access-Control-Allow-Credentials 'true';
+  # add_header Access-Control-Allow-Credentials 'true';
 
-
+  server_name signalregistry.net www.signalregistry.net;
 }
 EOM
+ln -s /etc/nginx/sites-available/www.signalregistry.net /etc/nginx/sites-enabled/www.signalregistry.net
 nginx -t
 nginx -s reload
 
@@ -28,7 +29,6 @@ sudo certbot --nginx -d signalregistry.net -d www.signalregistry.net
 nginx -s reload
 
 gpasswd -a www-data $USER
-chmod g+x $HOME/
-chmod g+x $HOME/SignalRegistry/
-chmod g+x $HOME/SignalRegistry/www/
+FOLDER=$PWD
+while [[ $FOLDER != / ]]; do chmod g+x "$FOLDER"; FOLDER=$(dirname "$FOLDER"); done;
 nginx -s reload
