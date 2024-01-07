@@ -13,11 +13,6 @@ server {
 
   index index.html;
 
-  # https://docs.digitalocean.com/glossary/allow-origin/
-  # add_header Access-Control-Allow-Origin "\$http_origin";
-  # https://docs.digitalocean.com/glossary/allow-cred/
-  # add_header Access-Control-Allow-Credentials 'true';
-
   server_name signalregistry.net www.signalregistry.net;
 }
 EOM
