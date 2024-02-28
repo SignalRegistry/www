@@ -27,6 +27,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">Owner</th>
           <th scope="col">Name</th>
           <th scope="col">Count</th>
           <th scope="col">Type(s)</th>
@@ -41,8 +42,8 @@
 
   <script>
 
-    const apiUrl = "https://api.signalregistry.net"
-    // const apiUrl = "http://127.0.0.1:7339"
+    // const apiUrl = "https://api.signalregistry.net"
+    const apiUrl = "http://127.0.0.1:7339"
 
     // =========================================================================
     // Cookie
@@ -99,14 +100,15 @@
         $("tbody").append(`
           <tr>
             <th scope="row">${i+1}</th>
+            <td>${data[i].owner}</td>
             <td>${data[i].name}</td>
             <td>${data[i].count}</td>
             <td>${data[i].types.toString()}</td>
             <td>${data[i].create_date}</td>
             <td>${data[i].last_update}</td>
-          </tr>
-        `)
-      }
+            </tr>
+            `)
+          }
     })
 
     // -------------------------------------------------------------------------
