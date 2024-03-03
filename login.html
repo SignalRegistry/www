@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"  data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Signal Registry</title>
+
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/js-cookie/dist/js.cookie.min.js"></script>
+
+  <script src="/js/session.js"></script>
+
+
+</head>
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-5 col-md-6 h-100 flex-column flex-center">
+        
+        <form class="text-center w-100 px-4 my-4" onsubmit="return false">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="input-username"><i class="bi bi-person-circle text-warning"></i></span>
+            <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="input-username">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="input-password"><i class="bi bi-key-fill text-warning"></i></span>
+            <input type="password" class="form-control" name="password" placeholder="***" aria-label="Password" aria-describedby="input-password">
+          </div>
+          <button type="submit" class="btn btn-outline-success px-5">Login</button>
+        </form>
+      </div>
+
+      <div class="col-xl-8 col-lg-7 col-md-6 h-100 d-md-block text-center m-auto p-auto"></div>
+    </div>
+  </div>
+
+  <script>
+    $("form").on("submit", (event) => {
+      event.preventDefault()
+      const formData = new FormData(event.target);
+      const queryString = new URLSearchParams(formData);
+      $.get("https://api.signalregistry.net/login?" + queryString, (res) => {
+        user = res
+        if (!user.username) null// location.href = "/login.html?returnCode=ERR_NO_USER"
+        else {
+          // if (appName == "ilkokul") location.href = "https://junior.baykushizliokuma.com/"
+          // else if (user.role == "admin") location.href = "/admin.html"
+          // else if (user.role == "customer") location.href = "/customer.html"
+          // else location.href = "/"
+        }
+      })
+    })
+
+
+  </script>
+
+</body>
+</html>
