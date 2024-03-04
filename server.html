@@ -14,14 +14,12 @@
   <script src="/node_modules/js-cookie/dist/js.cookie.min.js"></script>
   <script src="/node_modules/loglevel/dist/loglevel.min.js"></script>
 
-
   <link rel="stylesheet" href="/css/toast.css">
 
   <script src="/js/ajax.js"></script>
   <script src="/js/server.js"></script>
   <script src="/js/session.js"></script>
   <script src="/js/log.js"></script>
-
 
 </head>
 
@@ -40,13 +38,9 @@
     </div>
   </div>
 
-   
- 
-
   <script>
     
     $("[name=serverAddress]").val(Cookies.get("_sreg_server") || "https://signalregistry.net")
-
 
     $("form").on("submit", (event) => {
       event.preventDefault()
@@ -55,7 +49,6 @@
       $("[name]").val(formData.get("serverAddress") || "https://signalregistry.net")
       location.reload()
     })
-
 
   </script>
 
