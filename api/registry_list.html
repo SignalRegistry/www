@@ -42,8 +42,8 @@
 
   <script>
 
-    const apiUrl = "https://api.signalregistry.net"
-    // const apiUrl = "http://127.0.0.1:7339"
+    const server = "https://api.signalregistry.net"
+    // const server = "http://127.0.0.1:7339"
 
     $.ajaxSetup({
       crossDomain: true,
@@ -80,7 +80,7 @@
       </div>
     `)
 
-    $.get(apiUrl, {sessionId:Cookies.get("_sreg_id")}, (data)=>{
+    $.get(server, {sessionId:Cookies.get("_sreg_id")}, (data)=>{
       $("body > .row > .col-auto:eq(0)").append(`
           <div> [INFO] Server Session </div>   
         </div>
@@ -101,7 +101,7 @@
     // -------------------------------------------------------------------------
     // Registry operations: Get registry items
     // -------------------------------------------------------------------------
-    $.get(apiUrl+"/list", {sessionId:Cookies.get("_sreg_id")}, (data)=>{
+    $.get(server+"/list", {sessionId:Cookies.get("_sreg_id")}, (data)=>{
       $("tbody").empty()
       for(let i=0; i<data.length; i++) {
         $("tbody").append(`
@@ -124,7 +124,7 @@
     $("form").submit(event=>{
       event.preventDefault();
       $.ajax({
-        url  : `${apiUrl}/list/${$("#tableName").val()}?sessionId=${Cookies.get("_sreg_id")}`,
+        url  : `${server}/list/${$("#tableName").val()}?sessionId=${Cookies.get("_sreg_id")}`,
         type : 'PUT',
         success: function(result) {
           console.log(result)

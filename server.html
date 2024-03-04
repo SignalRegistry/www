@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server | Signal Registry</title>
+
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/js-cookie/dist/js.cookie.min.js"></script>
+  <script src="/node_modules/loglevel/dist/loglevel.min.js"></script>
+
+
+  <link rel="stylesheet" href="/css/toast.css">
+
+  <script src="/js/ajax.js"></script>
+  <script src="/js/server.js"></script>
+  <script src="/js/session.js"></script>
+  <script src="/js/log.js"></script>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <form>
+        <div class="mb-3">
+          <label for="serverAddress" class="form-label">Server Address</label>
+          <input type="url" class="form-control" name="serverAddress" aria-describedby="serverAddressHelp">
+          <div id="serverAddressHelp" class="form-text"> Provide full URL address of preferred server. </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+   
+ 
+
+  <script>
+    
+    $("[name=serverAddress]").val(Cookies.get("_sreg_server") || "https://signalregistry.net")
+
+
+    $("form").on("submit", (event) => {
+      event.preventDefault()
+      const formData = new FormData(event.target);
+      Cookies.set("_sreg_server", formData.get("serverAddress") || "https://signalregistry.net")
+      $("[name]").val(formData.get("serverAddress") || "https://signalregistry.net")
+      location.reload()
+    })
+
+
+  </script>
+
+</body>
+
+</html>

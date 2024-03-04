@@ -17,9 +17,9 @@
 
   <script>
 
-    // const apiUrl = (location.protocol == "http:") ? "http://127.0.0.1:7339" : "https://api.signalregistry.net"
-    const apiUrl = "https://api.signalregistry.net"
-    // const apiUrl = "http://127.0.0.1:7339"
+    // const server = (location.protocol == "http:") ? "http://127.0.0.1:7339" : "https://api.signalregistry.net"
+    const server = "https://api.signalregistry.net"
+    // const server = "http://127.0.0.1:7339"
 
 
     if(!Cookies.get("_sreg_id")) {
@@ -52,7 +52,7 @@
       </div>
     `)
 
-    $.get(apiUrl, {sessionId:Cookies.get("_sreg_id")}, (data)=>{
+    $.get(server, {sessionId:Cookies.get("_sreg_id")}, (data)=>{
       $("body > .row > .col-auto:eq(0)").append(`
           <div> [INFO] Server Session </div>   
         </div>

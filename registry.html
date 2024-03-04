@@ -47,8 +47,8 @@
 
   <script>
 
-    // const apiUrl = "https://api.signalregistry.net"
-    const apiUrl = "http://127.0.0.1:7339"
+    // const server = "https://api.signalregistry.net"
+    const server = "http://127.0.0.1:7339"
 
     $.ajaxSetup({
       crossDomain: true,
@@ -64,7 +64,7 @@
     // Registry operations: Get registry items
     // -------------------------------------------------------------------------
     function updateRegistryTable(){
-      $.get(apiUrl+"/registry", {sessionId:Cookies.get("_sreg_id")}, (data)=>{
+      $.get(server+"/registry", {sessionId:Cookies.get("_sreg_id")}, (data)=>{
         $("tbody").empty()
         for(let i=0; i<data.length; i++) {
           $("tbody").append(`
@@ -85,7 +85,7 @@
     $("form").submit(event=>{
       event.preventDefault();
       $.ajax({
-        url  : `${apiUrl}/registry?sessionId=${Cookies.get("_sreg_id")}`,
+        url  : `${server}/registry?sessionId=${Cookies.get("_sreg_id")}`,
         type : 'POST',
         data: JSON.stringify({ name: $("#registryName").val()}),
         contentType: "application/json; charset=utf-8",

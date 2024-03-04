@@ -1,0 +1,7 @@
+.toast.server-info {
+  position: relative;
+  top     : 0 !important;
+  bottom  : 0 !important;
+
+  --bs-toast-max-width: 200px;
+}
