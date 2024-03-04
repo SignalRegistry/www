@@ -11,7 +11,9 @@
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/node_modules/js-cookie/dist/js.cookie.min.js"></script>
+  <script src="/node_modules/loglevel/dist/loglevel.min.js"></script>
 
+  <script src="/js/main.js"></script>
   <script src="/js/session.js"></script>
 
 
@@ -37,14 +39,29 @@
 
       <div class="col-xl-8 col-lg-7 col-md-6 h-100 d-md-block text-center m-auto p-auto"></div>
     </div>
+    <div id="info"></div>
   </div>
 
   <script>
+
+    // const apiUrl = "https://api.signalregistry.net"
+    const apiUrl = "http://127.0.0.1:7339"
+
+    $.ajaxSetup({
+      crossDomain: true,
+      xhrFields: {
+          withCredentials: true
+      }
+    });
+
+
     $("form").on("submit", (event) => {
       event.preventDefault()
-      const formData = new FormData(event.target);
+      const formData    = new FormData(event.target);
       const queryString = new URLSearchParams(formData);
-      $.get("https://api.signalregistry.net/login?" + queryString, (res) => {
+      // $.get("https://api.signalregistry.net/login?" + queryString, (res) => {
+      $.get(apiUrl+"/login?" + queryString, {sessionId:Cookies.get("_sreg_id")}, (res) => {
+        console.log(res)
         user = res
         if (!user.username) null// location.href = "/login.html?returnCode=ERR_NO_USER"
         else {
