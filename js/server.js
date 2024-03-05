@@ -17,7 +17,6 @@ if (server == "http://127.0.0.1:7339") {
         </div>
       </div>
     `)
-    console.log(document.getElementById('serverInfo'))
     bootstrap.Toast.getOrCreateInstance(document.getElementById('serverInfo')).show()
   }, 1000)
 }

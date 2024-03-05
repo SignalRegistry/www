@@ -16,3 +16,15 @@ if(!Cookies.get("_sreg_cr")) {
 log.info(`[INFO] Session id    : ${cookie_id}`)
 log.info(`[INFO] Session start : ${Cookies.get("_sreg_cr")}`)
 log.info(`[INFO] Session expire: ${Cookies.get("_sreg_ex")}`)
+
+$.get(server+"/user", {sessionId:Cookies.get("_sreg_id")}, (res) => { 
+  log.info(`[INFO] User username: ${res ? res.username : ""}`)
+  log.info(`[INFO] User role    : ${res ? res.role : ""}`)
+})
+
+setInterval(() => {
+  $.get(server+"/user", {sessionId:Cookies.get("_sreg_id")}, (res) => { 
+    log.debug(`[DEBUG] User username: ${res ? res.username : ""}`)
+    log.debug(`[DEBUG] User role    : ${res ? res.role : ""}`)
+  })
+}, 5000)
