@@ -1,4 +1,4 @@
-log.setLevel("info")
+log.setLevel("trace")
 // const api_url = (location.protocol == "http:") ? "http://127.0.0.1:3000" : "https://api.signalregistry.net"
 
 // var request = new XMLHttpRequest();
