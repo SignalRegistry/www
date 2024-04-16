@@ -18,12 +18,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- LogLevel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.9.1/loglevel.min.js" integrity="sha512-RTpFpEIjxdex5j5nQGJmXJziMCNyWOJNqwWIBeclDyK3ONSS7Bg5GKI7KmLl6Y0RvsQ3EZIhT8rYqdUW7w2TSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <!-- <script src="/js/ajax.js"></script> -->
   <!-- <script src="/js/server.js"></script> -->
   <script src="/js/log.js"></script>
   <script src="/js/atlas.js"></script> 
   <script src="/js/session.js"></script> 
+
   
   <link rel = "stylesheet" href = "css/background_animation.css">
   <link rel="stylesheet" href="/css/toast.css">
@@ -105,39 +108,27 @@
     <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
       <div>
         <div class="text-center animation fade-in-left mb-5">
-          <button type="button" class="btn btn-outline-info btn-rounded"
-            data-mdb-ripple-color    = "dark"
-            data-mdb-toggle          = "animation"
-            data-mdb-animation-reset = "false"
-            data-mdb-animation       = "fade-out-right">
+          <button type="button" id="explore-registry" class="btn btn-outline-info rounded-pill animate__animated" >
             Explore Registry</button>
         </div>
-        <div class="text-center animation fade-in-right mt-5">
+        <!-- <div class="text-center animation fade-in-right mt-5">
           <button type="button" class="btn btn-outline-info btn-rounded  w-100"
             data-mdb-ripple-color    = "dark"
             data-mdb-toggle          = "animation"
             data-mdb-animation-reset = "false"
             data-mdb-animation       = "fade-out-left">
             Discover Apps</button>
-        </div>
+        </div> -->
 
       </div>
     </div>
     <!-- End your project here-->
 
     <script>
-      $('[data-mdb-animation=fade-out-left]').on('click', () => {
-        const element = $('[data-mdb-animation=fade-out-right]').parent()[0];
-        const animate = new mdb.Animate(element, { animation: 'fade-out-right', });
-        animate.init();
-        animate.startAnimation()
+      $('.btn#explore-registry').on('click', (event) => {
+        $(event.currentTarget).addClass("animate__backOutLeft")
       })
-      $('[data-mdb-animation=fade-out-right]').on('click', () => {
-        const element = $('[data-mdb-animation=fade-out-left]').parent()[0];
-        const animate = new mdb.Animate(element, { animation: 'fade-out-left', });
-        animate.init();
-        animate.startAnimation()
-      })
+      
     </script>
 
 </body>
