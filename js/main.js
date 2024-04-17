@@ -1,6 +1,9 @@
 const apiServer     = (location.protocol == "http:") ? "http://127.0.0.1:7339" : "https://api.signalregistry.net"
 const cookiePrefix  = "_sr"
-const cookieTimeout =  1 * 1 * 60 * 60 * 1000 // day x hour x minutes x seconds x milliseconds
+const cookieTimeout =  1 * 1 * 1 * 60 * 1000 // day x hour x minutes x seconds x milliseconds
+const loadTimeout   = 2000
+const logLevel      = "trace"
+const sessionPeriod = 5000
 
 
 const addCss = (href, integrity = "", crossOrigin = "anonymous") => {
@@ -9,7 +12,7 @@ const addCss = (href, integrity = "", crossOrigin = "anonymous") => {
   el.href        = href;
   el.integrity   = integrity;
   el.crossOrigin = crossOrigin;
-  document.body.append(el);
+  document.head.append(el);
 };
 
 const addScript = (src, integrity = "", crossOrigin = "anonymous") => {
@@ -17,7 +20,7 @@ const addScript = (src, integrity = "", crossOrigin = "anonymous") => {
   el.src         = src;
   el.integrity   = integrity;
   el.crossOrigin = crossOrigin;
-  document.body.append(el);
+  document.head.append(el);
 };
 
 const addScriptAsync = async (src, integrity = "", crossOrigin = "anonymous") => new Promise((resolve, reject) => {
@@ -27,8 +30,25 @@ const addScriptAsync = async (src, integrity = "", crossOrigin = "anonymous") =>
   el.crossOrigin = crossOrigin;
   el.addEventListener('load', resolve);
   el.addEventListener('error', reject);
-  document.body.append(el);
+  document.head.append(el);
 });
+
+let loadTimePass  = 0
+let loadCompleted = false
+const defer = (method) => {
+  if (window.jQuery && window.bootstrap && window.log && window.Cookies) {
+    method();
+    if(!loadCompleted) log.debug(`[DEBUG] Scripts loaded in ${loadTimePass}ms`)
+    loadCompleted = true
+  } 
+  else if(loadTimePass < loadTimeout) {
+    setTimeout(function() { defer(method) }, 50);
+    loadTimePass += 50
+  }
+  else {
+    console.error(`[ERROR] Essential scripts could not loaded.`)
+  }
+}
 
 addCss("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",      "sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH")
 addCss("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", "sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd")
@@ -45,30 +65,6 @@ async function loadAsync() {
 }
 loadAsync()
 
-function printSessionInfo() {
-  if(Cookies.get(`${cookiePrefix}_id`)) {
-    log.info(`[INFO] Session id    : ${Cookies.get(`${cookiePrefix}_id`)}`)
-    log.info(`[INFO] Session start : ${Cookies.get(`${cookiePrefix}_cr`)}`)
-    log.info(`[INFO] Session expire: ${Cookies.get(`${cookiePrefix}_ex`)}`)
-  }
-}
-
-function refreshSession() {
-  if(!Cookies.get(`${cookiePrefix}_id`)) {
-    log.info(`[INFO] Creating new session ...`)
-    
-    const cookieValue   = Cookies.get(`${cookiePrefix}_id`) || window.crypto.randomUUID()
-    const cookieCreated = (new Date()).toISOString()
-    const cookieExpire  = new Date(new Date().getTime() + cookieTimeout)
-
-    Cookies.set(`${cookiePrefix}_id`, cookieValue, { expires: cookieExpire })
-    Cookies.set(`${cookiePrefix}_cr`, cookieCreated, { expires: cookieExpire })
-    Cookies.set(`${cookiePrefix}_ex`, cookieExpire.toISOString(), { expires: cookieExpire })
-
-    printSessionInfo()
-  }
-}
-
 function getSessionId() { return Cookies.get(`${cookiePrefix}_id`); }
 
 function getUser(callback) {
@@ -77,8 +73,39 @@ function getUser(callback) {
   })
 }
 
+let sessionId = null
+function refreshSession() {
+  if(!Cookies.get(`${cookiePrefix}_id`)) {
+    log.info(`[INFO] Creating new session ...`)
+    
+    const cookieValue   = Cookies.get(`${cookiePrefix}_id`) || window.crypto.randomUUID()
+    const cookieCreated = (new Date()).toISOString()
+    const cookieExpire  = new Date(new Date().getTime() + cookieTimeout)
+    
+    Cookies.set(`${cookiePrefix}_id`, cookieValue, { expires: cookieExpire })
+    Cookies.set(`${cookiePrefix}_cr`, cookieCreated, { expires: cookieExpire })
+    Cookies.set(`${cookiePrefix}_ex`, cookieExpire.toISOString(), { expires: cookieExpire })
+  }
+  if (sessionId != Cookies.get(`${cookiePrefix}_id`)) {
+    log.info(`[INFO] Session id    : ${Cookies.get(`${cookiePrefix}_id`)}`)
+    log.info(`[INFO] Session start : ${Cookies.get(`${cookiePrefix}_cr`)}`)
+    log.info(`[INFO] Session expire: ${Cookies.get(`${cookiePrefix}_ex`)}`)
 
-setTimeout(() => {
+    getUser((user) => {
+      if(!user) {
+        log.warn(`[WARN] : Server is offline`)
+      }
+      else {
+        log.info(`[INFO] User username: ${user ? user.username : ""}`)
+        log.info(`[INFO] User role    : ${user ? user.role : ""}`)
+      }
+    })
+
+    sessionId = Cookies.get(`${cookiePrefix}_id`)
+  }
+}
+
+defer(() => {
   if (apiServer == "http://127.0.0.1:7339") {
     $("body").append(`
       <div class="toast-container p-3 top-0 end-0">
@@ -96,30 +123,13 @@ setTimeout(() => {
     bootstrap.Toast.getOrCreateInstance(document.getElementById('serverInfo')).show()
   }
 
-  log.setLevel("trace")
+  log.setLevel(logLevel)
   log.info(`[INFO] Server address : ${apiServer}`)
   
-  printSessionInfo()
   refreshSession()
-  getUser((user) => {
-    if(!user) {
-      log.warn(`[WARN] : Server is offline`)
-    }
-    else {
-      log.info(`[INFO] User username: ${user ? user.username : ""}`)
-      log.info(`[INFO] User role    : ${user ? user.role : ""}`)
-    }
-  })
-
-
-}, 1000)
+  
+})
 
 setInterval(() => {
-  refreshSession()
-  getUser((user) => {
-    if(!user) {
-      log.warn(`[WARN] : Server is offline`)
-    }
-    else null
-  })
-}, 5000)
+  defer(refreshSession)
+}, sessionPeriod)

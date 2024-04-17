@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark">
   
 <head>
   <meta charset="UTF-8">
@@ -8,11 +8,12 @@
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   
+  <script src="js/main.js"></script>
   <!-- <link rel="stylesheet" href="/css/toast.css"> -->
 </head>
 <body class="vh-100 d-flex">
   <div class="container d-flex flex-column justify-content-center">
-    <form class="col-xl-4 col-lg-5 col-md-6 mx-auto" action="/login" method="post">
+    <form class="col-xl-4 col-lg-5 col-md-6 mx-auto" onsubmit="return false;">
       <div class="input-group mb-3">
         <span class="input-group-text" id="input-username"><i class="bi bi-envelope text-warning"></i></span>
         <input type="email" class="form-control" name="email" placeholder="e-mail" aria-label="E-Mail" aria-describedby="input-email">
@@ -28,44 +29,31 @@
 
   </div>
 
-  <script src="js/main.js"></script>
 
   
 
   <script>
 
+    defer(() => {
+  
+      $("form").on("submit", (event) => {
+        event.preventDefault()
+        // alert(event)
+        // console.log(event)
+        const formData    = new FormData(event.target);
+        const queryString = new URLSearchParams(formData);
+        $.post(apiServer+`/login?sessionId=${getSessionId()}`, Object.fromEntries(queryString), (res) => {
+          log.debug(`[DEBUG] Login response: ${JSON.stringify(res)}`)
+          if (!res.username) null// location.href = "/login.html?returnCode=ERR_NO_USER"
+          else {
+            location.href = "/"
+          }
+        })
+      })
 
+    })
   
 
-
-    $("form").on("submit", (event) => {
-      event.preventDefault()
-      // alert(event)
-      // console.log(event)
-      const formData    = new FormData(event.target);
-      const queryString = new URLSearchParams(formData);
-      console.log(queryString)
-      // // $.get("https://api.signalregistry.net/login?" + queryString, (res) => {
-      // $.get(server+"/login?" + queryString, {sessionId:Cookies.get("_sreg_id")}, (res) => {
-      //   console.log(res)
-      //   user = res
-      //   if (!user.username) null// location.href = "/login.html?returnCode=ERR_NO_USER"
-      //   else {
-      //     // if (appName == "ilkokul") location.href = "https://junior.baykushizliokuma.com/"
-      //     // else if (user.role == "admin") location.href = "/admin.html"
-      //     // else if (user.role == "customer") location.href = "/customer.html"
-      //     // else location.href = "/"
-      //   }
-      // })
-      // .done(function() {})
-      // .fail(function(data, textStatus, xhr) {
-      //     if (data.status == 401) {
-      //       $(".invalid-feedback").addClass("d-block")
-      //       log.warn("[INFO] Invalid username or password.");
-      //     }
-      // })
-      // .always(function() {});
-    })
 
   </script>
 
