@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Signal Registry</title>
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  
+
   <script src="js/main.js"></script>
   <!-- <link rel="stylesheet" href="/css/toast.css"> -->
 </head>
+
 <body class="vh-100 d-flex">
   <div class="container d-flex flex-column justify-content-center">
     <form class="col-xl-4 col-lg-5 col-md-6 mx-auto" onsubmit="return false;">
@@ -27,22 +28,17 @@
     </form>
   </div>
 
-  </div>
-
-
-  
-
   <script>
 
     defer(() => {
-  
+
       $("form").on("submit", (event) => {
         event.preventDefault()
         // alert(event)
         // console.log(event)
-        const formData    = new FormData(event.target);
+        const formData = new FormData(event.target);
         const queryString = new URLSearchParams(formData);
-        $.post(apiServer+`/login?sessionId=${getSessionId()}`, Object.fromEntries(queryString), (res) => {
+        $.post(apiServer + `/login?sessionId=${getSessionId()}`, Object.fromEntries(queryString), (res) => {
           log.debug(`[DEBUG] Login response: ${JSON.stringify(res)}`)
           if (!res.username) $(`.invalid-feedback`).addClass("d-block")
           else {
@@ -52,10 +48,11 @@
       })
 
     })
-  
+
 
 
   </script>
 
 </body>
+
 </html>

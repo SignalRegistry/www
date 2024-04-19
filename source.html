@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source | Signal Registry</title>
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  
+  <script src="js/main.js"></script>
+  <!-- <link rel="stylesheet" href="/css/toast.css"> -->
+</head>
+<body class="container">
+ 
+  <form id="addTemplateForm" class="container d-none" onsubmit="return false;">
+    <div class="row">
+      <div class="column">
+        <select class="form-select" name="type" aria-label="Add template signal">
+          <option value="trigger" selected> Trigger (Pulse) </option>
+          <option value="onoff">            On/Off (TTL)    </option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  
+
+  <script>
+
+    defer(() => {
+      getUser(user => {
+        console.log(user)
+        if(user && user.role=="admin") $("#addTemplateForm").removeClass("d-none")
+      })
+    })
+
+  </script>
+
+</body>
+</html>

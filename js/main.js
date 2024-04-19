@@ -110,7 +110,7 @@ function refreshSession() {
 defer(() => {
   if (apiServer == apiServerLocal) {
     $("body").append(`
-      <div class="toast-container p-3 top-0 end-0">
+      <div class="toast-container p-3 bottom-0 end-0">
         <div id="serverInfo" class="toast server-info" data-bs-autohide=false>
           <div class="toast-header">
             <strong class="me-auto">Local Server</strong>
