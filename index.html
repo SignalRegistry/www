@@ -106,9 +106,12 @@
     <!-- End your project here-->
 
     <script>
-      $('.btn#explore-registry').on('click', (event) => {
-        $(event.currentTarget).addClass("animate__backOutLeft")
+      defer(() => {
+        $('.btn#explore-registry').on('click', (event) => {
+          $(event.currentTarget).addClass("animate__backOutLeft")
+        })
       })
+
       
     </script>
 

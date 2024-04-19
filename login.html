@@ -22,7 +22,7 @@
         <span class="input-group-text" id="input-password"><i class="bi bi-key-fill text-warning"></i></span>
         <input type="password" class="form-control" name="password" placeholder="***" aria-label="Password" aria-describedby="input-password">
       </div>
-      <div class="invalid-feedback"> Invalid username or password. </div>
+      <div class="invalid-feedback mb-3"> Invalid email or password </div>
       <button type="submit" class="btn btn-outline-success w-100">Login</button>
     </form>
   </div>
@@ -44,7 +44,7 @@
         const queryString = new URLSearchParams(formData);
         $.post(apiServer+`/login?sessionId=${getSessionId()}`, Object.fromEntries(queryString), (res) => {
           log.debug(`[DEBUG] Login response: ${JSON.stringify(res)}`)
-          if (!res.username) null// location.href = "/login.html?returnCode=ERR_NO_USER"
+          if (!res.username) $(`.invalid-feedback`).addClass("d-block")
           else {
             location.href = "/"
           }

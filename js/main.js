@@ -1,9 +1,11 @@
-const apiServer     = (location.protocol == "http:") ? "http://127.0.0.1:7339" : "https://api.signalregistry.net"
-const cookiePrefix  = "_sr"
-const cookieTimeout =  1 * 1 * 1 * 60 * 1000 // day x hour x minutes x seconds x milliseconds
-const loadTimeout   = 2000
-const logLevel      = "trace"
-const sessionPeriod = 5000
+const apiServerLocal  = "http://127.0.0.1:7339"
+const apiServerRemote = "https://api.signalregistry.net"
+const apiServer       = (location.protocol == "http:") ?  apiServerLocal : apiServerRemote 
+const cookiePrefix    = "_sr"
+const cookieTimeout   =  7 * 24 * 60 * 60 * 1000 // day x hour x minutes x seconds x milliseconds
+const loadTimeout     = 2000
+const logLevel        = "trace"
+const sessionPeriod   = 5000
 
 
 const addCss = (href, integrity = "", crossOrigin = "anonymous") => {
@@ -106,7 +108,7 @@ function refreshSession() {
 }
 
 defer(() => {
-  if (apiServer == "http://127.0.0.1:7339") {
+  if (apiServer == apiServerLocal) {
     $("body").append(`
       <div class="toast-container p-3 top-0 end-0">
         <div id="serverInfo" class="toast server-info" data-bs-autohide=false>
@@ -115,7 +117,7 @@ defer(() => {
             <small>(Debug Mode)</small>
           </div>
           <div class="toast-body">
-            http://127.0.0.1:7339
+            ${apiServerLocal}
           </div>
         </div>
       </div>
