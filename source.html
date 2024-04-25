@@ -14,10 +14,10 @@
 <body class="container">
  
   <form id="addTemplateForm" class="row" onsubmit="return false;">
-    <select class="form-select" name="type" aria-label="Add template signal">
-      <option value="trigger" selected> Trigger (Pulse)              </option>
-      <option value="onoff">            On/Off (TTL)                 </option>
-      <option value="float32">          32-Bit Floating Point Number </option>
+    <select class="form-select" name="template" aria-label="Source Templates Select">
+      <!-- <option value="trigger" selected> Trigger (Pulse)              </option>
+      <option value="ttl">              On/Off (TTL)                 </option>
+      <option value="float32">          32-Bit Floating Point Number </option> -->
     </select>
   </form>
 
@@ -27,8 +27,18 @@
 
     defer(() => {
       getUser(user => {
-        console.log(user)
-        if(user && user.role=="admin") $("#addTemplateForm").removeClass("d-none")
+        if(!user || user.role == "guest") location.href = "login.html"
+        // console.log(user)
+        // if(user && user.role=="admin") $("#addTemplateForm").removeClass("d-none")
+      })
+
+      $.get(apiServer+"/source/template", {sessionId:getSessionId()}, (res) => {
+        for(let i = 0; i < res.length; i++) {
+          $(`[name="template"]`).append(`
+            <option value=${res[i].name}> ${res[i].definition} </option>
+          `)
+        }
+        console.log(res)
       })
     })
 
