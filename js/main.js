@@ -52,13 +52,16 @@ const defer = (method) => {
   }
 }
 
-addCss("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",      "sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH")
-addCss("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", "sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd")
+// addCss("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",      "sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH")
+// addCss("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", "sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd")
 
-addScript("https://code.jquery.com/jquery-3.7.1.min.js")
-addScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz")
-addScript("https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.9.1/loglevel.min.js",        "sha512-RTpFpEIjxdex5j5nQGJmXJziMCNyWOJNqwWIBeclDyK3ONSS7Bg5GKI7KmLl6Y0RvsQ3EZIhT8rYqdUW7w2TSg==")
-addScript("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js",      "sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==")
+// addScript("https://code.jquery.com/jquery-3.7.1.min.js")
+// addScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz")
+// addScript("https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.9.1/loglevel.min.js",        "sha512-RTpFpEIjxdex5j5nQGJmXJziMCNyWOJNqwWIBeclDyK3ONSS7Bg5GKI7KmLl6Y0RvsQ3EZIhT8rYqdUW7w2TSg==")
+// addScript("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js",      "sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==")
+
+
+addScript("/node_modules/jquery/dist/jquery.js")
 
 async function loadAsync() {
   // await addScriptAsync("https://code.jquery.com/jquery-3.7.1.min.js").catch(console.log);
