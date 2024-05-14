@@ -60,8 +60,16 @@ const defer = (method) => {
 // addScript("https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.9.1/loglevel.min.js",        "sha512-RTpFpEIjxdex5j5nQGJmXJziMCNyWOJNqwWIBeclDyK3ONSS7Bg5GKI7KmLl6Y0RvsQ3EZIhT8rYqdUW7w2TSg==")
 // addScript("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js",      "sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==")
 
+addCss("/vendor/keen_html_v3.0.7/demo1/assets/plugins/global/plugins.bundle.css")
+addCss("/vendor/keen_html_v3.0.7/demo1/assets/css/style.bundle.css")
+
 
 addScript("/node_modules/jquery/dist/jquery.js")
+addScript("/node_modules/js-cookie/dist/js.cookie.min.js")
+addScript("/node_modules/loglevel/dist/loglevel.min.js")
+addScript("/vendor/keen_html_v3.0.7/demo1/assets/js/scripts.bundle.js")
+addScript("/vendor/keen_html_v3.0.7/demo1/assets/plugins/global/plugins.bundle.js")
+
 
 async function loadAsync() {
   // await addScriptAsync("https://code.jquery.com/jquery-3.7.1.min.js").catch(console.log);
