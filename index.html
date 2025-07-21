@@ -1,1152 +1,145 @@
 <!DOCTYPE html>
-<html lang="zxx">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" data-bs-theme-mode="dark">
 
-        <!-- Bootstrap Min CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!-- Animate Min CSS -->
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <!-- FlatIcon CSS -->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
-        <!-- Odometer Min CSS -->
-        <link rel="stylesheet" href="assets/css/odometer.min.css">
-        <!-- MeanMenu CSS -->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!-- Magnific Popup Min CSS -->
-        <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-        <!-- Nice Select Min CSS -->
-        <link rel="stylesheet" href="assets/css/nice-select.min.css">
-        <!-- Owl Carousel Min CSS -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <!-- Font Awesome All Min CSS -->
-        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!-- Dark CSS -->
-        <link rel="stylesheet" href="assets/css/dark.css">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="assets/css/responsive.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Registry</title>
 
-        <title>Plamb - Data Science & Machine Learning Analytics HTML Template</title>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    </head>
-    <body>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 
-        <!-- Preloader -->
-        <div class="preloader">
-            <div class="loader">
-                <div class="shadow"></div>
-                <div class="box"></div>
-            </div>
+  <!-- MDB ESSENTIAL -->
+  <link rel = "stylesheet" href = "css/mdb.min.css">
+  <link rel = "stylesheet" href = "plugins/css/treeview.min.css">
+  <!-- Font Awesome -->
+  <link rel = "stylesheet" href = "vendor/fontawesome-free-6.7.2-web/css/fontawesome.css">
+  <link rel = "stylesheet" href = "vendor/fontawesome-free-6.7.2-web/css/solid.css">
+  <link rel = "stylesheet" href = "vendor/fontawesome-free-6.7.2-web/css/brands.css">
+
+  <link rel = "stylesheet" href = "css/background_animation.css">
+
+  <style>
+    body {
+      background-color: #1b1b29;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class='light x1'></div>
+  <div class='light x2'></div>
+  <div class='light x3'></div>
+  <div class='light x4'></div>
+  <div class='light x5'></div>
+  <div class='light x6'></div>
+  <div class='light x7'></div>
+  <div class='light x8'></div>
+  <div class='light x9'></div>
+
+  <!--Main Navigation-->
+  <header class="d-none">
+    <!-- Animated navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+      <div class="container-fluid">
+        <button
+          class           = "navbar-toggler ps-0"
+          type            = "button"
+          data-mdb-toggle = "collapse"
+          data-mdb-target = "#navbarExample01"
+          aria-controls   = "navbarExample01"
+          aria-expanded   = "false"
+          aria-label      = "Toggle navigation">
+          <span
+            class="d-flex justify-content-start align-items-center">
+            <i class="fas fa-bars text-info"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link text-secondary fw-bold" aria-current="page" href="#intro">About</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class  = "nav-link"
+                href   = "https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
+                rel    = "nofollow"
+                target = "_blank">
+                Learn Bootstrap 5</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav flex-row">
+            <!-- Icons -->
+            <li class="nav-item">
+              <a
+                class  = "nav-link pe-2"
+                href   = "https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
+                rel    = "nofollow"
+                target = "_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <!-- End Preloader -->
+      </div>
+    </nav>
+    <!-- Animated navbar -->
 
-        <!-- Start Navbar Area -->
-        <div class="navbar-area">
-            <div class="plamb-responsive-nav">
-                <div class="container">
-                    <div class="plamb-responsive-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" class="white-logo" alt="logo">
-                                <img src="assets/img/logo-black.png" class="black-logo" alt="logo">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </header>
 
-            <div class="plamb-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" class="white-logo" alt="logo">
-                            <img src="assets/img/logo-black.png" class="black-logo" alt="logo">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Home 
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="index.html" class="nav-link active">
-                                                Home One
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link">
-                                                Home Two
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">
-                                                Home Three
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-4.html" class="nav-link">
-                                                Home Four
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Services 
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="services.html" class="nav-link">
-                                                Services
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-services.html" class="nav-link">
-                                                Services Details
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Projects 
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="projects.html" class="nav-link">
-                                                Projects
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-projects.html" class="nav-link">
-                                                Projects Details
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Pages 
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="about.html" class="nav-link">
-                                                About Us
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="team.html" class="nav-link">
-                                                Team
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pricing.html" class="nav-link">
-                                                Pricing
-                                            </a>
-                                        </li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Shop</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                    <a href="shop.html" class="nav-link">
-                                                        Shop
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="single-product.html" class="nav-link">
-                                                        Single Products
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="cart.html" class="nav-link">
-                                                        Cart
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="checkout.html" class="nav-link">
-                                                        Checkout
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="partner.html" class="nav-link">
-                                                Partner
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="error-404.html" class="nav-link">
-                                                404 Error
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="faq.html" class="nav-link">
-                                                FAQ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="coming-soon.html" class="nav-link">
-                                                Coming Soon
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Blog 
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blog-1.html" class="nav-link">
-                                                Blog Grid
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-2.html" class="nav-link">
-                                                Blog Right Sidebar
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-3.html" class="nav-link">
-                                                Blog Left Sidebar
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="single-blog.html" class="nav-link">
-                                                Blog Details
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="other-option">
-                                <a class="default-btn" href="pricing.html">
-                                    Free Quote 
-                                    <span></span>
-                                </a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+  <!-- Start your project here-->
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+      <div>
+        <div class="text-center animation fade-in-left mb-5">
+          <button type="button" class="btn btn-outline-info btn-rounded"
+            data-mdb-ripple-color    = "dark"
+            data-mdb-toggle          = "animation"
+            data-mdb-animation-reset = "false"
+            data-mdb-animation       = "fade-out-right">
+            Explore Registry</button>
         </div>
-        <!-- End Navbar Area -->
-
-        <!-- Start Main Banner Two Area -->
-        <div class="main-banner-two">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="main-banner-content">
-                            <h1>Big Data And Analytics</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis Ipsum is simply dummy text of the printing.</p>
-                            <div class="banner-btn">
-                                <a href="about.html" class="default-btn-one">
-                                    About Us
-                                    <span></span>
-                                </a>
-                                <a class="default-btn" href="pricing.html">
-                                    Contact Us 
-                                    <span></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="banner-image">
-                            <img src="assets/img/home-two/image.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="creative-shape">
-                <img src="assets/img/main-banner-shape/home-shape-2.png" alt="main-image">
-            </div>
-            <div class="shape-dot">
-                <img src="assets/img/main-banner-shape/dot.png" alt="image">
-            </div>
+        <div class="text-center animation fade-in-right mt-5">
+          <button type="button" class="btn btn-outline-info btn-rounded  w-100"
+            data-mdb-ripple-color    = "dark"
+            data-mdb-toggle          = "animation"
+            data-mdb-animation-reset = "false"
+            data-mdb-animation       = "fade-out-left">
+            Discover Apps</button>
         </div>
-        <!-- End Main Banner Two Area -->
 
-        <!-- Start Services Section -->
-        <section class="services-section pt-100 pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <span>Our Services</span>
-                    <h3>Expolre Our Data Services</h3>
-                </div>
+      </div>
+    </div>
+    <!-- End your project here-->
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-big-data"></i>
-                            </div>
-                            <h3>Big Data</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <script src="js/main.js"></script>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-data-analytics"></i>
-                            </div>
-                            <h3>Data Analytics</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- JQuery -->
+    <script src = "https://filedn.eu/l59pfB3ibCbBAOoojMSgwuL/cdn/signalregistry/vendor/jquery-3.6.4.min.js"></script>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-document"></i>
-                            </div>
-                            <h3>Managed Analytics</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- MDBPro -->
+    <script src = "https://filedn.eu/l59pfB3ibCbBAOoojMSgwuL/cdn/signalregistry/theme/mdbpro6.0.1/js/mdb.min.js"></script>
+    <script src = "https://filedn.eu/l59pfB3ibCbBAOoojMSgwuL/cdn/signalregistry/theme/mdbpro6.0.1/plugins/js/treeview.min.js"></script>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-chart"></i>
-                            </div>
-                            <h3>Business Intelligence</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <script>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-science"></i>
-                            </div>
-                            <h3>Data Science</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+      $('[data-mdb-animation=fade-out-left]').on('click', () => {
+        const element = $('[data-mdb-animation=fade-out-right]').parent()[0];
+        const animate = new mdb.Animate(element, { animation: 'fade-out-right', });
+        animate.init();
+        animate.startAnimation()
+      })
+      $('[data-mdb-animation=fade-out-right]').on('click', () => {
+        const element = $('[data-mdb-animation=fade-out-left]').parent()[0];
+        const animate = new mdb.Animate(element, { animation: 'fade-out-left', });
+        animate.init();
+        animate.startAnimation()
+      })
+    </script>
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-services-box">
-                            <div class="icon">
-                                <i class="flaticon-data-management"></i>
-                            </div>
-                            <h3>Data Management</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum </p>
-                            <div class="services-btn">
-                                <a href="single-services.html" class="services-btn-one">
-                                    Read More
-                                    <i class="flaticon-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Services Section -->
+</body>
 
-        <!-- Start About Section -->
-        <section class="about-section pb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-image">
-                            <img src="assets/img/about.png" alt="image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <span>About Us</span>
-                            <h3>Focused on Actionable Insights</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-
-                            <ul class="about-list">
-                                <li>
-                                    <i class="flaticon-tick"></i>
-                                    Professional Consultancy Service
-                                </li>
-                                <li>
-                                    <i class="flaticon-tick"></i>
-                                    24/7 Support Center
-                                </li>
-                                <li>
-                                    <i class="flaticon-tick"></i>
-                                    Custom Service & Operation
-                                </li>
-                                <li>
-                                    <i class="flaticon-tick"></i>
-                                    Advanced Advisory Team
-                                </li>
-                            </ul>
-
-                            <div class="about-btn">
-                                <a class="default-btn" href="about.html">
-                                    Read More 
-                                    <span></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End About Section -->
-
-        <!-- Start Fun Facts Section -->
-        <section class="fun-facts-area ptb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="820">00</span>
-                                <span class="sign-icon">+</span>
-                            </h3>
-                            <p>Data Analytics</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="150">00</span>
-                                <span class="sign-icon">+</span>
-                            </h3>
-                            <p>Data Management</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="20">00</span>
-                                <span class="sign-icon">+</span>
-                            </h3>
-                            <p>Managed  Analytics</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="120">00</span>
-                                <span class="sign-icon">+</span>
-                            </h3>
-                            <p>Big Data</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Fun Facts Section -->
-
-        <!-- Start Process Section -->
-        <section class="process-section pt-100 pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <span>Our Working Process</span>
-                    <h3>Software Testing Process</h3>
-                </div>
-
-                <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="process-item">
-                            <div class="process-image">
-                                <img src="assets/img/process/1.png" alt="image">
-                            </div>
-                            <div class="process-content">
-                                <h3>Planning</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                                <div class="process-btn">
-                                    <a href="single-projects.html" class="process-btn-one">
-                                        Read More
-                                        <i class="flaticon-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="process-item">
-                            <div class="process-image">
-                                <img src="assets/img/process/2.png" alt="image">
-                            </div>
-                            <div class="process-content">
-                                <h3>Design & Execution</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                                <div class="process-btn">
-                                    <a href="single-projects.html" class="process-btn-one">
-                                        Read More
-                                        <i class="flaticon-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                        <div class="process-item">
-                            <div class="process-image">
-                                <img src="assets/img/process/3.png" alt="image">
-                            </div>
-                            <div class="process-content">
-                                <h3>Analytics Projects</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                                <div class="process-btn">
-                                    <a href="single-projects.html" class="process-btn-one">
-                                        Read More
-                                        <i class="flaticon-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Process Section -->
-
-        <!-- Start Software Section -->
-        <section class="software-section pb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="software-content">
-                            <span>Our Working Process</span>
-                            <h2>Software Developement Services</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices Lorem Ipsum is simply dummy text.</p>
-
-                            <ul class="features-list">
-                                <li>
-                                    <span>Software Development</span>
-                                </li>
-                                <li>
-                                    <span>Automatic Optimization</span>
-                                </li>
-                                <li>
-                                    <span>Applicatication Services</span>
-                                </li>
-                                <li>
-                                    <span>IT Security Services</span>
-                                </li>
-                                <li>
-                                    <span>Data Analytics</span>
-                                </li>
-                                <li>
-                                    <span>System Integration Service</span>
-                                </li>
-                                <li>
-                                    <span>Help Desk Services</span>
-                                </li>
-                                <li>
-                                    <span>API Integration Service</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="software-image">
-                            <img src="assets/img/software.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Software Section -->
-
-        <!-- Start Testimonial Section -->
-        <section class="testimonial-section ptb-100">
-            <div class="container">
-                <div class="section-title">
-                    <span>Testimonial</span>
-                    <h3>What Our Client Say</h3>
-                </div>
-
-                <div class="testimonial-slider owl-carousel owl-theme">
-                    <div class="testimonial-single-item">
-                        <div class="testimonial-image">
-                            <img src="assets/img/client/1.jpg" alt="image">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Richard Denial</h3>
-                            <span>IT Executive</span>
-                        </div>
-                        <div class="testimonial-content">
-                            <div class="icon">
-                                <i class="flaticon-quote"></i>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-single-item">
-                        <div class="testimonial-image">
-                            <img src="assets/img/client/2.jpg" alt="image">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Sarah Taylor</h3>
-                            <span>Lead Architecure</span>
-                        </div>
-                        <div class="testimonial-content">
-                            <div class="icon">
-                                <i class="flaticon-quote"></i>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-single-item">
-                        <div class="testimonial-image">
-                            <img src="assets/img/client/1.jpg" alt="image">
-                        </div>
-                        <div class="testimonial-info">
-                            <h3>Alastair Cook</h3>
-                            <span>Marketing Manager</span>
-                        </div>
-                        <div class="testimonial-content">
-                            <div class="icon">
-                                <i class="flaticon-quote"></i>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-shape">
-                <img src="assets/img/shape/testimonial-shape-1.png" alt="main-image">
-            </div>
-            <div class="testimonial-shape-img1">
-                <img src="assets/img/shape/testimonial-shape-2.png" alt="image">
-            </div>
-            <div class="testimonial-shape-img2">
-                <img src="assets/img/shape/testimonial-shape-3.png" alt="image">
-            </div>
-        </section>
-        <!-- End Testimonial Section -->
-
-        <!-- Start Productive Section -->
-        <section class="productive-section pt-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="productive-content">
-                            <span>Let’s Get Started</span>
-                            <h3>Are you ready for a better, more productive business </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices Lorem Ipsum is simply dummy text.</p>
-
-                            <div class="productive-btn">
-                                <a class="productive-btn" href="projects.html">
-                                    Get Started Project 
-                                    <span></span>
-                                </a>
-                                <a href="contact.html" class="productive-btn-one">
-                                    Contact With Us
-                                    <span></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="productive-image">
-                            <img src="assets/img/productive.png" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Productive Section -->
-
-        <!-- Start Blog Section -->
-        <section class="blog-section pt-100 pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <span>Blog</span>
-                    <h3>Recent Blog</h3>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <a href="single-blog.html">
-                                    <img src="assets/img/blog/3.png" alt="image">
-                                </a>
-                            </div>
-
-                            <div class="single-blog-item">
-                                <ul class="blog-list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user-alt"></i> 
-                                            Admin
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fas fa-calendar-week"></i>
-                                            7 Dec 2024
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-comments"></i> 
-                                        3 Comments
-                                    </li>
-                                </ul>
-                                <div class="blog-content">
-                                    <h3>
-                                        <a href="single-blog.html">
-                                            Startup Marketing Solution for Business Owner
-                                        </a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                                    <div class="blog-btn">
-                                        <a href="single-blog.html" class="blog-btn-one">
-                                            Read More
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div> 
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <a href="single-blog.html">
-                                    <img src="assets/img/blog/4.png" alt="image">
-                                </a>
-                            </div>
-
-                            <div class="single-blog-item">
-                                <ul class="blog-list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user-alt"></i> 
-                                            Admin
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fas fa-calendar-week"></i>
-                                            7 Dec 2024
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-comments"></i> 
-                                        3 Comments
-                                    </li>
-                                </ul>
-                                <div class="blog-content">
-                                    <h3>
-                                        <a href="single-blog.html">
-                                            Web Developement Best Work in Future World
-                                        </a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                                    <div class="blog-btn">
-                                        <a href="single-blog.html" class="blog-btn-one">
-                                            Read More
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div> 
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <a href="single-blog.html">
-                                    <img src="assets/img/blog/5.png" alt="image">
-                                </a>
-                            </div>
-
-                            <div class="single-blog-item">
-                                <ul class="blog-list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user-alt"></i> 
-                                            Admin
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fas fa-calendar-week"></i>
-                                            7 Dec 2024
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-comments"></i> 
-                                        3 Comments
-                                    </li>
-                                </ul>
-                                <div class="blog-content">
-                                    <h3>
-                                        <a href="single-blog.html">
-                                            Creative solutions to improve your business!
-                                        </a>
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                                    <div class="blog-btn">
-                                        <a href="single-blog.html" class="blog-btn-one">
-                                            Read More
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Blog Section -->
-
-        <!-- Partner section -->
-        <section class="partner-section pt-100 pb-70">
-            <div class="container">
-                <div class="partner-title">
-                    <span>Customer</span>
-                    <h3>Discover Customer Successful Stories</h3>
-                </div>
-
-                <div class="partner-list">
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/1.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/2.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/3.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/4.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/5.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/6.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/7.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/8.png" alt="image">
-                        </a>
-                    </div>
-
-                    <div class="partner-item">
-                        <a href="partner.html">
-                            <img src="assets/img/partner/1.png" alt="image">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="partner-shape">
-                <img src="assets/img/shape/partnar-shape-1.png" alt="main-image">
-            </div>
-            <div class="partner-shape-img1">
-                <img src="assets/img/shape/partnar-shape-2.png" alt="image">
-            </div>
-        </section>
-        <!-- End Partner section -->
-
-        <!-- Start Subscribe Area -->
-        <section class="subscribe-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="subscribe-content">
-                            <h2>Sign Up For Newsletter</h2>
-                            <span class="sub-title">And Receive 40% Discount On First Project</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <form class="newsletter-form">
-                            <input type="email" class="input-newsletter" placeholder="Enter your email" name="EMAIL" required autocomplete="off">
-                            <button type="submit">Subscribe Now</button>
-                            <div id="validator-newsletter" class="form-result"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Subscribe Area -->
-
-        <!-- Start Footer Section -->
-        <section class="footer-section ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <div class="footer-heading">
-                                <h3>About Us</h3>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra  </p>
-                            <ul class="footer-social">
-                                <li>
-                                     <a href="https://www.facebook.com/login/" target="_blank">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="https://twitter.com/login" target="_blank">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="https://www.pinterest.com/" target="_blank">
-                                        <i class="fab fa-pinterest"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="https://www.linkedin.com/login" target="_blank">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <div class="footer-heading">
-                                <h3>Important Links</h3>
-                            </div>
-
-                            <ul class="footer-quick-links">
-                                <li>
-                                    <a href="about.html">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="projects.html">Project</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Services</a>
-                                </li>
-                                <li>
-                                    <a href="team.html">Team</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>    
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <div class="footer-heading">
-                                <h3>Featured Service</h3>
-                            </div>
-                            <ul class="footer-quick-links">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="blog-1.html">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Services</a>
-                                </li>
-                                <li>
-                                    <a href="partner.html">Client</a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>    
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="single-footer-widget">
-                            <div class="footer-heading">
-                                <h3>Contact</h3>
-                            </div>
-
-                            <div class="footer-info-contact">
-                                <i class="flaticon-call-answer"></i>
-                                <h3>Phone</h3>
-                                <span><a href="tel:+882-569-756">+123(456)123</a></span>
-                            </div>
-
-                            <div class="footer-info-contact">
-                                <i class="flaticon-envelope"></i>
-                                <h3>Email</h3>
-                                <span><a href="mailto:hello@plamb.com">hello@plamb.com</a></span>
-                            </div>
-
-                            <div class="footer-info-contact">
-                                <i class="flaticon-maps-and-flags"></i>
-                                <h3>Address</h3>
-                                <span>32 st Kilda Road, Melbourne VIC, 3004 Australia</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-
-            <div class="partner-shape-img1">
-                <img src="assets/img/shape/partnar-shape-2.png" alt="image">
-            </div>
-        </section>
-        <!-- End Footer Section -->
-
-        <!-- Start Copy Right Section -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <p>
-                            Copyright <span>Plamb</span> All Rights Reserved by <a href="https://envytheme.com/">EnvyTheme</a>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <ul>
-                            <li>
-                                <a href="terms-condition.html">Terms & Conditions</a>
-                            </li>
-                            <li>
-                                <a href="privacy-policy.html">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Copy Right Section -->
-
-        <!-- Start Go Top Section -->
-        <div class="go-top">
-            <i class="fas fa-chevron-up"></i>
-            <i class="fas fa-chevron-up"></i>
-        </div>
-        <!-- End Go Top Section -->
-
-        <!-- jQuery Min JS -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap Min JS -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!-- MeanMenu JS  -->
-        <script src="assets/js/jquery.meanmenu.js"></script>
-        <!-- Appear Min JS -->
-        <script src="assets/js/jquery.appear.min.js"></script>
-        <!-- Odometer Min JS -->
-        <script src="assets/js/odometer.min.js"></script>
-        <!-- Owl Carousel Min JS -->
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <!-- Magnific Popup Min JS -->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!-- Nice Select Min JS -->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!-- Ajaxchimp Min JS -->
-        <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-        <!-- WOW Min JS -->
-        <script src="assets/js/wow.min.js"></script>
-        <!-- Form Validator Min JS -->
-        <script src="assets/js/form-validator.min.js"></script>
-        <!-- Contact Form Min JS -->
-        <script src="assets/js/contact-form-script.js"></script>
-        <!-- Main JS -->
-        <script src="assets/js/main.js"></script>
-    </body>
 </html>

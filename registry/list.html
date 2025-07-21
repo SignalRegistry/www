@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List | Signal Registry</title>
+</head>
+
+<body>
+
+  <form id="add_data" name="new_data">
+    Name : <input type="text" name="name">
+    <br>
+    Data : <input type="text" name="data">
+    <br>
+    <input type="submit" name="add" value="Add">
+  </form>
+
+  <!-- <form action=""></form>
+  <input type="text" name="id" maxlength="30" value="">Lorem ipsum
+  <input type="text" name="pw" maxlength="30" value="">
+  <input type="submit" name="submit" value="Login"> -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>Owner</th>
+        <th>Name</th> 
+        <th>Create Date</th>
+        <th>Last Update</th>
+        <th>Count</th>
+        <th>Type(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    <tfoot>
+      <!-- <tr>
+        <td>Foot 1</td>
+        <td>Foot 1</td>
+        <td>Foot 2</td>
+        <td>Foot 2</td>
+        <td>Foot 2</td>
+        <td>Foot 2</td>
+      </tr> -->
+    </tfoot>
+  </table>
+
+
+  <!-- JQuery -->
+  <script src="https://filedn.eu/l59pfB3ibCbBAOoojMSgwuL/cdn/signalregistry/vendor/jquery-3.7.1.min.js"></script>
+
+  <script src="/js/main.js"></script>
+
+  <script>
+    $.ajaxSetup({
+      dataType: 'json',
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true
+    })
+
+    $.get(`${api_url}/list`, (result) => {
+      console.log(result)
+      for(let i=0; i<result.length; i++){
+        console.log(result[i].type)
+        $("tbody").append(`
+        <tr>
+          <td>${result[i].owner}</td>
+          <td>${result[i].name}</td>
+          <td>${result[i].create_date}</td>
+          <td>${result[i].last_update}</td>
+          <td>${result[i].count}</td>
+          <td>${result[i].types}</td>
+        </tr>
+        `)
+      }
+    })
+
+    // https://www.learnwithjason.dev/blog/get-form-values-as-json/
+    const add_data_form = document.querySelector('#add_data')
+    add_data_form.addEventListener('submit', addDataSubmitHandle)
+    function addDataSubmitHandle(event) {
+      event.preventDefault();
+      const form_data      = new FormData(event.target);
+      const form_data_json = Object.fromEntries(form_data.entries());
+      const name           = form_data_json.name
+      form_data_json.data  = Array.from(form_data_json.data)
+      delete form_data_json.name
+      // const form_data_array = Array.from(form_data_json.data)
+      // console.log(form_data_json);
+      $.ajax({
+        url  : `${api_url}/list/${name}`,
+        type : 'PUT',
+        data : form_data_json,
+        success: function(result) {
+          console.log(result)
+        }
+      });
+    }
+
+  </script>
+
+
+</body>
+
+</html>
