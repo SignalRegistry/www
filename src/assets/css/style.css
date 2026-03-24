@@ -862,6 +862,24 @@ Navbar Area CSS
   .plamb-responsive-nav .logo .black-logo {
     display: none;
   }
+  .plamb-responsive-nav .logo .navbar-brand.logo-text {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff !important;
+    white-space: nowrap;
+  }
+  .navbar-area.is-sticky .plamb-responsive-nav .logo .navbar-brand.logo-text {
+    color: #393953 !important;
+  }
+  .plamb-responsive-nav .logo .navbar-brand.logo-text .fa-bolt {
+    font-size: 0.9em;
+  }
   .plamb-nav {
     display: none;
   }
@@ -6629,54 +6647,4 @@ Buy Now Btn
             transform: scale3d(1, 1, 1);
   }
 }
-/*=================================
-Signal Registry UI screenshot cards
-====================================*/
-.ui-shot-card {
-  position: relative;
-  padding: 4px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 176, 238, 0.35), rgba(62, 87, 208, 0.25));
-  border: 2px solid rgba(0, 176, 238, 0.5);
-  -webkit-box-shadow: 0 12px 32px rgba(0, 176, 238, 0.2);
-          box-shadow: 0 12px 32px rgba(0, 176, 238, 0.2);
-}
-
-.ui-shot-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0, 176, 238, 0.25), rgba(62, 87, 208, 0.15));
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  border-radius: 12px;
-}
-
-.ui-shot-card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  position: relative;
-  z-index: 0;
-}
-
-.ui-shot-card--hero {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  -webkit-transition: -webkit-transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  transition: -webkit-transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
-}
-
-.ui-shot-card--hero:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  border-color: rgba(0, 176, 238, 0.75);
-  -webkit-box-shadow: 0 20px 48px rgba(0, 176, 238, 0.3);
-          box-shadow: 0 20px 48px rgba(0, 176, 238, 0.3);
-}
-
 /*# sourceMappingURL=style.css.map */

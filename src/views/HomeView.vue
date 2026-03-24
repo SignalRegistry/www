@@ -14,16 +14,16 @@ const email = ref('')
         <div class="container">
           <div class="plamb-responsive-menu">
             <div class="logo">
-              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="plamb-nav">
+      <div class="plamb-nav home-desktop-nav">
         <div class="container">
           <nav class="navbar navbar-expand-md navbar-light">
-            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li class="nav-item">
@@ -261,3 +261,15 @@ const email = ref('')
     <!-- Start Go Top Section -->
   </div>
 </template>
+
+<style scoped>
+@media only screen and (max-width: 822px) {
+  .plamb-responsive-nav {
+    display: block !important;
+  }
+
+  .home-desktop-nav {
+    display: none !important;
+  }
+}
+</style>

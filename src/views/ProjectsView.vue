@@ -2,18 +2,18 @@
 import { RouterLink } from 'vue-router'
 import { getAssetImg } from '@/utils/getAssetImg'
 
-const projectsHeroBg = getAssetImg('project/project-hero-dashboard.png')
+const projectsHeroBg = getAssetImg('projects_image.jpg')
 </script>
 
 <template>
-  <div>
+  <div class="centered-logo-mobile">
     <!-- Navbar -->
     <div class="navbar-area">
       <div class="plamb-responsive-nav">
         <div class="container">
           <div class="plamb-responsive-menu">
             <div class="logo">
-              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@ const projectsHeroBg = getAssetImg('project/project-hero-dashboard.png')
       <div class="plamb-nav">
         <div class="container">
           <nav class="navbar navbar-expand-md navbar-light">
-            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li class="nav-item"><RouterLink to="/about" class="nav-link">About Us</RouterLink></li>
@@ -241,8 +241,6 @@ const projectsHeroBg = getAssetImg('project/project-hero-dashboard.png')
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 24px 0 24px 24px;
-  overflow: hidden;
 }
 .page-title-area--projects::before {
   content: '';
@@ -250,6 +248,5 @@ const projectsHeroBg = getAssetImg('project/project-hero-dashboard.png')
   inset: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 0;
-  border-radius: inherit;
 }
 </style>

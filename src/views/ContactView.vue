@@ -6,14 +6,14 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
 </script>
 
 <template>
-  <div>
+  <div class="centered-logo-mobile">
     <!-- Start Navbar Area -->
     <div class="navbar-area">
       <div class="plamb-responsive-nav">
         <div class="container">
           <div class="plamb-responsive-menu">
             <div class="logo">
-              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
       <div class="plamb-nav">
         <div class="container">
           <nav class="navbar navbar-expand-md navbar-light">
-            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> Signal Registry</RouterLink>
+            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li class="nav-item">
