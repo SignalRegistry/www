@@ -161,6 +161,25 @@ import { getAssetImg } from '@/utils/getAssetImg'
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6">
             <p>© 2026 Signal Registry by Sinyatek. All rights reserved.</p>
+            <div class="single-footer-widget">
+              <ul class="footer-social copyright-social">
+                <li>
+                  <a href="https://www.facebook.com/login/" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-f" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/login" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="col-lg-6 col-md-6">
             <ul>

@@ -1,3 +1,7 @@
+.copyright-social {
+  display: none;
+}
+
 @media only screen and (max-width: 767px) {
   .plamb-responsive-nav .container {
     max-width: 100%;
@@ -527,6 +531,50 @@
   }
   .pricing-tab .tabs li a {
     padding: 10px 20px 11px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .copyright-social {
+    display: block !important;
+  }
+  .footer-section {
+    background-image: none !important;
+    background-color: transparent !important;
+  }
+  .footer-section::before {
+    opacity: 0 !important;
+    background-color: transparent !important;
+  }
+  .footer-section .lines {
+    display: none !important;
+  }
+  .footer-section .partner-shape-img1 {
+    display: none !important;
+  }
+  .copyright-area .container .row {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .copyright-area .container .row > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .footer-section .container .row > div:nth-child(1) {
+    display: none !important;
+  }
+  .footer-section .container .row > div:nth-child(2) {
+    display: none !important;
+  }
+  .footer-section .container .row > div:nth-child(3) {
+    display: none !important;
+  }
+  .footer-section .container .row > div:nth-child(4) {
+    display: none !important;
+  }
+  .footer-section.ptb-100 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
