@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import NavThemeToggle from '@/components/NavThemeToggle.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const openIndex = ref(0)
@@ -66,6 +67,7 @@ function toggleAccordion(index) {
                   Free Quote
                   <span />
                 </RouterLink>
+                <NavThemeToggle />
               </div>
             </div>
           </nav>

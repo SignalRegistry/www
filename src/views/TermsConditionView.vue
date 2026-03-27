@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import NavThemeToggle from '@/components/NavThemeToggle.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 </script>
 
@@ -30,6 +31,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
               </ul>
               <div class="other-option">
                 <RouterLink class="default-btn" to="/pricing">Free Quote <span /></RouterLink>
+                <NavThemeToggle />
               </div>
             </div>
           </nav>

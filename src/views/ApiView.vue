@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import NavThemeToggle from '@/components/NavThemeToggle.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const apiHeroBg = getAssetImg('api_image.webp')
@@ -24,6 +25,9 @@ const apiHeroBg = getAssetImg('api_image.webp')
   color: #475569;
   line-height: 1.65;
   margin-bottom: 2rem;
+}
+:deep(.theme-dark .api-doc .lead) {
+  color: #ffffff !important;
 }
 .api-doc :deep(h2) {
   font-size: 1.35rem;
@@ -54,25 +58,58 @@ const apiHeroBg = getAssetImg('api_image.webp')
 }
 .api-doc :deep(.table) {
   margin-bottom: 1.5rem;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  font-size: 0.9rem;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.22);
+  font-size: 0.92rem;
+  background: var(--api-code-bg);
+  border: 1px solid #334155;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 .api-doc :deep(.table thead th) {
-  background: var(--api-bg);
-  color: #0f172a;
-  font-weight: 600;
-  padding: 0.85rem 1rem;
-  border-bottom: 2px solid var(--api-border);
+  background: linear-gradient(180deg, #0f172a 0%, #16233a 100%);
+  color: #f8fafc;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #334155;
+  border-right: 1px solid #334155;
+}
+.api-doc :deep(.table thead th:last-child) {
+  border-right: none;
 }
 .api-doc :deep(.table td) {
-  padding: 0.75rem 1rem;
+  background: var(--api-code-bg);
+  color: #e2e8f0;
+  padding: 0.85rem 1rem;
   vertical-align: top;
-  border-color: var(--api-border);
+  border-color: #334155;
+  border-top: 1px solid #334155;
+}
+.api-doc :deep(.table tbody tr:nth-child(even) td) {
+  background: #243449;
 }
 .api-doc :deep(.table tbody tr:hover) {
-  background: #fafbfc;
+  background: #2b3b52;
+}
+.api-doc :deep(.table tbody tr:hover td) {
+  background: #2b3b52;
+  transition: background-color 0.18s ease;
+}
+.api-doc :deep(.table td:first-child),
+.api-doc :deep(.table th:first-child) {
+  width: 120px;
+  white-space: nowrap;
+}
+.api-doc :deep(.table td code) {
+  border-radius: 8px;
+  padding: 0.22rem 0.5rem;
+}
+.api-doc :deep(.table .method-badge) {
+  min-width: 54px;
+  text-align: center;
+  font-weight: 700;
 }
 .api-doc :deep(.table code) {
   background: var(--api-bg);
@@ -112,12 +149,28 @@ const apiHeroBg = getAssetImg('api_image.webp')
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
 }
 .api-doc :deep(.api-section) {
-  background: #fff;
-  border: 1px solid var(--api-border);
+  background: var(--api-code-bg);
+  border: 1px solid #334155;
   border-radius: 12px;
   padding: 1.5rem 1.75rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.22);
+}
+.api-doc :deep(.api-section h3) {
+  color: #f8fafc;
+}
+.api-doc :deep(.api-section p),
+.api-doc :deep(.api-section ul),
+.api-doc :deep(.api-section ol),
+.api-doc :deep(.api-section li),
+.api-doc :deep(.api-section td),
+.api-doc :deep(.api-section th) {
+  color: #e2e8f0;
+}
+.api-doc :deep(.api-section code) {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #bae6fd;
 }
 .page-title-area--api {
   background-color: #000;
@@ -131,6 +184,26 @@ const apiHeroBg = getAssetImg('api_image.webp')
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
   z-index: 0;
+}
+</style>
+<style>
+.theme-dark .api-doc .lead {
+  color: #ffffff !important;
+}
+.theme-dark .api-doc .api-endpoint-note {
+  color: #ffffff !important;
+}
+.theme-dark .api-doc .api-registry-note {
+  color: #ffffff !important;
+}
+.theme-dark .api-doc .api-success-note {
+  color: #ffffff !important;
+}
+.theme-dark .api-doc .api-response-note {
+  color: #ffffff !important;
+}
+.theme-dark .api-doc .api-related-note {
+  color: #ffffff !important;
 }
 </style>
 
@@ -170,6 +243,7 @@ const apiHeroBg = getAssetImg('api_image.webp')
                   Free Quote
                   <span />
                 </RouterLink>
+                <NavThemeToggle />
               </div>
             </div>
           </nav>
@@ -262,7 +336,7 @@ const apiHeroBg = getAssetImg('api_image.webp')
               </div>
 
               <h2 id="4-endpoints">4. Endpoint reference</h2>
-              <p>Paths below are used with <code>{baseUrl}</code>. Example: <code>GET {baseUrl}/user</code>.</p>
+              <p class="api-endpoint-note">Paths below are used with <code>{baseUrl}</code>. Example: <code>GET {baseUrl}/user</code>.</p>
               <h3>4.1 Session and user</h3>
               <div class="api-section">
                 <table class="table table-bordered">
@@ -339,8 +413,8 @@ const apiHeroBg = getAssetImg('api_image.webp')
               </div>
 
               <h2 id="5-subdomain">5. Registry subdomain</h2>
-              <p>Flow and source data for a given registry are accessed via the registry-specific host:</p>
-              <p><strong>Base URL:</strong> <code>https://{registryId}.signalregistry.net</code><br>(<code>registryId</code> = the registry’s ID.)</p>
+              <p class="api-registry-note">Flow and source data for a given registry are accessed via the registry-specific host:</p>
+              <p class="api-registry-note"><strong>Base URL:</strong> <code>https://{registryId}.signalregistry.net</code><br>(<code>registryId</code> = the registry’s ID.)</p>
               <h3>5.1 Flows</h3>
               <div class="api-section">
                 <p>Nodes, edges, and viewport data in the record editor are stored and read via these endpoints.</p>
@@ -416,7 +490,7 @@ Content-Type: application/json
   "username": "user",
   "password": "secret"
 }</code></pre>
-              <p>Success response (example): <code>{ "id": "...", "user": { ... }, "role": "...", "origin": "..." }</code></p>
+              <p class="api-success-note">Success response (example): <code>{ "id": "...", "user": { ... }, "role": "...", "origin": "..." }</code></p>
               <h3>7.2 Session check</h3>
               <pre class="api-code"><code>GET https://api0.signalregistry.net/session
 (Cookie or auth header required by server)</code></pre>
@@ -432,7 +506,7 @@ Content-Type: application/json
 Content-Type: application/json
 
 {}</code></pre>
-              <p>Response (example): <code>{ "id": "abc123", ... }</code> or <code>{ "_id": "abc123", ... }</code></p>
+              <p class="api-response-note">Response (example): <code>{ "id": "abc123", ... }</code> or <code>{ "_id": "abc123", ... }</code></p>
               <h3>7.5 Single registry and delete</h3>
               <pre class="api-code"><code>GET https://api0.signalregistry.net/registry/abc123
 DELETE https://api0.signalregistry.net/registry/abc123</code></pre>
@@ -452,12 +526,10 @@ Content-Type: application/json
 
 { ... }</code></pre>
 
-              <hr>
-
               <h2>Related docs</h2>
               <ul>
-                <li><strong>API configuration</strong> — Client-side base URL and environment selection</li>
-                <li><strong>Authentication and session</strong> — Session checks and router guard</li>
+                <li class="api-related-note"><strong>API configuration</strong> — Client-side base URL and environment selection</li>
+                <li class="api-related-note"><strong>Authentication and session</strong> — Session checks and router guard</li>
               </ul>
           </div>
         </div>

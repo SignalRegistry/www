@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import NavThemeToggle from '@/components/NavThemeToggle.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 const email = ref('')
 
@@ -12,7 +13,7 @@ const email = ref('')
     <div class="navbar-area">
       <div class="plamb-responsive-nav">
         <div class="container">
-          <div class="plamb-responsive-menu">
+            <div class="plamb-responsive-menu">
             <div class="logo">
               <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
             </div>
@@ -43,6 +44,7 @@ const email = ref('')
                   Free Quote
                   <span />
                 </RouterLink>
+                <NavThemeToggle />
               </div>
             </div>
           </nav>

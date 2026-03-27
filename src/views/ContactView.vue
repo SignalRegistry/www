@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import NavThemeToggle from '@/components/NavThemeToggle.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const contactHeroBg = getAssetImg('contactUs.jpg')
@@ -42,6 +43,7 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
                   Free Quote
                   <span />
                 </RouterLink>
+                <NavThemeToggle />
               </div>
             </div>
           </nav>
