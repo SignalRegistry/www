@@ -247,6 +247,37 @@ Default CSS
   background-color: #0e0e0e;
 }
 
+.theme-dark .home-feature-grid-section {
+  background-color: #0e0e0e;
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card {
+  background-color: #16161d;
+  border-color: #242435;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card:hover {
+  border-color: rgba(0, 176, 238, 0.45);
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card .home-feature-icon {
+  background-color: #1f1f2a;
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card .home-feature-icon i {
+  color: #00b0ee;
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card h3 {
+  color: #ffffff;
+}
+
+.theme-dark .home-feature-grid-section .home-feature-card p {
+  color: #d0d0d4;
+}
+
 .theme-dark .subscribe-area {
   background-color: #000000;
 }
@@ -278,8 +309,16 @@ Default CSS
 }
 
 .theme-dark .footer-section::before {
+  display: none;
+}
+
+.theme-dark .footer-section {
+  background-image: none;
   background-color: #0e0e0e;
-  opacity: .90;
+}
+
+.theme-dark .copyright-area {
+  background-color: #0e0e0e;
 }
 
 .theme-dark .main-banner-area {
@@ -326,6 +365,46 @@ Default CSS
 
 .theme-dark .subscribe-content-area {
   background-color: #16161d;
+}
+
+.theme-dark .pricing-subscribe-panel {
+  background: #16161d;
+  border-color: #2a2a3a;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.theme-dark .pricing-subscribe-panel .subscribe-content p {
+  color: #d1d1d8;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter {
+  background-color: #0e0e0e;
+  border-color: #2d2d3f;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter::-webkit-input-placeholder {
+  color: #bfc2d2;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter:-ms-input-placeholder {
+  color: #bfc2d2;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter::-ms-input-placeholder {
+  color: #bfc2d2;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter::placeholder {
+  color: #bfc2d2;
+}
+
+.theme-dark .pricing-subscribe-panel .newsletter-form button {
+  border-radius: 8px;
 }
 
 .theme-dark .main-banner-four {
@@ -428,6 +507,58 @@ Default CSS
 
 .theme-dark .single-pricing-box .pricing-features li {
   color: #ffffff;
+}
+
+.theme-dark .pricing-area-modern {
+  background-color: #05070d;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card {
+  background: #06080f;
+  border-color: #1f2840;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .pricing-header h3 {
+  color: #ffffff;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .pricing-header p {
+  color: #b6bed1;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .price {
+  color: #ffffff;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .price span {
+  color: #c3c9d8;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .price-btn .price-btn-one {
+  border-color: #2b3347;
+  background: #101625;
+  color: #e9eefc;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .price-btn .price-btn-one:hover {
+  background: #00b0ee;
+  border-color: #00b0ee;
+  color: #ffffff;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .pricing-features li {
+  color: #e6ebf7;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card .pricing-features li i {
+  color: #ffffff;
+}
+
+.theme-dark .pricing-area-modern .modern-pricing-card.featured {
+  border-color: #2f4f9d;
+  background: radial-gradient(100% 140% at 50% 100%, rgba(25, 59, 151, 0.55) 0%, #070b14 58%);
 }
 
 .theme-dark .product-details-desc .price {

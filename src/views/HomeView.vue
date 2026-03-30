@@ -1,9 +1,7 @@
 <script setup>
-import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
-const email = ref('')
 
 </script>
 
@@ -46,38 +44,6 @@ const email = ref('')
       </div>
     </div>
 
-    <!-- Start About Section -->
-    <section class="about-section pb-100">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="about-image">
-              <img :src="getAssetImg('about.png')" alt="image">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="about-content">
-              <span>Why Signal Registry</span>
-              <h3>Track signal records in a single interface</h3>
-              <p>Signal Registry is Sinyatek's signal registration tracking and management panel. Summary cards, trend and channel charts, unit table, and record editing on one screen—secure access with login and session control.</p>
-              <ul class="about-list">
-                <li><i class="flaticon-tick" />Summary cards, trend and channel charts</li>
-                <li><i class="flaticon-tick" />Draggable, customizable views</li>
-                <li><i class="flaticon-tick" />Unit table and record editor (connections/nodes)</li>
-                <li><i class="flaticon-tick" />Environment selection (localhost, staging, production)</li>
-              </ul>
-              <div class="about-btn">
-                <RouterLink class="default-btn" to="/about">
-                  Read More
-                  <span />
-                </RouterLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Start Productive Section -->
     <section class="productive-section pt-100">
       <div class="container">
@@ -108,29 +74,67 @@ const email = ref('')
       </div>
     </section>
 
-    <!-- Start Subscribe Area -->
-    <section class="subscribe-area">
+    <!-- Start Home Features Section -->
+    <section class="home-feature-grid-section pt-100 pb-70">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6">
-            <div class="subscribe-content">
-              <h2>Sign Up For Newsletter</h2>
+        <div class="section-title">
+          <span>Core Benefits</span>
+          <h3>Built for fast and clear operations</h3>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="far fa-object-group" />
+              </div>
+              <h3>Best practices baked in</h3>
+              <p>Signal Registry keeps reusable, modular structures in place so your team can manage records faster and with fewer repeated steps.</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
-            <form class="newsletter-form" @submit.prevent>
-              <input
-                v-model="email"
-                type="email"
-                class="input-newsletter"
-                placeholder="Enter your email"
-                name="EMAIL"
-                required
-                autocomplete="off"
-              >
-              <button type="submit">Subscribe Now</button>
-              <div id="validator-newsletter" class="form-result" />
-            </form>
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="fas fa-bolt" />
+              </div>
+              <h3>Insane speed</h3>
+              <p>Move through tables, filters, and charts quickly to review records and make updates without slowing down your workflow.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="far fa-clock" />
+              </div>
+              <h3>Privacy-preserving</h3>
+              <p>Your data flow remains controlled and purpose-based, helping you process signal records with privacy and operational confidence.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="far fa-comment-alt" />
+              </div>
+              <h3>Multi-agentic</h3>
+              <p>Structure tasks into clear, modular operations so teams can collaborate and manage complex updates in a predictable way.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="far fa-life-ring" />
+              </div>
+              <h3>Keeps you in the loop</h3>
+              <p>Track each action with clear status and progress context so approvals and follow-ups happen without losing visibility.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="home-feature-card">
+              <div class="home-feature-icon">
+                <i class="far fa-user" />
+              </div>
+              <h3>Efficient for common operations</h3>
+              <p>Handle repetitive management tasks in fewer clicks and keep routine updates consistent across your signal registry.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -142,52 +146,32 @@ const email = ref('')
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>About Us</h3></div>
-              <p>Sinyatek provides the Signal Registry management panel application for tracking and managing signal registration data.</p>
-              <ul class="footer-social">
-                <li><a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook-f" /></a></li>
-                <li><a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter" /></a></li>
-                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin" /></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Important Links</h3></div>
+              <div class="footer-heading"><h3>Developers</h3></div>
               <ul class="footer-quick-links">
-                <li><RouterLink to="/about">About Us</RouterLink></li>
-                <li><RouterLink to="/projects">Project</RouterLink></li>
-                                <li><RouterLink to="/contact">Contact</RouterLink></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Featured Service</h3></div>
-              <ul class="footer-quick-links">
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li><RouterLink to="/contact">Contact</RouterLink></li>
+                <li><a href="https://github.com/SignalRegistry" target="_blank" rel="noopener">GitHub</a></li>
+                
+                <li><RouterLink to="/api">API</RouterLink></li>
+                
               </ul>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Contact</h3></div>
-              <div class="footer-info-contact">
-                <i class="flaticon-call-answer" />
-                <h3>Phone</h3>
-                <span><a href="tel:+882-569-756">+123(456)123</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-envelope" />
-                <h3>Email</h3>
-                <span><a href="mailto:iletisim@sinyatek.com">iletisim@sinyatek.com</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-maps-and-flags" />
-                <h3>Address</h3>
-                <span>Barış Koşu Yolu Caddesi, Gebze, Kocaeli - Kocaeli/Gebze</span>
-              </div>
+              <div class="footer-heading"><h3>Resources</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <div class="footer-heading"><h3>Stay in Touch</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="mailto:iletisim@sinyatek.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -207,31 +191,12 @@ const email = ref('')
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6">
-            <p>© 2026 Signal Registry by Sinyatek. All rights reserved.</p>
-            <div class="single-footer-widget">
-              <ul class="footer-social copyright-social">
-                <li>
-                  <a href="https://www.facebook.com/login/" target="_blank" rel="noopener">
-                    <i class="fab fa-facebook-f" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/login" target="_blank" rel="noopener">
-                    <i class="fab fa-twitter" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin" />
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <p>Copyright © 2026 Sinyatek. All Rights Reserved</p>
           </div>
           <div class="col-lg-6 col-md-6">
             <ul>
-              <li><RouterLink to="/terms-condition">Terms & Conditions</RouterLink></li>
               <li><RouterLink to="/privacy-policy">Privacy Policy</RouterLink></li>
+              <li><RouterLink to="/terms-condition">Terms & Conditions</RouterLink></li>
             </ul>
           </div>
         </div>

@@ -67,52 +67,32 @@ import { getAssetImg } from '@/utils/getAssetImg'
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>About Us</h3></div>
-              <p>Sinyatek, Signal Registry ile sinyal kayıt verilerini takip ve yönetmek için kullanılan yönetim paneli uygulamasını sunar.</p>
-              <ul class="footer-social">
-                <li><a href="https://www.facebook.com/login/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" /></a></li>
-                <li><a href="https://twitter.com/login" target="_blank" rel="noopener"><i class="fab fa-twitter" /></a></li>
-                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener"><i class="fab fa-linkedin" /></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Important Links</h3></div>
+              <div class="footer-heading"><h3>Developers</h3></div>
               <ul class="footer-quick-links">
-                <li><RouterLink to="/about">About Us</RouterLink></li>
-                <li><RouterLink to="/projects">Project</RouterLink></li>
-                                <li><RouterLink to="/contact">Contact</RouterLink></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Featured Service</h3></div>
-              <ul class="footer-quick-links">
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li><RouterLink to="/contact">Contact</RouterLink></li>
+                <li><a href="https://github.com/SignalRegistry" target="_blank" rel="noopener">GitHub</a></li>
+                
+                <li><RouterLink to="/api">API</RouterLink></li>
+                
               </ul>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Contact</h3></div>
-              <div class="footer-info-contact">
-                <i class="flaticon-call-answer" />
-                <h3>Phone</h3>
-                <span><a href="tel:+882-569-756">+123(456)123</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-envelope" />
-                <h3>Email</h3>
-                <span><a href="mailto:iletisim@sinyatek.com">iletisim@sinyatek.com</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-maps-and-flags" />
-                <h3>Address</h3>
-                <span>Barış Koşu Yolu Caddesi, Gebze, Kocaeli - Kocaeli/Gebze</span>
-              </div>
+              <div class="footer-heading"><h3>Resources</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <div class="footer-heading"><h3>Stay in Touch</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="mailto:iletisim@sinyatek.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+              </ul>
             </div>
           </div>
         </div>

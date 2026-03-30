@@ -296,6 +296,36 @@ $black-color: #000000;
         background-color: #0e0e0e;
     }
 
+    .home-feature-grid-section {
+        background-color: #0e0e0e;
+
+        .home-feature-card {
+            background-color: #16161d;
+            border-color: #242435;
+            box-shadow: none;
+
+            &:hover {
+                border-color: rgba(0, 176, 238, 0.45);
+            }
+
+            .home-feature-icon {
+                background-color: #1f1f2a;
+
+                i {
+                    color: $main-color;
+                }
+            }
+
+            h3 {
+                color: $white-color;
+            }
+
+            p {
+                color: #d0d0d4;
+            }
+        }
+    }
+
     .subscribe-area {
         background-color: $black-color;
     }
@@ -318,10 +348,16 @@ $black-color: #000000;
     }
 
     .footer-section {
+        background-image: none;
+        background-color: #0e0e0e;
+
         &::before {
-            background-color: #0e0e0e;
-            opacity: .90;
+            display: none;
         }
+    }
+
+    .copyright-area {
+        background-color: #0e0e0e;
     }
 
     .main-banner-area {
@@ -386,6 +422,37 @@ $black-color: #000000;
 
     .subscribe-content-area {
         background-color: #16161d
+    }
+
+    .pricing-subscribe-panel {
+        background: #16161d;
+        border-color: #2a2a3a;
+        box-shadow: none;
+        border-radius: 16px;
+        padding: 40px;
+
+        .subscribe-content {
+            p {
+                color: #d1d1d8;
+            }
+        }
+
+        .newsletter-form {
+            .input-newsletter {
+                background-color: #0e0e0e;
+                border-color: #2d2d3f;
+                color: $white-color;
+                border-radius: 8px;
+
+                &::placeholder {
+                    color: #bfc2d2;
+                }
+            }
+
+            button {
+                border-radius: 8px;
+            }
+        }
     }
 
     .main-banner-four {
@@ -492,6 +559,63 @@ $black-color: #000000;
             li {
                 color: $white-color;
             }
+        }
+    }
+
+    .pricing-area-modern {
+        background-color: #05070d;
+
+        .modern-pricing-card {
+            background: #06080f;
+            border-color: #1f2840;
+            box-shadow: none;
+
+            .pricing-header {
+                h3 {
+                    color: $white-color;
+                }
+
+                p {
+                    color: #b6bed1;
+                }
+            }
+
+            .price {
+                color: $white-color;
+
+                span {
+                    color: #c3c9d8;
+                }
+            }
+
+            .price-btn {
+                .price-btn-one {
+                    border-color: #2b3347;
+                    background: #101625;
+                    color: #e9eefc;
+
+                    &:hover {
+                        background: $main-color;
+                        border-color: $main-color;
+                        color: $white-color;
+                    }
+                }
+            }
+
+            .pricing-features {
+                li {
+                    color: #e6ebf7;
+
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+
+        .modern-pricing-card.featured {
+            border-color: #2f4f9d;
+            background: radial-gradient(100% 140% at 50% 100%, rgba(25, 59, 151, 0.55) 0%, #070b14 58%);
         }
     }
 

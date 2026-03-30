@@ -126,13 +126,13 @@ onBeforeUnmount(() => {
               </ul>
             </div>
             <div class="other-option site-navbar__actions">
-              <div class="site-navbar__desktop-theme">
-                <NavThemeToggle />
-              </div>
               <RouterLink class="default-btn" to="/pricing" @click="closeDrawer">
                 Free Quote
                 <span />
               </RouterLink>
+              <div class="site-navbar__desktop-theme">
+                <NavThemeToggle />
+              </div>
             </div>
           </div>
         </nav>

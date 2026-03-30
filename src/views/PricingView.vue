@@ -3,19 +3,47 @@ import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
-const pricingFeatures = [
-  'Managed Analytics',
-  'Business Intelligence',
-  'International payments',
-  'Data Management',
-  'Social Integration',
-  'Relevant App Content',
-]
-
 const plans = [
-  { name: 'Basic', price: 29, desc: 'That is a long established fact that a reader will be distracted.' },
-  { name: 'Advanced', price: 59, desc: 'That is a long established fact that a reader will be distracted.' },
-  { name: 'Premium', price: 99, desc: 'That is a long established fact that a reader will be distracted.' },
+  {
+    name: 'Free',
+    desc: 'Ideal for getting started with tracking signal records in MyDashboard.',
+    priceText: '$0',
+    priceSuffix: '/month/user',
+    action: 'Get Started Free',
+    features: [
+      '1 User',
+      'Dashboard summary view',
+      'Basic filtering and record listing',
+      'Basic support via email',
+    ],
+  },
+  {
+    name: 'Team',
+    desc: 'For teams managing Signal Registry operations collaboratively.',
+    priceText: '$29',
+    priceSuffix: '/month/user',
+    action: 'Start Free Trial',
+    featured: true,
+    features: [
+      'Team access for up to 5 users',
+      'Advanced filters and reporting views',
+      'Record update and monitoring workflows',
+      'Priority technical support',
+    ],
+  },
+  {
+    name: 'Enterprise',
+    desc: 'Custom solution for high-volume record management and enterprise needs.',
+    priceText: 'Custom',
+    priceSuffix: 'Pricing',
+    action: 'Contact Sales',
+    features: [
+      'Unlimited users and role management',
+      'Enterprise security and access policies',
+      'Custom integrations and API planning',
+      'SLA and dedicated customer success support',
+    ],
+  },
 ]
 </script>
 
@@ -23,25 +51,17 @@ const plans = [
   <div>
     <SiteNavbar />
 
-    <!-- Page Title -->
+    <!-- Page Title Area (text removed) -->
     <div class="page-title-area item-bg2">
       <div class="d-table">
         <div class="d-table-cell">
-          <div class="container">
-            <div class="page-title-content">
-              <h2>Pricing</h2>
-              <ul>
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li>Pricing</li>
-              </ul>
-            </div>
-          </div>
+          <div class="container" />
         </div>
       </div>
     </div>
 
     <!-- Pricing Area -->
-    <section class="pricing-area pt-100 pb-70">
+    <section class="pricing-area pricing-area-modern pt-100 pb-70">
       <div class="container">
         <div class="row">
           <div
@@ -50,22 +70,22 @@ const plans = [
             class="col-lg-4 col-md-6"
             :class="{ 'offset-lg-0 offset-md-3': i === 2 }"
           >
-            <div class="single-pricing-box">
+            <div class="single-pricing-box modern-pricing-card" :class="{ featured: plan.featured }">
               <div class="pricing-header">
                 <h3>{{ plan.name }}</h3>
                 <p>{{ plan.desc }}</p>
               </div>
               <div class="price">
-                ${{ plan.price }}<span>/month</span>
+                {{ plan.priceText }}<span>{{ plan.priceSuffix }}</span>
+              </div>
+              <div class="price-btn">
+                <a href="#" class="price-btn-one">{{ plan.action }} <i class="fas fa-chevron-right" /></a>
               </div>
               <ul class="pricing-features">
-                <li v-for="(feature, j) in pricingFeatures" :key="j">
+                <li v-for="(feature, j) in plan.features" :key="j">
                   <i class="fas fa-check" /> {{ feature }}
                 </li>
               </ul>
-              <div class="price-btn">
-                <a href="#" class="price-btn-one">Choose this plan</a>
-              </div>
             </div>
           </div>
         </div>
@@ -75,7 +95,7 @@ const plans = [
     <!-- Subscribe Section -->
     <section class="subscribe-Section pb-100">
       <div class="container">
-        <div class="subscribe-content-area mb-0">
+        <div class="subscribe-content-area pricing-subscribe-panel mb-0">
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-6">
               <div class="subscribe-image">
@@ -104,52 +124,32 @@ const plans = [
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>About Us</h3></div>
-              <p>Sinyatek, Signal Registry ile sinyal kayıt verilerini takip ve yönetmek için kullanılan yönetim paneli uygulamasını sunar.</p>
-              <ul class="footer-social">
-                <li><a href="https://www.facebook.com/login/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" /></a></li>
-                <li><a href="https://twitter.com/login" target="_blank" rel="noopener"><i class="fab fa-twitter" /></a></li>
-                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener"><i class="fab fa-linkedin" /></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Important Links</h3></div>
+              <div class="footer-heading"><h3>Developers</h3></div>
               <ul class="footer-quick-links">
-                <li><RouterLink to="/about">About Us</RouterLink></li>
-                <li><RouterLink to="/projects">Project</RouterLink></li>
-                                <li><RouterLink to="/contact">Contact</RouterLink></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Featured Service</h3></div>
-              <ul class="footer-quick-links">
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li><RouterLink to="/contact">Contact</RouterLink></li>
+                <li><a href="https://github.com/SignalRegistry" target="_blank" rel="noopener">GitHub</a></li>
+                
+                <li><RouterLink to="/api">API</RouterLink></li>
+                
               </ul>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Contact</h3></div>
-              <div class="footer-info-contact">
-                <i class="flaticon-call-answer" />
-                <h3>Phone</h3>
-                <span><a href="tel:+882-569-756">+123(456)123</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-envelope" />
-                <h3>Email</h3>
-                <span><a href="mailto:iletisim@sinyatek.com">iletisim@sinyatek.com</a></span>
-              </div>
-              <div class="footer-info-contact">
-                <i class="flaticon-maps-and-flags" />
-                <h3>Address</h3>
-                <span>Barış Koşu Yolu Caddesi, Gebze, Kocaeli - Kocaeli/Gebze</span>
-              </div>
+              <div class="footer-heading"><h3>Resources</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-footer-widget">
+              <div class="footer-heading"><h3>Stay in Touch</h3></div>
+              <ul class="footer-quick-links">
+                <li><a href="mailto:iletisim@sinyatek.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+              </ul>
             </div>
           </div>
         </div>

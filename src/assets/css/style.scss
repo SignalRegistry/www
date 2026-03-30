@@ -2177,6 +2177,59 @@ Partner Section CSS
 }
 
 /*================================================
+Home Feature Grid Section CSS
+=================================================*/
+.home-feature-grid-section {
+    background-color: #f8fbff;
+
+    .home-feature-card {
+        background-color: $white-color;
+        border: 1px solid #edf2ff;
+        border-radius: 25px 0px 25px 0px;
+        padding: 30px 26px;
+        min-height: 250px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.08);
+        transition: $transition;
+
+        &:hover {
+            border-color: #d8e4ff;
+            transform: translateY(-8px);
+        }
+
+        .home-feature-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: #eef5ff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+
+            i {
+                color: $main-color;
+                font-size: 18px;
+            }
+        }
+
+        h3 {
+            color: $black-color;
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        p {
+            color: $paragraph-color;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+}
+
+/*================================================
 Subscribe Area CSS
 =================================================*/
 .subscribe-area {
@@ -2750,6 +2803,57 @@ Subscribe Section CSS
                 background-color: $black-color;
                 color: $white-color;
             }
+        }
+    }
+}
+
+/* Pricing page specific newsletter polish */
+.pricing-subscribe-panel {
+    border-radius: 16px;
+    border: 1px solid #e7ecf7;
+    background: #ffffff;
+    box-shadow: none;
+    padding: 40px;
+
+    .subscribe-image img {
+        max-width: 92%;
+    }
+
+    .subscribe-content {
+        margin-bottom: 16px;
+
+        h2 {
+            font-size: 32px;
+            line-height: 1.3;
+            max-width: 360px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            max-width: 500px;
+            line-height: 1.7;
+            color: #6b7593;
+        }
+    }
+
+    .newsletter-form {
+        .input-newsletter {
+            height: 58px;
+            border-radius: 8px;
+            border: 1px solid #d8e0f1;
+            background-color: #ffffff;
+            padding-left: 16px;
+            font-size: 14px;
+        }
+
+        button {
+            height: 48px;
+            top: 5px;
+            right: 5px;
+            border-radius: 8px;
+            font-weight: 600;
+            background-color: $main-color;
+            padding: 0 22px;
         }
     }
 }
@@ -3404,6 +3508,100 @@ Pricing Area CSS
     &.bg-color {
         border-top: 1px solid #f3f3f3;
         border-bottom: 1px solid #f3f3f3;
+    }
+}
+
+.pricing-area-modern {
+    background-color: #f8fbff;
+
+    .modern-pricing-card {
+        background: $white-color;
+        border: 1px solid #e8efff;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px 0 rgba(20, 34, 66, 0.08);
+        padding: 34px 30px;
+
+        .pricing-header {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            text-align: left;
+
+            h3 {
+                text-transform: none;
+                color: $black-color;
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: $paragraph-color;
+                line-height: 1.7;
+            }
+        }
+
+        .price {
+            margin-top: 28px;
+            margin-bottom: 24px;
+            text-align: left;
+            color: $black-color;
+            font-size: 54px;
+            line-height: 1;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+
+            span {
+                font-size: 20px;
+                color: #6f7a96;
+                margin-bottom: 10px;
+            }
+        }
+
+        .price-btn {
+            margin-top: 0;
+            margin-bottom: 24px;
+
+            .price-btn-one {
+                width: 100%;
+                text-align: center;
+                border-radius: 999px;
+                border: 1px solid #dbe7ff;
+                background: #f4f8ff;
+                color: $black-color;
+                font-weight: 600;
+                padding: 13px 18px;
+
+                i {
+                    margin-left: 10px;
+                    font-size: 11px;
+                }
+
+                &:hover {
+                    background: $main-color;
+                    border-color: $main-color;
+                    color: $white-color;
+                }
+            }
+        }
+
+        .pricing-features {
+            li {
+                color: $paragraph-color;
+                padding-left: 24px;
+                margin-bottom: 14px;
+
+                i {
+                    color: $main-color;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    .modern-pricing-card.featured {
+        border-color: $main-color;
+        background: linear-gradient(180deg, #ffffff 0%, #f2f8ff 100%);
     }
 }
 .pricing-tab {
@@ -5597,6 +5795,22 @@ Footer Section CSS
             display: none;
         }
     }
+
+    // Match the reference layout: wider horizontal gaps on desktop.
+    .container > .row:first-child {
+        row-gap: 28px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .footer-section .container > .row:first-child {
+        justify-content: flex-start;
+        column-gap: 120px;
+    }
+    .footer-section .container > .row:first-child > [class*="col-"] {
+        width: auto;
+        flex: 0 0 auto;
+        max-width: none;
+    }
 }
 .footer-heading {
     margin-bottom: 25px;
@@ -5665,7 +5879,7 @@ Footer Section CSS
         margin-bottom: 0;
         li {
             list-style-type: none;
-            padding-bottom: 18px;
+            padding-bottom: 14px;
             &:last-child {
                 padding-bottom: 0;
             }
