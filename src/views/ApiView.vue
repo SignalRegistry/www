@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-import NavThemeToggle from '@/components/NavThemeToggle.vue'
+import SiteNavbar from '@/components/SiteNavbar.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const apiHeroBg = getAssetImg('api_image.webp')
@@ -209,47 +209,7 @@ const apiHeroBg = getAssetImg('api_image.webp')
 
 <template>
   <div class="centered-logo-mobile">
-    <!-- Navbar -->
-    <div class="navbar-area">
-      <div class="plamb-responsive-nav">
-        <div class="container">
-          <div class="plamb-responsive-menu">
-            <div class="logo">
-              <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="plamb-nav">
-        <div class="container">
-          <nav class="navbar navbar-expand-md navbar-light">
-            <RouterLink class="navbar-brand logo-text" to="/"><i class="fas fa-bolt" /> SignalRegistry</RouterLink>
-            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <RouterLink to="/about" class="nav-link">About Us</RouterLink>
-                </li>
-                <li class="nav-item"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></li>
-                <li class="nav-item"><RouterLink to="/api" class="nav-link active">API</RouterLink></li>
-                <li class="nav-item">
-                  <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
-                </li>
-                <li class="nav-item">
-                  <RouterLink to="/faq" class="nav-link">FAQ</RouterLink>
-                </li>
-              </ul>
-              <div class="other-option">
-                <RouterLink class="default-btn" to="/pricing">
-                  Free Quote
-                  <span />
-                </RouterLink>
-                <NavThemeToggle />
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
+    <SiteNavbar />
 
     <!-- Page Title -->
     <div

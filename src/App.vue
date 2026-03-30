@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import { RouterView } from 'vue-router'
-import NavThemeToggle from '@/components/NavThemeToggle.vue'
 
 const preloaderDone = ref(false)
 const themeMode = ref('light')
@@ -40,7 +39,6 @@ onMounted(() => {
   } else {
     window.addEventListener('load', () => setTimeout(hidePreloader, 300), { once: true })
   }
-  // Fallback: sayfa 3 saniyede yüklenmezse yine gizle
   setTimeout(hidePreloader, 3000)
 })
 
@@ -63,23 +61,4 @@ watch(themeMode, (mode) => {
     </div>
   </div>
   <RouterView />
-  <div class="mobile-theme-toggle">
-    <NavThemeToggle />
-  </div>
 </template>
-
-<style scoped>
-.mobile-theme-toggle {
-  display: none;
-}
-
-@media only screen and (max-width: 822px) {
-  .mobile-theme-toggle {
-    display: block;
-    position: fixed;
-    right: 14px;
-    top: 14px;
-    z-index: 1200;
-  }
-}
-</style>

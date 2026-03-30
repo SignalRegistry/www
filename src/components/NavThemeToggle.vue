@@ -28,7 +28,11 @@ onBeforeUnmount(() => {
     :aria-label="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
     @click="handleThemeToggle"
   >
-    <span aria-hidden="true">{{ isDarkMode ? '🌙' : '☀️' }}</span>
+    <i
+      class="fas navbar-theme-toggle__icon"
+      :class="isDarkMode ? 'fa-sun' : 'fa-moon'"
+      aria-hidden="true"
+    />
   </button>
 </template>
 
@@ -48,6 +52,12 @@ onBeforeUnmount(() => {
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(31, 41, 55, 0.12);
   transition: all 0.2s ease;
+}
+
+.navbar-theme-toggle__icon {
+  font-size: 0.9375rem;
+  line-height: 1;
+  color: inherit;
 }
 
 .navbar-theme-toggle:hover {

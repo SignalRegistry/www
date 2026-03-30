@@ -10,6 +10,7 @@ import './assets/css/fontawesome.min.css'
 import './assets/css/style.css'
 import './assets/css/dark.css'
 import './assets/css/responsive.css'
+import './assets/css/navbar-app.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
