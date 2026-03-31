@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 </script>
 
@@ -64,6 +65,13 @@ import { getAssetImg } from '@/utils/getAssetImg'
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="Policy Experience"
+      title="Compliance content presented with product-grade readability"
+      description="Policy documents now sit within a clearer visual system that improves scanability while preserving formal legal structure."
+      :chips="['Readable Legal Text', 'Structured Sections', 'Trust Emphasis', 'Consistent UI']"
+    />
+
     <!-- Footer -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -83,8 +91,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

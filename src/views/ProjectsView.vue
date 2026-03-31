@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const projectsHeroBg = getAssetImg('projects_image.jpg')
@@ -122,6 +123,13 @@ const projectsHeroBg = getAssetImg('projects_image.jpg')
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="Project Lens"
+      title="Workflow-centric presentation for project capabilities"
+      description="This section reinforces project delivery logic with modular capability framing and integration-aware design cues."
+      :chips="['Flow Mapping', 'Capability Matrix', 'Integration Ready', 'Operational UI']"
+    />
+
     <!-- Footer -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -141,8 +149,7 @@ const projectsHeroBg = getAssetImg('projects_image.jpg')
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

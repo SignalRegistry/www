@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 </script>
 
@@ -61,6 +62,13 @@ import { getAssetImg } from '@/utils/getAssetImg'
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="Terms Experience"
+      title="Operational terms communicated with a modern visual hierarchy"
+      description="Terms and conditions now use the same product language so legal and operational expectations are easier to parse."
+      :chips="['Legal Clarity', 'Operational Scope', 'Readable Layout', 'Unified Design']"
+    />
+
     <!-- Footer -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -80,8 +88,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

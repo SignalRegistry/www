@@ -20,6 +20,7 @@ watch(menuOpen, (open) => {
 
 const drawerLinks = [
   { path: '/about', label: 'About Us', icon: 'fa-info-circle' },
+  { path: '/blog', label: 'Blog', icon: 'fa-newspaper' },
   { path: '/projects', label: 'Projects', icon: 'fa-folder-open' },
   { path: '/api', label: 'API', icon: 'fa-code' },
   { path: '/contact', label: 'Contact', icon: 'fa-envelope' },

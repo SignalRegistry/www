@@ -2623,6 +2623,139 @@ Home Feature Grid Section CSS
 }
 
 /*================================================
+Registry Flow Section CSS
+=================================================*/
+.registry-flow-section {
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.registry-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.registry-flow-card {
+  position: relative;
+  border: 1px solid #e3ecff;
+  border-radius: 18px;
+  background-color: #ffffff;
+  padding: 26px 20px 22px;
+  box-shadow: 0 8px 26px rgba(26, 54, 93, 0.08);
+  min-height: 215px;
+  transition: 0.5s;
+}
+
+.registry-flow-card:hover {
+  transform: translateY(-6px);
+  border-color: #bcd4ff;
+}
+
+.registry-flow-card .flow-step {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #00b0ee;
+  background: #eaf6ff;
+  border-radius: 30px;
+  padding: 6px 12px;
+  margin-bottom: 14px;
+}
+
+.registry-flow-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.registry-flow-card p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #6c7697;
+  line-height: 1.8;
+}
+
+/*================================================
+Platform Lens Section CSS
+=================================================*/
+.platform-lens-card,
+.platform-integrations-card {
+  height: 100%;
+  border-radius: 20px;
+  padding: 35px 30px;
+}
+
+.platform-lens-card {
+  background: linear-gradient(140deg, #1c2d66 0%, #1d3f89 60%, #1f63ab 100%);
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(21, 37, 82, 0.25);
+}
+
+.platform-lens-card h3 {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.platform-lens-card p {
+  color: #d9e7ff;
+  margin-bottom: 18px;
+}
+
+.platform-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.platform-lens-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.platform-lens-list li {
+  color: #e7efff;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.platform-lens-list li i {
+  margin-right: 8px;
+}
+
+.platform-integrations-card {
+  border: 1px solid #dbe7ff;
+  background-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(49, 64, 112, 0.11);
+}
+
+.platform-integrations-card h3 {
+  margin-bottom: 18px;
+}
+
+.integration-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.integration-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3e4c73;
+  border: 1px solid #d4e2ff;
+  border-radius: 999px;
+  background-color: #f7faff;
+}
+
+/*================================================
 Subscribe Area CSS
 =================================================*/
 .subscribe-area {

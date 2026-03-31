@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
+import ProfessionalSection from '@/components/ProfessionalSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const apiHeroBg = getAssetImg('api_image.webp')
@@ -496,6 +498,19 @@ Content-Type: application/json
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="API Experience"
+      title="Documentation layered for speed, trust, and integration"
+      description="The API page now carries a stronger product pattern: discover endpoints quickly, connect confidently, and scale integrations."
+      :chips="['Endpoint Clarity', 'Structured Docs', 'Integration Focus', 'Developer Ready']"
+    />
+
+    <ProfessionalSection
+      title="Production-minded API integration lifecycle"
+      subtitle="Use a staged approach for authentication, endpoint validation, and rollout to keep integrations stable."
+      roadmap-title="API rollout steps"
+    />
+
     <!-- Footer -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -515,8 +530,7 @@ Content-Type: application/json
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

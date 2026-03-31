@@ -1245,5 +1245,32 @@
   .plamb-responsive-nav .logo .navbar-brand.logo-text .fa-bolt {
     font-size: 0.9em;
   }
+  .registry-flow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .registry-flow-card {
+    min-height: 190px;
+  }
+  .platform-lens-card,
+  .platform-integrations-card {
+    padding: 28px 22px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .registry-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .registry-flow-card h3 {
+    font-size: 19px;
+  }
+  .integration-chip-wrap {
+    gap: 8px;
+  }
+  .integration-chip {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
 }
 /*# sourceMappingURL=responsive.css.map */

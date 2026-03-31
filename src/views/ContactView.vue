@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const contactHeroBg = getAssetImg('contactUs.jpg')
@@ -141,6 +142,13 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="Contact Journey"
+      title="Assisted contact flow with structured communication paths"
+      description="Contact interactions are now supported with a cleaner conversion layer that aligns with product-first and workflow-based UX."
+      :chips="['Lead Capture', 'Support Routing', 'Fast Response', 'Trust Signals']"
+    />
+
     <!-- Start Footer Section -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -160,8 +168,7 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

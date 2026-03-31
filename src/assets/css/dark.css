@@ -278,6 +278,136 @@ Default CSS
   color: #d0d0d4;
 }
 
+.theme-dark .registry-flow-section {
+  background: #0e0e0e;
+}
+
+.theme-dark .registry-flow-card {
+  background-color: #16161d;
+  border-color: #242435;
+  box-shadow: none;
+}
+
+.theme-dark .registry-flow-card:hover {
+  border-color: rgba(0, 176, 238, 0.45);
+}
+
+.theme-dark .registry-flow-card p {
+  color: #d0d0d4;
+}
+
+.theme-dark .registry-flow-card .flow-step {
+  background-color: #1f1f2a;
+}
+
+.theme-dark .platform-lens-card {
+  background: #000000 !important;
+  border: 1px solid #2a335a;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36);
+}
+
+.theme-dark .platform-lens-card p,
+.theme-dark .platform-lens-card .platform-lens-list li {
+  color: #dbe4ff;
+}
+
+.theme-dark .platform-lens-card .default-btn-one {
+  background-color: #12b8ef;
+  color: #ffffff;
+  border-color: #12b8ef;
+}
+
+.theme-dark .platform-lens-card .default-btn-one:hover {
+  background-color: #0f9fcf;
+  border-color: #0f9fcf;
+  color: #ffffff;
+}
+
+.theme-dark .platform-integrations-card {
+  background: #000000 !important;
+  border-color: #242d47;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .platform-integrations-card h3 {
+  color: #ffffff;
+}
+
+.theme-dark .platform-integrations-card .platform-eyebrow {
+  color: #d0d0d4;
+}
+
+.theme-dark .integration-chip {
+  color: #dbe4ff;
+  background-color: #1b2033;
+  border-color: #2b3557;
+}
+
+.theme-dark .platform-integrations-card .default-btn {
+  background-color: #12b8ef;
+  color: #ffffff;
+  border-color: #12b8ef;
+}
+
+.theme-dark .platform-integrations-card .default-btn:hover {
+  background-color: #0f9fcf;
+  border-color: #0f9fcf;
+  color: #ffffff;
+}
+
+.theme-dark .industry-inspired-section {
+  background: #0e0e0e !important;
+}
+
+.theme-dark .industry-inspired-section .inspired-card {
+  background: linear-gradient(160deg, #171723 0%, #11111a 100%) !important;
+  border-color: #2b2b42 !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+.theme-dark .industry-inspired-section .inspired-card:hover {
+  border-color: rgba(0, 176, 238, 0.55) !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.42) !important;
+}
+
+.theme-dark .industry-inspired-section .inspired-card h4 {
+  color: #ffffff !important;
+}
+
+.theme-dark .industry-inspired-section .inspired-card li {
+  color: #dbe3ff !important;
+}
+
+.theme-dark .industry-inspired-section .inspired-card li i {
+  color: #18c8ff !important;
+}
+
+.theme-dark .professional-section .metric-card,
+.theme-dark .professional-section .roadmap-item,
+.theme-dark .professional-section .professional-roadmap {
+  background: #000000 !important;
+}
+
+.theme-dark .professional-section .metric-card,
+.theme-dark .professional-section .roadmap-item {
+  border-color: #242435 !important;
+  box-shadow: none !important;
+}
+
+.theme-dark .professional-section .professional-roadmap {
+  border-color: #242435 !important;
+}
+
+.theme-dark .professional-section .metric-card .metric-label,
+.theme-dark .professional-section .metric-card .metric-value,
+.theme-dark .professional-section .metric-card p {
+  color: #ffffff !important;
+}
+
+.theme-dark .professional-section .professional-head p {
+  color: #ffffff !important;
+}
+
 .theme-dark .subscribe-area {
   background-color: #000000;
 }

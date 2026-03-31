@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const openIndex = ref(0)
@@ -133,6 +134,13 @@ function toggleAccordion(index) {
       </div>
     </div>
 
+    <PageDesignSection
+      eyebrow="FAQ Experience"
+      title="Knowledge layout optimized for quick decision support"
+      description="The FAQ surface now aligns with the rest of the product style, helping users move from answers to action without friction."
+      :chips="['Readable Blocks', 'Support Flow', 'Contextual Guidance', 'Action Paths']"
+    />
+
     <!-- Start Footer Section -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -152,8 +160,7 @@ function toggleAccordion(index) {
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

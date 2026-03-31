@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const plans = [
@@ -118,6 +119,13 @@ const plans = [
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="Pricing Experience"
+      title="Clear plan framing with scalable team journey"
+      description="The pricing flow is supported by a design layer focused on fast comparison, confidence, and enterprise readiness."
+      :chips="['Plan Clarity', 'Fast Comparison', 'Team Scaling', 'Enterprise Path']"
+    />
+
     <!-- Footer -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -137,8 +145,7 @@ const plans = [
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

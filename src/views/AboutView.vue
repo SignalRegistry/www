@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
+import PageDesignSection from '@/components/PageDesignSection.vue'
+import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const email = ref('')
@@ -128,6 +130,15 @@ const heroBg = getAssetImg('aboutUs.jpg')
       </div>
     </section>
 
+    <PageDesignSection
+      eyebrow="About Experience"
+      title="Storytelling structure with engineering-grade clarity"
+      description="The About page now follows a layered narrative style: context, capabilities, and action path in one consistent flow."
+      :chips="['Narrative Layout', 'Capability Blocks', 'Reusable Sections', 'Action Driven']"
+    />
+
+    <IndustryInspiredSection />
+
     <!-- Start Footer Section -->
     <section class="footer-section ptb-100">
       <div class="container">
@@ -147,8 +158,7 @@ const heroBg = getAssetImg('aboutUs.jpg')
             <div class="single-footer-widget">
               <div class="footer-heading"><h3>Resources</h3></div>
               <ul class="footer-quick-links">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">YouTube</a></li>
+                <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
             </div>
           </div>

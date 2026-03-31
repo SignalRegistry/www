@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 </script>
 
@@ -22,5 +23,12 @@ import { getAssetImg } from '@/utils/getAssetImg'
         </div>
       </div>
     </section>
+
+    <PageDesignSection
+      eyebrow="Navigation Recovery"
+      title="Fast recovery path aligned with product design system"
+      description="Even the error state now follows the same interface language to help users recover and continue quickly."
+      :chips="['Recovery UX', 'Clear CTA', 'Consistent Theme', 'Low Friction']"
+    />
   </div>
 </template>
