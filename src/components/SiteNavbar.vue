@@ -19,12 +19,11 @@ watch(menuOpen, (open) => {
 })
 
 const drawerLinks = [
-  { path: '/about', label: 'About Us', icon: 'fa-info-circle' },
-  { path: '/blog', label: 'Blog', icon: 'fa-newspaper' },
-  { path: '/projects', label: 'Projects', icon: 'fa-folder-open' },
-  { path: '/api', label: 'API', icon: 'fa-code' },
-  { path: '/contact', label: 'Contact', icon: 'fa-envelope' },
-  { path: '/faq', label: 'FAQ', icon: 'fa-question-circle' },
+  { path: '/about', label: 'Product', icon: 'fa-box-open' },
+  { path: '/projects', label: 'Solutions', icon: 'fa-layer-group' },
+  { path: '/api', label: 'Resources', icon: 'fa-book-open' },
+  { path: '/faq', label: 'Community', icon: 'fa-comments' },
+  { path: '/pricing', label: 'Pricing', icon: 'fa-tag' },
 ]
 
 function linkClass(path) {

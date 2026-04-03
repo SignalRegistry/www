@@ -92,11 +92,11 @@
 }
 
 :global(.theme-dark) .industry-inspired-section {
-  background: #0e0e0e !important;
+  background: #000000 !important;
 }
 
 :global(.theme-dark) .inspired-card {
-  background: linear-gradient(160deg, #171723 0%, #11111a 100%) !important;
+  background: #000000 !important;
   border-color: #2b2b42 !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
 }

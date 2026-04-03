@@ -240,7 +240,7 @@ defineProps({
 }
 
 :global(.theme-dark) .roadmap-step {
-  background: #10192d;
+  background: #000000;
   border-color: #2a4d79;
   color: #4ab8ff;
 }

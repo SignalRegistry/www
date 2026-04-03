@@ -143,7 +143,7 @@ Default CSS
 }
 
 .theme-dark .navbar-area.is-sticky {
-  background-color: #0e0e0e !important;
+  background-color: #000000 !important;
 }
 
 .theme-dark .navbar-area.is-sticky .plamb-nav .navbar-brand .black-logo {
@@ -175,7 +175,7 @@ Default CSS
 }
 
 .theme-dark .main-banner-two {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .main-banner-two .creative-shape {
@@ -183,7 +183,7 @@ Default CSS
 }
 
 .theme-dark .single-services-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .single-services-box h3 {
@@ -211,16 +211,16 @@ Default CSS
 }
 
 .theme-dark .software-content .features-list li span {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
 }
 
 .theme-dark .testimonial-section {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .testimonial-slider .testimonial-single-item {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .testimonial-slider .testimonial-single-item .testimonial-info h3 {
@@ -232,7 +232,7 @@ Default CSS
 }
 
 .theme-dark .blog-item .single-blog-item {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .blog-item .single-blog-item .blog-content p {
@@ -244,15 +244,15 @@ Default CSS
 }
 
 .theme-dark .partner-section {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .home-feature-grid-section {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .home-feature-grid-section .home-feature-card {
-  background-color: #16161d;
+  background-color: #000000;
   border-color: #242435;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -263,7 +263,7 @@ Default CSS
 }
 
 .theme-dark .home-feature-grid-section .home-feature-card .home-feature-icon {
-  background-color: #1f1f2a;
+  background-color: #000000;
 }
 
 .theme-dark .home-feature-grid-section .home-feature-card .home-feature-icon i {
@@ -279,11 +279,11 @@ Default CSS
 }
 
 .theme-dark .registry-flow-section {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .registry-flow-card {
-  background-color: #16161d;
+  background-color: #000000;
   border-color: #242435;
   box-shadow: none;
 }
@@ -297,7 +297,7 @@ Default CSS
 }
 
 .theme-dark .registry-flow-card .flow-step {
-  background-color: #1f1f2a;
+  background-color: #000000;
 }
 
 .theme-dark .platform-lens-card {
@@ -339,7 +339,7 @@ Default CSS
 
 .theme-dark .integration-chip {
   color: #dbe4ff;
-  background-color: #1b2033;
+  background-color: #000000;
   border-color: #2b3557;
 }
 
@@ -356,11 +356,11 @@ Default CSS
 }
 
 .theme-dark .industry-inspired-section {
-  background: #0e0e0e !important;
+  background: #000000 !important;
 }
 
 .theme-dark .industry-inspired-section .inspired-card {
-  background: linear-gradient(160deg, #171723 0%, #11111a 100%) !important;
+  background: #000000 !important;
   border-color: #2b2b42 !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
 }
@@ -417,9 +417,9 @@ Default CSS
 }
 
 .theme-dark .newsletter-form .input-newsletter {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
-  border: 1px solid #0e0e0e;
+  border: 1px solid #000000;
 }
 
 .theme-dark .newsletter-form .input-newsletter::-webkit-input-placeholder {
@@ -444,15 +444,15 @@ Default CSS
 
 .theme-dark .footer-section {
   background-image: none;
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .copyright-area {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .main-banner-area {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .main-banner-area .creative-shape {
@@ -460,12 +460,12 @@ Default CSS
 }
 
 .theme-dark .data-services-item .single-data-service-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .solutions-list-tab .tabs li a {
   color: #ffffff;
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .solutions-list-tab .tabs li a span {
@@ -482,11 +482,11 @@ Default CSS
 }
 
 .theme-dark .work-item .work-content {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .main-banner-three {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .main-banner-three .creative-shape {
@@ -494,11 +494,11 @@ Default CSS
 }
 
 .theme-dark .subscribe-content-area {
-  background-color: #16161d;
+  background-color: #000000;
 }
 
 .theme-dark .pricing-subscribe-panel {
-  background: #16161d;
+  background: #000000;
   border-color: #2a2a3a;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -511,7 +511,7 @@ Default CSS
 }
 
 .theme-dark .pricing-subscribe-panel .newsletter-form .input-newsletter {
-  background-color: #0e0e0e;
+  background-color: #000000;
   border-color: #2d2d3f;
   color: #ffffff;
   border-radius: 8px;
@@ -538,7 +538,7 @@ Default CSS
 }
 
 .theme-dark .main-banner-four {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .main-banner-four .creative-shape {
@@ -546,7 +546,7 @@ Default CSS
 }
 
 .theme-dark .contact-section {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .contact-form form .form-control {
@@ -578,7 +578,7 @@ Default CSS
 }
 
 .theme-dark .contact-box .single-contact-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .contact-box .single-contact-box .content-title a {
@@ -590,11 +590,11 @@ Default CSS
 }
 
 .theme-dark .single-team-item {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .services-details-overview .services-details-desc .services-details-accordion .accordion .accordion-item {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .services-details-overview .services-details-desc .services-details-accordion .accordion .accordion-title {
@@ -624,7 +624,7 @@ Default CSS
 }
 
 .theme-dark .single-pricing-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .single-pricing-box .price {
@@ -640,11 +640,11 @@ Default CSS
 }
 
 .theme-dark .pricing-area-modern {
-  background-color: #05070d;
+  background-color: #000000;
 }
 
 .theme-dark .pricing-area-modern .modern-pricing-card {
-  background: #06080f;
+  background: #000000;
   border-color: #1f2840;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -668,7 +668,7 @@ Default CSS
 
 .theme-dark .pricing-area-modern .modern-pricing-card .price-btn .price-btn-one {
   border-color: #2b3347;
-  background: #101625;
+  background: #000000;
   color: #e9eefc;
 }
 
@@ -688,7 +688,7 @@ Default CSS
 
 .theme-dark .pricing-area-modern .modern-pricing-card.featured {
   border-color: #2f4f9d;
-  background: radial-gradient(100% 140% at 50% 100%, rgba(25, 59, 151, 0.55) 0%, #070b14 58%);
+  background: #000000;
 }
 
 .theme-dark .product-details-desc .price {
@@ -720,7 +720,7 @@ Default CSS
 
 .theme-dark .product-details-desc .product-add-to-cart .input-counter input {
   color: #ffffff;
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .product-details-desc .product-add-to-cart .input-counter input::-webkit-input-placeholder {
@@ -740,7 +740,7 @@ Default CSS
 }
 
 .theme-dark .product-details-desc .buy-checkbox-btn .cbx span:first-child {
-  border: 1px solid #0e0e0e;
+  border: 1px solid #000000;
 }
 
 .theme-dark .product-details-desc .buy-checkbox-btn .cbx span:last-child {
@@ -748,7 +748,7 @@ Default CSS
 }
 
 .theme-dark .product-details-desc .buy-checkbox-btn .btn-light {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -763,7 +763,7 @@ Default CSS
 
 .theme-dark .products-details-tab .tabs li a {
   color: #ffffff;
-  border: 1px dashed #0e0e0e;
+  border: 1px dashed #000000;
 }
 
 .theme-dark .products-details-tab .tabs li a:hover, .theme-dark .products-details-tab .tabs li a:focus {
@@ -779,16 +779,16 @@ Default CSS
 }
 
 .theme-dark .products-details-tab .tab_content {
-  border: 1px dashed #0e0e0e;
+  border: 1px dashed #000000;
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .additional-information li {
-  border: 1px solid #0e0e0e;
+  border: 1px solid #000000;
   color: #ffffff;
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .additional-information li:last-child {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .additional-information li span {
@@ -800,7 +800,7 @@ Default CSS
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-comments .review-item {
-  border-top: 1px dashed #0e0e0e;
+  border-top: 1px dashed #000000;
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-comments .review-item .rating i {
@@ -816,7 +816,7 @@ Default CSS
 }
 
 .theme-dark .products-details-tab .tab_content .tabs_item .products-details-tab-content .product-review-form .review-form form .form-group .form-control {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
   -webkit-box-shadow: unset !important;
           box-shadow: unset !important;
@@ -911,7 +911,7 @@ Default CSS
 }
 
 .theme-dark .cart-totals {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .cart-totals ul li {
@@ -924,7 +924,7 @@ Default CSS
 }
 
 .theme-dark .cart-area .coupon-wrap {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .cart-area .coupon-wrap .shops-form .form-group .form-control {
@@ -972,18 +972,18 @@ Default CSS
 }
 
 .theme-dark .cart-wraps {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .user-actions {
   -webkit-box-shadow: unset;
           box-shadow: unset;
-  background: #0e0e0e;
+  background: #000000;
   border-top: 3px solid #00b0ee;
 }
 
 .theme-dark .user-actions::before {
-  background: #0e0e0e;
+  background: #000000;
 }
 
 .theme-dark .user-actions i {
@@ -1003,7 +1003,7 @@ Default CSS
 }
 
 .theme-dark .billing-details .title {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .billing-details .form-group label {
@@ -1016,8 +1016,8 @@ Default CSS
 
 .theme-dark .billing-details .form-group .nice-select {
   color: #ffffff;
-  background-color: #0e0e0e;
-  border: 1px solid #0e0e0e;
+  background-color: #000000;
+  border: 1px solid #000000;
 }
 
 .theme-dark .billing-details .form-group .nice-select .list {
@@ -1039,9 +1039,9 @@ Default CSS
 }
 
 .theme-dark .billing-details .form-group .form-control {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
-  border: 1px solid #0e0e0e;
+  border: 1px solid #000000;
 }
 
 .theme-dark .billing-details .form-group .form-control::-webkit-input-placeholder {
@@ -1076,7 +1076,7 @@ Default CSS
 }
 
 .theme-dark .order-details .title {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .order-details .order-table table {
@@ -1084,23 +1084,23 @@ Default CSS
 }
 
 .theme-dark .order-details .order-table table thead tr {
-  border-top: 1px solid #0e0e0e;
-  border-bottom: 1px solid #0e0e0e;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .order-details .order-table table thead tr th {
-  border-color: #0e0e0e;
+  border-color: #000000;
   color: #ffffff;
 }
 
 .theme-dark .order-details .order-table table tbody tr {
-  border-top: 1px solid #0e0e0e;
-  border-bottom: 1px solid #0e0e0e;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .order-details .order-table table tbody tr td {
   color: #ffffff;
-  border-color: #0e0e0e;
+  border-color: #000000;
 }
 
 .theme-dark .order-details .order-table table tbody tr td.product-name a {
@@ -1116,7 +1116,7 @@ Default CSS
 }
 
 .theme-dark .order-details .payment-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
   -webkit-box-shadow: unset;
           box-shadow: unset;
 }
@@ -1135,9 +1135,9 @@ Default CSS
 }
 
 .theme-dark .pagination-area .page-numbers {
-  background-color: #0e0e0e;
-  -webkit-box-shadow: 0 2px 10px 0 #0e0e0e;
-          box-shadow: 0 2px 10px 0 #0e0e0e;
+  background-color: #000000;
+  -webkit-box-shadow: 0 2px 10px 0 #000000;
+          box-shadow: 0 2px 10px 0 #000000;
   -webkit-box-shadow: unset;
           box-shadow: unset;
   color: #ffffff;
@@ -1149,11 +1149,11 @@ Default CSS
 }
 
 .theme-dark .widget-area .widget .widget-title {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .widget-area .widget_search {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .widget-area .widget_search form .search-field {
@@ -1256,7 +1256,7 @@ Default CSS
 
 .theme-dark .widget-area .tagcloud a {
   color: #ffffff;
-  border: 1px dashed #0e0e0e;
+  border: 1px dashed #000000;
 }
 
 .theme-dark .widget-area .tagcloud a:hover, .theme-dark .widget-area .tagcloud a:focus {
@@ -1266,7 +1266,7 @@ Default CSS
 }
 
 .theme-dark .widget-area .widget_event_details ul li {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000000;
   color: #ffffff;
 }
 
@@ -1330,7 +1330,7 @@ Default CSS
 }
 
 .theme-dark blockquote, .theme-dark .blockquote {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark blockquote p, .theme-dark .blockquote p {
@@ -1342,8 +1342,8 @@ Default CSS
 }
 
 .theme-dark .post-navigation {
-  border-top: 1px solid #0e0e0e;
-  border-bottom: 1px solid #0e0e0e;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
 
 .theme-dark .post-navigation .navigation-links .nav-previous a {
@@ -1365,7 +1365,7 @@ Default CSS
 .theme-dark .comments-area {
   -webkit-box-shadow: unset;
           box-shadow: unset;
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .comments-area .comment-body {
@@ -1435,7 +1435,7 @@ Default CSS
 }
 
 .theme-dark .woocommerce-topbar .woocommerce-topbar-ordering .nice-select {
-  background-color: #0e0e0e;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -1458,7 +1458,7 @@ Default CSS
 }
 
 .theme-dark .single-product-box {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .single-product-box .product-content h3 a {
@@ -1475,8 +1475,8 @@ Default CSS
 
 .theme-dark .cart-buttons .shopping-coupon-code .form-control {
   color: #ffffff;
-  border: 1px solid #0e0e0e;
-  background-color: #0e0e0e;
+  border: 1px solid #000000;
+  background-color: #000000;
 }
 
 .theme-dark .cart-buttons .shopping-coupon-code .form-control::-webkit-input-placeholder {
@@ -1496,12 +1496,12 @@ Default CSS
 }
 
 .theme-dark .faq-accordion .accordion .accordion-item {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .faq-accordion .accordion .accordion-item .accordion-title {
   color: #ffffff;
-  border: 1px solid #0e0e0e;
+  border: 1px solid #000000;
 }
 
 .theme-dark .faq-accordion .accordion .accordion-item .accordion-title i {
@@ -1510,11 +1510,11 @@ Default CSS
 
 .theme-dark .faq-accordion .accordion .accordion-item .accordion-content {
   color: #ffffff;
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .faq-contact-form .contact-form form .form-control {
-  background-color: #0e0e0e;
+  background-color: #000000;
   border: none;
   -webkit-box-shadow: unset !important;
           box-shadow: unset !important;
@@ -1544,7 +1544,7 @@ Default CSS
 }
 
 .theme-dark .coming-soon-content form .email-input {
-  background-color: #0e0e0e;
+  background-color: #000000;
   border: none;
   -webkit-box-shadow: unset !important;
           box-shadow: unset !important;
@@ -1574,7 +1574,7 @@ Default CSS
 }
 
 .theme-dark .coming-soon-content #timer div {
-  background-color: #0e0e0e;
+  background-color: #000000;
 }
 
 .theme-dark .coming-soon-content #timer div span {
@@ -1583,10 +1583,10 @@ Default CSS
 
 @media only screen and (max-width: 767px) {
   .theme-dark .navbar-area {
-    background-color: #0e0e0e;
+    background-color: #000000;
   }
   .theme-dark .navbar-area.is-sticky {
-    background-color: #0e0e0e !important;
+    background-color: #000000 !important;
   }
   .theme-dark .plamb-responsive-nav .mean-container a.meanmenu-reveal {
     color: #ffffff;
@@ -1598,10 +1598,10 @@ Default CSS
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .theme-dark .navbar-area {
-    background-color: #0e0e0e;
+    background-color: #000000;
   }
   .theme-dark .navbar-area.is-sticky {
-    background-color: #0e0e0e !important;
+    background-color: #000000 !important;
   }
   .theme-dark .plamb-responsive-nav .mean-container a.meanmenu-reveal {
     color: #ffffff;

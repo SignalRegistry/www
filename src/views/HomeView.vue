@@ -1,7 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
-import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
+import SiteFooter from '@/components/SiteFooter.vue'
+import HomePreFooterCta from '@/components/HomePreFooterCta.vue'
+import HomeDarkProductHero from '@/components/HomeDarkProductHero.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 </script>
@@ -10,8 +12,9 @@ import { getAssetImg } from '@/utils/getAssetImg'
   <div>
     <SiteNavbar />
 
-    <!-- Start Main Banner Two Area -->
-    <div class="main-banner-two">
+    <!-- Ana sayfa hero: arka plan ayrı div (CSS ::before + shape katmanları bazı tarayıcılarda gri/soluk hataya yol açıyordu) -->
+    <div class="main-banner-two site-home-hero">
+      <div class="site-home-hero__bg" aria-hidden="true" />
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12">
@@ -36,12 +39,6 @@ import { getAssetImg } from '@/utils/getAssetImg'
             </div>
           </div>
         </div>
-      </div>
-      <div class="creative-shape">
-        <img :src="getAssetImg('main-banner-shape/home-shape-2.png')" alt="main-image">
-      </div>
-      <div class="shape-dot">
-        <img :src="getAssetImg('main-banner-shape/dot.png')" alt="image">
       </div>
     </div>
 
@@ -141,152 +138,39 @@ import { getAssetImg } from '@/utils/getAssetImg'
       </div>
     </section>
 
-    <!-- Start Registry Flow Section -->
-    <section class="registry-flow-section pt-100 pb-70">
-      <div class="container">
-        <div class="section-title">
-          <span>Signal Workflow</span>
-          <h3>Move from collection to action with a clear operational flow</h3>
-        </div>
-        <div class="registry-flow-grid">
-          <div class="registry-flow-card">
-            <span class="flow-step">01</span>
-            <h3>Collect</h3>
-            <p>Bring incoming signal records into one source of truth to reduce manual handoffs.</p>
-          </div>
-          <div class="registry-flow-card">
-            <span class="flow-step">02</span>
-            <h3>Validate</h3>
-            <p>Apply required checks and field-level controls before records become operational.</p>
-          </div>
-          <div class="registry-flow-card">
-            <span class="flow-step">03</span>
-            <h3>Transform</h3>
-            <p>Convert raw entries into standardized, reusable formats for teams and dashboards.</p>
-          </div>
-          <div class="registry-flow-card">
-            <span class="flow-step">04</span>
-            <h3>Monitor</h3>
-            <p>Track trend and channel behavior continuously so issues are visible early.</p>
-          </div>
-          <div class="registry-flow-card">
-            <span class="flow-step">05</span>
-            <h3>Act</h3>
-            <p>Approve updates and publish trusted records with full visibility of change status.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HomeDarkProductHero />
 
-    <!-- Start Platform Lens Section -->
-    <section class="platform-lens-section pb-100">
-      <div class="container">
-        <div class="row g-4 align-items-stretch">
-          <div class="col-lg-7">
-            <div class="platform-lens-card">
-              <span class="platform-eyebrow">Designed for modern teams</span>
-              <h3>Engineering discipline for registry operations</h3>
-              <p>
-                Signal Registry applies transformation-ready thinking to daily operations:
-                modular structure, consistent checks, and transparent delivery across teams.
-              </p>
-              <ul class="platform-lens-list">
-                <li><i class="fas fa-check-circle" /> Reusable model-like structure for repeated tasks</li>
-                <li><i class="fas fa-check-circle" /> Step-based execution logic inspired by workflow orchestration</li>
-                <li><i class="fas fa-check-circle" /> Team-friendly process visibility for reviews and approvals</li>
-              </ul>
-              <RouterLink class="default-btn-one" to="/projects">
-                Explore Use Cases
-                <span />
-              </RouterLink>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <div class="platform-integrations-card">
-              <span class="platform-eyebrow">Works with your stack</span>
-              <h3>Common integration landscape</h3>
-              <div class="integration-chip-wrap">
-                <span class="integration-chip">Data Warehouse</span>
-                <span class="integration-chip">API Gateway</span>
-                <span class="integration-chip">Analytics Layer</span>
-                <span class="integration-chip">Event Streams</span>
-                <span class="integration-chip">Quality Controls</span>
-                <span class="integration-chip">Monitoring Tools</span>
-              </div>
-              <RouterLink to="/contact" class="default-btn">
-                Talk to Us
-                <span />
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HomePreFooterCta />
 
-    <IndustryInspiredSection />
-
-    <!-- Start Footer Section -->
-    <section class="footer-section ptb-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Developers</h3></div>
-              <ul class="footer-quick-links">
-                <li><a href="https://github.com/SignalRegistry" target="_blank" rel="noopener">GitHub</a></li>
-                
-                <li><RouterLink to="/api">API</RouterLink></li>
-                
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Resources</h3></div>
-              <ul class="footer-quick-links">
-                <li><RouterLink to="/blog">Blog</RouterLink></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Stay in Touch</h3></div>
-              <ul class="footer-quick-links">
-                <li><a href="mailto:iletisim@sinyatek.com">Email</a></li>
-                <li><a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><RouterLink to="/contact">Contact Us</RouterLink></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="lines">
-        <div class="line" />
-        <div class="line" />
-        <div class="line" />
-      </div>
-      <div class="partner-shape-img1">
-        <img :src="getAssetImg('shape/partnar-shape-2.png')" alt="image">
-      </div>
-    </section>
-
-    <!-- Start Copy Right Section -->
-    <div class="copyright-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6">
-            <p>Copyright © 2026 Sinyatek. All Rights Reserved</p>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <ul>
-              <li><RouterLink to="/privacy-policy">Privacy Policy</RouterLink></li>
-              <li><RouterLink to="/terms-condition">Terms & Conditions</RouterLink></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <SiteFooter />
 
     <!-- Start Go Top Section -->
   </div>
 </template>
+
+<style scoped>
+.site-home-hero.main-banner-two {
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+}
+
+.site-home-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #370b6f, #00429b, #006dba, #0095ce, #2dbcdc);
+}
+
+.site-home-hero > :deep(.container-fluid) {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+<style>
+html.theme-dark .site-home-hero__bg {
+  background: #000000;
+}
+</style>

@@ -54,7 +54,7 @@ watch(themeMode, (mode) => {
 </script>
 
 <template>
-  <div class="preloader" :class="{ 'preloader-deactivate': preloaderDone }">
+  <div v-if="!preloaderDone" class="preloader">
     <div class="loader">
       <div class="shadow" />
       <div class="box" />
