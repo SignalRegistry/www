@@ -23,7 +23,18 @@ const heroBg = getAssetImg('aboutUs.jpg')
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
-            <div class="page-title-content page-title-content--about" />
+            <div class="about-hero-content">
+              <span class="about-hero-eyebrow">About Signal Registry</span>
+              <h1>Built for teams that need clarity, control, and speed</h1>
+              <p>Signal Registry helps organizations monitor signal records, analyze trends, and manage updates from one secure operational workspace.</p>
+              <div class="about-hero-actions">
+                <RouterLink to="/contact" class="default-btn-one">
+                  Request Demo
+                  <span />
+                </RouterLink>
+                <span class="about-hero-note">Trusted workflows. Enterprise-ready support.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -147,40 +158,83 @@ const heroBg = getAssetImg('aboutUs.jpg')
 </template>
 
 <style scoped>
-/* About page hero: new design, navbar unchanged */
 .page-title-area--about {
   background-color: #000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 0 80px;
+  position: relative;
 }
+
 .page-title-area--about::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(16, 18, 37, 0.62);
   z-index: 0;
 }
-.page-title-content--about {
-  margin-top: 0;
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: #ffffff;
+  padding: 36px 0 28px;
 }
-.page-title-content--about h2 {
-  font-size: 2.5rem;
+
+.about-hero-eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
-.page-title-content--about ul li {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+
+.about-hero-content h1 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: 44px;
+  line-height: 1.2;
 }
-.page-title-content--about ul li a {
+
+.about-hero-content p {
+  margin-bottom: 22px;
+  max-width: 690px;
   color: rgba(255, 255, 255, 0.9);
-  transition: color 0.2s ease;
+  font-size: 17px;
+  line-height: 1.7;
 }
-.page-title-content--about ul li a:hover {
-  color: #007bff;
+
+.about-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.about-hero-note {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+  .about-hero-content {
+    padding: 24px 0 12px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 </style>

@@ -185,8 +185,78 @@ const apiHeroBg = getAssetImg('api_image.webp')
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(16, 18, 37, 0.62);
   z-index: 0;
+}
+
+.page-title-area--api .d-table-cell {
+  vertical-align: middle;
+}
+
+.pricing-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: #ffffff;
+  padding: 36px 0 28px;
+}
+
+.pricing-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+}
+
+.pricing-hero-content h1 {
+  margin-bottom: 14px;
+  font-size: 44px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.pricing-hero-content p {
+  margin-bottom: 22px;
+  max-width: 690px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pricing-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.pricing-hero-note {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+  .pricing-hero-content {
+    padding: 24px 0 12px;
+  }
+
+  .pricing-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .pricing-hero-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 </style>
 <style>
@@ -245,7 +315,18 @@ const apiHeroBg = getAssetImg('api_image.webp')
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
-            <div class="page-title-content" />
+            <div class="pricing-hero-content">
+              <span class="pricing-hero-eyebrow">Product Overview</span>
+              <h1>Build reliable integrations on the Signal Registry platform</h1>
+              <p>Authenticate securely, access registry resources consistently, and scale production workflows with clear endpoint standards and deployment-ready guidance.</p>
+              <div class="pricing-hero-actions">
+                <RouterLink to="/contact" class="default-btn-one">
+                  Talk to Sales
+                  <span />
+                </RouterLink>
+                <span class="pricing-hero-note">Production-ready endpoints. Enterprise-grade support.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
