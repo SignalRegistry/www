@@ -91,30 +91,4 @@
   margin-right: 8px;
 }
 
-:global(.theme-dark) .industry-inspired-section {
-  background: #000000 !important;
-}
-
-:global(.theme-dark) .inspired-card {
-  background: #000000 !important;
-  border-color: #2b2b42 !important;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35) !important;
-}
-
-:global(.theme-dark) .inspired-card:hover {
-  border-color: rgba(0, 176, 238, 0.55) !important;
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.42) !important;
-}
-
-:global(.theme-dark) .inspired-card h4 {
-  color: #ffffff !important;
-}
-
-:global(.theme-dark) .inspired-card li {
-  color: #dbe3ff !important;
-}
-
-:global(.theme-dark) .inspired-card li i {
-  color: #18c8ff !important;
-}
 </style>

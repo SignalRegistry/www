@@ -204,51 +204,6 @@ defineProps({
   font-size: 14px;
 }
 
-:global(.theme-dark) .professional-head p,
-:global(.theme-dark) .metric-card p,
-:global(.theme-dark) .roadmap-item p {
-  color: #d0d0d4;
-}
-
-:global(.theme-dark) .professional-section {
-  --pro-card-bg: #000000;
-  --pro-roadmap-bg: #000000;
-  --pro-border: #242435;
-  --pro-item-border: #242435;
-}
-
-:global(.theme-dark) .metric-card,
-:global(.theme-dark) .roadmap-item {
-  border-color: #242435;
-  box-shadow: none;
-}
-
-:global(.theme-dark) .metric-card:hover {
-  border-color: #3b4d87;
-}
-
-:global(.theme-dark) .metric-label {
-  color: #ffffff;
-}
-
-:global(.theme-dark) .metric-value {
-  color: #ffffff;
-}
-
-:global(.theme-dark) .metric-card p {
-  color: #ffffff;
-}
-
-:global(.theme-dark) .roadmap-step {
-  background: #000000;
-  border-color: #2a4d79;
-  color: #4ab8ff;
-}
-
-:global(.theme-dark) .professional-roadmap {
-  border-color: #242435;
-}
-
 @media only screen and (max-width: 991px) {
   .professional-head h3 {
     font-size: 32px;

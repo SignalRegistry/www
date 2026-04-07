@@ -1,7 +1,6 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import NavThemeToggle from '@/components/NavThemeToggle.vue'
 
 const route = useRoute()
 const menuOpen = ref(false)
@@ -19,11 +18,12 @@ watch(menuOpen, (open) => {
 })
 
 const drawerLinks = [
-  { path: '/about', label: 'Product', icon: 'fa-box-open' },
-  { path: '/projects', label: 'Solutions', icon: 'fa-layer-group' },
-  { path: '/api', label: 'Resources', icon: 'fa-book-open' },
-  { path: '/faq', label: 'Community', icon: 'fa-comments' },
+  { path: '/about', label: 'About Us', icon: 'fa-box-open' },
+  { path: '/projects', label: 'Projects', icon: 'fa-layer-group' },
+  { path: '/api', label: 'API', icon: 'fa-book-open' },
   { path: '/pricing', label: 'Pricing', icon: 'fa-tag' },
+  { path: '/contact', label: 'Contact', icon: 'fa-envelope' },
+  { path: '/faq', label: 'Faq', icon: 'fa-comments' },
 ]
 
 function linkClass(path) {
@@ -130,9 +130,6 @@ onBeforeUnmount(() => {
                 Free Quote
                 <span />
               </RouterLink>
-              <div class="site-navbar__desktop-theme">
-                <NavThemeToggle />
-              </div>
             </div>
           </div>
         </nav>

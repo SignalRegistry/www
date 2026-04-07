@@ -1,13 +1,10 @@
 <script setup>
-import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
-import PageDesignSection from '@/components/PageDesignSection.vue'
 import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
-const email = ref('')
 const heroBg = getAssetImg('aboutUs.jpg')
 </script>
 
@@ -40,44 +37,6 @@ const heroBg = getAssetImg('aboutUs.jpg')
       </div>
     </div>
 
-    <!-- Start About Section -->
-    <section class="about-section ptb-100">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="about-image">
-              <img :src="getAssetImg('about.png')" alt="image">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="about-content">
-              <span>About Us</span>
-              <h3>Signal Registry</h3>
-              <p><strong>Sinyatek</strong> provides <strong>Signal Registry</strong>, a management panel for tracking and managing signal registration data. Users sign in to view a summary of signal records, explore trend and channel data with charts, list units in a table, and edit individual records. Both high-level overview and detailed editing are available in a single interface.</p>
-              <ul class="about-list">
-                <li>
-                  <i class="flaticon-tick" />
-                  Summary cards, trend and channel charts, unit table
-                </li>
-                <li>
-                  <i class="flaticon-tick" />
-                  Secure login and session control
-                </li>
-                <li>
-                  <i class="flaticon-tick" />
-                  Record editing and connection editor (nodes/lines)
-                </li>
-                <li>
-                  <i class="flaticon-tick" />
-                  Draggable layouts; environment selection (localhost / staging / production)
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Start Productive Section -->
     <section class="productive-section ptb-100">
       <div class="container">
@@ -108,46 +67,55 @@ const heroBg = getAssetImg('aboutUs.jpg')
       </div>
     </section>
 
-    <!-- Start Subscribe Section -->
-    <section class="subscribe-Section ptb-100">
+    <!-- Start About Section -->
+    <section class="about-section ptb-100">
       <div class="container">
-        <div class="subscribe-content-area mb-0">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-              <div class="subscribe-image">
-                <img :src="getAssetImg('subscribe.png')" alt="image">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="about-content">
+              <span class="about-label">Enterprise Platform</span>
+              <h3>Signal Registry Governance Suite</h3>
+              <p class="about-intro">
+                <strong>Signal Registry</strong> is Sinyatek's enterprise platform for governing signal registration data with
+                operational consistency, security, and full lifecycle control.
+              </p>
+              <p class="about-intro about-intro--secondary">
+                It unifies portfolio-level visibility, analytics, and record-level interventions in one managed workspace,
+                enabling faster decisions and stronger compliance posture across environments.
+              </p>
+              <div class="about-metrics">
+                <div class="about-metric-item">
+                  <strong>Centralized Control</strong>
+                  <span>Single operational workspace across teams</span>
+                </div>
+                <div class="about-metric-item">
+                  <strong>Governance by Design</strong>
+                  <span>Traceable actions with policy-aligned workflows</span>
+                </div>
+                <div class="about-metric-item">
+                  <strong>Enterprise Readiness</strong>
+                  <span>Security-focused architecture for scale</span>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="subscribe-content">
-                <h2>Don't Miss Our News And Updates</h2>
-                <p>Subscribe to our newsletter to receive announcements and updates about Signal Registry.</p>
-              </div>
-              <form class="newsletter-form" @submit.prevent>
-                <input
-                  v-model="email"
-                  type="email"
-                  class="input-newsletter"
-                  placeholder="Enter your email"
-                  name="EMAIL"
-                  required
-                  autocomplete="off"
-                >
-                <button type="submit">Subscribe Now</button>
-                <div id="validator-newsletter" class="form-result" />
-              </form>
+              <ul class="about-list">
+                <li>
+                  <i class="flaticon-tick" />
+                  Executive command view with KPI monitoring, trend intelligence, and channel-level performance analytics
+                </li>
+                <li>
+                  <i class="flaticon-tick" />
+                  Enterprise-grade security architecture with role-based authorization and controlled session governance
+                </li>
+                <li>
+                  <i class="flaticon-tick" />
+                  End-to-end data lifecycle administration with structured editing, traceability, and environment governance
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <PageDesignSection
-      eyebrow="About Experience"
-      title="Storytelling structure with engineering-grade clarity"
-      description="The About page now follows a layered narrative style: context, capabilities, and action path in one consistent flow."
-      :chips="['Narrative Layout', 'Capability Blocks', 'Reusable Sections', 'Action Driven']"
-    />
 
     <IndustryInspiredSection />
 
@@ -223,7 +191,79 @@ const heroBg = getAssetImg('aboutUs.jpg')
   font-weight: 500;
 }
 
+.about-content {
+  background: #ffffff;
+  border: 1px solid #e6ecfa;
+  border-radius: 16px;
+  padding: 38px 36px;
+  box-shadow: 0 14px 34px rgba(20, 44, 92, 0.1);
+}
+
+.about-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d7e3fc;
+  background: #f6f9ff;
+  color: #1e4fa3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-content h3 {
+  margin-bottom: 14px;
+}
+
+.about-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0 18px;
+}
+
+.about-metric-item {
+  border: 1px solid #e7edfb;
+  border-radius: 12px;
+  background: #fbfdff;
+  padding: 14px 12px;
+}
+
+.about-metric-item strong {
+  display: block;
+  color: #1d2d52;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.about-metric-item span {
+  color: #5f6f95;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.about-intro {
+  margin-bottom: 10px;
+}
+
+.about-intro--secondary {
+  margin-bottom: 18px;
+}
+
 @media only screen and (max-width: 767px) {
+  .about-content {
+    padding: 24px 18px;
+  }
+
+  .about-metrics {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 16px 0 14px;
+  }
+
   .about-hero-content {
     padding: 24px 0 12px;
   }

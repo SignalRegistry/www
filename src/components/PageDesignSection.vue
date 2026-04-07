@@ -108,23 +108,6 @@ defineProps({
   font-weight: 600;
 }
 
-:global(.theme-dark) .page-design-card--primary {
-  background: #000000 !important;
-  box-shadow: none;
-}
-
-:global(.theme-dark) .page-design-card--side {
-  background: #000000;
-  border-color: #242435;
-  box-shadow: none;
-}
-
-:global(.theme-dark) .page-design-chip {
-  color: #d6def2;
-  background: #000000;
-  border-color: #2d2d43;
-}
-
 @media only screen and (max-width: 767px) {
   .page-design-card {
     padding: 24px 18px;

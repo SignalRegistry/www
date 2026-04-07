@@ -2,7 +2,6 @@
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
-import PageDesignSection from '@/components/PageDesignSection.vue'
 import ProfessionalSection from '@/components/ProfessionalSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
@@ -28,9 +27,6 @@ const apiHeroBg = getAssetImg('api_image.webp')
   color: #475569;
   line-height: 1.65;
   margin-bottom: 2rem;
-}
-:deep(.theme-dark .api-doc .lead) {
-  color: #ffffff !important;
 }
 .api-doc :deep(h2) {
   font-size: 1.35rem;
@@ -143,6 +139,14 @@ const apiHeroBg = getAssetImg('api_image.webp')
   line-height: 1.55;
   margin-bottom: 1rem;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+}
+
+.api-doc :deep(pre.api-code--plain) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 .api-doc :deep(pre.api-code code) {
   background: none;
@@ -257,49 +261,6 @@ const apiHeroBg = getAssetImg('api_image.webp')
     font-size: 15px;
     line-height: 1.65;
   }
-}
-</style>
-<style>
-.theme-dark .api-doc .lead {
-  color: #ffffff !important;
-}
-.theme-dark .api-doc .api-endpoint-note {
-  color: #ffffff !important;
-}
-.theme-dark .api-doc .api-registry-note {
-  color: #ffffff !important;
-}
-.theme-dark .api-doc .api-success-note {
-  color: #ffffff !important;
-}
-.theme-dark .api-doc .api-response-note {
-  color: #ffffff !important;
-}
-.theme-dark .api-doc .api-related-note {
-  color: #ffffff !important;
-}
-
-.theme-dark .api-doc-wrap {
-  --api-bg: #000000;
-  --api-code-bg: #000000;
-  --api-border: rgba(255, 255, 255, 0.12);
-}
-
-.theme-dark .api-doc-wrap .api-doc .table thead th {
-  background: #000000 !important;
-}
-
-.theme-dark .api-doc-wrap .api-doc .table tbody tr:nth-child(even) td {
-  background: #000000 !important;
-}
-
-.theme-dark .api-doc-wrap .api-doc .table tbody tr:hover,
-.theme-dark .api-doc-wrap .api-doc .table tbody tr:hover td {
-  background: #000000 !important;
-}
-
-.theme-dark .api-doc-wrap .api-doc .api-section code {
-  background: #000000 !important;
 }
 </style>
 
@@ -550,48 +511,155 @@ const apiHeroBg = getAssetImg('api_image.webp')
 
               <h2 id="7-examples">7. Example requests</h2>
               <h3>7.1 Login</h3>
-              <pre class="api-code"><code>POST https://api0.signalregistry.net/login
-Content-Type: application/json
-
-{
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Payload (JSON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-post">POST</span></td>
+                    <td><code>/login</code></td>
+                    <td>
+                      <pre class="api-code api-code--plain"><code>{
   "username": "user",
   "password": "secret"
 }</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
               <p class="api-success-note">Success response (example): <code>{ "id": "...", "user": { ... }, "role": "...", "origin": "..." }</code></p>
               <h3>7.2 Session check</h3>
-              <pre class="api-code"><code>GET https://api0.signalregistry.net/session
-(Cookie or auth header required by server)</code></pre>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-get">GET</span></td>
+                    <td><code>/session</code></td>
+                    <td>(Cookie or auth header required by server)</td>
+                  </tr>
+                </tbody>
+              </table>
               <h3>7.3 User profile</h3>
-              <pre class="api-code"><code>GET https://api0.signalregistry.net/user
-PUT https://api0.signalregistry.net/user
-Content-Type: application/json
-
-{ "displayName": "New Name", ... }</code></pre>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Payload (JSON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-get">GET</span></td>
+                    <td><code>/user</code></td>
+                    <td>Profile retrieval request (no body)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-badge method-put">PUT</span></td>
+                    <td><code>/user</code></td>
+                    <td><pre class="api-code"><code>{ "displayName": "New Name", ... }</code></pre></td>
+                  </tr>
+                </tbody>
+              </table>
               <h3>7.4 Registry list and create</h3>
-              <pre class="api-code"><code>GET https://api0.signalregistry.net/registry</code></pre>
-              <pre class="api-code"><code>POST https://api0.signalregistry.net/registry
-Content-Type: application/json
-
-{}</code></pre>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Payload (JSON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-get">GET</span></td>
+                    <td><code>/registry</code></td>
+                    <td>Registry list request (no body)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-badge method-post">POST</span></td>
+                    <td><code>/registry</code></td>
+                    <td><pre class="api-code"><code>{}</code></pre></td>
+                  </tr>
+                </tbody>
+              </table>
               <p class="api-response-note">Response (example): <code>{ "id": "abc123", ... }</code> or <code>{ "_id": "abc123", ... }</code></p>
               <h3>7.5 Single registry and delete</h3>
-              <pre class="api-code"><code>GET https://api0.signalregistry.net/registry/abc123
-DELETE https://api0.signalregistry.net/registry/abc123</code></pre>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-get">GET</span></td>
+                    <td><code>/registry/abc123</code></td>
+                    <td>Fetch single registry detail</td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-badge method-delete">DELETE</span></td>
+                    <td><code>/registry/abc123</code></td>
+                    <td>Delete registry by ID</td>
+                  </tr>
+                </tbody>
+              </table>
               <h3>7.6 Flow data (registry subdomain)</h3>
-              <pre class="api-code"><code>GET https://{registryId}.signalregistry.net/flows?last_only=1</code></pre>
-              <pre class="api-code"><code>POST https://{registryId}.signalregistry.net/flows
-Content-Type: application/json
-
-{
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Payload (JSON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-get">GET</span></td>
+                    <td><code>/flows?last_only=1</code></td>
+                    <td>Fetch latest saved flow (no body)</td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-badge method-post">POST</span></td>
+                    <td><code>/flows</code></td>
+                    <td><pre class="api-code"><code>{
   "nodes": [...],
   "edges": [...],
   "viewport": { "x": 0, "y": 0, "zoom": 1 }
-}</code></pre>
+}</code></pre></td>
+                  </tr>
+                </tbody>
+              </table>
               <h3>7.7 Create source (registry subdomain)</h3>
-              <pre class="api-code"><code>POST https://{registryId}.signalregistry.net/sources
-Content-Type: application/json
-
-{ ... }</code></pre>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Payload (JSON)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="method-badge method-post">POST</span></td>
+                    <td><code>/sources</code></td>
+                    <td><pre class="api-code"><code>{ ... }</code></pre></td>
+                  </tr>
+                </tbody>
+              </table>
 
               <h2>Related docs</h2>
               <ul>
@@ -602,13 +670,6 @@ Content-Type: application/json
         </div>
       </div>
     </section>
-
-    <PageDesignSection
-      eyebrow="API Experience"
-      title="Documentation layered for speed, trust, and integration"
-      description="The API page now carries a stronger product pattern: discover endpoints quickly, connect confidently, and scale integrations."
-      :chips="['Endpoint Clarity', 'Structured Docs', 'Integration Focus', 'Developer Ready']"
-    />
 
     <ProfessionalSection
       title="Production-minded API integration lifecycle"

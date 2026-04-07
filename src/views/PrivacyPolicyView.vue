@@ -2,8 +2,9 @@
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
-import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
+
+const privacyHeroBg = getAssetImg('aboutUs.jpg')
 </script>
 
 <template>
@@ -11,16 +12,27 @@ import { getAssetImg } from '@/utils/getAssetImg'
     <SiteNavbar />
 
     <!-- Page Title -->
-    <div class="page-title-area item-bg1">
+    <div
+      class="page-title-area page-title-area--privacy"
+      :style="privacyHeroBg ? { backgroundImage: `url(${privacyHeroBg})` } : {}"
+    >
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
-            <div class="page-title-content">
-              <h2>Privacy Policy</h2>
-              <ul>
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li>Privacy Policy</li>
-              </ul>
+            <div class="privacy-hero-content">
+              <span class="privacy-hero-eyebrow">Privacy & Data Protection</span>
+              <h1>Privacy policy built for transparent and secure operations</h1>
+              <p>
+                Learn how Signal Registry collects, processes, and protects personal data across platform access,
+                support interactions, and operational workflows.
+              </p>
+              <div class="privacy-hero-actions">
+                <RouterLink to="/contact" class="default-btn-one">
+                  Contact Team
+                  <span />
+                </RouterLink>
+                <span class="privacy-hero-note">Compliance-focused policies. Practical accountability.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -66,13 +78,88 @@ import { getAssetImg } from '@/utils/getAssetImg'
       </div>
     </section>
 
-    <PageDesignSection
-      eyebrow="Policy Experience"
-      title="Compliance content presented with product-grade readability"
-      description="Policy documents now sit within a clearer visual system that improves scanability while preserving formal legal structure."
-      :chips="['Readable Legal Text', 'Structured Sections', 'Trust Emphasis', 'Consistent UI']"
-    />
-
     <SiteFooter />
   </div>
 </template>
+
+<style scoped>
+.page-title-area--privacy {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.page-title-area--privacy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 18, 37, 0.62);
+  z-index: 0;
+}
+
+.privacy-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: #ffffff;
+  padding: 36px 0 28px;
+}
+
+.privacy-hero-eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.privacy-hero-content h1 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.privacy-hero-content p {
+  margin-bottom: 22px;
+  max-width: 690px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.privacy-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.privacy-hero-note {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+  .privacy-hero-content {
+    padding: 24px 0 12px;
+  }
+
+  .privacy-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .privacy-hero-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+</style>

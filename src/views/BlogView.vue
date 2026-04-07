@@ -4,6 +4,8 @@ import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
+const blogHeroBg = getAssetImg('aboutUs.jpg')
+
 const posts = [
   {
     title: 'How to standardize signal records across teams',
@@ -30,11 +32,28 @@ const posts = [
   <div>
     <SiteNavbar />
 
-    <div class="page-title-area item-bg1">
+    <div
+      class="page-title-area page-title-area--blog"
+      :style="blogHeroBg ? { backgroundImage: `url(${blogHeroBg})` } : {}"
+    >
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
-            <div class="page-title-content" />
+            <div class="blog-hero-content">
+              <span class="blog-hero-eyebrow">Blog & Insights</span>
+              <h1>Explore practical knowledge for secure signal operations</h1>
+              <p>
+                Discover implementation notes, workflow best practices, and platform guidance designed to help teams
+                scale Signal Registry with confidence.
+              </p>
+              <div class="blog-hero-actions">
+                <RouterLink to="/contact" class="default-btn-one">
+                  Contact Team
+                  <span />
+                </RouterLink>
+                <span class="blog-hero-note">Actionable content. Built for operational teams.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -67,6 +86,71 @@ const posts = [
 </template>
 
 <style scoped>
+.page-title-area--blog {
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.page-title-area--blog::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 18, 37, 0.62);
+  z-index: 0;
+}
+
+.blog-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: #ffffff;
+  padding: 36px 0 28px;
+}
+
+.blog-hero-eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.blog-hero-content h1 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.blog-hero-content p {
+  margin-bottom: 22px;
+  max-width: 690px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.blog-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.blog-hero-note {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .blog-modern-card {
   height: 100%;
   border: 1px solid #dbe7ff;
@@ -105,15 +189,18 @@ const posts = [
   margin-left: 6px;
 }
 
-:global(.theme-dark) .blog-modern-card {
-  background: #000000;
-  border-color: #242435;
-  box-shadow: none;
-}
+@media only screen and (max-width: 767px) {
+  .blog-hero-content {
+    padding: 24px 0 12px;
+  }
 
-:global(.theme-dark) .blog-modern-card h3,
-:global(.theme-dark) .blog-modern-card p,
-:global(.theme-dark) .blog-modern-link {
-  color: #ffffff;
+  .blog-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .blog-hero-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 </style>

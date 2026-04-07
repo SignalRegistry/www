@@ -2,7 +2,6 @@
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
-import PageDesignSection from '@/components/PageDesignSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const projectsHeroBg = getAssetImg('projects_image.jpg')
@@ -20,7 +19,21 @@ const projectsHeroBg = getAssetImg('projects_image.jpg')
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
-            <div class="page-title-content" />
+            <div class="projects-hero-content">
+              <span class="projects-hero-eyebrow">Signal Registry Project</span>
+              <h1>Built for operational projects that require accuracy and control</h1>
+              <p>
+                Signal Registry delivers end-to-end visibility for signal records, from executive-level monitoring to
+                record-level interventions in one secure and structured environment.
+              </p>
+              <div class="projects-hero-actions">
+                <RouterLink to="/contact" class="default-btn-one">
+                  Request Project Demo
+                  <span />
+                </RouterLink>
+                <span class="projects-hero-note">Implementation-ready workflows. Enterprise support model.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -98,39 +111,6 @@ const projectsHeroBg = getAssetImg('projects_image.jpg')
       </div>
     </section>
 
-    <!-- Subscribe Section -->
-    <section class="subscribe-Section ptb-100">
-      <div class="container">
-        <div class="subscribe-content-area mb-0">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-              <div class="subscribe-image">
-                <img :src="getAssetImg('subscribe.png')" alt="image">
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="subscribe-content">
-                <h2>Don't Miss Our News And Updates</h2>
-                <p>Stay informed about Signal Registry updates and new features. Subscribe to our newsletter.</p>
-              </div>
-              <form class="newsletter-form" @submit.prevent>
-                <input type="email" class="input-newsletter" placeholder="Enter your email" name="EMAIL" required autocomplete="off">
-                <button type="submit">Subscribe Now</button>
-                <div id="validator-newsletter" class="form-result" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <PageDesignSection
-      eyebrow="Project Lens"
-      title="Workflow-centric presentation for project capabilities"
-      description="This section reinforces project delivery logic with modular capability framing and integration-aware design cues."
-      :chips="['Flow Mapping', 'Capability Matrix', 'Integration Ready', 'Operational UI']"
-    />
-
     <SiteFooter />
   </div>
 </template>
@@ -141,12 +121,78 @@ const projectsHeroBg = getAssetImg('projects_image.jpg')
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
+
 .page-title-area--projects::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(16, 18, 37, 0.62);
   z-index: 0;
+}
+
+.projects-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  color: #ffffff;
+  padding: 36px 0 28px;
+}
+
+.projects-hero-eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.projects-hero-content h1 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.projects-hero-content p {
+  margin-bottom: 22px;
+  max-width: 690px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.projects-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.projects-hero-note {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+  .projects-hero-content {
+    padding: 24px 0 12px;
+  }
+
+  .projects-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .projects-hero-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
 }
 </style>

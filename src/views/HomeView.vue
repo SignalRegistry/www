@@ -168,9 +168,3 @@ import { getAssetImg } from '@/utils/getAssetImg'
   z-index: 1;
 }
 </style>
-
-<style>
-html.theme-dark .site-home-hero__bg {
-  background: #000000;
-}
-</style>
