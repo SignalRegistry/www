@@ -10,8 +10,11 @@ function hidePreloader() {
 
 onMounted(() => {
   const root = document.documentElement
-  root.className = 'theme-light'
-  localStorage.setItem('theme', 'light')
+  const savedTheme = localStorage.getItem('theme')
+  const themeClass = savedTheme === 'theme-dark' ? 'theme-dark' : 'theme-light'
+  root.classList.remove('theme-light', 'theme-dark')
+  root.classList.add(themeClass)
+  localStorage.setItem('theme', themeClass)
 
   if (document.readyState === 'complete') {
     setTimeout(hidePreloader, 300)

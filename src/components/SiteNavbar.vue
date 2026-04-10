@@ -4,6 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
 const menuOpen = ref(false)
+const isDarkTheme = ref(false)
 
 watch(
   () => route.fullPath,
@@ -41,7 +42,23 @@ function onResize() {
   }
 }
 
+function setTheme(isDark) {
+  if (typeof document === 'undefined') return
+  const root = document.documentElement
+  const themeClass = isDark ? 'theme-dark' : 'theme-light'
+  root.classList.remove('theme-light', 'theme-dark')
+  root.classList.add(themeClass)
+  localStorage.setItem('theme', themeClass)
+}
+
+function toggleTheme() {
+  setTheme(isDarkTheme.value)
+}
+
 onMounted(() => {
+  const savedTheme = localStorage.getItem('theme')
+  isDarkTheme.value = savedTheme === 'theme-dark'
+  setTheme(isDarkTheme.value)
   window.addEventListener('resize', onResize)
 })
 
@@ -130,6 +147,32 @@ onBeforeUnmount(() => {
                 Free Quote
                 <span />
               </RouterLink>
+              <div class="site-navbar__desktop-theme">
+                <label class="switch">
+                  <input
+                    v-model="isDarkTheme"
+                    class="switch__input"
+                    type="checkbox"
+                    role="switch"
+                    aria-label="Dark Mode"
+                    @change="toggleTheme"
+                  />
+                  <span class="switch__icon">
+                    <span class="switch__icon-part switch__icon-part--1" />
+                    <span class="switch__icon-part switch__icon-part--2" />
+                    <span class="switch__icon-part switch__icon-part--3" />
+                    <span class="switch__icon-part switch__icon-part--4" />
+                    <span class="switch__icon-part switch__icon-part--5" />
+                    <span class="switch__icon-part switch__icon-part--6" />
+                    <span class="switch__icon-part switch__icon-part--7" />
+                    <span class="switch__icon-part switch__icon-part--8" />
+                    <span class="switch__icon-part switch__icon-part--9" />
+                    <span class="switch__icon-part switch__icon-part--10" />
+                    <span class="switch__icon-part switch__icon-part--11" />
+                  </span>
+                  <span class="switch__sr">Dark Mode</span>
+                </label>
+              </div>
             </div>
           </div>
         </nav>

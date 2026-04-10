@@ -225,3 +225,62 @@ defineProps({
   }
 }
 </style>
+
+<style>
+html.theme-dark .professional-section {
+  --pro-card-bg: #111827;
+  --pro-roadmap-bg: #0f172a;
+  --pro-border: rgba(255, 255, 255, 0.12);
+  --pro-item-border: rgba(255, 255, 255, 0.1);
+}
+
+html.theme-dark .professional-section .professional-head h3 {
+  color: #e2e8f0 !important;
+}
+
+html.theme-dark .professional-section .professional-head p {
+  color: #94a3b8 !important;
+}
+
+html.theme-dark .professional-section .professional-eyebrow {
+  color: #7ddfff !important;
+}
+
+html.theme-dark .professional-section .metric-card {
+  box-shadow: none !important;
+}
+
+html.theme-dark .professional-section .metric-card:hover {
+  border-color: rgba(125, 223, 255, 0.5) !important;
+}
+
+html.theme-dark .professional-section .metric-label {
+  color: #94a3b8 !important;
+}
+
+html.theme-dark .professional-section .metric-value {
+  color: #7ddfff !important;
+}
+
+html.theme-dark .professional-section .metric-card p {
+  color: #cbd5e1 !important;
+}
+
+html.theme-dark .professional-section .professional-roadmap h4 {
+  color: #e2e8f0 !important;
+}
+
+html.theme-dark .professional-section .roadmap-item h5 {
+  color: #e2e8f0 !important;
+}
+
+html.theme-dark .professional-section .roadmap-item p {
+  color: #94a3b8 !important;
+}
+
+html.theme-dark .professional-section .roadmap-step {
+  border-color: rgba(125, 223, 255, 0.45) !important;
+  color: #7ddfff !important;
+  background: rgba(125, 223, 255, 0.1) !important;
+}
+</style>
