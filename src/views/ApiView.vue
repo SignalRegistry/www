@@ -65,6 +65,7 @@ const apiHeroBg = getAssetImg('api_image.webp')
   border: 1px solid #334155;
   border-collapse: separate;
   border-spacing: 0;
+  min-width: 100%;
 }
 .api-doc :deep(.table thead th) {
   background: linear-gradient(180deg, #0f172a 0%, #16233a 100%);
@@ -248,18 +249,87 @@ const apiHeroBg = getAssetImg('api_image.webp')
   font-weight: 500;
 }
 
+@media only screen and (max-width: 991px) {
+  .api-doc-main {
+    margin-top: 0;
+  }
+
+  .api-doc :deep(h1) {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .api-doc :deep(.api-section) {
+    padding: 1.2rem 1rem;
+  }
+
+  .api-doc :deep(.table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+  }
+
+  .api-doc :deep(.table td:first-child),
+  .api-doc :deep(.table th:first-child) {
+    width: auto;
+    min-width: 100px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
+  .api-doc-wrap {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
   .pricing-hero-content {
     padding: 24px 0 12px;
   }
 
   .pricing-hero-content h1 {
     font-size: 30px;
+    line-height: 1.28;
   }
 
   .pricing-hero-content p {
     font-size: 15px;
     line-height: 1.65;
+  }
+
+  .pricing-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-hero-note {
+    font-size: 13px;
+  }
+
+  .api-doc :deep(h2) {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .api-doc :deep(h3) {
+    font-size: 1rem;
+  }
+
+  .api-doc :deep(pre.api-code) {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .api-doc :deep(.table) {
+    font-size: 0.85rem;
+  }
+
+  .api-doc :deep(.table th),
+  .api-doc :deep(.table td) {
+    white-space: nowrap;
+    padding: 0.75rem 0.8rem;
   }
 }
 </style>
