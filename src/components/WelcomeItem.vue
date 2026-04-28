@@ -1,12 +1,15 @@
 <template>
   <div class="item">
     <i>
+      <!-- Icon slot lets each item provide its own visual marker. -->
       <slot name="icon"></slot>
     </i>
     <div class="details">
       <h3>
+        <!-- Heading slot keeps title content customizable. -->
         <slot name="heading"></slot>
       </h3>
+      <!-- Default slot is used for descriptive body content. -->
       <slot></slot>
     </div>
   </div>
@@ -58,6 +61,7 @@ h3 {
   }
 
   .item:before {
+    /* Upper connector line for timeline layout. */
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;
@@ -67,6 +71,7 @@ h3 {
   }
 
   .item:after {
+    /* Lower connector line for timeline layout. */
     content: ' ';
     border-left: 1px solid var(--color-border);
     position: absolute;

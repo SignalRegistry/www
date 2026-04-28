@@ -145,6 +145,7 @@ const pricingFaqItems = [
 ]
 
 function togglePricingFaq(index) {
+  // Behaves like an accordion: one open item at a time.
   openPricingFaqIndex.value = openPricingFaqIndex.value === index ? -1 : index
 }
 </script>

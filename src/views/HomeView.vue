@@ -12,7 +12,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
   <div>
     <SiteNavbar />
 
-    <!-- Ana sayfa hero: arka plan ayrı div (CSS ::before + shape katmanları bazı tarayıcılarda gri/soluk hataya yol açıyordu) -->
+    <!-- Use a dedicated background layer; pseudo-element stacks previously caused dull/gray rendering in some browsers. -->
     <div class="main-banner-two site-home-hero">
       <div class="site-home-hero__bg" aria-hidden="true" />
       <div class="container-fluid">

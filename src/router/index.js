@@ -4,9 +4,11 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to) {
+    // Preserve anchor-link navigation while keeping smooth scrolling.
     if (to.hash) {
       return { el: to.hash, behavior: 'smooth' }
     }
+    // Reset to top for standard route transitions.
     return { top: 0 }
   },
   routes: [
@@ -169,6 +171,7 @@ const DEFAULT_DESCRIPTION =
 router.afterEach((to) => {
   if (typeof document === 'undefined') return
 
+  // Use per-route SEO metadata and fall back to global defaults.
   const title = (to.meta && to.meta.title) || DEFAULT_TITLE
   const description = (to.meta && to.meta.description) || DEFAULT_DESCRIPTION
 
@@ -176,6 +179,7 @@ router.afterEach((to) => {
 
   let descTag = document.querySelector('meta[name="description"]')
   if (!descTag) {
+    // Ensure description meta exists for crawlers and social preview tools.
     descTag = document.createElement('meta')
     descTag.setAttribute('name', 'description')
     document.head.appendChild(descTag)

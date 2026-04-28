@@ -9,12 +9,14 @@ const isDarkTheme = ref(false)
 watch(
   () => route.fullPath,
   () => {
+    // Close drawer after navigation to avoid stale open state on new pages.
     menuOpen.value = false
   },
 )
 
 watch(menuOpen, (open) => {
   if (typeof document === 'undefined') return
+  // Lock body scroll when mobile drawer is open.
   document.body.classList.toggle('site-nav-drawer-open', open)
 })
 
@@ -37,6 +39,7 @@ function closeDrawer() {
 
 function onResize() {
   if (typeof window === 'undefined') return
+  // Force-close mobile drawer once desktop breakpoint is active.
   if (window.matchMedia('(min-width: 992px)').matches) {
     menuOpen.value = false
   }
@@ -46,6 +49,7 @@ function setTheme(isDark) {
   if (typeof document === 'undefined') return
   const root = document.documentElement
   const themeClass = isDark ? 'theme-dark' : 'theme-light'
+  // Keep theme class and persisted preference in sync.
   root.classList.remove('theme-light', 'theme-dark')
   root.classList.add(themeClass)
   localStorage.setItem('theme', themeClass)

@@ -6,6 +6,7 @@ import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 const openIndex = ref(0)
+// Reuse shared image resolver to keep asset references Vite-safe.
 const faqHeroBg = getAssetImg('aboutUs.jpg')
 
 const faqItems = [
@@ -28,6 +29,7 @@ const faqItems = [
 ]
 
 function toggleAccordion(index) {
+  // Clicking an open item collapses it; otherwise switch to the selected item.
   openIndex.value = openIndex.value === index ? -1 : index
 }
 </script>

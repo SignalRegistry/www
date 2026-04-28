@@ -1,3 +1,4 @@
+// Global vendor and app styles are loaded once at app entry.
 import './assets/css/bootstrap.min.css'
 import './assets/css/animate.min.css'
 import './assets/css/flaticon.css'
@@ -18,6 +19,7 @@ import router from './router'
 
 const app = createApp(App)
 
+// Register router before mounting so routes are available immediately.
 app.use(router)
 
 app.mount('#app')
