@@ -4,6 +4,7 @@ import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import HomePreFooterCta from '@/components/HomePreFooterCta.vue'
 import HomeDarkProductHero from '@/components/HomeDarkProductHero.vue'
+import HomeMobileReadySection from '@/components/HomeMobileReadySection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
 </script>
@@ -139,6 +140,8 @@ import { getAssetImg } from '@/utils/getAssetImg'
     </section>
 
     <HomeDarkProductHero />
+
+    <HomeMobileReadySection />
 
     <HomePreFooterCta />
 
