@@ -4,9 +4,9 @@ import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
-import aboutHeroImg from '@/assets/img/about-hero.jpg'
 
-const heroBg = aboutHeroImg || getAssetImg('about-hero.jpg')
+// Served from /public so the URL is stable in dev + production (no hashed asset 404).
+const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
 </script>
 
 <template>
@@ -14,16 +14,10 @@ const heroBg = aboutHeroImg || getAssetImg('about-hero.jpg')
     <SiteNavbar />
 
     <!-- Start Page Title Area -->
-    <div class="page-title-area page-title-area--about">
-      <img
-        v-if="heroBg"
-        class="page-title-area__bg"
-        :src="heroBg"
-        alt=""
-        width="1024"
-        height="512"
-        decoding="async"
-      >
+    <div
+      class="page-title-area page-title-area--about"
+      :style="{ backgroundImage: `url('${heroBg}')` }"
+    >
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
@@ -134,35 +128,24 @@ const heroBg = aboutHeroImg || getAssetImg('about-hero.jpg')
 
 <style scoped>
 .page-title-area--about {
-  /* Kill template default bg so only the hero <img> shows */
-  background-image: none !important;
+  /* public/about-hero.jpg — static fallback + inline style */
+  background-image: url('/about-hero.jpg') !important;
   background-color: #07101f;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
   position: relative;
   overflow: hidden;
-}
-
-.page-title-area__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none;
-  user-select: none;
 }
 
 .page-title-area--about::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(8, 14, 32, 0.35);
+  background: rgba(8, 14, 32, 0.32);
   z-index: 1;
   opacity: 1;
+  pointer-events: none;
 }
 
 .page-title-area--about .d-table {
