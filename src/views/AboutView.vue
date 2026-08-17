@@ -4,8 +4,11 @@ import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
+import aboutHeroImg from '@/assets/img/about-hero.jpg'
 
-const heroBg = getAssetImg('about-hero.jpg')
+// Direct import so Vite always ships the new hero (avoids glob/cache misses).
+const heroBg = aboutHeroImg || getAssetImg('about-hero.jpg')
+const heroBgCss = heroBg ? `url("${heroBg}")` : 'none'
 </script>
 
 <template>
@@ -127,6 +130,8 @@ const heroBg = getAssetImg('about-hero.jpg')
 
 <style scoped>
 .page-title-area--about {
+  /* Beat global .page-title-area { background-image: page-title-bg.jpg } */
+  background-image: v-bind(heroBgCss) !important;
   background-color: #000;
   background-size: cover;
   background-position: center;
@@ -138,7 +143,7 @@ const heroBg = getAssetImg('about-hero.jpg')
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(16, 18, 37, 0.62);
+  background: rgba(16, 18, 37, 0.45);
   z-index: 0;
 }
 
