@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter.vue'
 import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
-const heroBg = getAssetImg('aboutUs.jpg')
+const heroBg = getAssetImg('about-hero.jpg')
 </script>
 
 <template>

@@ -12,6 +12,7 @@ import './assets/css/style.css'
 import './assets/css/responsive.css'
 import './assets/css/navbar-app.css'
 import './assets/css/dark-mode.css'
+import './assets/css/apple-design.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'

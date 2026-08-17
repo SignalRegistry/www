@@ -3,13 +3,19 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to) {
-    // Preserve anchor-link navigation while keeping smooth scrolling.
-    if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' }
+  scrollBehavior(to, _from, savedPosition) {
+    const reduce =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const behavior = reduce ? 'auto' : 'smooth'
+
+    if (savedPosition) {
+      return { ...savedPosition, behavior }
     }
-    // Reset to top for standard route transitions.
-    return { top: 0 }
+    if (to.hash) {
+      return { el: to.hash, behavior }
+    }
+    return { top: 0, behavior }
   },
   routes: [
     {

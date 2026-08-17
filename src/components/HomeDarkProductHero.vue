@@ -141,10 +141,10 @@ import { getAssetImg } from '@/utils/getAssetImg'
     0 1px 2px rgba(0, 0, 0, 0.08),
     0 8px 24px rgba(0, 66, 155, 0.35);
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+    background 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 100ms ease-out;
 }
 
 .home-dark-product-hero__cta:hover {
@@ -161,7 +161,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
 }
 
 .home-dark-product-hero__cta:active {
-  transform: translateY(1px);
+  transform: scale(0.97);
 }
 
 .home-dark-product-hero__cta-icon {
@@ -177,6 +177,17 @@ import { getAssetImg } from '@/utils/getAssetImg'
     0 0 0 1px rgba(0, 176, 238, 0.12),
     0 0 40px rgba(0, 176, 238, 0.08);
   overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-dark-product-hero__browser:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 32px 60px -12px rgba(15, 13, 41, 0.6),
+    0 0 0 1px rgba(0, 176, 238, 0.16),
+    0 0 48px rgba(0, 176, 238, 0.12);
 }
 
 .home-dark-product-hero__browser-chrome {
@@ -232,6 +243,21 @@ import { getAssetImg } from '@/utils/getAssetImg'
     left: -35%;
     bottom: -25%;
     opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-dark-product-hero__browser,
+  .home-dark-product-hero__cta {
+    transition:
+      opacity 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+
+  .home-dark-product-hero__browser:hover,
+  .home-dark-product-hero__cta:active {
+    transform: none !important;
   }
 }
 </style>

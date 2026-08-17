@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { RouterView } from 'vue-router'
+import AppleGoTop from '@/components/AppleGoTop.vue'
 
 const preloaderDone = ref(false)
 
@@ -11,20 +12,17 @@ function hidePreloader() {
 onMounted(() => {
   const root = document.documentElement
   const savedTheme = localStorage.getItem('theme')
-  // Ensure a valid theme class is always present on first render.
   const themeClass = savedTheme === 'theme-dark' ? 'theme-dark' : 'theme-light'
   root.classList.remove('theme-light', 'theme-dark')
   root.classList.add(themeClass)
   localStorage.setItem('theme', themeClass)
 
-  // Hide preloader shortly after load for smooth initial paint.
   if (document.readyState === 'complete') {
-    setTimeout(hidePreloader, 300)
+    setTimeout(hidePreloader, 80)
   } else {
-    window.addEventListener('load', () => setTimeout(hidePreloader, 300), { once: true })
+    window.addEventListener('load', () => setTimeout(hidePreloader, 80), { once: true })
   }
-  // Safety fallback in case the load event is delayed or blocked.
-  setTimeout(hidePreloader, 3000)
+  setTimeout(hidePreloader, 2000)
 })
 </script>
 
@@ -35,5 +33,41 @@ onMounted(() => {
       <div class="box" />
     </div>
   </div>
-  <RouterView />
+  <RouterView v-slot="{ Component, route }">
+    <Transition name="apple-page" mode="out-in">
+      <component :is="Component" :key="route.path" />
+    </Transition>
+  </RouterView>
+  <AppleGoTop />
 </template>
+
+<style>
+.apple-page-enter-active,
+.apple-page-leave-active {
+  transition:
+    opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.apple-page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.apple-page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apple-page-enter-active,
+  .apple-page-leave-active {
+    transition: opacity 0.2s ease !important;
+  }
+
+  .apple-page-enter-from,
+  .apple-page-leave-to {
+    transform: none !important;
+  }
+}
+</style>

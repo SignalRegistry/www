@@ -59,13 +59,20 @@
   background: #ffffff;
   box-shadow: 0 10px 24px rgba(37, 56, 102, 0.1);
   padding: 24px 20px;
-  transition: 0.35s ease;
+  transition:
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .inspired-card:hover {
   transform: translateY(-5px);
   border-color: #b8cfff;
   box-shadow: 0 14px 28px rgba(37, 56, 102, 0.14);
+}
+
+.inspired-card:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .inspired-card h4 {

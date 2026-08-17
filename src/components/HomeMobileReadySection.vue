@@ -53,7 +53,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
               <img
                 :src="getAssetImg('home-mobile-dashboard.png')"
                 alt="Signal Registry mobile dashboard with source and monitor charts"
-                width="505"
+                width="512"
                 height="1024"
                 loading="lazy"
                 decoding="async"
@@ -163,9 +163,9 @@ import { getAssetImg } from '@/utils/getAssetImg'
     0 1px 2px rgba(0, 0, 0, 0.06),
     0 8px 22px rgba(0, 147, 206, 0.28);
   transition:
-    background 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+    background 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 100ms ease-out;
 }
 
 .home-mobile-ready__cta:hover {
@@ -182,7 +182,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
 }
 
 .home-mobile-ready__cta:active {
-  transform: translateY(1px);
+  transform: scale(0.97);
 }
 
 .home-mobile-ready__cta-icon {
@@ -223,7 +223,9 @@ import { getAssetImg } from '@/utils/getAssetImg'
     0 28px 48px rgba(15, 30, 70, 0.35),
     0 0 28px rgba(0, 176, 238, 0.12);
   transform: translateY(0);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .home-mobile-ready__phone:hover {
@@ -255,6 +257,21 @@ import { getAssetImg } from '@/utils/getAssetImg'
 
   .home-mobile-ready__phone {
     width: min(100%, 260px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-mobile-ready__phone,
+  .home-mobile-ready__cta {
+    transition:
+      opacity 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+
+  .home-mobile-ready__phone:hover,
+  .home-mobile-ready__cta:active {
+    transform: none !important;
   }
 }
 </style>

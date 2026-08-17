@@ -40,7 +40,8 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
 
 .site-nav-backdrop-enter-active,
 .site-nav-backdrop-leave-active {
-  transition: opacity 0.22s ease;
+  /* Sheet scrim: short opacity settle; interruptible via Vue Transition */
+  transition: opacity 0.3s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .site-nav-backdrop-enter-from,
@@ -52,10 +53,10 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  /* Tıklayınca kapanma için görünmez katman — karartma / blur yok */
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  /* Dim to focus the sheet; keep flow readable underneath */
+  background: rgba(15, 23, 42, 0.32);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  backdrop-filter: blur(2px) saturate(120%);
 }
 
 @media (min-width: 992px) {
@@ -80,6 +81,51 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
   z-index: 1002;
 }
 
+/* Sticky: light glass bar — logo must be dark (style.css forces #fff) */
+.navbar-area.is-sticky .plamb-nav .navbar-brand.logo-text,
+.navbar-area.is-sticky .site-navbar .navbar-brand.logo-text,
+.navbar-area.is-sticky .navbar-brand.logo-text {
+  color: #0f172a !important;
+}
+
+.navbar-area.is-sticky .plamb-nav .navbar-brand.logo-text .fa-bolt,
+.navbar-area.is-sticky .site-navbar .navbar-brand.logo-text .fa-bolt,
+.navbar-area.is-sticky .navbar-brand.logo-text .fa-bolt {
+  color: #00b0ee !important;
+}
+
+html.theme-dark .navbar-area.is-sticky .plamb-nav .navbar-brand.logo-text,
+html.theme-dark .navbar-area.is-sticky .site-navbar .navbar-brand.logo-text,
+html.theme-dark .navbar-area.is-sticky .navbar-brand.logo-text {
+  color: #f8fafc !important;
+}
+
+html.theme-dark .navbar-area.is-sticky .plamb-nav .navbar-brand.logo-text .fa-bolt,
+html.theme-dark .navbar-area.is-sticky .site-navbar .navbar-brand.logo-text .fa-bolt,
+html.theme-dark .navbar-area.is-sticky .navbar-brand.logo-text .fa-bolt {
+  color: #7ddfff !important;
+}
+
+/* Sticky hamburger: readable on light material */
+.navbar-area.is-sticky .site-navbar__toggler {
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.14);
+  background: rgba(15, 23, 42, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.navbar-area.is-sticky .site-navbar__toggler:hover {
+  border-color: rgba(0, 176, 238, 0.4);
+  background: rgba(0, 176, 238, 0.1);
+}
+
+html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
 .site-navbar__toggler {
   position: relative;
   display: inline-flex;
@@ -95,11 +141,13 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
   z-index: 1003;
   color: #ffffff;
   cursor: pointer;
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
   transition:
-    border-color 0.22s ease,
-    background 0.22s ease,
-    box-shadow 0.22s ease,
-    transform 0.18s ease;
+    border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 100ms ease-out;
 }
 
 .site-navbar__toggler:hover {
@@ -108,7 +156,7 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
 }
 
 .site-navbar__toggler:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .site-navbar__toggler:focus-visible {
@@ -140,9 +188,9 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
   background: currentColor;
   transform-origin: center;
   transition:
-    transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.2s ease,
-    width 0.22s ease;
+    transform 0.36s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-navbar__toggler.is-open .site-navbar__burger-line:nth-child(1) {
@@ -220,10 +268,23 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
 @media (max-width: 991.98px) {
   @keyframes site-nav-drawer-in {
     from {
-      transform: translateX(100%);
+      transform: translateX(108%);
+      opacity: 0.92;
     }
     to {
       transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes site-nav-drawer-materialize {
+    from {
+      -webkit-backdrop-filter: blur(0) saturate(100%);
+      backdrop-filter: blur(0) saturate(100%);
+    }
+    to {
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      backdrop-filter: blur(28px) saturate(180%);
     }
   }
 
@@ -355,7 +416,7 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
 
-  /* Mobil çekmece: açık temada beyaz kart; koyu temada kömür panel (lacivert gradient yok) */
+  /* Mobil çekmece: sheet material — translucent + blur (Apple materials) */
   .site-navbar__drawer-sheet.site-navbar__collapse {
     position: fixed !important;
     top: 0.65rem !important;
@@ -371,34 +432,39 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
       1.15rem
       max(1.25rem, env(safe-area-inset-bottom, 0px))
       max(1.1rem, env(safe-area-inset-right, 0px));
-    border-radius: 16px 0 0 16px !important;
+    border-radius: 18px 0 0 18px !important;
     border: 1px solid transparent !important;
     border-left: 4px solid #00b0ee !important;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
     overflow-x: hidden !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     z-index: 1001 !important;
     flex-basis: auto !important;
     flex-grow: 0 !important;
   }
 
   html.theme-light .site-navbar__drawer-sheet.site-navbar__collapse {
-    background: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    border-left-color: #00b0ee !important;
-    box-shadow: -6px 8px 32px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04) !important;
-  }
-
-  /* theme-dark body #000000 ile aynı zemin; ince çerçeve sayfa ile ayrım */
-  html.theme-dark .site-navbar__drawer-sheet.site-navbar__collapse {
-    background: #000000 !important;
-    border-color: rgba(255, 255, 255, 0.07) !important;
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(226, 232, 240, 0.9) !important;
     border-left-color: #00b0ee !important;
     box-shadow:
-      -8px 8px 28px rgba(0, 0, 0, 0.35),
-      0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+      -10px 12px 40px rgba(15, 23, 42, 0.16),
+      0 0 0 1px rgba(15, 23, 42, 0.04),
+      inset 1px 0 0 rgba(255, 255, 255, 0.55) !important;
+  }
+
+  /* theme-dark: heavier material separates structural sheet from page */
+  html.theme-dark .site-navbar__drawer-sheet.site-navbar__collapse {
+    background: rgba(0, 0, 0, 0.78) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-left-color: #00b0ee !important;
+    box-shadow:
+      -10px 12px 36px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      inset 1px 0 0 rgba(255, 255, 255, 0.06) !important;
   }
 
   .site-navbar__drawer-sheet.site-navbar__collapse::before {
@@ -410,7 +476,10 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    animation: site-nav-drawer-in 0.36s cubic-bezier(0.32, 0.72, 0, 1) both;
+    /* Sheet spring (~damping 0.8 / response 0.3) + materialize blur together */
+    animation:
+      site-nav-drawer-in 0.42s cubic-bezier(0.32, 0.72, 0, 1) both,
+      site-nav-drawer-materialize 0.42s cubic-bezier(0.32, 0.72, 0, 1) both;
   }
 
   .site-navbar__links-wrap {
@@ -491,7 +560,14 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
     font-size: 0.9375rem !important; font-weight: 500;
     letter-spacing: 0.01em; line-height: 1.35 !important;
     border-radius: 10px; border: none;
-    transition: background 0.18s ease, color 0.18s ease;
+    transition:
+      background 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 100ms ease-out;
+  }
+
+  .plamb-nav .navbar.site-navbar .site-navbar__nav .nav-item a.site-navbar__drawer-link.nav-link:active {
+    transform: scale(0.98);
   }
 
   html.theme-light .site-navbar__nav .nav-item a.site-navbar__drawer-link {
@@ -616,7 +692,49 @@ body.site-nav-drawer-open .navbar-area:not(.is-sticky) {
   }
 }
 
+@media (max-width: 991.98px) {
+  .site-navbar__sheet-handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0.15rem 0 0.65rem;
+    touch-action: none;
+    cursor: grab;
+  }
+
+  .site-navbar__sheet-handle-bar {
+    width: 42px;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.35);
+  }
+
+  html.theme-dark .site-navbar__sheet-handle-bar {
+    background: rgba(148, 163, 184, 0.4);
+  }
+
+  .site-navbar__drawer-sheet.site-navbar__collapse {
+    touch-action: pan-y;
+  }
+
+  .site-navbar__drawer-sheet.site-navbar__collapse.is-dragging,
+  .site-navbar__drawer-sheet.site-navbar__collapse.is-settling {
+    touch-action: none;
+    animation: none !important;
+    cursor: grabbing;
+  }
+
+  .site-navbar__drawer-sheet.site-navbar__collapse.is-dragging * {
+    pointer-events: none;
+  }
+}
+
 @media (min-width: 992px) {
+  .site-navbar__sheet-handle {
+    display: none !important;
+  }
+
   .site-navbar__drawer-head {
     display: none !important;
   }

@@ -109,11 +109,11 @@ import { RouterLink } from 'vue-router'
   letter-spacing: 0.01em;
   text-decoration: none;
   transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+    background 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 100ms ease-out;
 }
 
 .home-prefooter-cta__btn--primary {
@@ -159,7 +159,7 @@ import { RouterLink } from 'vue-router'
 }
 
 .home-prefooter-cta__btn:active {
-  transform: translateY(1px);
+  transform: scale(0.97);
 }
 
 .home-prefooter-cta__features {

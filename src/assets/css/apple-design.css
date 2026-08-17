@@ -1,0 +1,503 @@
+/**
+ * Apple Design foundations for Signal Registry (feel only — no content changes).
+ * Springs approximated with interruptible, presentation-value-friendly CSS curves.
+ */
+
+:root {
+  --apple-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --apple-spring-snappy: cubic-bezier(0.32, 0.72, 0, 1);
+  --apple-press: 100ms ease-out;
+  --apple-response: 0.36s;
+  --apple-material-blur: 20px;
+  --apple-material-saturate: 180%;
+  --apple-scrim: rgba(15, 23, 42, 0.32);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typography: size-specific tracking & leading (WWDC UI Typography) */
+h1,
+.section-title h3,
+.main-banner-content h1,
+.productive-content h3 {
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  font-optical-sizing: auto;
+}
+
+h2,
+h3 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-optical-sizing: auto;
+}
+
+h4,
+h5,
+h6 {
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+p,
+li,
+.section-title span,
+.home-feature-card p {
+  letter-spacing: 0;
+  line-height: 1.65;
+}
+
+/* Theme swaps: ease dark↔light instead of an abrupt jump */
+html.theme-light,
+html.theme-dark,
+html.theme-light body,
+html.theme-dark body {
+  transition:
+    background-color 0.35s var(--apple-spring),
+    color 0.35s var(--apple-spring),
+    border-color 0.35s var(--apple-spring);
+}
+
+/* ------------------------------------------------------------------ */
+/* Response — press feedback on pointer-down (scale, not release-only) */
+/* ------------------------------------------------------------------ */
+
+.default-btn,
+.default-btn-one,
+.productive-btn,
+.productive-btn-one,
+.banner-btn a,
+a.default-btn,
+a.default-btn-one,
+.home-dark-product-hero__cta,
+.home-mobile-ready__cta,
+.home-prefooter-cta__btn,
+.site-navbar__toggler,
+.site-navbar__drawer-close,
+.plamb-nav .navbar .other-option .default-btn {
+  transition:
+    transform var(--apple-press),
+    background-color var(--apple-response) var(--apple-spring),
+    color var(--apple-response) var(--apple-spring),
+    border-color var(--apple-response) var(--apple-spring),
+    box-shadow var(--apple-response) var(--apple-spring) !important;
+}
+
+.default-btn:active,
+.default-btn-one:active,
+.productive-btn:active,
+.productive-btn-one:active,
+.banner-btn a:active,
+a.default-btn:active,
+a.default-btn-one:active,
+.home-dark-product-hero__cta:active,
+.home-mobile-ready__cta:active,
+.home-prefooter-cta__btn:active,
+.site-navbar__toggler:active,
+.site-navbar__drawer-close:active,
+.plamb-nav .navbar .other-option .default-btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Ripple fill still runs; keep color feedback instant on press */
+.default-btn:active,
+.default-btn-one:active {
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Sticky chrome — translucent material, content can read underneath   */
+/* ------------------------------------------------------------------ */
+
+.navbar-area.is-sticky {
+  background: rgba(255, 255, 255, 0.72) !important;
+  -webkit-backdrop-filter: blur(var(--apple-material-blur)) saturate(var(--apple-material-saturate));
+  backdrop-filter: blur(var(--apple-material-blur)) saturate(var(--apple-material-saturate));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 1px 0 rgba(15, 23, 42, 0.04),
+    0 8px 28px rgba(15, 23, 42, 0.06) !important;
+  /* Prefer continuous spring settle over one-shot keyframe entrance */
+  animation: none !important;
+  transition:
+    background-color 0.3s var(--apple-spring),
+    box-shadow 0.3s var(--apple-spring),
+    border-color 0.3s var(--apple-spring) !important;
+}
+
+html.theme-dark .navbar-area.is-sticky {
+  background: rgba(11, 18, 32, 0.72) !important;
+  -webkit-backdrop-filter: blur(var(--apple-material-blur)) saturate(var(--apple-material-saturate));
+  backdrop-filter: blur(var(--apple-material-blur)) saturate(var(--apple-material-saturate));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04),
+    0 10px 28px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Scroll-edge soft mask instead of a hard 1px divider feel */
+.navbar-area.is-sticky::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05), transparent);
+  opacity: 0.7;
+}
+
+html.theme-dark .navbar-area.is-sticky::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Cards & media — spring lift, compositor-friendly transforms         */
+/* ------------------------------------------------------------------ */
+
+.home-feature-grid-section .home-feature-card {
+  transition:
+    transform var(--apple-response) var(--apple-spring),
+    box-shadow var(--apple-response) var(--apple-spring),
+    border-color var(--apple-response) var(--apple-spring) !important;
+}
+
+.home-feature-grid-section .home-feature-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 36px rgba(15, 30, 70, 0.12) !important;
+}
+
+.home-feature-grid-section .home-feature-card:active {
+  transform: translateY(-2px) scale(0.99) !important;
+}
+
+.home-dark-product-hero__browser,
+.home-mobile-ready__phone {
+  transition:
+    transform var(--apple-response) var(--apple-spring),
+    box-shadow var(--apple-response) var(--apple-spring) !important;
+}
+
+.home-dark-product-hero__browser:hover {
+  transform: translateY(-4px);
+}
+
+.home-mobile-ready__phone:hover {
+  transform: translateY(-6px) !important;
+}
+
+/* Tone down slow looping bounce (near vestibular “one cycle / 5s”) */
+[class*='shape'] img,
+.main-banner-two .banner-image,
+.animation-one,
+.animation-two,
+.animation-three,
+.animation-four,
+.animation-five,
+.animation-six,
+.animation-seven,
+.animation-eight,
+.animation-nine {
+  animation-duration: 12s !important;
+  animation-timing-function: ease-in-out !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion — gentler equivalents, not zero feedback             */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --apple-press: 1ms linear;
+    --apple-response: 0.2s;
+    --apple-spring: ease;
+    --apple-spring-snappy: ease;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .default-btn,
+  .default-btn-one,
+  .productive-btn,
+  .productive-btn-one,
+  .banner-btn a,
+  .home-feature-grid-section .home-feature-card,
+  .home-dark-product-hero__browser,
+  .home-mobile-ready__phone,
+  .home-dark-product-hero__cta,
+  .home-mobile-ready__cta,
+  .home-prefooter-cta__btn {
+    transition:
+      opacity 0.2s ease,
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease !important;
+  }
+
+  .default-btn:active,
+  .default-btn-one:active,
+  .productive-btn:active,
+  .productive-btn-one:active,
+  .banner-btn a:active,
+  .home-dark-product-hero__cta:active,
+  .home-mobile-ready__cta:active,
+  .home-prefooter-cta__btn:active,
+  .site-navbar__toggler:active,
+  .site-navbar__drawer-close:active {
+    transform: none !important;
+    opacity: 0.88;
+  }
+
+  .home-feature-grid-section .home-feature-card:hover,
+  .home-feature-grid-section .home-feature-card:active,
+  .home-dark-product-hero__browser:hover,
+  .home-mobile-ready__phone:hover {
+    transform: none !important;
+  }
+
+  .navbar-area.is-sticky {
+    animation: none !important;
+  }
+
+  .plamb-nav .navbar.site-navbar .site-navbar__drawer-sheet.site-navbar__collapse.show {
+    animation: none !important;
+  }
+
+  .site-nav-backdrop-enter-active,
+  .site-nav-backdrop-leave-active {
+    transition: opacity 0.2s ease !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced transparency — frostier / solid materials                   */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-transparency: reduce) {
+  .navbar-area.is-sticky {
+    background: #ffffff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  html.theme-dark .navbar-area.is-sticky {
+    background: #0b1220 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .site-navbar__backdrop {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(15, 23, 42, 0.55) !important;
+  }
+
+  html.theme-light .site-navbar__drawer-sheet.site-navbar__collapse,
+  html.theme-dark .site-navbar__drawer-sheet.site-navbar__collapse {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  html.theme-light .site-navbar__drawer-sheet.site-navbar__collapse {
+    background: #ffffff !important;
+  }
+
+  html.theme-dark .site-navbar__drawer-sheet.site-navbar__collapse {
+    background: #000000 !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Higher contrast — solid chrome + defined borders                    */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-contrast: more) {
+  .navbar-area.is-sticky {
+    background: #ffffff !important;
+    border-bottom: 2px solid #0f172a !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  html.theme-dark .navbar-area.is-sticky {
+    background: #000000 !important;
+    border-bottom: 2px solid #f8fafc !important;
+  }
+
+  .default-btn,
+  .default-btn-one,
+  .home-feature-grid-section .home-feature-card {
+    outline: 1px solid currentColor;
+  }
+}
+
+/* Focus rings stay visible and consistent */
+:focus-visible {
+  outline: 2px solid #00b0ee;
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Site-wide surfaces — spring settle, press, materials                */
+/* ------------------------------------------------------------------ */
+
+.single-pricing-box,
+.single-blog-post,
+.single-services-box,
+.single-projects-box,
+.single-faq-box,
+.accordion-item,
+.metric-card,
+.roadmap-item,
+.home-feature-grid-section .home-feature-card,
+.productive-image img,
+.banner-image img {
+  transition:
+    transform var(--apple-response) var(--apple-spring),
+    box-shadow var(--apple-response) var(--apple-spring),
+    border-color var(--apple-response) var(--apple-spring),
+    background-color var(--apple-response) var(--apple-spring) !important;
+}
+
+.single-pricing-box:hover,
+.single-blog-post:hover,
+.single-services-box:hover,
+.single-projects-box:hover,
+.metric-card:hover,
+.roadmap-item:hover {
+  transform: translateY(-5px);
+}
+
+.single-pricing-box:active,
+.single-blog-post:active,
+.metric-card:active,
+.roadmap-item:active,
+.home-feature-grid-section .home-feature-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Forms — continuous focus feedback */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
+input[type='url'],
+input[type='search'],
+textarea,
+select,
+.form-control {
+  transition:
+    border-color 0.22s var(--apple-spring),
+    box-shadow 0.22s var(--apple-spring),
+    background-color 0.22s var(--apple-spring) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  box-shadow: 0 0 0 4px rgba(0, 176, 238, 0.18) !important;
+}
+
+/* Footer / nav links — press, not only hover */
+.footer-quick-links a,
+.copyright-area ul a,
+.plamb-nav .navbar-nav .nav-item a {
+  transition:
+    color 0.22s var(--apple-spring),
+    opacity 0.18s ease,
+    transform 100ms ease-out !important;
+}
+
+.footer-quick-links a:active,
+.copyright-area ul a:active {
+  transform: scale(0.97);
+  opacity: 0.75;
+}
+
+/* Page heroes — optical tracking already on h1; soften image bounce */
+.page-title-area,
+.about-hero-content,
+.contact-hero-content,
+.pricing-hero-content,
+.faq-hero-content,
+.projects-hero-content,
+.blog-hero-content,
+.privacy-hero-content,
+.terms-hero-content {
+  letter-spacing: inherit;
+}
+
+.page-title-area h1,
+[class$='-hero-content'] h1 {
+  letter-spacing: -0.03em !important;
+  line-height: 1.12 !important;
+}
+
+[class$='-hero-content'] p {
+  letter-spacing: 0;
+  line-height: 1.65;
+}
+
+/* Accordion / FAQ continuous open feedback */
+.accordion-button {
+  transition:
+    background-color 0.28s var(--apple-spring),
+    color 0.28s var(--apple-spring),
+    box-shadow 0.28s var(--apple-spring) !important;
+}
+
+.accordion-button:active {
+  transform: scale(0.995);
+}
+
+/* Soften template bounce loops further (vestibular-friendly) */
+.rotateme,
+.movebounce,
+[class*='animationFrames'] {
+  animation-timing-function: ease-in-out !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .single-pricing-box:hover,
+  .single-blog-post:hover,
+  .single-services-box:hover,
+  .single-projects-box:hover,
+  .metric-card:hover,
+  .roadmap-item:hover,
+  .single-pricing-box:active,
+  .metric-card:active,
+  .roadmap-item:active {
+    transform: none !important;
+  }
+
+  .rotateme,
+  .movebounce,
+  [class*='animationFrames'],
+  .main-banner-two .banner-image {
+    animation: none !important;
+  }
+}
+

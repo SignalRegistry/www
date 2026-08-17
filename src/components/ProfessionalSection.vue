@@ -119,12 +119,20 @@ defineProps({
   border-radius: 16px;
   padding: 20px 18px;
   box-shadow: 0 12px 28px rgba(40, 58, 107, 0.12);
-  transition: 0.35s ease;
+  transition:
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .metric-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: #b8ccf7;
+  box-shadow: 0 16px 34px rgba(40, 58, 107, 0.16);
+}
+
+.metric-card:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .metric-value {
@@ -176,6 +184,16 @@ defineProps({
   border: 1px solid var(--pro-item-border);
   border-radius: 14px;
   padding: 16px 14px 14px;
+  transition:
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-item:hover {
+  transform: translateY(-4px);
+  border-color: #b8ccf7;
+  box-shadow: 0 12px 26px rgba(40, 58, 107, 0.12);
 }
 
 .roadmap-step {
