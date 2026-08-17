@@ -6,9 +6,7 @@ import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 import aboutHeroImg from '@/assets/img/about-hero.jpg'
 
-// Direct import so Vite always ships the new hero (avoids glob/cache misses).
 const heroBg = aboutHeroImg || getAssetImg('about-hero.jpg')
-const heroBgCss = heroBg ? `url("${heroBg}")` : 'none'
 </script>
 
 <template>
@@ -16,10 +14,16 @@ const heroBgCss = heroBg ? `url("${heroBg}")` : 'none'
     <SiteNavbar />
 
     <!-- Start Page Title Area -->
-    <div
-      class="page-title-area page-title-area--about"
-      :style="heroBg ? { backgroundImage: `url(${heroBg})` } : {}"
-    >
+    <div class="page-title-area page-title-area--about">
+      <img
+        v-if="heroBg"
+        class="page-title-area__bg"
+        :src="heroBg"
+        alt=""
+        width="1024"
+        height="512"
+        decoding="async"
+      >
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
@@ -130,26 +134,45 @@ const heroBgCss = heroBg ? `url("${heroBg}")` : 'none'
 
 <style scoped>
 .page-title-area--about {
-  /* Beat global .page-title-area { background-image: page-title-bg.jpg } */
-  background-image: v-bind(heroBgCss) !important;
-  background-color: #000;
+  /* Kill template default bg so only the hero <img> shows */
+  background-image: none !important;
+  background-color: #07101f;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
+}
+
+.page-title-area__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .page-title-area--about::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(16, 18, 37, 0.45);
-  z-index: 0;
+  background: rgba(8, 14, 32, 0.35);
+  z-index: 1;
+  opacity: 1;
+}
+
+.page-title-area--about .d-table {
+  position: relative;
+  z-index: 2;
 }
 
 .about-hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 760px;
   color: #ffffff;
   padding: 36px 0 28px;
