@@ -11,6 +11,7 @@ const plans = [
     priceText: '$0',
     priceSuffix: '/month/user',
     action: 'Get Started Free',
+    actionTo: '/get-started-free',
     features: [
       '1 User',
       'Dashboard summary view',
@@ -24,6 +25,7 @@ const plans = [
     priceText: '$29',
     priceSuffix: '/month/user',
     action: 'Start Free Trial',
+    actionTo: '/start-free-trial',
     featured: true,
     features: [
       'Team access for up to 5 users',
@@ -38,6 +40,7 @@ const plans = [
     priceText: 'Custom',
     priceSuffix: 'Pricing',
     action: 'Contact Sales',
+    actionTo: '/contact-sales',
     features: [
       'Unlimited users and role management',
       'Enterprise security and access policies',
@@ -195,7 +198,9 @@ function togglePricingFaq(index) {
                 {{ plan.priceText }}<span>{{ plan.priceSuffix }}</span>
               </div>
               <div class="price-btn">
-                <a href="#" class="price-btn-one">{{ plan.action }} <i class="fas fa-chevron-right" /></a>
+                <RouterLink :to="plan.actionTo" class="price-btn-one">
+                  {{ plan.action }} <i class="fas fa-chevron-right" />
+                </RouterLink>
               </div>
               <ul class="pricing-features">
                 <li v-for="(feature, j) in plan.features" :key="j">

@@ -93,6 +93,39 @@ const router = createRouter({
       redirect: '/404',
     },
     {
+      path: '/get-started-free',
+      name: 'get-started-free',
+      component: () => import('../views/PlanActionView.vue'),
+      meta: {
+        plan: 'free',
+        title: 'Get Started Free — Signal Registry',
+        description:
+          'Request a free Signal Registry workspace for one user, with dashboard summary, basic filtering, and email support.',
+      },
+    },
+    {
+      path: '/start-free-trial',
+      name: 'start-free-trial',
+      component: () => import('../views/PlanActionView.vue'),
+      meta: {
+        plan: 'team',
+        title: 'Start Free Trial — Signal Registry',
+        description:
+          'Request a Signal Registry Team trial for up to five users, with advanced filters, reporting, and priority support.',
+      },
+    },
+    {
+      path: '/contact-sales',
+      name: 'contact-sales',
+      component: () => import('../views/PlanActionView.vue'),
+      meta: {
+        plan: 'enterprise',
+        title: 'Contact Sales — Signal Registry',
+        description:
+          'Talk with Sinyatek about an Enterprise Signal Registry deployment, including roles, API planning, and an SLA.',
+      },
+    },
+    {
       path: '/pricing',
       name: 'pricing',
       component: () => import('../views/PricingView.vue'),
