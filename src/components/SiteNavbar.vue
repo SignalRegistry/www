@@ -1,8 +1,10 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
+import { useLanguage } from '@/utils/language'
 
 const route = useRoute()
+const { language, t, setLanguage } = useLanguage()
 const menuOpen = ref(false)
 const isDarkTheme = ref(false)
 const isSticky = ref(false)
@@ -42,14 +44,14 @@ watch(menuOpen, (open) => {
   if (!open) resetDrag()
 })
 
-const drawerLinks = [
-  { path: '/about', label: 'About Us', icon: 'fa-box-open' },
-  { path: '/projects', label: 'Projects', icon: 'fa-layer-group' },
-  { path: '/api', label: 'API', icon: 'fa-book-open' },
-  { path: '/pricing', label: 'Pricing', icon: 'fa-tag' },
-  { path: '/contact', label: 'Contact', icon: 'fa-envelope' },
-  { path: '/faq', label: 'Faq', icon: 'fa-comments' },
-]
+const drawerLinks = computed(() => [
+  { path: '/about', label: t.value.nav[0], icon: 'fa-box-open' },
+  { path: '/projects', label: t.value.nav[1], icon: 'fa-layer-group' },
+  { path: '/api', label: t.value.nav[2], icon: 'fa-book-open' },
+  { path: '/pricing', label: t.value.nav[3], icon: 'fa-tag' },
+  { path: '/contact', label: t.value.nav[4], icon: 'fa-envelope' },
+  { path: '/faq', label: t.value.nav[5], icon: 'fa-comments' },
+])
 
 const drawerStyle = computed(() => {
   // CSS keyframes own idle open/close; inline transform only during gesture & settle.
@@ -357,7 +359,7 @@ onBeforeUnmount(() => {
                 </button>
               </div>
               <p class="site-navbar__drawer-sub">
-                Signal registration dashboard — navigate pages below.
+                {{ t.navDescription }}
               </p>
             </div>
             <div class="site-navbar__links-wrap">
@@ -374,8 +376,16 @@ onBeforeUnmount(() => {
               </ul>
             </div>
             <div class="other-option site-navbar__actions">
-              <RouterLink class="default-btn" to="/pricing" @click="closeDrawer">
-                Free Quote
+              <label class="site-navbar__language" :class="{ 'is-dark': isDarkTheme }">
+                <i class="fas fa-globe" aria-hidden="true" />
+                <span class="site-navbar__language-label">{{ t.language }}</span>
+                <select :value="language" :aria-label="t.language" @change="setLanguage($event.target.value)">
+                  <option value="en">English</option>
+                  <option value="tr">Türkçe</option>
+                </select>
+              </label>
+              <RouterLink class="default-btn" to="/contact" @click="closeDrawer">
+                {{ t.quote }}
                 <span />
               </RouterLink>
               <div class="site-navbar__desktop-theme">
@@ -411,3 +421,118 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.site-navbar__language {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.65rem;
+  margin: 0 0.75rem 0 0;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #d9e8f5;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #00a7df;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(30, 64, 112, 0.06);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-navbar__language:hover,
+.site-navbar__language:focus-within {
+  border-color: #8bcfec;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(30, 64, 112, 0.09);
+}
+
+.site-navbar__language > i {
+  font-size: 0.95rem;
+}
+
+.site-navbar__language-label {
+  color: #7b8798;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.site-navbar__language select {
+  width: auto;
+  min-width: 0;
+  min-height: 2rem;
+  padding: 0.2rem 1.15rem 0.2rem 0;
+  border: 0;
+  appearance: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%2300a7df' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: #263650;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.site-navbar__language select:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.site-navbar__language select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+:global(html) .site-navbar__language select:focus,
+:global(html) .site-navbar__language select:focus-visible {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-navbar__language.is-dark {
+  border-color: rgba(131, 177, 209, 0.35) !important;
+  background: #17243b !important;
+  color: #55c8ee !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+}
+
+.site-navbar__language.is-dark .site-navbar__language-label {
+  color: #a6b3c8 !important;
+}
+
+.site-navbar__language.is-dark select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  color: #f0f5ff !important;
+  color-scheme: dark;
+  background: #17243b url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%2355c8ee' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right center !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-navbar__language.is-dark option {
+  background: #17243b !important;
+  color: #f0f5ff !important;
+}
+
+.site-navbar__actions > .default-btn,
+.site-navbar__actions > .default-btn:hover,
+.site-navbar__actions > .default-btn:focus-visible {
+  color: #ffffff !important;
+}
+
+@media (max-width: 991px) {
+  .site-navbar__language {
+    width: fit-content;
+    margin: 0 0 1rem;
+  }
+
+  .site-navbar__language select {
+    width: auto;
+    min-width: 0;
+  }
+}
+</style>

@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { useLanguage } from '@/utils/language'
+
+const { language } = useLanguage()
 </script>
 
 <template>
@@ -10,7 +13,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Developers</h3></div>
+              <div class="footer-heading"><h3>{{ language === 'tr' ? 'Geliştiriciler' : 'Developers' }}</h3></div>
               <ul class="footer-quick-links">
                 <li><a href="https://github.com/SignalRegistry" target="_blank" rel="noopener">GitHub</a></li>
                 <li><RouterLink to="/api">API</RouterLink></li>
@@ -19,7 +22,7 @@ import { getAssetImg } from '@/utils/getAssetImg'
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Resources</h3></div>
+              <div class="footer-heading"><h3>{{ language === 'tr' ? 'Kaynaklar' : 'Resources' }}</h3></div>
               <ul class="footer-quick-links">
                 <li><RouterLink to="/blog">Blog</RouterLink></li>
               </ul>
@@ -27,13 +30,13 @@ import { getAssetImg } from '@/utils/getAssetImg'
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <div class="footer-heading"><h3>Stay in Touch</h3></div>
+              <div class="footer-heading"><h3>{{ language === 'tr' ? 'İletişimde kalın' : 'Stay in Touch' }}</h3></div>
               <ul class="footer-quick-links">
                 <li><a href="mailto:iletisim@sinyatek.com">Email</a></li>
                 <li>
                   <a href="https://www.linkedin.com/company/si%CC%87nyatek/posts/?feedView=all" target="_blank" rel="noopener">LinkedIn</a>
                 </li>
-                <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+                <li><RouterLink to="/contact">{{ language === 'tr' ? 'İletişim' : 'Contact Us' }}</RouterLink></li>
               </ul>
             </div>
           </div>
@@ -53,12 +56,12 @@ import { getAssetImg } from '@/utils/getAssetImg'
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6">
-            <p>Copyright © 2026 Sinyatek. All Rights Reserved</p>
+            <p>Copyright © 2026 Sinyatek. {{ language === 'tr' ? 'Tüm hakları saklıdır.' : 'All Rights Reserved' }}</p>
           </div>
           <div class="col-lg-6 col-md-6">
             <ul>
-              <li><RouterLink to="/privacy-policy">Privacy Policy</RouterLink></li>
-              <li><RouterLink to="/terms-condition">Terms & Conditions</RouterLink></li>
+              <li><RouterLink to="/privacy-policy">{{ language === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy' }}</RouterLink></li>
+              <li><RouterLink to="/terms-condition">{{ language === 'tr' ? 'Kullanım Koşulları' : 'Terms & Conditions' }}</RouterLink></li>
             </ul>
           </div>
         </div>

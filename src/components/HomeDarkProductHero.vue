@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { useLanguage } from '@/utils/language'
+
+const { t } = useLanguage()
 </script>
 
 <template>
@@ -11,16 +14,16 @@ import { getAssetImg } from '@/utils/getAssetImg'
       <div class="row align-items-center gy-5 gx-lg-4">
         <div class="col-lg-5 order-lg-1 order-2">
           <span class="home-dark-product-hero__eyebrow-wrap">
-            <span class="home-dark-product-hero__eyebrow">Product</span>
+            <span class="home-dark-product-hero__eyebrow">{{ t.dashboardEyebrow }}</span>
           </span>
           <h2 id="home-dark-product-heading" class="home-dark-product-hero__title">
-            Operate your signal registry from one dashboard.
+            {{ t.dashboardTitle }}
           </h2>
           <p class="home-dark-product-hero__subtitle">
-            Centralize summaries, live charts, device views, and governed record edits in a single workspace—built for teams that need consistency and audit-friendly operations.
+            {{ t.dashboardText }}
           </p>
           <RouterLink to="/pricing" class="home-dark-product-hero__cta">
-            Request access
+            {{ t.access }}
             <i class="fas fa-arrow-right home-dark-product-hero__cta-icon" aria-hidden="true" />
           </RouterLink>
         </div>

@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { useLanguage } from '@/utils/language'
+
+const { t } = useLanguage()
 </script>
 
 <template>
@@ -8,29 +11,28 @@ import { RouterLink } from 'vue-router'
       <div class="row align-items-center gy-4 gx-lg-5">
         <div class="col-lg-7">
           <span class="home-prefooter-cta__eyebrow-wrap">
-            <span class="home-prefooter-cta__eyebrow">Partnership</span>
+            <span class="home-prefooter-cta__eyebrow">{{ t.partnership }}</span>
           </span>
           <h2 id="home-prefooter-heading" class="home-prefooter-cta__title">
-            Great registry work never happens alone.
+            {{ t.partnershipTitle }}
           </h2>
           <p class="home-prefooter-cta__lead">
-            Documentation, API access, and direct support—so your team can standardize operations,
-            share practices, and keep records accurate.
+            {{ t.partnershipText }}
           </p>
           <div class="home-prefooter-cta__actions">
             <RouterLink to="/contact" class="home-prefooter-cta__btn home-prefooter-cta__btn--primary">
-              Get in touch
+              {{ t.getInTouch }}
             </RouterLink>
-            <RouterLink to="/api" class="home-prefooter-cta__btn home-prefooter-cta__btn--ghost">
-              Explore resources
+            <RouterLink to="/about" class="home-prefooter-cta__btn home-prefooter-cta__btn--ghost">
+              {{ t.resources }}
             </RouterLink>
           </div>
         </div>
         <div class="col-lg-5">
           <ul class="home-prefooter-cta__features" role="list">
-            <li>Clear docs &amp; API reference</li>
-            <li>Structured workflows for your team</li>
-            <li>Direct support when you need it</li>
+            <li>{{ t.features[0][0] }}</li>
+            <li>{{ t.features[4][0] }}</li>
+            <li>{{ t.getInTouch }}</li>
           </ul>
         </div>
       </div>

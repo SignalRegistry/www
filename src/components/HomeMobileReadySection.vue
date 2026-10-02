@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { useLanguage } from '@/utils/language'
+
+const { t } = useLanguage()
 </script>
 
 <template>
@@ -9,39 +12,26 @@ import { getAssetImg } from '@/utils/getAssetImg'
       <div class="row align-items-center gy-5 gx-lg-5">
         <div class="col-lg-6 order-lg-1 order-2">
           <span class="home-mobile-ready__eyebrow-wrap">
-            <span class="home-mobile-ready__eyebrow">Mobile Ready</span>
+            <span class="home-mobile-ready__eyebrow">{{ t.mobileEyebrow }}</span>
           </span>
           <h2 id="home-mobile-ready-heading" class="home-mobile-ready__title">
-            Monitor signals on the go—same clarity, smaller screen.
+            {{ t.mobileTitle }}
           </h2>
           <p class="home-mobile-ready__subtitle">
-            Charts, monitors, and record actions stay readable and touch-friendly on mobile,
-            so your team can review live data without switching to a desktop.
+            {{ t.mobileText }}
           </p>
 
           <ul class="home-mobile-ready__list" role="list">
-            <li>
+            <li v-for="(item, index) in t.mobileList" :key="item">
               <span class="home-mobile-ready__list-icon" aria-hidden="true">
-                <i class="fas fa-chart-line" />
+                <i :class="['fas', ['fa-chart-line', 'fa-mobile-alt', 'fa-shield-alt'][index]]" />
               </span>
-              <span>Touch-optimized charts with live point highlights</span>
-            </li>
-            <li>
-              <span class="home-mobile-ready__list-icon" aria-hidden="true">
-                <i class="fas fa-mobile-alt" />
-              </span>
-              <span>Compact navigation for dashboard and refresh flows</span>
-            </li>
-            <li>
-              <span class="home-mobile-ready__list-icon" aria-hidden="true">
-                <i class="fas fa-shield-alt" />
-              </span>
-              <span>Secure access to the same governed records</span>
+              <span>{{ item }}</span>
             </li>
           </ul>
 
           <RouterLink to="/pricing" class="home-mobile-ready__cta">
-            Request access
+            {{ t.access }}
             <i class="fas fa-arrow-right home-mobile-ready__cta-icon" aria-hidden="true" />
           </RouterLink>
         </div>
