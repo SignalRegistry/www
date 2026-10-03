@@ -111,9 +111,13 @@ html.theme-dark .table > :not(caption) > * > * {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-html.theme-dark .footer-area,
-html.theme-dark .copyright-area {
+html.theme-dark .footer-area {
   background: #020617 !important;
+  color: #cbd5e1 !important;
+}
+
+html.theme-dark .copyright-area {
+  background: #081020 !important;
   color: #cbd5e1 !important;
 }
 
@@ -202,27 +206,25 @@ html.theme-dark .home-prefooter-cta__features li::before {
 }
 
 html.theme-dark .home-dark-product-hero {
-  background: linear-gradient(180deg, #0b1220 0%, #0f172a 50%, #111827 100%) !important;
+  background: #081020 !important;
 }
 
 html.theme-dark .home-dark-product-hero::after {
-  background: linear-gradient(180deg, rgba(2, 6, 23, 0.3) 0%, transparent 45%, rgba(2, 6, 23, 0.22) 100%) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 22%, transparent 78%, rgba(0, 0, 0, 0.18) 100%) !important;
 }
 
 html.theme-dark .home-dark-product-hero__glow {
-  background:
-    radial-gradient(ellipse at 40% 60%, rgba(0, 176, 238, 0.14) 0%, transparent 55%),
-    radial-gradient(ellipse at 70% 80%, rgba(62, 87, 208, 0.12) 0%, transparent 50%) !important;
+  background: radial-gradient(ellipse at 30% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 58%) !important;
 }
 
 html.theme-dark .footer-section {
   background-image: none !important;
-  background-color: #020617 !important;
+  background-color: #081020 !important;
 }
 
 html.theme-dark .footer-section::before {
-  background-color: #020617 !important;
-  opacity: 0.96 !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
 }
 
 html.theme-dark .footer-heading h3 {

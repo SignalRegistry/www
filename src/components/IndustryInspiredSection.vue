@@ -1,42 +1,28 @@
+<script setup>
+import { useLanguage } from '@/utils/language'
+
+const { t } = useLanguage()
+</script>
+
 <template>
   <section class="industry-inspired-section pb-100">
     <div class="container">
       <div class="section-title">
-        <span>Inspired Patterns</span>
-        <h3>Principles, ecosystem, and execution in one layer</h3>
+        <span>{{ t.aboutPage.modelLabel }}</span>
+        <h3>{{ t.aboutPage.modelTitle }}</h3>
       </div>
 
       <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
+        <div
+          v-for="(card, index) in t.aboutPage.cards"
+          :key="card[0]"
+          class="col-lg-4"
+          :class="index === 2 ? 'col-md-12' : 'col-md-6'"
+        >
           <div class="inspired-card">
-            <h4>Workflow Principles</h4>
+            <h4>{{ card[0] }}</h4>
             <ul>
-              <li><i class="fas fa-check-circle" /> Scalable task orchestration</li>
-              <li><i class="fas fa-check-circle" /> Dynamic operation flows</li>
-              <li><i class="fas fa-check-circle" /> Extensible integration points</li>
-              <li><i class="fas fa-check-circle" /> Explicit and observable steps</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="inspired-card">
-            <h4>Transformation Culture</h4>
-            <ul>
-              <li><i class="fas fa-check-circle" /> Modular SQL-oriented logic</li>
-              <li><i class="fas fa-check-circle" /> Testable data operations</li>
-              <li><i class="fas fa-check-circle" /> Version-friendly change model</li>
-              <li><i class="fas fa-check-circle" /> Shared team documentation mindset</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12">
-          <div class="inspired-card">
-            <h4>Execution Speed</h4>
-            <ul>
-              <li><i class="fas fa-check-circle" /> Formula-to-query approach</li>
-              <li><i class="fas fa-check-circle" /> Guided, approval-based flow</li>
-              <li><i class="fas fa-check-circle" /> Fast handling of repeat operations</li>
-              <li><i class="fas fa-check-circle" /> Privacy-aware architecture choices</li>
+              <li v-for="item in card[1]" :key="item"><i class="fas fa-check-circle" /> {{ item }}</li>
             </ul>
           </div>
         </div>

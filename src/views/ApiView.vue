@@ -3,9 +3,8 @@ import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import ProfessionalSection from '@/components/ProfessionalSection.vue'
-import { getAssetImg } from '@/utils/getAssetImg'
 
-const apiHeroBg = getAssetImg('api_image.webp')
+const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
 </script>
 
 <style scoped>
@@ -180,28 +179,54 @@ const apiHeroBg = getAssetImg('api_image.webp')
   border: 1px solid #334155;
   color: #bae6fd;
 }
-.page-title-area--api {
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.page-title-area.page-title-area--api {
+  height: 560px !important;
+  min-height: 560px;
+  padding: 0;
+  background-color: #07111f;
+  background-image: none;
+  position: relative;
+  overflow: hidden;
 }
+
+.api-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% center;
+  filter: saturate(0.78) contrast(1.04);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .page-title-area--api::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(16, 18, 37, 0.62);
-  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 14, 28, 0.94) 0%,
+    rgba(6, 14, 28, 0.82) 34%,
+    rgba(6, 14, 28, 0.42) 58%,
+    rgba(6, 14, 28, 0.22) 100%
+  );
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.page-title-area--api .d-table-cell {
-  vertical-align: middle;
+.page-title-area--api .d-table {
+  position: relative;
+  z-index: 2;
+  height: 100%;
 }
 
 .pricing-hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 760px;
+  z-index: 2;
+  max-width: 680px;
   color: #ffffff;
   padding: 36px 0 28px;
 }
@@ -250,6 +275,30 @@ const apiHeroBg = getAssetImg('api_image.webp')
 }
 
 @media only screen and (max-width: 991px) {
+  .page-title-area.page-title-area--api {
+    height: auto !important;
+    min-height: 460px;
+    padding: 112px 0 56px;
+  }
+
+  .api-hero__bg {
+    object-position: 62% center;
+  }
+
+  .page-title-area--api::before {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 14, 28, 0.9) 0%,
+      rgba(6, 14, 28, 0.72) 62%,
+      rgba(6, 14, 28, 0.48) 100%
+    );
+  }
+
+  .pricing-hero-content {
+    max-width: 100%;
+    padding: 12px 0 0;
+  }
+
   .api-doc-main {
     margin-top: 0;
   }
@@ -285,7 +334,7 @@ const apiHeroBg = getAssetImg('api_image.webp')
   }
 
   .pricing-hero-content {
-    padding: 24px 0 12px;
+    padding: 8px 0 0;
   }
 
   .pricing-hero-content h1 {
@@ -339,10 +388,8 @@ const apiHeroBg = getAssetImg('api_image.webp')
     <SiteNavbar />
 
     <!-- Page Title -->
-    <div
-      class="page-title-area page-title-area--api"
-      :style="apiHeroBg ? { backgroundImage: `url(${apiHeroBg})` } : {}"
-    >
+    <div class="page-title-area page-title-area--api">
+      <img class="api-hero__bg" :src="apiHeroBg" alt="" />
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">

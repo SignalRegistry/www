@@ -6572,10 +6572,8 @@ blockquote::after, .blockquote::after {
 Footer Section CSS
 =================================================*/
 .footer-section {
-  background-image: url(../../assets/img/footer-bg.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: none;
+  background-color: #081020;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -6586,11 +6584,11 @@ Footer Section CSS
   content: "";
   height: 100%;
   width: 100%;
-  background-color: #393953;
+  background-color: transparent;
   left: 0;
   right: 0;
   top: 0;
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .footer-section.bg-color {
@@ -6778,7 +6776,7 @@ Footer Section CSS
 Copyright Section CSS
 =================================================*/
 .copyright-area {
-  background-color: #01082d;
+  background-color: #081020;
   padding-top: 35px;
   padding-bottom: 35px;
 }

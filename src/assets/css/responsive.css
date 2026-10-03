@@ -540,7 +540,7 @@
   }
   .footer-section {
     background-image: none !important;
-    background-color: transparent !important;
+    background-color: #081020 !important;
   }
   .footer-section::before {
     opacity: 0 !important;

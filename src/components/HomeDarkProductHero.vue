@@ -53,12 +53,11 @@ const { t } = useLanguage()
 </template>
 
 <style scoped>
-/* Palette: main-banner-two + .default-btn (#00b0ee / #3e57d0) */
 .home-dark-product-hero {
   position: relative;
   overflow: hidden;
   padding: 5.25rem 0 5.5rem;
-  background: linear-gradient(to bottom, #370b6f, #00429b, #006dba, #0095ce, #2dbcdc);
+  background: #081020;
   color: #f8fafc;
 }
 
@@ -67,7 +66,7 @@ const { t } = useLanguage()
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, transparent 45%, rgba(0, 0, 0, 0.08) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 22%, transparent 78%, rgba(0, 0, 0, 0.18) 100%);
 }
 
 .home-dark-product-hero > .container {
@@ -82,9 +81,7 @@ const { t } = useLanguage()
   width: 58%;
   max-width: 620px;
   aspect-ratio: 1;
-  background:
-    radial-gradient(ellipse at 40% 60%, rgba(0, 176, 238, 0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 70% 80%, rgba(62, 87, 208, 0.18) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 30% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 58%);
   pointer-events: none;
   filter: blur(1px);
   z-index: 0;
@@ -141,8 +138,8 @@ const { t } = useLanguage()
   text-decoration: none;
   letter-spacing: 0.01em;
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.08),
-    0 8px 24px rgba(0, 66, 155, 0.35);
+    0 1px 2px rgba(0, 0, 0, 0.16),
+    0 8px 24px rgba(8, 16, 32, 0.35);
   transition:
     background 0.36s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
@@ -176,9 +173,8 @@ const { t } = useLanguage()
   border-radius: 12px;
   background: #0f172a;
   box-shadow:
-    0 28px 56px -12px rgba(15, 13, 41, 0.55),
-    0 0 0 1px rgba(0, 176, 238, 0.12),
-    0 0 40px rgba(0, 176, 238, 0.08);
+    0 28px 56px -12px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
   overflow: hidden;
   transition:
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
@@ -188,9 +184,8 @@ const { t } = useLanguage()
 .home-dark-product-hero__browser:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 32px 60px -12px rgba(15, 13, 41, 0.6),
-    0 0 0 1px rgba(0, 176, 238, 0.16),
-    0 0 48px rgba(0, 176, 238, 0.12);
+    0 32px 60px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .home-dark-product-hero__browser-chrome {

@@ -376,14 +376,26 @@ onBeforeUnmount(() => {
               </ul>
             </div>
             <div class="other-option site-navbar__actions">
-              <label class="site-navbar__language" :class="{ 'is-dark': isDarkTheme }">
-                <i class="fas fa-globe" aria-hidden="true" />
-                <span class="site-navbar__language-label">{{ t.language }}</span>
-                <select :value="language" :aria-label="t.language" @change="setLanguage($event.target.value)">
-                  <option value="en">English</option>
-                  <option value="tr">Türkçe</option>
-                </select>
-              </label>
+              <div class="site-navbar__language" :class="{ 'is-dark': isDarkTheme }" role="group" :aria-label="t.language">
+                <button
+                  type="button"
+                  class="site-navbar__language-option"
+                  :class="{ 'is-active': language === 'en' }"
+                  :aria-pressed="language === 'en'"
+                  @click="setLanguage('en')"
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  class="site-navbar__language-option"
+                  :class="{ 'is-active': language === 'tr' }"
+                  :aria-pressed="language === 'tr'"
+                  @click="setLanguage('tr')"
+                >
+                  TR
+                </button>
+              </div>
               <RouterLink class="default-btn" to="/contact" @click="closeDrawer">
                 {{ t.quote }}
                 <span />
@@ -425,97 +437,61 @@ onBeforeUnmount(() => {
 <style scoped>
 .site-navbar__language {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 2.65rem;
+  align-items: stretch;
+  height: 2.05rem;
   margin: 0 0.75rem 0 0;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #d9e8f5;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #00a7df;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(30, 64, 112, 0.06);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.site-navbar__language:hover,
-.site-navbar__language:focus-within {
-  border-color: #8bcfec;
+  padding: 2px;
+  border: 1px solid #d5deea;
+  border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 3px 10px rgba(30, 64, 112, 0.09);
 }
 
-.site-navbar__language > i {
-  font-size: 0.95rem;
-}
-
-.site-navbar__language-label {
-  color: #7b8798;
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-
-.site-navbar__language select {
-  width: auto;
-  min-width: 0;
-  min-height: 2rem;
-  padding: 0.2rem 1.15rem 0.2rem 0;
-  border: 0;
+.site-navbar__language-option {
   appearance: none;
-  background-color: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%2300a7df' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/svg%3E");
-  background-position: right center;
-  background-repeat: no-repeat;
-  color: #263650;
+  margin: 0;
+  min-width: 2.15rem;
+  padding: 0 0.55rem;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #5c6b80;
   font-family: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.72rem;
   font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1;
   cursor: pointer;
 }
 
-.site-navbar__language select:focus-visible {
-  outline: none;
-  box-shadow: none;
+.site-navbar__language-option:hover {
+  color: #1c2b42;
 }
 
-.site-navbar__language select:focus {
-  outline: none;
-  box-shadow: none;
+.site-navbar__language-option.is-active {
+  background: #10233f;
+  color: #ffffff;
 }
 
-:global(html) .site-navbar__language select:focus,
-:global(html) .site-navbar__language select:focus-visible {
-  border: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
+.site-navbar__language-option:focus-visible {
+  box-shadow: inset 0 0 0 2px #00b0ee;
 }
 
 .site-navbar__language.is-dark {
-  border-color: rgba(131, 177, 209, 0.35) !important;
-  background: #17243b !important;
-  color: #55c8ee !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #121c2e;
 }
 
-.site-navbar__language.is-dark .site-navbar__language-label {
-  color: #a6b3c8 !important;
+.site-navbar__language.is-dark .site-navbar__language-option {
+  color: #b7c3d6;
 }
 
-.site-navbar__language.is-dark select {
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  color: #f0f5ff !important;
-  color-scheme: dark;
-  background: #17243b url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='m1 1 4 4 4-4' fill='none' stroke='%2355c8ee' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right center !important;
-  border: 0 !important;
-  box-shadow: none !important;
+.site-navbar__language.is-dark .site-navbar__language-option:hover {
+  color: #ffffff;
 }
 
-.site-navbar__language.is-dark option {
-  background: #17243b !important;
-  color: #f0f5ff !important;
+.site-navbar__language.is-dark .site-navbar__language-option.is-active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
 }
 
 .site-navbar__actions > .default-btn,
@@ -528,11 +504,6 @@ onBeforeUnmount(() => {
   .site-navbar__language {
     width: fit-content;
     margin: 0 0 1rem;
-  }
-
-  .site-navbar__language select {
-    width: auto;
-    min-width: 0;
   }
 }
 </style>

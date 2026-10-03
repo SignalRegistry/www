@@ -804,6 +804,19 @@ html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
     display: flex;
     align-items: center;
   }
+
+  .plamb-nav .navbar .other-option.site-navbar__actions .default-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.05rem;
+    padding: 0 18px;
+    line-height: 1.2;
+    font-size: 0.875rem;
+  }
+
+  .site-navbar .switch {
+    font-size: 1.37rem;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -822,12 +835,13 @@ html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
   }
 
   .plamb-nav .navbar .other-option.site-navbar__actions .default-btn {
-    padding: 10px 18px;
-    font-size: 0.88rem;
+    min-height: 2.05rem;
+    padding: 0 16px;
+    font-size: 0.84rem;
   }
 
   .site-navbar .switch {
-    font-size: 1.35rem;
+    font-size: 1.37rem;
   }
 }
 
@@ -902,7 +916,7 @@ html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
   --switch-hue: 223;
   --switch-trans-dur: 0.4s;
   --switch-trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
-  font-size: 1.5rem;
+  font-size: 1.37rem;
   display: inline-flex;
   align-items: center;
 }

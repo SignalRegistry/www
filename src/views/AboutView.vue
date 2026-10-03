@@ -1,9 +1,20 @@
 <script setup>
+import { watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import IndustryInspiredSection from '@/components/IndustryInspiredSection.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { documentMeta, useLanguage } from '@/utils/language'
+
+const { language, t } = useLanguage()
+
+watch(language, () => {
+  const meta = documentMeta('about')
+  if (!meta || typeof document === 'undefined') return
+  document.title = meta.title
+  document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
+})
 
 // Served from /public so the URL is stable in dev + production (no hashed asset 404).
 const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
@@ -22,15 +33,15 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
         <div class="d-table-cell">
           <div class="container">
             <div class="about-hero-content">
-              <span class="about-hero-eyebrow">About Signal Registry</span>
-              <h1>Built for teams that need clarity, control, and speed</h1>
-              <p>Signal Registry helps organizations monitor signal records, analyze trends, and manage updates from one secure operational workspace.</p>
+              <span class="about-hero-eyebrow">{{ t.aboutPage.eyebrow }}</span>
+              <h1>{{ t.aboutPage.heroTitle }}</h1>
+              <p>{{ t.aboutPage.heroText }}</p>
               <div class="about-hero-actions">
                 <RouterLink to="/contact" class="default-btn-one">
-                  Request Demo
+                  {{ t.aboutPage.briefing }}
                   <span />
                 </RouterLink>
-                <span class="about-hero-note">Trusted workflows. Enterprise-ready support.</span>
+                <span class="about-hero-note">{{ t.aboutPage.heroNote }}</span>
               </div>
             </div>
           </div>
@@ -44,16 +55,16 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="productive-content">
-              <span>Get Started</span>
-              <h3>Manage your signal records from a single place with Signal Registry</h3>
-              <p>With Signal Registry, you can monitor signal records in one place, analyze them with charts, and edit records when needed. Contact us for access and implementation details.</p>
+              <span>{{ t.aboutPage.platformLabel }}</span>
+              <h3>{{ t.aboutPage.platformTitle }}</h3>
+              <p>{{ t.aboutPage.platformText }}</p>
               <div class="productive-btn">
                 <RouterLink class="productive-btn" to="/projects">
-                  Get Started Project
+                  {{ t.aboutPage.viewProject }}
                   <span />
                 </RouterLink>
                 <RouterLink to="/contact" class="productive-btn-one">
-                  Contact With Us
+                  {{ t.aboutPage.contact }}
                   <span />
                 </RouterLink>
               </div>
@@ -61,7 +72,7 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
           </div>
           <div class="col-lg-6">
             <div class="productive-image">
-              <img :src="getAssetImg('productive.png')" alt="image">
+              <img :src="getAssetImg('productive.png')" :alt="t.aboutPage.imageAlt">
             </div>
           </div>
         </div>
@@ -74,42 +85,24 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="about-content">
-              <span class="about-label">Enterprise Platform</span>
-              <h3>Signal Registry Governance Suite</h3>
+              <span class="about-label">{{ t.aboutPage.enterpriseLabel }}</span>
+              <h3>Signal Registry</h3>
               <p class="about-intro">
-                <strong>Signal Registry</strong> is Sinyatek's enterprise platform for governing signal registration data with
-                operational consistency, security, and full lifecycle control.
+                <strong>Signal Registry</strong>{{ t.aboutPage.intro }}
               </p>
               <p class="about-intro about-intro--secondary">
-                It unifies portfolio-level visibility, analytics, and record-level interventions in one managed workspace,
-                enabling faster decisions and stronger compliance posture across environments.
+                {{ t.aboutPage.introSecondary }}
               </p>
               <div class="about-metrics">
-                <div class="about-metric-item">
-                  <strong>Centralized Control</strong>
-                  <span>Single operational workspace across teams</span>
-                </div>
-                <div class="about-metric-item">
-                  <strong>Governance by Design</strong>
-                  <span>Traceable actions with policy-aligned workflows</span>
-                </div>
-                <div class="about-metric-item">
-                  <strong>Enterprise Readiness</strong>
-                  <span>Security-focused architecture for scale</span>
+                <div v-for="metric in t.aboutPage.metrics" :key="metric[0]" class="about-metric-item">
+                  <strong>{{ metric[0] }}</strong>
+                  <span>{{ metric[1] }}</span>
                 </div>
               </div>
               <ul class="about-list">
-                <li>
+                <li v-for="point in t.aboutPage.points" :key="point">
                   <i class="flaticon-tick" />
-                  Executive command view with KPI monitoring, trend intelligence, and channel-level performance analytics
-                </li>
-                <li>
-                  <i class="flaticon-tick" />
-                  Enterprise-grade security architecture with role-based authorization and controlled session governance
-                </li>
-                <li>
-                  <i class="flaticon-tick" />
-                  End-to-end data lifecycle administration with structured editing, traceability, and environment governance
+                  {{ point }}
                 </li>
               </ul>
             </div>

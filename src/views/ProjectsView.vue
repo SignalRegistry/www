@@ -5,7 +5,7 @@ import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
 
-const projectsHeroBg = getAssetImg('projects_image.jpg')
+const projectsHeroBg = `${import.meta.env.BASE_URL}projects-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
 const activeStep = ref(0)
 
 const steps = [
@@ -52,10 +52,8 @@ function selectStep(index) {
     <SiteNavbar />
 
     <!-- Page Title -->
-    <div
-      class="page-title-area page-title-area--projects"
-      :style="projectsHeroBg ? { backgroundImage: `url(${projectsHeroBg})` } : {}"
-    >
+    <div class="page-title-area page-title-area--projects">
+      <img class="projects-hero__bg" :src="projectsHeroBg" alt="" />
       <div class="d-table">
         <div class="d-table-cell">
           <div class="container">
@@ -330,26 +328,53 @@ function selectStep(index) {
 </template>
 
 <style scoped>
-.page-title-area--projects {
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.page-title-area.page-title-area--projects {
+  height: 560px !important;
+  min-height: 560px;
+  padding: 0;
+  background-color: #07111f;
+  background-image: none;
   position: relative;
+  overflow: hidden;
+}
+
+.projects-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .page-title-area--projects::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(16, 18, 37, 0.62);
-  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 14, 28, 0.94) 0%,
+    rgba(6, 14, 28, 0.8) 36%,
+    rgba(6, 14, 28, 0.38) 62%,
+    rgba(6, 14, 28, 0.2) 100%
+  );
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.page-title-area--projects .d-table {
+  position: relative;
+  z-index: 2;
+  height: 100%;
 }
 
 .projects-hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 760px;
+  z-index: 2;
+  max-width: 680px;
   color: #ffffff;
   padding: 36px 0 28px;
 }
@@ -1073,6 +1098,30 @@ function selectStep(index) {
 }
 
 @media only screen and (max-width: 991px) {
+  .page-title-area.page-title-area--projects {
+    height: auto !important;
+    min-height: 460px;
+    padding: 112px 0 56px;
+  }
+
+  .projects-hero__bg {
+    object-position: center center;
+  }
+
+  .page-title-area--projects::before {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 14, 28, 0.9) 0%,
+      rgba(6, 14, 28, 0.7) 62%,
+      rgba(6, 14, 28, 0.46) 100%
+    );
+  }
+
+  .projects-hero-content {
+    max-width: 100%;
+    padding: 12px 0 0;
+  }
+
   .how-flow__layout {
     grid-template-columns: 1fr;
   }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { documentMeta } from '@/utils/language'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
@@ -47,7 +48,7 @@ const router = createRouter({
       meta: {
         title: 'About — Signal Registry',
         description:
-          'Learn about Signal Registry and how Sinyatek helps you track, analyze, and edit signal registration data from a single dashboard.',
+          'Signal Registry is Sinyatek’s enterprise platform for governed signal registration operations, reporting, and controlled record administration.',
       },
     },
     {
@@ -211,8 +212,9 @@ router.afterEach((to) => {
   if (typeof document === 'undefined') return
 
   // Use per-route SEO metadata and fall back to global defaults.
-  const title = (to.meta && to.meta.title) || DEFAULT_TITLE
-  const description = (to.meta && to.meta.description) || DEFAULT_DESCRIPTION
+  const localized = documentMeta(to.name)
+  const title = localized?.title || (to.meta && to.meta.title) || DEFAULT_TITLE
+  const description = localized?.description || (to.meta && to.meta.description) || DEFAULT_DESCRIPTION
 
   document.title = title
 
