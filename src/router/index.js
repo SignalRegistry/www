@@ -163,7 +163,7 @@ const router = createRouter({
       meta: {
         title: 'Projects — Signal Registry',
         description:
-          'See how Signal Registry is used in real projects to track and manage signal registration data across environments.',
+          'Signal Registry is Sinyatek’s enterprise project for controlled signal registration, operational reporting, and authorized record administration.',
       },
     },
     {

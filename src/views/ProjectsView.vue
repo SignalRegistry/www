@@ -1,46 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { documentMeta, useLanguage } from '@/utils/language'
 
-const projectsHeroBg = `${import.meta.env.BASE_URL}projects-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
+const { language, t } = useLanguage()
+
+watch(language, () => {
+  const meta = documentMeta('projects')
+  if (!meta || typeof document === 'undefined') return
+  document.title = meta.title
+  document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
+})
+
+const operationsImage = `${import.meta.env.BASE_URL}projects-workspace.jpg`.replace(/([^:]\/)\/+/g, '$1')
 const activeStep = ref(0)
-
-const steps = [
-  {
-    label: 'Sign in',
-    title: 'Sign in',
-    text: 'Dashboard, profile, and record pages stay behind sign-in. If the session expires, you come back to this screen.',
-  },
-  {
-    label: 'Summary cards',
-    title: 'Summary cards',
-    text: 'The first view is a set of summary cards: record volume, status, and the data source you are looking at.',
-  },
-  {
-    label: 'Charts',
-    title: 'Trend and channel charts',
-    text: 'Trend and channel charts sit with the cards, so a change is visible before you open a unit.',
-  },
-  {
-    label: 'Open a record',
-    title: 'From the table to a record',
-    text: 'The unit table lists every unit. Sort or filter it, then open a row to start that record.',
-  },
-  {
-    label: 'Edit',
-    title: 'Edit the record',
-    text: 'Connections show as nodes and lines. Drag a link to update the record and keep the units consistent.',
-  },
-]
-
-const units = [
-  { name: 'Depot A', status: 'Active' },
-  { name: 'Cabinet 12', status: 'Review' },
-  { name: 'Field 4', status: 'Active' },
-]
 
 function selectStep(index) {
   activeStep.value = index
@@ -51,28 +27,28 @@ function selectStep(index) {
   <div class="centered-logo-mobile">
     <SiteNavbar />
 
-    <!-- Page Title -->
     <div class="page-title-area page-title-area--projects">
-      <img class="projects-hero__bg" :src="projectsHeroBg" alt="" />
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="projects-hero-content">
-              <span class="projects-hero-eyebrow">Signal Registry Project</span>
-              <h1>Built for operational projects that require accuracy and control</h1>
-              <p>
-                Signal Registry delivers end-to-end visibility for signal records, from executive-level monitoring to
-                record-level interventions in one secure and structured environment.
-              </p>
-              <div class="projects-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  Request Project Demo
-                  <span />
-                </RouterLink>
-                <span class="projects-hero-note">Implementation-ready workflows. Enterprise support model.</span>
-              </div>
+      <div class="container">
+        <div class="projects-hero-layout">
+          <div class="projects-hero-content">
+            <span class="projects-hero-eyebrow">{{ t.projectsPage.eyebrow }}</span>
+            <h1>{{ t.projectsPage.heroTitle }}</h1>
+            <p>{{ t.projectsPage.heroText }}</p>
+            <div class="projects-hero-actions">
+              <RouterLink to="/contact" class="default-btn-one">
+                {{ t.projectsPage.demo }}
+                <span />
+              </RouterLink>
+              <span class="projects-hero-note">{{ t.projectsPage.heroNote }}</span>
             </div>
           </div>
+          <figure class="projects-operations">
+            <img :src="operationsImage" :alt="t.projectsPage.imageAlt">
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>{{ t.projectsPage.imageCaption }}</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -81,17 +57,13 @@ function selectStep(index) {
     <section class="project-section pt-100 pb-70">
       <div class="container">
         <div class="section-title">
-          <span>Signal Registry</span>
-          <h3>About This Project</h3>
+          <span>{{ t.projectsPage.overviewLabel }}</span>
+          <h3>{{ t.projectsPage.overviewTitle }}</h3>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <p class="text-center mb-4">
-              Signal Registry is Sinyatek's management panel (dashboard) for tracking and managing signal registration data. Users sign in to view a summary of signal records, explore trend and channel data with charts, list units in a table, and edit individual records. Both status overview and detailed editing are available in a single interface.
-            </p>
-            <p class="text-center">
-              Access to the dashboard, profile, and record pages is protected: the session is checked continuously, and if it becomes invalid, the user is redirected to the sign-in page. The main screen includes summary cards, trend charts, channel charts, and a unit table. Views can be rearranged with drag-and-drop, and you can switch between different data sources (e.g. central depot or field cabinet). For more detail or to get access, contact us.
-            </p>
+            <p class="text-center mb-4">{{ t.projectsPage.overviewLead }}</p>
+            <p class="text-center">{{ t.projectsPage.overviewBody }}</p>
           </div>
         </div>
       </div>
@@ -100,12 +72,12 @@ function selectStep(index) {
     <section class="how-flow ptb-100" aria-labelledby="how-flow-heading">
       <div class="container">
         <div class="section-title">
-          <span>How it works</span>
-          <h3 id="how-flow-heading">From sign-in to a saved edit</h3>
+          <span>{{ t.projectsPage.flowLabel }}</span>
+          <h3 id="how-flow-heading">{{ t.projectsPage.flowTitle }}</h3>
         </div>
         <div class="how-flow__layout">
           <ol class="how-flow__steps">
-            <li v-for="(step, index) in steps" :key="step.label">
+            <li v-for="(step, index) in t.projectsPage.steps" :key="step.label">
               <button
                 type="button"
                 class="how-flow__step"
@@ -125,7 +97,7 @@ function selectStep(index) {
               <span />
               <span />
             </div>
-            <div class="how-flow__canvas" :aria-label="steps[activeStep].title">
+            <div class="how-flow__canvas" :aria-label="t.projectsPage.steps[activeStep].title">
               <div v-if="activeStep === 0" class="mock-signin">
                 <aside class="mock-signin__aside">
                   <span class="mock-signin__mark" aria-hidden="true">
@@ -135,38 +107,38 @@ function selectStep(index) {
                   </span>
                   <div>
                     <strong>Signal Registry</strong>
-                    <p>Dashboard, profile, and records stay behind a checked session.</p>
+                    <p>{{ t.projectsPage.mock.sessionNote }}</p>
                   </div>
                 </aside>
                 <div class="mock-signin__form">
                   <div class="mock-signin__brand">
-                    <strong>Sign in</strong>
-                    <small>Use your work account</small>
+                    <strong>{{ t.projectsPage.mock.signIn }}</strong>
+                    <small>{{ t.projectsPage.mock.signInHint }}</small>
                   </div>
                   <div class="mock-field">
-                    <span>Work email</span>
+                    <span>{{ t.projectsPage.mock.workEmail }}</span>
                     <em>name@company.com</em>
                   </div>
                   <div class="mock-field">
-                    <span>Password</span>
+                    <span>{{ t.projectsPage.mock.password }}</span>
                     <em class="is-secret">••••••••••</em>
                   </div>
-                  <span class="mock-btn">Sign in</span>
+                  <span class="mock-btn">{{ t.projectsPage.mock.signIn }}</span>
                 </div>
               </div>
 
               <div v-else-if="activeStep === 1" class="mock-cards">
                 <article>
                   <div class="mock-cards__top">
-                    <small>Records</small>
+                    <small>{{ t.projectsPage.mock.records }}</small>
                     <span class="mock-cards__delta">+18</span>
                   </div>
                   <strong>128</strong>
-                  <em>Across this source</em>
+                  <em>{{ t.projectsPage.mock.acrossSource }}</em>
                 </article>
                 <article>
                   <div class="mock-cards__top">
-                    <small>Active</small>
+                    <small>{{ t.projectsPage.mock.active }}</small>
                     <span class="mock-cards__delta">75%</span>
                   </div>
                   <strong>96</strong>
@@ -174,11 +146,11 @@ function selectStep(index) {
                 </article>
                 <article>
                   <div class="mock-cards__top">
-                    <small>Source</small>
-                    <span class="mock-cards__live">Live</span>
+                    <small>{{ t.projectsPage.mock.source }}</small>
+                    <span class="mock-cards__live">{{ t.projectsPage.mock.live }}</span>
                   </div>
-                  <strong>Depot</strong>
-                  <em>Central depot</em>
+                  <strong>{{ t.projectsPage.mock.depot }}</strong>
+                  <em>{{ t.projectsPage.mock.centralDepot }}</em>
                 </article>
               </div>
 
@@ -186,7 +158,7 @@ function selectStep(index) {
                 <div class="mock-trend" aria-hidden="true">
                   <header class="mock-trend__head">
                     <div>
-                      <small>7-day trend</small>
+                      <small>{{ t.projectsPage.mock.trend }}</small>
                       <strong>1,284</strong>
                     </div>
                     <span class="mock-trend__delta">+12.4%</span>
@@ -227,7 +199,7 @@ function selectStep(index) {
                 </div>
                 <div class="mock-bars" aria-hidden="true">
                   <header class="mock-bars__head">
-                    <small>Channels</small>
+                    <small>{{ t.projectsPage.mock.channels }}</small>
                     <strong>4</strong>
                   </header>
                   <div class="mock-bars__plot">
@@ -242,33 +214,33 @@ function selectStep(index) {
               <div v-else-if="activeStep === 3" class="mock-table">
                 <header class="mock-table__head">
                   <div>
-                    <small>Units</small>
+                    <small>{{ t.projectsPage.mock.units }}</small>
                     <strong>3</strong>
                   </div>
-                  <span>1 in review</span>
+                  <span>{{ t.projectsPage.mock.inReview }}</span>
                 </header>
                 <div class="mock-table__cols" aria-hidden="true">
-                  <span>Unit</span>
-                  <span>Status</span>
+                  <span>{{ t.projectsPage.mock.unit }}</span>
+                  <span>{{ t.projectsPage.mock.status }}</span>
                 </div>
                 <div
-                  v-for="(unit, index) in units"
+                  v-for="(unit, index) in t.projectsPage.units"
                   :key="unit.name"
                   class="mock-row"
                   :class="{ 'is-open': index === 1 }"
                 >
                   <span>{{ unit.name }}</span>
-                  <em :class="unit.status === 'Review' ? 'is-review' : 'is-active'">{{ unit.status }}</em>
+                  <em :class="unit.review ? 'is-review' : 'is-active'">{{ unit.status }}</em>
                 </div>
               </div>
 
               <div v-else class="mock-editor" aria-hidden="true">
                 <header class="mock-editor__head">
                   <div>
-                    <small>Record links</small>
+                    <small>{{ t.projectsPage.mock.recordLinks }}</small>
                     <strong>3</strong>
                   </div>
-                  <span>Source selected</span>
+                  <span>{{ t.projectsPage.mock.sourceSelected }}</span>
                 </header>
                 <div class="mock-editor__graph">
                   <svg class="mock-editor__lines" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
@@ -276,23 +248,23 @@ function selectStep(index) {
                     <path d="M50 50 H82 V74" />
                   </svg>
                   <span class="mock-node is-selected mock-node--source">
-                    <small>Selected</small>
-                    Source
+                    <small>{{ t.projectsPage.mock.selected }}</small>
+                    {{ t.projectsPage.mock.sourceNode }}
                   </span>
                   <span class="mock-node mock-node--trigger">
-                    <small>Input</small>
-                    Trigger
+                    <small>{{ t.projectsPage.mock.input }}</small>
+                    {{ t.projectsPage.mock.trigger }}
                   </span>
                   <span class="mock-node mock-node--monitor">
-                    <small>Watch</small>
-                    Monitor
+                    <small>{{ t.projectsPage.mock.watch }}</small>
+                    {{ t.projectsPage.mock.monitor }}
                   </span>
                 </div>
               </div>
             </div>
             <div class="how-flow__copy">
-              <h4>{{ steps[activeStep].title }}</h4>
-              <p>{{ steps[activeStep].text }}</p>
+              <h4>{{ t.projectsPage.steps[activeStep].title }}</h4>
+              <p>{{ t.projectsPage.steps[activeStep].text }}</p>
             </div>
           </div>
         </div>
@@ -305,18 +277,18 @@ function selectStep(index) {
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="productive-content">
-              <span>Get Started</span>
-              <h3>Manage your signal records with Signal Registry</h3>
-              <p>Signal Registry is Sinyatek's management panel for tracking and managing signal registration data. View summaries, trend and channel charts, unit table, and edit records in one place. Contact us for access.</p>
+              <span>{{ t.projectsPage.engageLabel }}</span>
+              <h3>{{ t.projectsPage.engageTitle }}</h3>
+              <p>{{ t.projectsPage.engageText }}</p>
               <div class="productive-btn">
-                <RouterLink class="productive-btn" to="/pricing">Get Started Project <span /></RouterLink>
-                <RouterLink to="/contact" class="productive-btn-one">Contact With Us <span /></RouterLink>
+                <RouterLink class="productive-btn" to="/pricing">{{ t.projectsPage.pricing }} <span /></RouterLink>
+                <RouterLink to="/contact" class="productive-btn-one">{{ t.projectsPage.contact }} <span /></RouterLink>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="productive-image">
-              <img :src="getAssetImg('productive.png')" alt="image">
+              <img :src="getAssetImg('productive.png')" :alt="t.projectsPage.productiveAlt">
             </div>
           </div>
         </div>
@@ -329,54 +301,81 @@ function selectStep(index) {
 
 <style scoped>
 .page-title-area.page-title-area--projects {
-  height: 560px !important;
-  min-height: 560px;
-  padding: 0;
-  background-color: #07111f;
-  background-image: none;
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
   overflow: hidden;
-}
-
-.projects-hero__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 70% center;
-  z-index: 0;
-  pointer-events: none;
+  padding: 132px 0 76px;
 }
 
 .page-title-area--projects::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(6, 14, 28, 0.94) 0%,
-    rgba(6, 14, 28, 0.8) 36%,
-    rgba(6, 14, 28, 0.38) 62%,
-    rgba(6, 14, 28, 0.2) 100%
-  );
-  opacity: 1;
-  z-index: 1;
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 
-.page-title-area--projects .d-table {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+.projects-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.projects-operations {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.projects-operations img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+  object-position: center 78%;
+}
+
+.projects-operations figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.projects-operations figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.projects-operations figcaption span {
+  min-width: 0;
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .projects-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 680px;
+  max-width: 560px;
   color: #ffffff;
-  padding: 36px 0 28px;
+  padding: 0;
 }
 
 .projects-hero-eyebrow {
@@ -1099,27 +1098,26 @@ function selectStep(index) {
 
 @media only screen and (max-width: 991px) {
   .page-title-area.page-title-area--projects {
-    height: auto !important;
-    min-height: 460px;
-    padding: 112px 0 56px;
+    padding: 118px 0 48px !important;
   }
 
-  .projects-hero__bg {
-    object-position: center center;
-  }
-
-  .page-title-area--projects::before {
-    background: linear-gradient(
-      180deg,
-      rgba(6, 14, 28, 0.9) 0%,
-      rgba(6, 14, 28, 0.7) 62%,
-      rgba(6, 14, 28, 0.46) 100%
-    );
+  .projects-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .projects-hero-content {
     max-width: 100%;
-    padding: 12px 0 0;
+  }
+
+  .projects-operations figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .projects-operations figcaption span {
+    text-align: left;
   }
 
   .how-flow__layout {
@@ -1127,20 +1125,24 @@ function selectStep(index) {
   }
 
   .how-flow__steps {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    flex-direction: column;
+    overflow: visible;
+    gap: 8px;
   }
 
   .how-flow__step {
-    width: auto;
-    white-space: nowrap;
+    width: 100%;
+    white-space: normal;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  .page-title-area.page-title-area--projects {
+    padding: 108px 0 36px !important;
+  }
+
   .projects-hero-content {
-    padding: 24px 0 12px;
+    padding: 0;
   }
 
   .projects-hero-content h1 {
@@ -1150,6 +1152,15 @@ function selectStep(index) {
   .projects-hero-content p {
     font-size: 15px;
     line-height: 1.65;
+  }
+
+  .how-flow__canvas {
+    min-height: 0;
+    padding: 16px 12px 4px;
+  }
+
+  .how-flow__copy {
+    padding: 4px 16px 18px;
   }
 
   .mock-cards,

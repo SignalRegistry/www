@@ -501,3 +501,268 @@ select:focus,
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Corporate buttons — one shape, no template ripple                   */
+/* ------------------------------------------------------------------ */
+
+.default-btn > span,
+.default-btn-one > span,
+.productive-btn > span,
+.productive-btn-one > span {
+  display: none !important;
+}
+
+.default-btn,
+.default-btn-one,
+a.default-btn,
+a.default-btn-one,
+.productive-content .productive-btn .productive-btn,
+.productive-content .productive-btn .productive-btn-one,
+.contact-form .submit-btn,
+.newsletter-form button,
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px !important;
+  margin: 0 !important;
+  border-radius: 8px !important;
+  border: 1px solid transparent;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+  line-height: 1.2 !important;
+  text-decoration: none;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.productive-content .productive-btn,
+.main-banner-content .banner-btn,
+.about-hero-actions,
+.projects-hero-actions,
+.plan-action__actions,
+.faq-contact-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Navbar keeps the brand color, in the same shape */
+.plamb-nav .navbar .other-option .default-btn {
+  min-height: 36px;
+  padding: 0 16px !important;
+  background: #00b0ee !important;
+  color: #ffffff !important;
+  border-color: #00b0ee !important;
+}
+
+.plamb-nav .navbar .other-option .default-btn:hover,
+.plamb-nav .navbar .other-option .default-btn:focus-visible {
+  background: #0c1c33 !important;
+  border-color: #0c1c33 !important;
+  color: #ffffff !important;
+}
+
+/* Light sections: navy primary, quiet outline secondary */
+.productive-content .productive-btn .productive-btn,
+.error-content .default-btn-one,
+.faq-contact-cta__actions .default-btn-one,
+.contact-form .submit-btn,
+.submit-btn,
+.newsletter-form button {
+  background: #0c1c33 !important;
+  color: #ffffff !important;
+  border-color: #0c1c33 !important;
+}
+
+.productive-content .productive-btn .productive-btn:hover,
+.productive-content .productive-btn .productive-btn:focus-visible,
+.error-content .default-btn-one:hover,
+.error-content .default-btn-one:focus-visible,
+.faq-contact-cta__actions .default-btn-one:hover,
+.faq-contact-cta__actions .default-btn-one:focus-visible,
+.contact-form .submit-btn:hover,
+.contact-form .submit-btn:focus-visible,
+.submit-btn:hover,
+.submit-btn:focus-visible,
+.newsletter-form button:hover,
+.newsletter-form button:focus-visible {
+  background: #16304f !important;
+  border-color: #16304f !important;
+  color: #ffffff !important;
+}
+
+.productive-content .productive-btn .productive-btn-one {
+  background: #ffffff !important;
+  color: #0c1c33 !important;
+  border-color: #c9d4e8 !important;
+}
+
+.productive-content .productive-btn .productive-btn-one:hover,
+.productive-content .productive-btn .productive-btn-one:focus-visible {
+  background: #f4f7fb !important;
+  color: #0c1c33 !important;
+  border-color: #0c1c33 !important;
+}
+
+/* Dark heroes and blue cards: white primary, outline secondary */
+.page-title-area .default-btn-one,
+.main-banner-two .default-btn-one,
+.page-design-card--primary .default-btn-one,
+html.theme-dark .page-title-area .default-btn-one,
+html.theme-dark .main-banner-two .default-btn-one,
+html.theme-dark .page-design-card--primary .default-btn-one {
+  background: #ffffff !important;
+  color: #0c1c33 !important;
+  border-color: #ffffff !important;
+}
+
+.page-title-area .default-btn-one:hover,
+.page-title-area .default-btn-one:focus-visible,
+.main-banner-two .default-btn-one:hover,
+.main-banner-two .default-btn-one:focus-visible,
+.page-design-card--primary .default-btn-one:hover,
+.page-design-card--primary .default-btn-one:focus-visible,
+html.theme-dark .page-title-area .default-btn-one:hover,
+html.theme-dark .main-banner-two .default-btn-one:hover,
+html.theme-dark .page-design-card--primary .default-btn-one:hover {
+  background: #e7eef6 !important;
+  color: #0c1c33 !important;
+  border-color: #e7eef6 !important;
+}
+
+.main-banner-two .banner-btn .default-btn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.main-banner-two .banner-btn .default-btn:hover,
+.main-banner-two .banner-btn .default-btn:focus-visible {
+  background: #ffffff !important;
+  color: #0c1c33 !important;
+  border-color: #ffffff !important;
+}
+
+.page-title-area .default-btn-one:active,
+.main-banner-two .default-btn-one:active,
+.page-design-card--primary .default-btn-one:active,
+.productive-content .productive-btn .productive-btn-one:active {
+  color: #0c1c33 !important;
+}
+
+.main-banner-two .banner-btn .default-btn:active {
+  color: #ffffff !important;
+}
+
+.main-banner-two .banner-btn .default-btn:hover:active {
+  color: #0c1c33 !important;
+}
+
+.default-btn:focus-visible,
+.default-btn-one:focus-visible,
+.productive-content .productive-btn .productive-btn:focus-visible,
+.productive-content .productive-btn .productive-btn-one:focus-visible,
+.contact-form .submit-btn:focus-visible,
+.submit-btn:focus-visible,
+.newsletter-form button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 176, 238, 0.35) !important;
+}
+
+.contact-form .submit-btn,
+.newsletter-form--pro button {
+  width: auto;
+}
+
+.contact-form .submit-btn {
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .plamb-nav .navbar .other-option.site-navbar__actions .default-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 18px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .main-banner-two,
+  .main-banner-content {
+    text-align: left !important;
+  }
+
+  .main-banner-two {
+    padding-top: 108px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .main-banner-content h1 {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+
+  .section-title,
+  .partner-title {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .about-hero-actions,
+  .projects-hero-actions,
+  .page-title-area [class$='-hero-actions'],
+  .main-banner-content .banner-btn,
+  .productive-content .productive-btn,
+  .faq-contact-cta__actions,
+  .plan-action__actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  .about-hero-actions .default-btn,
+  .about-hero-actions .default-btn-one,
+  .projects-hero-actions .default-btn,
+  .projects-hero-actions .default-btn-one,
+  .page-title-area [class$='-hero-actions'] .default-btn,
+  .page-title-area [class$='-hero-actions'] .default-btn-one,
+  .main-banner-content .banner-btn .default-btn,
+  .main-banner-content .banner-btn .default-btn-one,
+  .productive-content .productive-btn .productive-btn,
+  .productive-content .productive-btn .productive-btn-one,
+  .faq-contact-cta__actions .default-btn-one,
+  .error-content .default-btn-one,
+  .plan-action__actions .default-btn-one,
+  .page-design-card--primary .default-btn-one {
+    width: 100% !important;
+  }
+
+  .page-title-area [class$='-hero-note'],
+  .about-hero-note,
+  .projects-hero-note {
+    display: block;
+    width: 100%;
+  }
+
+  .about-office,
+  .projects-operations,
+  .productive-image img {
+    width: 100%;
+  }
+
+  .productive-image {
+    margin-top: 28px;
+    text-align: left;
+  }
+}
+

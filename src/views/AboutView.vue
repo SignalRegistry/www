@@ -16,35 +16,35 @@ watch(language, () => {
   document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
 })
 
-// Served from /public so the URL is stable in dev + production (no hashed asset 404).
-const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
+const officeImage = `${import.meta.env.BASE_URL}about-office.jpg`.replace(/([^:]\/)\/+/g, '$1')
 </script>
 
 <template>
   <div class="centered-logo-mobile">
     <SiteNavbar />
 
-    <!-- Start Page Title Area -->
-    <div
-      class="page-title-area page-title-area--about"
-      :style="{ backgroundImage: `url('${heroBg}')` }"
-    >
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="about-hero-content">
-              <span class="about-hero-eyebrow">{{ t.aboutPage.eyebrow }}</span>
-              <h1>{{ t.aboutPage.heroTitle }}</h1>
-              <p>{{ t.aboutPage.heroText }}</p>
-              <div class="about-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  {{ t.aboutPage.briefing }}
-                  <span />
-                </RouterLink>
-                <span class="about-hero-note">{{ t.aboutPage.heroNote }}</span>
-              </div>
+    <div class="page-title-area page-title-area--about">
+      <div class="container">
+        <div class="about-hero-layout">
+          <div class="about-hero-content">
+            <span class="about-hero-eyebrow">{{ t.aboutPage.eyebrow }}</span>
+            <h1>{{ t.aboutPage.heroTitle }}</h1>
+            <p>{{ t.aboutPage.heroText }}</p>
+            <div class="about-hero-actions">
+              <RouterLink to="/contact" class="default-btn-one">
+                {{ t.aboutPage.briefing }}
+                <span />
+              </RouterLink>
+              <span class="about-hero-note">{{ t.aboutPage.heroNote }}</span>
             </div>
           </div>
+          <figure class="about-office">
+            <img :src="officeImage" :alt="t.aboutPage.officeAlt">
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>{{ t.aboutPage.officeCaption }}</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -121,37 +121,80 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
 
 <style scoped>
 .page-title-area--about {
-  /* public/about-hero.jpg — static fallback + inline style */
-  background-image: url('/about-hero.jpg') !important;
-  background-color: #07101f;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
   overflow: hidden;
+  padding: 132px 0 76px;
 }
 
 .page-title-area--about::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 14, 32, 0.32);
-  z-index: 1;
-  opacity: 1;
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 
-.page-title-area--about .d-table {
-  position: relative;
-  z-index: 2;
+.about-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.about-office {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.about-office img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.about-office figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.about-office figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.about-office figcaption span {
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .about-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  max-width: 560px;
   color: #ffffff;
-  padding: 36px 0 28px;
+  padding: 0;
 }
 
 .about-hero-eyebrow {
@@ -257,7 +300,36 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
   margin-bottom: 18px;
 }
 
+@media only screen and (max-width: 991px) {
+  .page-title-area--about {
+    padding: 118px 0 48px !important;
+  }
+
+  .about-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-hero-content {
+    max-width: 100%;
+  }
+
+  .about-office figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .about-office figcaption span {
+    text-align: left;
+  }
+}
+
 @media only screen and (max-width: 767px) {
+  .page-title-area--about {
+    padding: 108px 0 36px !important;
+  }
+
   .about-content {
     padding: 24px 18px;
   }
@@ -266,10 +338,6 @@ const heroBg = `${import.meta.env.BASE_URL}about-hero.jpg`.replace(/([^:]\/)\/+/
     grid-template-columns: 1fr;
     gap: 10px;
     margin: 16px 0 14px;
-  }
-
-  .about-hero-content {
-    padding: 24px 0 12px;
   }
 
   .about-hero-content h1 {

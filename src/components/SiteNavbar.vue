@@ -86,9 +86,9 @@ function linkClass(path) {
   return ['nav-link', 'site-navbar__drawer-link', { active: route.path === path }]
 }
 
-function closeDrawer() {
+function closeDrawer(immediate = false) {
   if (!menuOpen.value) return
-  if (prefersReducedMotion.value || isDragging.value) {
+  if (immediate === true || prefersReducedMotion.value || isDragging.value) {
     menuOpen.value = false
     resetDrag()
     return
@@ -147,9 +147,16 @@ function measureWidth() {
   width = drawerEl.value?.getBoundingClientRect().width || 340
 }
 
+function isInteractiveTarget(target) {
+  return target instanceof Element && Boolean(target.closest('a, button, input, textarea, select, label'))
+}
+
 function onPointerDown(e) {
   if (!menuOpen.value || prefersReducedMotion.value) return
   if (e.pointerType === 'mouse' && e.button !== 0) return
+  // Buttons and links must receive the click. Capturing the pointer here
+  // retargets the click to the sheet, so the close control never runs.
+  if (isInteractiveTarget(e.target)) return
   measureWidth()
   pointerId = e.pointerId
   startX = e.clientX
@@ -158,7 +165,6 @@ function onPointerDown(e) {
   axisLocked = null
   samples.length = 0
   pushSample(e.clientX, e.timeStamp)
-  e.currentTarget.setPointerCapture?.(e.pointerId)
 }
 
 function onPointerMove(e) {
@@ -174,6 +180,7 @@ function onPointerMove(e) {
       pointerId = null
       return
     }
+    e.currentTarget.setPointerCapture?.(e.pointerId)
     isDragging.value = true
     settleAnimating.value = false
   }
@@ -353,7 +360,8 @@ onBeforeUnmount(() => {
                   type="button"
                   class="site-navbar__drawer-close"
                   aria-label="Close menu"
-                  @click="closeDrawer"
+                  @pointerdown.stop
+                  @click.stop="closeDrawer(true)"
                 >
                   <span class="site-navbar__drawer-close-icon" aria-hidden="true" />
                 </button>
