@@ -66,7 +66,7 @@ const router = createRouter({
       meta: {
         title: 'Contact — Signal Registry',
         description:
-          'Get in touch with Sinyatek for access to Signal Registry, implementation details, and support for your signal registration workflows.',
+          'Sinyatek arranges access, deployment, and operating support for Signal Registry.',
       },
     },
     {
@@ -133,7 +133,7 @@ const router = createRouter({
       meta: {
         title: 'Pricing — Signal Registry',
         description:
-          'Explore pricing and engagement options for Signal Registry, Sinyatek’s signal registration management panel.',
+          'Signal Registry engagements set out access, support, and operating scope for authorized use.',
       },
     },
     {
@@ -173,7 +173,7 @@ const router = createRouter({
       meta: {
         title: 'API Documentation — Signal Registry',
         description:
-          'Signal Registry API documentation: authentication, registry management endpoints, and integration details for your applications.',
+          'The Signal Registry API provides authorized access for authentication, registry administration, and operational records.',
       },
     },
     {

@@ -7,53 +7,53 @@ import SiteFooter from '@/components/SiteFooter.vue'
 const plans = [
   {
     name: 'Free',
-    desc: 'Ideal for getting started with tracking signal records in MyDashboard.',
+    desc: 'One authorized user, for record review and summary reporting.',
     priceText: '$0',
-    priceSuffix: '/month/user',
-    action: 'Get Started Free',
+    priceSuffix: 'per user, monthly',
+    action: 'Request access',
     actionTo: '/get-started-free',
     features: [
-      '1 User',
-      'Dashboard summary view',
-      'Basic filtering and record listing',
-      'Basic support via email',
+      'One authorized user',
+      'Summary view',
+      'Record listing and standard filters',
+      'Email support',
     ],
   },
   {
     name: 'Team',
-    desc: 'For teams managing Signal Registry operations collaboratively.',
+    desc: 'A defined operating group, for shared reporting and record administration.',
     priceText: '$29',
-    priceSuffix: '/month/user',
-    action: 'Start Free Trial',
+    priceSuffix: 'per user, monthly',
+    action: 'Request a trial',
     actionTo: '/start-free-trial',
     featured: true,
     features: [
-      'Team access for up to 5 users',
-      'Advanced filters and reporting views',
-      'Record update and monitoring workflows',
+      'Access for up to five users',
+      'Advanced filters and reporting',
+      'Record updates and monitoring',
       'Priority technical support',
     ],
   },
   {
     name: 'Enterprise',
-    desc: 'Custom solution for high-volume record management and enterprise needs.',
+    desc: 'A governed deployment, arranged with Sinyatek for scope, policy, and support.',
     priceText: 'Custom',
-    priceSuffix: 'Pricing',
-    action: 'Contact Sales',
+    priceSuffix: 'Engagement',
+    action: 'Request a briefing',
     actionTo: '/contact-sales',
     features: [
-      'Unlimited users and role management',
-      'Enterprise security and access policies',
-      'Custom integrations and API planning',
-      'SLA and dedicated customer success support',
+      'Unlimited users and role administration',
+      'Enterprise access policy',
+      'Integration planning',
+      'Service commitment and dedicated support',
     ],
   },
 ]
 
 const planColumns = [
-  { name: 'Free', label: 'For individuals' },
-  { name: 'Team', label: 'Most popular', featured: true },
-  { name: 'Enterprise', label: 'For regulated scale' },
+  { name: 'Free', label: 'Single user' },
+  { name: 'Team', label: 'Operating group', featured: true },
+  { name: 'Enterprise', label: 'Governed deployment' },
 ]
 
 const compareSections = [
@@ -62,15 +62,15 @@ const compareSections = [
     rows: [
       {
         feature: 'User access',
-        values: ['1 user', 'Up to 5 users', 'Unlimited users'],
+        values: ['One user', 'Up to five users', 'Unlimited users'],
       },
       {
         feature: 'Dashboard summary cards',
         values: [true, true, true],
       },
       {
-        feature: 'Signal trend and channel charts',
-        values: ['Basic view', 'Advanced filters', 'Advanced + custom views'],
+        feature: 'Trend and channel reports',
+        values: ['Standard view', 'Advanced filters', 'Advanced and custom views'],
       },
       {
         feature: 'Role and permission controls',
@@ -78,7 +78,7 @@ const compareSections = [
       },
       {
         feature: 'Security controls',
-        values: ['Standard', 'Priority controls', 'Enterprise policy set'],
+        values: ['Standard controls', 'Priority controls', 'Enterprise policy'],
       },
     ],
   },
@@ -86,64 +86,66 @@ const compareSections = [
     title: 'Workflows',
     rows: [
       {
-        feature: 'Record edit workflows',
-        values: ['Single record edit', 'Bulk-friendly workflows', 'Custom workflow design'],
+        feature: 'Record administration',
+        values: ['Single record', 'Defined workflows', 'Custom workflow design'],
       },
       {
         feature: 'Monitoring and alerts',
-        values: ['Manual follow-up', 'Team monitoring', 'Dedicated monitoring setup'],
+        values: ['Manual review', 'Team monitoring', 'Dedicated monitoring'],
       },
       {
-        feature: 'Audit activity logs',
+        feature: 'Audit records',
         values: [false, true, true],
       },
       {
-        feature: 'Release and change management',
-        values: ['Latest stable', 'Staged updates', 'Staged + rollback planning'],
+        feature: 'Change management',
+        values: ['Current release', 'Staged updates', 'Staged release with rollback'],
       },
     ],
   },
   {
-    title: 'Integrations & Support',
+    title: 'Integrations and support',
     rows: [
       {
         feature: 'API and integration planning',
-        values: [false, 'Starter API scope', 'Custom integration support'],
+        values: [false, 'Defined API scope', 'Arranged with Sinyatek'],
       },
       {
         feature: 'Support channel',
-        values: ['Email support', 'Priority technical support', 'Dedicated customer success'],
+        values: ['Email', 'Priority technical support', 'Dedicated support'],
       },
       {
-        feature: 'SLA commitment',
+        feature: 'Service commitment',
         values: [false, false, true],
       },
     ],
   },
 ]
 
+const pricingHero = `${import.meta.env.BASE_URL}pricing-hero.jpg`.replace(/([^:]\/)\/+/g, '$1')
+
 const openPricingFaqIndex = ref(0)
 
 const pricingFaqItems = [
   {
-    title: 'How does billing work for Signal Registry?',
-    content: 'Free has no monthly charge. Team is billed per active user per month. Enterprise pricing is tailored to your deployment scope, support model, and compliance requirements.',
+    title: 'How is Signal Registry billed?',
+    content: 'Free carries no monthly charge. Team is billed per active user each month. Enterprise terms are arranged according to deployment scope, support, and compliance requirements.',
   },
   {
-    title: 'Can we pay by invoice?',
-    content: 'Invoice-based billing is available for Enterprise plans. Team plans typically use standard monthly billing, and we can review annual procurement options for larger teams.',
+    title: 'Is invoice billing available?',
+    content: 'Invoice billing is available for Enterprise. Team is billed monthly. Annual procurement may be arranged for a larger operating group.',
   },
   {
-    title: 'Can we upgrade or downgrade our plan?',
-    content: 'Yes. You can move between Free and Team as your operational needs change. For Enterprise transitions, our team supports migration planning and rollout coordination.',
+    title: 'Can an engagement be changed?',
+    content: 'Movement between Free and Team is available as the operating requirement changes. An Enterprise transition, including migration and rollout, is planned with Sinyatek.',
   },
   {
-    title: 'What happens if we cancel our subscription?',
-    content: 'You retain access until the current billing period ends. We provide guidance for secure offboarding and data export steps when required by your internal policies.',
+    title: 'What follows cancellation?',
+    content: 'Access continues until the end of the current billing period. Offboarding and export are provided where internal policy requires them.',
   },
   {
-    title: 'How is our data protected?',
-    content: 'Signal Registry applies authenticated access controls and role-based management options. Enterprise includes advanced policy alignment and dedicated support for governance workflows.',
+    title: 'How is data protected?',
+    content: 'Access is authenticated. Role-based administration is available on Team and Enterprise. Enterprise includes policy alignment and dedicated support for governance.',
   },
 ]
 
@@ -158,23 +160,28 @@ function togglePricingFaq(index) {
     <SiteNavbar />
 
     <!-- Pricing Hero Area -->
-    <div class="page-title-area item-bg2">
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="pricing-hero-content">
-              <span class="pricing-hero-eyebrow">Pricing Plans</span>
-              <h1>Flexible pricing for every Signal Registry stage</h1>
-              <p>Start with essential monitoring, scale with team collaboration, and move to enterprise-grade governance when your operational scope grows.</p>
-              <div class="pricing-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  Request Demo
-                  <span />
-                </RouterLink>
-                <span class="pricing-hero-note">No hidden fees. Cancel anytime.</span>
-              </div>
+    <div class="page-title-area page-title-area--pricing">
+      <div class="container">
+        <div class="pricing-hero-layout">
+          <div class="pricing-hero-content">
+            <span class="pricing-hero-eyebrow">Pricing</span>
+            <h1>Defined terms for Signal Registry</h1>
+            <p>Signal Registry is offered in three engagements. Scope, access, and support are set according to the operating requirement.</p>
+            <div class="pricing-hero-actions">
+              <RouterLink to="/contact" class="default-btn-one">
+                Request a briefing
+                <span />
+              </RouterLink>
+              <span class="pricing-hero-note">Defined procedures. Enterprise support.</span>
             </div>
           </div>
+          <figure class="pricing-hero-figure">
+            <img :src="pricingHero" alt="Signal Registry operational reporting" />
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>Operational reporting</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -216,9 +223,9 @@ function togglePricingFaq(index) {
     <section class="plan-compare-area pb-100">
       <div class="container">
         <div class="section-title mb-4">
-          <span>Plan Comparison</span>
-          <h3>A transparent feature matrix for every stage</h3>
-          <p>Compare capabilities side by side and choose the package that fits your operational and compliance requirements.</p>
+          <span>Scope</span>
+          <h3>Capability by engagement</h3>
+          <p>The table sets out access, workflow, and support for each engagement.</p>
         </div>
 
         <div class="plan-compare-card">
@@ -255,8 +262,8 @@ function togglePricingFaq(index) {
         </div>
 
         <div class="plan-compare-note">
-          Need a custom deployment model, data residency, or procurement support?
-          <RouterLink to="/contact">Talk to our team</RouterLink>
+          A custom deployment, data residency, or procurement arrangement is confirmed with Sinyatek.
+          <RouterLink to="/contact">Contact us</RouterLink>
         </div>
       </div>
     </section>
@@ -264,8 +271,8 @@ function togglePricingFaq(index) {
     <section class="pricing-faq-area pb-100">
       <div class="container">
         <div class="section-title mb-4">
-          <span>Billing & Security FAQs</span>
-          <h3>Answers for pricing, billing, and plan operations</h3>
+          <span>Billing and governance</span>
+          <h3>Pricing, billing, and operating terms</h3>
         </div>
 
         <div class="faq-accordion">
@@ -301,18 +308,82 @@ function togglePricingFaq(index) {
 </template>
 
 <style scoped>
-.page-title-area.item-bg2 {
+.page-title-area--pricing {
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
+  overflow: hidden;
+  padding: 132px 0 76px;
 }
 
-.page-title-area.item-bg2::before {
-  background: rgba(16, 18, 37, 0.62);
+.page-title-area--pricing::before {
+  content: none;
+  display: none;
+}
+
+.pricing-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.pricing-hero-figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.pricing-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.pricing-hero-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.pricing-hero-figure figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pricing-hero-figure figcaption span {
+  min-width: 0;
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .pricing-hero-content {
-  max-width: 760px;
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
   color: #ffffff;
-  padding: 36px 0 28px;
+  padding: 0;
 }
 
 .pricing-hero-eyebrow {
@@ -422,7 +493,7 @@ function togglePricingFaq(index) {
 }
 
 .plan-compare-table .is-featured-column::after {
-  content: 'Recommended';
+  content: 'Principal';
   position: absolute;
   top: 8px;
   right: 12px;
@@ -456,9 +527,34 @@ function togglePricingFaq(index) {
   font-weight: 700;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
+  .page-title-area--pricing {
+    padding: 118px 0 48px !important;
+  }
+
+  .pricing-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .pricing-hero-content {
-    padding: 24px 0 12px;
+    max-width: 100%;
+  }
+
+  .pricing-hero-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .pricing-hero-figure figcaption span {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-title-area--pricing {
+    padding: 108px 0 36px !important;
   }
 
   .pricing-hero-content h1 {

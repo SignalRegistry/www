@@ -2,16 +2,16 @@
 defineProps({
   title: {
     type: String,
-    default: 'Enterprise-ready operations, from day one',
+    default: 'A controlled path from integration to production',
   },
   subtitle: {
     type: String,
     default:
-      'Signal Registry combines clear workflows, measurable outcomes, and production-grade governance for teams.',
+      'Authentication, validation, and deployment proceed in defined stages, so production use remains stable.',
   },
   roadmapTitle: {
     type: String,
-    default: 'Implementation roadmap',
+    default: 'Integration stages',
   },
 })
 </script>
@@ -20,7 +20,7 @@ defineProps({
   <section class="professional-section pb-100">
     <div class="container">
       <div class="professional-head text-center">
-        <span class="professional-eyebrow">Operational Excellence</span>
+        <span class="professional-eyebrow">Operating standard</span>
         <h3>{{ title }}</h3>
         <p>{{ subtitle }}</p>
       </div>
@@ -29,22 +29,22 @@ defineProps({
         <div class="metric-card">
           <span class="metric-label">Availability</span>
           <span class="metric-value">99.9%</span>
-          <p>Operational availability target</p>
+          <p>Defined availability target</p>
         </div>
         <div class="metric-card">
           <span class="metric-label">Access Model</span>
           <span class="metric-value">Role-Based</span>
-          <p>Access and permission governance</p>
+          <p>Role-based authorization</p>
         </div>
         <div class="metric-card">
           <span class="metric-label">Auditability</span>
           <span class="metric-value">Audit-Ready</span>
-          <p>Traceable updates and change visibility</p>
+          <p>Traceable amendments</p>
         </div>
         <div class="metric-card">
           <span class="metric-label">Onboarding</span>
           <span class="metric-value">&lt;2 Weeks</span>
-          <p>Typical onboarding timeline</p>
+          <p>Defined implementation period</p>
         </div>
       </div>
 
@@ -53,18 +53,18 @@ defineProps({
         <div class="roadmap-grid">
           <div class="roadmap-item">
             <span class="roadmap-step">01</span>
-            <h5>Discovery</h5>
-            <p>Map your current record lifecycle, roles, and integration requirements.</p>
+            <h5>Assessment</h5>
+            <p>The record lifecycle, roles, and integration requirements are established.</p>
           </div>
           <div class="roadmap-item">
             <span class="roadmap-step">02</span>
             <h5>Configuration</h5>
-            <p>Set environments, policy controls, and workflow rules for operational teams.</p>
+            <p>Environments, access policy, and workflow rules are set for the operating teams.</p>
           </div>
           <div class="roadmap-item">
             <span class="roadmap-step">03</span>
-            <h5>Scale</h5>
-            <p>Roll out dashboards, monitoring loops, and continuous improvement practices.</p>
+            <h5>Implementation</h5>
+            <p>Dashboards and monitoring are introduced under the defined operating procedures.</p>
           </div>
         </div>
       </div>

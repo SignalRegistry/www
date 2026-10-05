@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
@@ -12,29 +11,31 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
     <SiteNavbar />
 
     <!-- Start Page Title Area -->
-    <div
-      class="page-title-area page-title-area--contact"
-      :style="contactHeroBg ? { backgroundImage: `url(${contactHeroBg})` } : {}"
-    >
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="contact-hero-content">
-              <span class="contact-hero-eyebrow">Contact Signal Registry</span>
-              <h1>Connect with our team for onboarding, support, and implementation</h1>
-              <p>
-                Reach out to discuss access planning, deployment requirements, or operational guidance.
-                We help teams move from evaluation to production with a clear support path.
-              </p>
-              <div class="contact-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  Contact Team
-                  <span />
-                </RouterLink>
-                <span class="contact-hero-note">Response-oriented support. Enterprise-ready communication.</span>
-              </div>
+    <div class="page-title-area page-title-area--contact">
+      <div class="container">
+        <div class="contact-hero-layout">
+          <div class="contact-hero-content">
+            <span class="contact-hero-eyebrow">Contact</span>
+            <h1>Correspondence with Sinyatek</h1>
+            <p>
+              Access, deployment, and operating guidance for Signal Registry are arranged with Sinyatek.
+              Enquiries are answered through a defined path.
+            </p>
+            <div class="contact-hero-actions">
+              <a href="#contactForm" class="default-btn-one">
+                Submit an enquiry
+                <span />
+              </a>
+              <span class="contact-hero-note">Defined procedures. Enterprise support.</span>
             </div>
           </div>
+          <figure class="contact-hero-figure">
+            <img :src="contactHeroBg" alt="Signal Registry correspondence">
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>Authorized correspondence</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -82,30 +83,30 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
           <div class="row g-0 align-items-stretch">
             <div class="col-lg-5">
               <div class="contact-surface__info">
-                <h3>So glad we're getting in touch!</h3>
+                <h3>Correspondence</h3>
                 <p>
-                  Signal Registry helps teams manage signal operations with clarity, speed, and secure governance.
+                  Signal Registry is Sinyatek’s system for signal registration. Access and deployment are arranged through this office.
                 </p>
                 <ul class="contact-surface__list">
                   <li>
                     <i class="fa fa-line-chart" aria-hidden="true" />
                     <div>
-                      <strong>Operational Intelligence</strong>
-                      <span>Track trends, channels, and critical KPIs in one place.</span>
+                      <strong>Operational reporting</strong>
+                      <span>Summaries, trends, and channel reports are maintained in one record.</span>
                     </div>
                   </li>
                   <li>
                     <i class="fa fa-random" aria-hidden="true" />
                     <div>
-                      <strong>Workflow Simplicity</strong>
-                      <span>Move from monitoring to editing through one structured flow.</span>
+                      <strong>Record administration</strong>
+                      <span>Monitoring and authorized updates follow a defined sequence.</span>
                     </div>
                   </li>
                   <li>
                     <i class="fa fa-shield" aria-hidden="true" />
                     <div>
-                      <strong>Enterprise Trust</strong>
-                      <span>Built with secure access controls and environment-aware operations.</span>
+                      <strong>Access control</strong>
+                      <span>Sessions and roles govern who may review or amend a record.</span>
                     </div>
                   </li>
                 </ul>
@@ -114,46 +115,46 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
             <div class="col-lg-7">
               <div class="contact-form contact-form--pro">
                 <div class="contact-form__head">
-                  <h3>Contact Our Team</h3>
-                  <p>Share your requirements and we will return with the right implementation path.</p>
+                  <h3>Submit an enquiry</h3>
+                  <p>State the operating requirement. Sinyatek will respond with the appropriate path for access or deployment.</p>
                 </div>
                 <form id="contactForm" @submit.prevent>
                   <div class="row">
                     <div class="col-lg-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="First name">
+                        <input type="text" name="name" id="name" class="form-control" required data-error="Enter a given name" placeholder="Given name">
                         <div class="help-block with-errors" />
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="last_name" id="last_name" class="form-control" required data-error="Please enter your last name" placeholder="Last name">
+                        <input type="text" name="last_name" id="last_name" class="form-control" required data-error="Enter a family name" placeholder="Family name">
                         <div class="help-block with-errors" />
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                       <div class="form-group">
-                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Business email">
+                        <input type="email" name="email" id="email" class="form-control" required data-error="Enter a work email address" placeholder="Work email">
                         <div class="help-block with-errors" />
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                       <div class="form-group">
-                        <input type="text" name="company_name" id="company_name" class="form-control" required data-error="Please enter your company name" placeholder="Company name">
+                        <input type="text" name="company_name" id="company_name" class="form-control" required data-error="Enter the organization" placeholder="Organization">
                         <div class="help-block with-errors" />
                       </div>
                     </div>
                     <div class="col-lg-12 col-md-12">
                       <div class="form-group">
-                        <textarea name="message" class="form-control" id="message" cols="30" rows="6" required data-error="Write your message" placeholder="Tell us how we can help" />
+                        <textarea name="message" class="form-control" id="message" cols="30" rows="6" required data-error="Enter the enquiry" placeholder="State the operating requirement" />
                         <div class="help-block with-errors" />
                       </div>
                     </div>
                     <div class="col-lg-12 col-md-12">
                       <p class="contact-form__policy">
-                        By clicking contact us, you agree to our terms of service and privacy policy.
+                        Submission confirms acceptance of the terms of service and the privacy policy.
                       </p>
-                      <button type="submit" class="submit-btn">Contact us</button>
+                      <button type="submit" class="submit-btn">Submit enquiry</button>
                       <div id="msgSubmit" class="h3 text-center hidden" />
                     </div>
                   </div>
@@ -170,13 +171,13 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
       <div class="container">
         <div class="subscribe-content-area mb-0 subscribe-content-area--pro">
           <div class="subscribe-content">
-            <span class="subscribe-content__eyebrow">Newsletter</span>
-            <h2>Stay updated with product releases and support announcements</h2>
-            <p>Get curated updates about Signal Registry capabilities, platform improvements, and service notifications.</p>
+            <span class="subscribe-content__eyebrow">Notices</span>
+            <h2>Operating notices and service announcements</h2>
+            <p>Notices cover Signal Registry capability, platform changes, and service conditions.</p>
           </div>
           <form class="newsletter-form newsletter-form--pro" @submit.prevent>
-            <input type="email" class="input-newsletter" placeholder="Enter your business email" name="EMAIL" required autocomplete="off">
-            <button type="submit">Subscribe</button>
+            <input type="email" class="input-newsletter" placeholder="Work email" name="EMAIL" required autocomplete="off">
+            <button type="submit">Register</button>
             <div id="validator-newsletter" class="form-result" />
           </form>
         </div>
@@ -191,27 +192,81 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
 
 <style scoped>
 .page-title-area--contact {
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
+  overflow: hidden;
+  padding: 132px 0 76px;
 }
 
 .page-title-area--contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(16, 18, 37, 0.62);
-  z-index: 0;
+  content: none;
+  display: none;
+}
+
+.contact-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.contact-hero-figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.contact-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+  object-position: 22% center;
+}
+
+.contact-hero-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.contact-hero-figure figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.contact-hero-figure figcaption span {
+  min-width: 0;
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .contact-hero-content {
   position: relative;
-  z-index: 1;
-  max-width: 760px;
+  z-index: 2;
+  max-width: 560px;
   color: #ffffff;
-  padding: 36px 0 28px;
+  padding: 0;
 }
 
 .contact-hero-eyebrow {
@@ -486,9 +541,34 @@ const contactHeroBg = getAssetImg('contactUs.jpg')
   padding: 0 28px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
+  .page-title-area--contact {
+    padding: 118px 0 48px !important;
+  }
+
+  .contact-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
   .contact-hero-content {
-    padding: 24px 0 12px;
+    max-width: 100%;
+  }
+
+  .contact-hero-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-hero-figure figcaption span {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-title-area--contact {
+    padding: 108px 0 36px !important;
   }
 
   .contact-hero-content h1 {

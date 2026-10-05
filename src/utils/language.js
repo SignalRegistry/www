@@ -131,7 +131,7 @@ const messages = {
     },
   },
   tr: {
-    nav: ['Hakkımızda', 'Projeler', 'API', 'Fiyatlandırma', 'İletişim', 'SSS'],
+    nav: ['Hakkımızda', 'Projeler', 'API', 'Fiyatlandırma', 'İletişim', 'FAQ'],
     quote: 'Bize ulaşın', navDescription: 'Sinyal kayıt yönetim platformu', language: 'Dil',
     heroEyebrow: 'Signal Registry', heroTitle: 'Sinyal operasyonları için yönetişimli bir çalışma alanı',
     heroText: 'Signal Registry, kurumlara canlı izleme, kayıt yönetimi ve kontrollü iş akışı tasarımı için tek bir ortam sunar.',

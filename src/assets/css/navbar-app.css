@@ -623,8 +623,8 @@ html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
   }
 
   html.theme-light .site-navbar__nav .nav-item a.site-navbar__drawer-link.active {
-    background: #f4f7fb; color: #0c1c33 !important;
-    box-shadow: inset 3px 0 0 #0c1c33;
+    background: #f4f7fb; color: #0284c7 !important;
+    box-shadow: inset 3px 0 0 #00b0ee;
   }
 
   html.theme-light .site-navbar__nav .nav-item a.site-navbar__drawer-link.active .site-navbar__nav-link-icon {
@@ -632,7 +632,7 @@ html.theme-dark .navbar-area.is-sticky .site-navbar__toggler {
   }
 
   html.theme-dark .site-navbar__nav .nav-item a.site-navbar__drawer-link.active {
-    background: rgba(255, 255, 255, 0.06); color: #ffffff !important;
+    background: rgba(0, 176, 238, 0.12); color: #7ddfff !important;
     box-shadow: inset 3px 0 0 #00b0ee;
   }
 

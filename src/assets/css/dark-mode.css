@@ -52,6 +52,13 @@ html.theme-dark .navbar-area .navbar-nav .nav-item a {
   color: #e2e8f0 !important;
 }
 
+html.theme-dark .navbar-area .navbar-nav .nav-item a:hover,
+html.theme-dark .navbar-area .navbar-nav .nav-item a:focus-visible,
+html.theme-dark .navbar-area .navbar-nav .nav-item a.active,
+html.theme-dark .navbar-area .navbar-nav .nav-item a.router-link-exact-active {
+  color: #7ddfff !important;
+}
+
 html.theme-dark .card,
 html.theme-dark .single-services-box,
 html.theme-dark .single-pricing-box,

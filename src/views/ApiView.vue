@@ -179,124 +179,146 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
   border: 1px solid #334155;
   color: #bae6fd;
 }
-.page-title-area.page-title-area--api {
-  height: 560px !important;
-  min-height: 560px;
-  padding: 0;
-  background-color: #07111f;
-  background-image: none;
+.page-title-area--api {
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
   overflow: hidden;
-}
-
-.api-hero__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 68% center;
-  filter: saturate(0.78) contrast(1.04);
-  z-index: 0;
-  pointer-events: none;
+  padding: 132px 0 76px;
 }
 
 .page-title-area--api::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(6, 14, 28, 0.94) 0%,
-    rgba(6, 14, 28, 0.82) 34%,
-    rgba(6, 14, 28, 0.42) 58%,
-    rgba(6, 14, 28, 0.22) 100%
-  );
-  opacity: 1;
-  z-index: 1;
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 
-.page-title-area--api .d-table {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-}
-
-.pricing-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  color: #ffffff;
-  padding: 36px 0 28px;
-}
-
-.pricing-hero-eyebrow {
-  display: inline-flex;
+.api-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
   align-items: center;
+}
+
+.api-hero-figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.api-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.api-hero-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.api-hero-figure figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.api-hero-figure figcaption span {
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.api-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  color: #ffffff;
+  padding: 0;
+}
+
+.api-hero-eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.98);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  padding: 6px 12px;
   margin-bottom: 16px;
 }
 
-.pricing-hero-content h1 {
+.api-hero-content h1 {
   margin-bottom: 14px;
+  color: #ffffff;
   font-size: 44px;
   line-height: 1.2;
-  color: #ffffff;
 }
 
-.pricing-hero-content p {
+.api-hero-content p {
   margin-bottom: 22px;
   max-width: 690px;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 17px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
 }
 
-.pricing-hero-actions {
+.api-hero-actions {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
-.pricing-hero-note {
-  color: rgba(255, 255, 255, 0.86);
+.api-hero-note {
+  color: rgba(255, 255, 255, 0.88);
   font-size: 14px;
   font-weight: 500;
 }
 
 @media only screen and (max-width: 991px) {
-  .page-title-area.page-title-area--api {
-    height: auto !important;
-    min-height: 460px;
-    padding: 112px 0 56px;
+  .page-title-area--api {
+    padding: 118px 0 48px !important;
   }
 
-  .api-hero__bg {
-    object-position: 62% center;
+  .api-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .page-title-area--api::before {
-    background: linear-gradient(
-      180deg,
-      rgba(6, 14, 28, 0.9) 0%,
-      rgba(6, 14, 28, 0.72) 62%,
-      rgba(6, 14, 28, 0.48) 100%
-    );
-  }
-
-  .pricing-hero-content {
+  .api-hero-content {
     max-width: 100%;
-    padding: 12px 0 0;
+  }
+
+  .api-hero-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .api-hero-figure figcaption span {
+    text-align: left;
   }
 
   .api-doc-main {
@@ -333,28 +355,17 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
     padding-bottom: 60px !important;
   }
 
-  .pricing-hero-content {
-    padding: 8px 0 0;
+  .page-title-area--api {
+    padding: 108px 0 36px !important;
   }
 
-  .pricing-hero-content h1 {
+  .api-hero-content h1 {
     font-size: 30px;
-    line-height: 1.28;
   }
 
-  .pricing-hero-content p {
+  .api-hero-content p {
     font-size: 15px;
     line-height: 1.65;
-  }
-
-  .pricing-hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .pricing-hero-note {
-    font-size: 13px;
   }
 
   .api-doc :deep(h2) {
@@ -389,23 +400,27 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
 
     <!-- Page Title -->
     <div class="page-title-area page-title-area--api">
-      <img class="api-hero__bg" :src="apiHeroBg" alt="" />
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="pricing-hero-content">
-              <span class="pricing-hero-eyebrow">Product Overview</span>
-              <h1>Build reliable integrations on the Signal Registry platform</h1>
-              <p>Authenticate securely, access registry resources consistently, and scale production workflows with clear endpoint standards and deployment-ready guidance.</p>
-              <div class="pricing-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  Talk to Sales
-                  <span />
-                </RouterLink>
-                <span class="pricing-hero-note">Production-ready endpoints. Enterprise-grade support.</span>
-              </div>
+      <div class="container">
+        <div class="api-hero-layout">
+          <div class="api-hero-content">
+            <span class="api-hero-eyebrow">The API</span>
+            <h1>Authorized integration with Signal Registry</h1>
+            <p>Signal Registry provides a defined interface for authentication, registry administration, and access to operational records. Use is limited to authorized systems.</p>
+            <div class="api-hero-actions">
+              <RouterLink to="/contact" class="default-btn-one">
+                Request a briefing
+                <span />
+              </RouterLink>
+              <span class="api-hero-note">Defined procedures. Enterprise support.</span>
             </div>
           </div>
+          <figure class="api-hero-figure">
+            <img :src="apiHeroBg" alt="Signal Registry integration environment" />
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>Authorized system interface</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -415,21 +430,21 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
       <div class="container">
         <div class="api-doc-main">
           <div class="single-privacy api-doc">
-              <h1>Signal Registry API — Documentation</h1>
+              <h1>Signal Registry API</h1>
               <p class="lead">
-                This document describes how to use the Signal Registry backend API. The dashboard and other clients use this API for authentication, registry management, and access to flow and source data.
+                This reference sets out how authorized clients authenticate, administer registries, and retrieve flow and source records.
               </p>
 
               <h2 id="1-overview">1. Overview</h2>
               <div class="api-section">
-                <p>Signal Registry API:</p>
+                <p>The Signal Registry API provides:</p>
                 <ul>
-                  <li>Exposes <strong>REST</strong>-based HTTP endpoints.</li>
-                  <li>Uses <strong>JSON</strong>: request bodies and responses use <code>Content-Type: application/json</code>.</li>
-                  <li>Uses <strong>authentication</strong> for session-required requests (e.g. cookie or server-defined method).</li>
-                  <li>Supports <strong>WebSocket</strong> for the record editor and real-time scenarios (may be documented separately).</li>
+                  <li><strong>REST</strong> endpoints over HTTP.</li>
+                  <li><strong>JSON</strong> request and response bodies, with <code>Content-Type: application/json</code>.</li>
+                  <li><strong>Session authentication</strong> for protected operations, including cookie-based access where the service requires it.</li>
+                  <li><strong>WebSocket</strong> access for the record editor and real-time operations, documented separately where required.</li>
                 </ul>
-                <p><strong>Environments:</strong></p>
+                <p><strong>Operating environments</strong></p>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -442,46 +457,46 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                     <tr>
                       <td>Production</td>
                       <td><code>https://api0.signalregistry.net</code></td>
-                      <td>Live traffic</td>
+                      <td>Authorized production traffic</td>
                     </tr>
                     <tr>
                       <td>Staging</td>
                       <td><code>https://staging.api0.signalregistry.net</code></td>
-                      <td>Test and integration</td>
+                      <td>Integration and acceptance testing</td>
                     </tr>
                   </tbody>
                 </table>
-                <p>Replace <code>{baseUrl}</code> with one of these URLs in all examples.</p>
+                <p>In the examples below, <code>{baseUrl}</code> denotes the address of the selected environment.</p>
               </div>
 
-              <h2 id="2-basics">2. Basics</h2>
+              <h2 id="2-basics">2. Request conventions</h2>
               <div class="api-section">
-                <h3>2.1 Request headers</h3>
+                <h3>2.1 Request requirements</h3>
                 <ul>
-                  <li><strong>Content-Type:</strong> <code>application/json</code> (for requests with a body)</li>
-                  <li><strong>Authentication:</strong> Use the method required by the server for protected endpoints (e.g. <code>credentials: 'include'</code> for cookies)</li>
+                  <li><strong>Content-Type:</strong> <code>application/json</code> for every request that includes a body.</li>
+                  <li><strong>Authentication:</strong> Protected operations require the session method defined by the service. Cookie-based access uses <code>credentials: 'include'</code>.</li>
                 </ul>
-                <h3>2.2 Base URL override (optional)</h3>
-                <p>For development or testing, the API base URL can be overridden:</p>
+                <h3>2.2 Environment address</h3>
+                <p>For integration testing, the client may direct requests to a designated address.</p>
                 <ul>
                   <li><strong>Single parameter:</strong> <code>?api=https://example.com</code></li>
                   <li><strong>Separate parameters:</strong> <code>?apiHost=example.com&amp;apiPort=443&amp;apiProtocol=https</code></li>
                 </ul>
-                <p>These parameters determine which server the client calls; they are not required on the server side.</p>
+                <p>These parameters apply to the client only. They are not required by the service.</p>
               </div>
 
               <h2 id="3-auth">3. Authentication and session</h2>
               <div class="api-section">
                 <ul>
-                  <li>Login is performed with <strong>POST /login</strong>; a successful response returns session data (and may set a cookie).</li>
-                  <li>Session validity is checked with <strong>GET /session</strong> or <strong>GET /user</strong>; invalid or empty response is treated as no session.</li>
-                  <li>Logout is performed with <strong>POST /logout</strong>; the session is then invalid.</li>
-                  <li>Protected endpoints (registry list, registry detail, profile, etc.) require a valid session.</li>
+                  <li>Sign-in is completed with <strong>POST /login</strong>. A successful response returns the session and may establish a cookie.</li>
+                  <li>Session status is confirmed with <strong>GET /session</strong> or <strong>GET /user</strong>. An invalid or empty response is treated as no active session.</li>
+                  <li>Sign-out is completed with <strong>POST /logout</strong>. The session is then closed.</li>
+                  <li>Registry, record, and profile operations require a valid session.</li>
                 </ul>
               </div>
 
               <h2 id="4-endpoints">4. Endpoint reference</h2>
-              <p class="api-endpoint-note">Paths below are used with <code>{baseUrl}</code>. Example: <code>GET {baseUrl}/user</code>.</p>
+              <p class="api-endpoint-note">Each path is appended to <code>{baseUrl}</code>. Example: <code>GET {baseUrl}/user</code>.</p>
               <h3>4.1 Session and user</h3>
               <div class="api-section">
                 <table class="table table-bordered">
@@ -496,27 +511,27 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/session</code></td>
-                      <td>Current session info. Response shape: <code>{ id, user, role, origin }</code> or server-defined fields.</td>
+                      <td>Returns the current session. The response includes the identifier, user, role, and origin, or the fields defined by the service.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/user</code></td>
-                      <td>User profile. Also used for session validity checks.</td>
+                      <td>Returns the user profile. Also confirms that the session remains valid.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-put">PUT</span></td>
                       <td><code>/user</code></td>
-                      <td>Update profile (body: fields to update).</td>
+                      <td>Revises the authorized profile. The body contains the fields to be updated.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-post">POST</span></td>
                       <td><code>/login</code></td>
-                      <td>Login. Body: <code>{ "username": "...", "password": "..." }</code>. Success returns session data (e.g. <code>id</code>, <code>user</code>, <code>role</code>, <code>origin</code>).</td>
+                      <td>Signs in. Body: <code>{ "username": "...", "password": "..." }</code>. A successful response returns the session, including <code>id</code>, <code>user</code>, <code>role</code>, and <code>origin</code>.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-post">POST</span></td>
                       <td><code>/logout</code></td>
-                      <td>Logout; ends the session.</td>
+                      <td>Signs out and closes the current session.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -535,34 +550,34 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/registry</code></td>
-                      <td>User's registry list. Response: array (each item may have <code>id</code> or <code>_id</code>).</td>
+                      <td>Returns the registry list for the signed-in user. Each record includes <code>id</code> or <code>_id</code>.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-post">POST</span></td>
                       <td><code>/registry</code></td>
-                      <td>Create a new registry. Body: <code>{}</code> or server-accepted fields. Response: created record (at least <code>id</code> or <code>_id</code>).</td>
+                      <td>Creates a registry. The body may be empty or contain the fields accepted by the service. The response returns the created record, including <code>id</code> or <code>_id</code>.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/registry/:id</code></td>
-                      <td>Single registry detail. Query <code>?user={userIdentifier}</code> may be used for auth (client-side example).</td>
+                      <td>Returns one registry record. The query <code>?user={userIdentifier}</code> is supplied where authorization requires it.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-delete">DELETE</span></td>
                       <td><code>/registry/:id</code></td>
-                      <td>Delete registry. Authorized user required.</td>
+                      <td>Removes a registry. The operation requires an authorized user.</td>
                     </tr>
                   </tbody>
                 </table>
-                <p><code>:id</code> — Registry ID.</p>
+                <p><code>:id</code> is the registry identifier.</p>
               </div>
 
-              <h2 id="5-subdomain">5. Registry subdomain</h2>
-              <p class="api-registry-note">Flow and source data for a given registry are accessed via the registry-specific host:</p>
-              <p class="api-registry-note"><strong>Base URL:</strong> <code>https://{registryId}.signalregistry.net</code><br>(<code>registryId</code> = the registry’s ID.)</p>
+              <h2 id="5-subdomain">5. Registry host</h2>
+              <p class="api-registry-note">Flow and source records for a registry are served from the registry host.</p>
+              <p class="api-registry-note"><strong>Address:</strong> <code>https://{registryId}.signalregistry.net</code><br><code>registryId</code> is the registry identifier.</p>
               <h3>5.1 Flows</h3>
               <div class="api-section">
-                <p>Nodes, edges, and viewport data in the record editor are stored and read via these endpoints.</p>
+                <p>The record editor stores and retrieves nodes, edges, and the viewport through these endpoints.</p>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -575,20 +590,20 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/flows?last_only=1</code></td>
-                      <td>Returns the last saved flow (single flow).</td>
+                      <td>Returns the most recently saved flow.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-post">POST</span></td>
                       <td><code>/flows</code></td>
-                      <td>Save flow data. Body example: <code>{ "nodes": [...], "edges": [...], "viewport": { ... } }</code>.</td>
+                      <td>Stores the flow. The body includes <code>nodes</code>, <code>edges</code>, and <code>viewport</code>.</td>
                     </tr>
                   </tbody>
                 </table>
-                <p><strong>Note:</strong> Some scenarios use <code>apiFetchWithoutCredentials</code> for requests to this host; the server defines CORS and auth rules accordingly. See server docs for actual behaviour.</p>
+                <p>Requests to this host may be issued without credentials where the integration requires it. Cross-origin and authorization rules are defined by the service.</p>
               </div>
               <h3>5.2 Sources</h3>
               <div class="api-section">
-                <p>Source definitions within a registry.</p>
+                <p>Source definitions are maintained within the registry.</p>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -601,33 +616,33 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                     <tr>
                       <td><span class="method-badge method-get">GET</span></td>
                       <td><code>/sources</code></td>
-                      <td>List of sources for the registry (if supported by server).</td>
+                      <td>Returns the source list for the registry, where the service provides it.</td>
                     </tr>
                     <tr>
                       <td><span class="method-badge method-post">POST</span></td>
                       <td><code>/sources</code></td>
-                      <td>Create a new source. Response: created source ID, etc.</td>
+                      <td>Creates a source. The response includes the identifier of the created record.</td>
                     </tr>
                   </tbody>
                 </table>
-                <p>Base URL is again <code>https://{registryId}.signalregistry.net</code>.</p>
+                <p>The address is <code>https://{registryId}.signalregistry.net</code>.</p>
               </div>
 
-              <h2 id="6-errors">6. Error codes and responses</h2>
+              <h2 id="6-errors">6. Response codes</h2>
               <div class="api-section">
                 <ul>
-                  <li><strong>200</strong> — Success (content in response body).</li>
-                  <li><strong>400</strong> — Bad request (body or parameters); response may include an error message.</li>
-                  <li><strong>401</strong> — Unauthorized; session invalid or missing.</li>
-                  <li><strong>403</strong> — Forbidden (no permission).</li>
-                  <li><strong>404</strong> — Not found (e.g. registry or user).</li>
-                  <li><strong>500</strong> — Server error.</li>
+                  <li><strong>200</strong> — The request succeeded. The result is in the response body.</li>
+                  <li><strong>400</strong> — The request was not accepted. The body or parameters are not valid, and the response may include an explanation.</li>
+                  <li><strong>401</strong> — The session is missing or no longer valid.</li>
+                  <li><strong>403</strong> — The session is valid, but the operation is not authorized.</li>
+                  <li><strong>404</strong> — The requested registry or user was not found.</li>
+                  <li><strong>500</strong> — The service could not complete the request.</li>
                 </ul>
-                <p>If the error response body is JSON, details may be in <code>message</code>, <code>error</code>, or other server-defined fields.</p>
+                <p>Where the error body is JSON, the explanation is provided in <code>message</code>, <code>error</code>, or another field defined by the service.</p>
               </div>
 
-              <h2 id="7-examples">7. Example requests</h2>
-              <h3>7.1 Login</h3>
+              <h2 id="7-examples">7. Request examples</h2>
+              <h3>7.1 Sign-in</h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -649,8 +664,8 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   </tr>
                 </tbody>
               </table>
-              <p class="api-success-note">Success response (example): <code>{ "id": "...", "user": { ... }, "role": "...", "origin": "..." }</code></p>
-              <h3>7.2 Session check</h3>
+              <p class="api-success-note">A successful response returns the session, for example <code>{ "id": "...", "user": { ... }, "role": "...", "origin": "..." }</code>.</p>
+              <h3>7.2 Session verification</h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -663,7 +678,7 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   <tr>
                     <td><span class="method-badge method-get">GET</span></td>
                     <td><code>/session</code></td>
-                    <td>(Cookie or auth header required by server)</td>
+                    <td>Requires the cookie or authorization header defined by the service.</td>
                   </tr>
                 </tbody>
               </table>
@@ -680,7 +695,7 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   <tr>
                     <td><span class="method-badge method-get">GET</span></td>
                     <td><code>/user</code></td>
-                    <td>Profile retrieval request (no body)</td>
+                    <td>Retrieves the profile. No body is required.</td>
                   </tr>
                   <tr>
                     <td><span class="method-badge method-put">PUT</span></td>
@@ -702,7 +717,7 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   <tr>
                     <td><span class="method-badge method-get">GET</span></td>
                     <td><code>/registry</code></td>
-                    <td>Registry list request (no body)</td>
+                    <td>Retrieves the registry list. No body is required.</td>
                   </tr>
                   <tr>
                     <td><span class="method-badge method-post">POST</span></td>
@@ -711,8 +726,8 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   </tr>
                 </tbody>
               </table>
-              <p class="api-response-note">Response (example): <code>{ "id": "abc123", ... }</code> or <code>{ "_id": "abc123", ... }</code></p>
-              <h3>7.5 Single registry and delete</h3>
+              <p class="api-response-note">The created record is returned as <code>{ "id": "abc123", ... }</code> or <code>{ "_id": "abc123", ... }</code>.</p>
+              <h3>7.5 Registry record and removal</h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -725,16 +740,16 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   <tr>
                     <td><span class="method-badge method-get">GET</span></td>
                     <td><code>/registry/abc123</code></td>
-                    <td>Fetch single registry detail</td>
+                    <td>Retrieves the registry record.</td>
                   </tr>
                   <tr>
                     <td><span class="method-badge method-delete">DELETE</span></td>
                     <td><code>/registry/abc123</code></td>
-                    <td>Delete registry by ID</td>
+                    <td>Removes the registry identified by the record identifier.</td>
                   </tr>
                 </tbody>
               </table>
-              <h3>7.6 Flow data (registry subdomain)</h3>
+              <h3>7.6 Flow records</h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -747,7 +762,7 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   <tr>
                     <td><span class="method-badge method-get">GET</span></td>
                     <td><code>/flows?last_only=1</code></td>
-                    <td>Fetch latest saved flow (no body)</td>
+                    <td>Retrieves the most recently saved flow. No body is required.</td>
                   </tr>
                   <tr>
                     <td><span class="method-badge method-post">POST</span></td>
@@ -760,7 +775,7 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                   </tr>
                 </tbody>
               </table>
-              <h3>7.7 Create source (registry subdomain)</h3>
+              <h3>7.7 Source record</h3>
               <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -778,10 +793,10 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
                 </tbody>
               </table>
 
-              <h2>Related docs</h2>
+              <h2>Related references</h2>
               <ul>
-                <li class="api-related-note"><strong>API configuration</strong> — Client-side base URL and environment selection</li>
-                <li class="api-related-note"><strong>Authentication and session</strong> — Session checks and router guard</li>
+                <li class="api-related-note"><strong>API configuration</strong> — Selection of the client address and operating environment.</li>
+                <li class="api-related-note"><strong>Authentication and session</strong> — Verification of the session for protected operations.</li>
               </ul>
           </div>
         </div>
@@ -789,9 +804,9 @@ const apiHeroBg = `${import.meta.env.BASE_URL}api-hero.jpg`.replace(/([^:]\/)\/+
     </section>
 
     <ProfessionalSection
-      title="Production-minded API integration lifecycle"
-      subtitle="Use a staged approach for authentication, endpoint validation, and rollout to keep integrations stable."
-      roadmap-title="API rollout steps"
+      title="A controlled path from integration to production"
+      subtitle="Authentication, validation, and deployment proceed in defined stages, so production use remains stable."
+      roadmap-title="Integration stages"
     />
 
     <SiteFooter />
