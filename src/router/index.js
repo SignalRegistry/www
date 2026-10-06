@@ -76,7 +76,7 @@ const router = createRouter({
       meta: {
         title: 'FAQ — Signal Registry',
         description:
-          'Frequently asked questions about Signal Registry, access, security, and how the signal registration dashboard works.',
+          'Authorized answers on Signal Registry access, session control, dashboard reporting, and record administration.',
       },
     },
     {

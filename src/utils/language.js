@@ -129,6 +129,46 @@ const messages = {
       contact: 'Contact us',
       productiveAlt: 'Signal Registry operational view',
     },
+    faqPage: {
+      title: 'FAQ — Signal Registry',
+      description: 'Authorized answers on Signal Registry access, session control, dashboard reporting, and record administration.',
+      eyebrow: 'Frequently asked questions',
+      heroTitle: 'Guidance on Signal Registry',
+      heroText: 'These answers cover access, security, dashboard reporting, and record administration. Further arrangements are made with Sinyatek.',
+      contact: 'Contact us',
+      heroNote: 'Defined procedures. Enterprise support.',
+      imageAlt: 'Signal Registry operating environment',
+      figureCaption: 'Authorized operating guidance',
+      sectionLabel: 'FAQ',
+      sectionTitle: 'Frequently asked questions',
+      items: [
+        {
+          title: 'What is Signal Registry?',
+          content: 'Signal Registry is Sinyatek’s enterprise system for the administration of signal registration data. Authorized users review summary reports, trend and channel charts, the unit register, and individual records. The dashboard, profile, and record pages require a valid session.',
+        },
+        {
+          title: 'What does the dashboard present?',
+          content: 'The dashboard presents summary cards, trend reports, and channel reports for the source under review. The unit register lists every unit and may be sorted or filtered. Authorized users may move between data sources and arrange the operating view.',
+        },
+        {
+          title: 'How is access controlled?',
+          content: 'Access to the dashboard and record pages is governed by sign-in. The session is verified continuously. An invalid or expired session returns the user to sign-in. Account credentials remain the responsibility of the organization. Suspected misuse should be reported to iletisim@sinyatek.com.',
+        },
+        {
+          title: 'How is access or support arranged?',
+          content: 'Access, implementation, and operating support for Signal Registry are arranged with Sinyatek through the contact page or at iletisim@sinyatek.com. API and environment arrangements are included in that correspondence.',
+        },
+      ],
+      ctaEyebrow: 'Correspondence',
+      ctaTitle: 'Further questions',
+      ctaText: 'Onboarding, environment arrangements, and secure access are handled with Sinyatek through a defined path.',
+      signals: [
+        ['Structured onboarding', 'First deployment and activation are arranged with Sinyatek'],
+        ['Technical correspondence', 'Integration and configuration are addressed through a defined path'],
+        ['Operating support', 'Procedures for secure and consistent use across teams'],
+      ],
+      ctaButton: 'Contact us',
+    },
   },
   tr: {
     nav: ['Hakkımızda', 'Projeler', 'API', 'Fiyatlandırma', 'İletişim', 'FAQ'],
@@ -255,12 +295,58 @@ const messages = {
       contact: 'Bize ulaşın',
       productiveAlt: 'Signal Registry operasyon görünümü',
     },
+    faqPage: {
+      title: 'SSS — Signal Registry',
+      description: 'Signal Registry erişimi, oturum kontrolü, dashboard raporlaması ve kayıt yönetimi hakkında yetkili yanıtlar.',
+      eyebrow: 'Sık sorulan sorular',
+      heroTitle: 'Signal Registry hakkında yönlendirme',
+      heroText: 'Bu yanıtlar erişim, güvenlik, dashboard raporlaması ve kayıt yönetimini kapsar. İlave düzenlemeler Sinyatek ile yapılır.',
+      contact: 'Bize ulaşın',
+      heroNote: 'Tanımlı prosedürler. Kurumsal destek.',
+      imageAlt: 'Signal Registry işletim ortamı',
+      figureCaption: 'Yetkili işletim yönlendirmesi',
+      sectionLabel: 'SSS',
+      sectionTitle: 'Sık sorulan sorular',
+      items: [
+        {
+          title: 'Signal Registry nedir?',
+          content: 'Signal Registry, Sinyatek’in sinyal kayıt verisinin yönetimi için sunduğu kurumsal sistemdir. Yetkili kullanıcılar özet raporları, eğilim ve kanal grafiklerini, birim listesini ve tekil kayıtları inceler. Dashboard, profil ve kayıt sayfaları geçerli bir oturum gerektirir.',
+        },
+        {
+          title: 'Dashboard neleri sunar?',
+          content: 'Dashboard, incelenen kaynağa ait özet kartları, eğilim raporlarını ve kanal raporlarını sunar. Birim listesi tüm birimleri içerir; sıralanabilir ve filtrelenebilir. Yetkili kullanıcılar veri kaynakları arasında geçiş yapabilir ve işletim görünümünü düzenleyebilir.',
+        },
+        {
+          title: 'Erişim nasıl kontrol edilir?',
+          content: 'Dashboard ve kayıt sayfalarına erişim oturum açma ile yönetilir. Oturum sürekli doğrulanır. Geçersiz veya süresi dolmuş bir oturum kullanıcıyı oturum açma sayfasına döndürür. Hesap bilgilerinin korunması kurumun sorumluluğundadır. Şüpheli kullanım iletisim@sinyatek.com adresine bildirilmelidir.',
+        },
+        {
+          title: 'Erişim veya destek nasıl düzenlenir?',
+          content: 'Signal Registry için erişim, uygulama ve işletim desteği iletişim sayfası veya iletisim@sinyatek.com üzerinden Sinyatek ile planlanır. API ve ortam düzenlemeleri bu yazışmanın kapsamındadır.',
+        },
+      ],
+      ctaEyebrow: 'Yazışma',
+      ctaTitle: 'İlave sorular',
+      ctaText: 'İlk kurulum, ortam düzenlemeleri ve güvenli erişim, tanımlı bir yol üzerinden Sinyatek ile yürütülür.',
+      signals: [
+        ['Yapılandırılmış kurulum', 'İlk dağıtım ve etkinleştirme Sinyatek ile planlanır'],
+        ['Teknik yazışma', 'Entegrasyon ve yapılandırma tanımlı bir yol üzerinden ele alınır'],
+        ['İşletim desteği', 'Ekipler arasında güvenli ve tutarlı kullanım prosedürleri'],
+      ],
+      ctaButton: 'Bize ulaşın',
+    },
   },
 }
 
 export function documentMeta(routeName) {
   const pages = messages[language.value]
-  const page = routeName === 'about' ? pages.aboutPage : routeName === 'projects' ? pages.projectsPage : null
+  const page = routeName === 'about'
+    ? pages.aboutPage
+    : routeName === 'projects'
+      ? pages.projectsPage
+      : routeName === 'faq'
+        ? pages.faqPage
+        : null
   if (!page) return null
   return { title: page.title, description: page.description }
 }

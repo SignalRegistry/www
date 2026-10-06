@@ -1,32 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import SiteNavbar from '@/components/SiteNavbar.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import { getAssetImg } from '@/utils/getAssetImg'
+import { documentMeta, useLanguage } from '@/utils/language'
 
+const { language, t } = useLanguage()
 const openIndex = ref(0)
-// Reuse shared image resolver to keep asset references Vite-safe.
-const faqHeroBg = getAssetImg('aboutUs.jpg')
+const faqHeroImage = getAssetImg('faq-hero.jpg')
 
-const faqItems = [
-  {
-    title: 'What is Signal Registry?',
-    content: "Signal Registry is Sinyatek's management panel for tracking and managing signal registration data. After signing in, you can view summary cards, trend and channel charts, a unit table, and edit individual records. Dashboard, profile, and record pages are protected and require a valid session.",
-  },
-  {
-    title: 'What can I see on the dashboard?',
-    content: "The dashboard shows summary cards, trend graphs, and channel graphs for a quick overview of signal registration data. The unit table lists all units and can be sorted and filtered. You can switch between data sources and rearrange the layout with drag-and-drop.",
-  },
-  {
-    title: 'How is access and security handled?',
-    content: "Access to the dashboard and record pages is controlled by sign-in. The application checks your session continuously; if the session is invalid or expires, you are redirected to the sign-in page. Keep your account details secure and contact us at iletisim@sinyatek.com if you notice any suspicious activity.",
-  },
-  {
-    title: 'How can I get access or support?',
-    content: "For access to Signal Registry, implementation details, or technical support, please contact us via the Contact page or at iletisim@sinyatek.com. We can also help with custom API or environment setup.",
-  },
-]
+watch(language, () => {
+  const meta = documentMeta('faq')
+  if (!meta || typeof document === 'undefined') return
+  document.title = meta.title
+  document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
+})
 
 function toggleAccordion(index) {
   // Clicking an open item collapses it; otherwise switch to the selected item.
@@ -39,29 +28,28 @@ function toggleAccordion(index) {
     <SiteNavbar />
 
     <!-- Start Page Title Area -->
-    <div
-      class="page-title-area page-title-area--faq"
-      :style="faqHeroBg ? { backgroundImage: `url(${faqHeroBg})` } : {}"
-    >
-      <div class="d-table">
-        <div class="d-table-cell">
-          <div class="container">
-            <div class="faq-hero-content">
-              <span class="faq-hero-eyebrow">FAQ Support Hub</span>
-              <h1>Find clear answers before you move to action</h1>
-              <p>
-                Browse the most common questions about access, security, operations, and setup.
-                If you need tailored guidance, our team is ready to help.
-              </p>
-              <div class="faq-hero-actions">
-                <RouterLink to="/contact" class="default-btn-one">
-                  Contact Team
-                  <span />
-                </RouterLink>
-                <span class="faq-hero-note">Fast support flow. Practical, implementation-ready answers.</span>
-              </div>
+    <div class="page-title-area page-title-area--faq">
+      <div class="container">
+        <div class="faq-hero-layout">
+          <div class="faq-hero-content">
+            <span class="faq-hero-eyebrow">{{ t.faqPage.eyebrow }}</span>
+            <h1>{{ t.faqPage.heroTitle }}</h1>
+            <p>{{ t.faqPage.heroText }}</p>
+            <div class="faq-hero-actions">
+              <RouterLink to="/contact" class="default-btn-one">
+                {{ t.faqPage.contact }}
+                <span />
+              </RouterLink>
+              <span class="faq-hero-note">{{ t.faqPage.heroNote }}</span>
             </div>
           </div>
+          <figure class="faq-hero-figure">
+            <img :src="faqHeroImage" :alt="t.faqPage.imageAlt">
+            <figcaption>
+              <strong>Signal Registry</strong>
+              <span>{{ t.faqPage.figureCaption }}</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -70,14 +58,14 @@ function toggleAccordion(index) {
     <section class="faq-section ptb-100">
       <div class="container">
         <div class="section-title">
-          <span>FAQ</span>
-          <h3>Frequently Asked Questions</h3>
+          <span>{{ t.faqPage.sectionLabel }}</span>
+          <h3>{{ t.faqPage.sectionTitle }}</h3>
         </div>
 
         <div class="faq-accordion">
           <ul class="accordion">
             <li
-              v-for="(item, index) in faqItems"
+              v-for="(item, index) in t.faqPage.items"
               :key="index"
               class="accordion-item"
             >
@@ -106,26 +94,18 @@ function toggleAccordion(index) {
     <section class="faq-contact-cta pb-100">
       <div class="container">
         <div class="faq-contact-cta__card">
-          <span class="faq-contact-cta__eyebrow">Support Desk</span>
-          <h3>Do You Have Any Questions</h3>
-          <p>Get direct support for onboarding, environment setup, and secure access workflows from our product team.</p>
+          <span class="faq-contact-cta__eyebrow">{{ t.faqPage.ctaEyebrow }}</span>
+          <h3>{{ t.faqPage.ctaTitle }}</h3>
+          <p>{{ t.faqPage.ctaText }}</p>
           <div class="faq-contact-cta__signals">
-            <div class="faq-contact-cta__signal">
-              <strong>Guided Onboarding</strong>
-              <span>Structured help for first-time setup and activation</span>
-            </div>
-            <div class="faq-contact-cta__signal">
-              <strong>Technical Assistance</strong>
-              <span>Fast guidance for integration and configuration topics</span>
-            </div>
-            <div class="faq-contact-cta__signal">
-              <strong>Operational Support</strong>
-              <span>Best practices for secure and reliable team usage</span>
+            <div v-for="signal in t.faqPage.signals" :key="signal[0]" class="faq-contact-cta__signal">
+              <strong>{{ signal[0] }}</strong>
+              <span>{{ signal[1] }}</span>
             </div>
           </div>
           <div class="faq-contact-cta__actions">
             <RouterLink to="/contact" class="default-btn-one">
-              Contact Support Team
+              {{ t.faqPage.ctaButton }}
               <span />
             </RouterLink>
           </div>
@@ -141,27 +121,80 @@ function toggleAccordion(index) {
 
 <style scoped>
 .page-title-area--faq {
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: auto !important;
+  min-height: 0 !important;
+  background-image: none !important;
+  background-color: #071422 !important;
+  background:
+    radial-gradient(720px 320px at 88% 0%, rgba(0, 176, 238, 0.16), transparent 62%),
+    linear-gradient(180deg, #071422 0%, #0c1c33 100%) !important;
   position: relative;
+  overflow: hidden;
+  padding: 132px 0 76px;
 }
 
 .page-title-area--faq::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(16, 18, 37, 0.62);
-  z-index: 0;
+  content: none;
+  display: none;
+}
+
+.faq-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.faq-hero-figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.faq-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 558;
+  object-fit: cover;
+}
+
+.faq-hero-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  background: #f6f8fc;
+  border-top: 1px solid #e6ecf5;
+}
+
+.faq-hero-figure figcaption strong {
+  color: #1e4fa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.faq-hero-figure figcaption span {
+  min-width: 0;
+  color: #5f6f95;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .faq-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  max-width: 560px;
   color: #ffffff;
-  padding: 36px 0 28px;
+  padding: 0;
 }
 
 .faq-hero-eyebrow {
@@ -272,14 +305,37 @@ function toggleAccordion(index) {
 }
 
 @media only screen and (max-width: 991px) {
+  .page-title-area--faq {
+    padding: 118px 0 48px !important;
+  }
+
+  .faq-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .faq-hero-content {
+    max-width: 100%;
+  }
+
+  .faq-hero-figure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .faq-hero-figure figcaption span {
+    text-align: left;
+  }
+
   .faq-contact-cta__signals {
     grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .faq-hero-content {
-    padding: 24px 0 12px;
+  .page-title-area--faq {
+    padding: 108px 0 36px !important;
   }
 
   .faq-hero-content h1 {
